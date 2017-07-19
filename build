@@ -1,0 +1,96 @@
+nmap -sn 192.168.1.0/24
+ssh-keygen -R 192.168.1.14
+
+
+sudo apt-get update
+sudo apt-get install git python-dev python-imaging
+git clone https://github.com/hzeller/rpi-rgb-led-matrix.git
+
+
+sudo apt-get update && sudo apt-get install python2.7-dev python-pillow python-imaging git -y
+
+cat <<EOF | sudo tee /etc/modprobe.d/blacklist-rgb-matrix.conf
+blacklist snd_bcm2835
+EOF
+
+sudo update-initramfs -u
+
+sudo nano /etc/init.d/mta
+
+#!/bin/sh
+sleep 10
+sudo python /home/pi/mta/start.py
+
+sudo chmod 755 /etc/init.d/mta
+sudo update-rc.d mta defaults
+
+
+sudo nano /etc/hosts
+sudo nano /etc/hostname
+sudo /etc/init.d/hostname.sh
+
+passwd
+
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+brun
+mk ssh
+---
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+sudo nano /etc/hosts
+sudo nano /etc/hostname
+sudo /etc/init.d/hostname.sh
+
+
+network={
+        ssid="CAFFE BENE- OFFICE"
+        psk=""
+        key_mgmt=WPA-PSK
+}
+
+network={
+        ssid="Caffe Bene"
+        psk=""
+        key_mgmt=WPA-PSK
+}
+
+network={
+        ssid="nixon"
+        psk="richards"
+        key_mgmt=WPA-PSK
+}
+
+network={
+        ssid="Slowly Loading"
+        psk="7184563770"
+        key_mgmt=WPA-PSK
+}
+
+network={
+        ssid="Houdini"
+        psk="7184563770"
+        key_mgmt=""
+}
+
+network={
+    ssid="Houdini"
+    key_mgmt=NONE
+    wep_key0=7184563770
+    wep_tx_keyidx=0
+    priority=1
+}
+
+Wifi name:Password: 
+
+sudo ifdown wlan0
+sudo ifup wlan0
+ifconfig wlan0
+iwconfig
+sudo iwlist wlan0 scan
+
+
+
+
+
+
