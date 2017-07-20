@@ -1,3 +1,4 @@
+# encoding=utf8
 import atexit
 import Image
 import ImageDraw
@@ -10,10 +11,13 @@ import signal
 import logging
 import json
 import socket
+import urllib2
 from base import base
 
+
+
 ##### DEV MODE #####
-dev = False
+dev = True
 
 client = '29'
 b = base(client)
@@ -73,6 +77,7 @@ swap = b.matrix.CreateFrameCanvas()
 while True:
 
     try:
+
         swap.Clear()
         swapImage = Image.new('RGB', (width, height))
         swapDraw  = ImageDraw.Draw(swapImage)
@@ -88,6 +93,27 @@ while True:
         time.sleep(4)
         swap = b.matrix.SwapOnVSync(swap)
 
+
+        swap.Clear()
+
+        baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='new york, ny')"
+        yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
+        result = urllib2.urlopen(yql_url).read()
+        data = json.loads(result)
+
+        weatherImage = Image.new('RGB', (width, height))
+        weatherDraw  = ImageDraw.Draw(weatherImage)
+
+        weatherDraw.text((2, 0), 'IT IS ' + data['query']['results']['channel']['item']['condition']['temp'] + ' FUCKING DEGREES' , font=font, fill=red)
+        weatherDraw.text((2, 16), '& ' + data['query']['results']['channel']['item']['condition']['text'].upper() + ' OUTSIDE', font=font, fill=green)
+
+        swap.SetImage(weatherImage, 0, 0)
+        time.sleep(4)
+        swap = b.matrix.SwapOnVSync(swap)
+
+        swap.Clear()
+
         count = not count
 
         if count == True:
@@ -99,6 +125,7 @@ while True:
         raw = connection.read()
         times = raw.split()
         connection.close()
+
 
 
         if frame == 'ln':
@@ -149,6 +176,15 @@ while True:
         draw.point((width - 12, 20), fill=black)
 
         swap.SetImage(image, 0, 0)
+        time.sleep(4)
+        swap = b.matrix.SwapOnVSync(swap)
+
+        swap.Clear()
+        pic = Image.open("emoji.png")
+        pic = pic.convert('RGB')
+        pic.thumbnail((128,32), Image.ANTIALIAS)
+        swap.SetImage(pic.convert('RGB'), 0, 0)
+
         time.sleep(4)
         swap = b.matrix.SwapOnVSync(swap)
 
