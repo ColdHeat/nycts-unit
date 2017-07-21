@@ -50,6 +50,8 @@ count = True
 
 slideLength = 10
 
+logging.basicConfig(filename='error.log',level=logging.DEBUG)
+
 ##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
@@ -65,6 +67,13 @@ def drawClear():
 def displayError():
     drawClear()
     draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), 'WiFi Connection Error', font=font, fill=orange)
+    b.matrix.SetImage(image, 0, 0)
+    time.sleep(5)
+    drawClear()
+
+def displayRawError(msg):
+    drawClear()
+    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), msg, font=font, fill=orange)
     b.matrix.SetImage(image, 0, 0)
     time.sleep(5)
     drawClear()
@@ -189,6 +198,11 @@ while True:
         swap = b.matrix.SwapOnVSync(swap)
 
     except Exception as e:
-        logging.exception("message")
-        displayError()
+
+        logging.exception(str(e))
+
+        if dev == True:
+            displayRawError(str(e))
+        else:
+            displayError()
         pass
