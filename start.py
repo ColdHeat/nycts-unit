@@ -14,10 +14,13 @@ import socket
 import urllib2
 from base import base
 
+with open('config.json') as config_file:
+    config = json.load(config_file)
+
 
 
 ##### DEV MODE #####
-dev = True
+dev = config["dev"]
 
 client = '29'
 b = base(client)
@@ -34,6 +37,7 @@ orange    = (255, 100, 0)
 green     = (0,   255, 0)
 black     = (0,     0, 0)
 red       = (255,   0, 0)
+blue      = (0,     200, 255)
 
 font      = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
@@ -49,6 +53,11 @@ minOffset = width - 6 - font.getsize(minLabel)[0]
 count = True
 
 slideLength = 10
+
+pic = Image.open("emoji.png")
+pic = pic.convert('RGB')
+pic.thumbnail((128,32), Image.ANTIALIAS)
+
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
@@ -85,8 +94,8 @@ while True:
             ip = str([l for l in ([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2] if not ip.startswith("127.")][:1], [[(s.connect(('8.8.8.8', 53)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]]) if l][0][0])
             swapDraw.text((2, 0), 'IP: ' + ip , font=font, fill=red)
         else:
-            swapDraw.text((2, 0), 'NYC Train Sign:' , font=font, fill=red)
-            swapDraw.text((68, 0), 'legit realtime' , font=font, fill=green)
+            swapDraw.text((2, 0), config["text_line_1"] , font=font, fill=red)
+            swapDraw.text((68, 0), config["text_line_2"] , font=font, fill=green)
             swapDraw.text((2, 16), '@' , font=font, fill=green)
             swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=font, fill=orange)
         swap.SetImage(swapImage, 0, 0)
@@ -95,9 +104,19 @@ while True:
 
 
         swap.Clear()
+        textImage = Image.new('RGB', (width, height))
+        textDraw  = ImageDraw.Draw(textImage)
+        textDraw.text((2, 0), 'HAPPY HOUR 4-8PM' , font=font, fill=red)
+        textDraw.text((2, 16), '$2 SHOT  $3 PBR  $4 WELL' , font=font, fill=blue)
+        swap.SetImage(textImage, 0, 0)
+        time.sleep(4)
+        swap = b.matrix.SwapOnVSync(swap)
+
+
+        swap.Clear()
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
-        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='new york, ny')"
+        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         result = urllib2.urlopen(yql_url).read()
         data = json.loads(result)
@@ -180,9 +199,6 @@ while True:
         swap = b.matrix.SwapOnVSync(swap)
 
         swap.Clear()
-        pic = Image.open("emoji.png")
-        pic = pic.convert('RGB')
-        pic.thumbnail((128,32), Image.ANTIALIAS)
         swap.SetImage(pic.convert('RGB'), 0, 0)
 
         time.sleep(4)
