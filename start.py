@@ -60,6 +60,8 @@ pic = Image.open("emoji.png")
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
+weather = '74'
+conditions = 'Mostly Sunny'
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
@@ -120,14 +122,22 @@ while True:
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
-        result = urllib2.urlopen(yql_url).read()
-        data = json.loads(result)
+        try:
+            result = urllib2.urlopen(yql_url)
+        except urllib2.URLError as e:
+            print 'error'
+        else:
+            data = json.loads(result.read())
+            weather = data['query']['results']['channel']['item']['condition']['temp']
+            conditions = data['query']['results']['channel']['item']['condition']['text'].upper()
 
         weatherImage = Image.new('RGB', (width, height))
         weatherDraw  = ImageDraw.Draw(weatherImage)
 
-        weatherDraw.text((2, 0), 'IT IS ' + data['query']['results']['channel']['item']['condition']['temp'] + ' FUCKING DEGREES' , font=font, fill=red)
-        weatherDraw.text((2, 16), '& ' + data['query']['results']['channel']['item']['condition']['text'].upper() + ' OUTSIDE', font=font, fill=green)
+
+
+        weatherDraw.text((2, 0), 'IT IS ' + weather + ' FUCKING DEGREES' , font=font, fill=red)
+        weatherDraw.text((2, 16), '& ' + conditions + ' OUTSIDE', font=font, fill=green)
 
         swap.SetImage(weatherImage, 0, 0)
         time.sleep(transition_time)
