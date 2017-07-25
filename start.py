@@ -24,6 +24,8 @@ dev = config["dev"]
 
 client = '29'
 b = base(client)
+
+transition_time = config["transition_time"]
 ##### MATRIX #####
 width          = 128
 height         = 32
@@ -75,7 +77,7 @@ def displayError():
     drawClear()
     draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), 'WiFi Connection Error', font=font, fill=orange)
     b.matrix.SetImage(image, 0, 0)
-    time.sleep(5)
+    time.sleep(transition_time)
     drawClear()
 
 atexit.register(clearOnExit)
@@ -99,7 +101,7 @@ while True:
             swapDraw.text((2, 16), '@' , font=font, fill=green)
             swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=font, fill=orange)
         swap.SetImage(swapImage, 0, 0)
-        time.sleep(4)
+        time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
 
@@ -109,7 +111,7 @@ while True:
         textDraw.text((2, 0), 'HAPPY HOUR 4-8PM' , font=font, fill=red)
         textDraw.text((2, 16), '$2 SHOT  $3 PBR  $4 WELL' , font=font, fill=blue)
         swap.SetImage(textImage, 0, 0)
-        time.sleep(4)
+        time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
 
@@ -128,7 +130,7 @@ while True:
         weatherDraw.text((2, 16), '& ' + data['query']['results']['channel']['item']['condition']['text'].upper() + ' OUTSIDE', font=font, fill=green)
 
         swap.SetImage(weatherImage, 0, 0)
-        time.sleep(4)
+        time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
         swap.Clear()
@@ -195,13 +197,13 @@ while True:
         draw.point((width - 12, 20), fill=black)
 
         swap.SetImage(image, 0, 0)
-        time.sleep(4)
+        time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
         swap.Clear()
         swap.SetImage(pic.convert('RGB'), 0, 0)
 
-        time.sleep(4)
+        time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
     except Exception as e:

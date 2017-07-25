@@ -4,7 +4,8 @@
   "image_file": "emoji.png",
   "text_line_1": "HAPPY HOUR 4-8PM",
   "text_line_2": "$2 SHOT  $3 PBR  $4 WELL",
-  "weather_zip": 11237
+  "weather_zip": 11237,
+  "transition_time": 4
 
 
 }
