@@ -12,6 +12,8 @@ let config = {
   "transition_time": 0.05
 };
 
+bonjour.publish({ name: 'NYCTS', type: 'http', port: 3000 })
+
 app.get('/', function (req, res) {
   res.json(config)
 });
@@ -19,5 +21,3 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
-
-bonjour.publish({ name: 'NYCTS', type: 'http', port: 3000 })
