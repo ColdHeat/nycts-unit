@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mdns = require('mdns');
-
+mdns.isAvahi = true;
 let config = {
   "client_id" : 29,
   "dev": true,
