@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bonjour = require('bonjour')()
 
 let config = {
   "client_id" : 29,
@@ -18,3 +19,5 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
+
+bonjour.publish({ name: 'NYCTS', type: 'http', port: 3000 })
