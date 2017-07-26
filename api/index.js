@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const bonjour = require('bonjour')()
+const mdns = require('mdns');
 
 let config = {
   "client_id" : 29,
@@ -12,7 +12,8 @@ let config = {
   "transition_time": 0.05
 };
 
-bonjour.publish({ name: 'NYCTS', type: 'http', port: 3000 })
+let ad = mdns.createAdvertisement(mdns.tcp('http'), 4321);
+ad.start();
 
 app.get('/', function (req, res) {
   res.json(config)
