@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mdns = require('mdns');
-mdns.isAvahi = true;
+
 let config = {
   "client_id" : 29,
   "dev": true,
@@ -19,6 +19,6 @@ app.get('/', function (req, res) {
   res.json(config)
 });
 
-app.listen(3000, function () {
+app.listen(80, function () {
   console.log('Example app listening on port 3000!')
 });
