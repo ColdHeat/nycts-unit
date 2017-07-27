@@ -12,10 +12,18 @@ let config = {
   "transition_time": 0.05
 };
 
-let ad = mdns.createAdvertisement(mdns.tcp('http'), 4321);
+let ad = mdns.createAdvertisement(mdns.tcp('http'), 80);
 ad.start();
 
 app.get('/', function (req, res) {
+  res.json(config)
+});
+
+app.get('/getConfig', function (req, res) {
+  res.json(config)
+});
+
+app.get('/setConfig', function (req, res) {
   res.json(config)
 });
 
