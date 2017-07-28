@@ -1,6 +1,6 @@
 {
   "client_id" : 29,
-  "dev": true,
+  "dev": false,
   "image_file": "emoji.png",
   "text_line_1": "HAPPY HOUR 4-8PM",
   "text_line_2": "$2 SHOT  $3 PBR  $4 WELL",
