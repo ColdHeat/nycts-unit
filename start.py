@@ -17,7 +17,7 @@ from base import base
 #with open('config.json') as config_file:
 #    config = json.load(config_file)
 config = json.loads('{}')
-baseurl = "https://127.0.0.1:3000/"
+baseurl = "http://127.0.0.1:3000/"
 try:
     result = urllib2.urlopen(baseurl)
 except urllib2.URLError as e:
