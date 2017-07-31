@@ -22,7 +22,8 @@ app.get('/getConfig', function (req, res) {
   res.json(config)
 });
 
-app.get('/setConfig', function (req, res) {
+app.get('/setConfig/:settingKey/:settingValue', function (req, res) {
+  config[req.params.settingKey] = req.params.settingValue;
   res.json(config)
 });
 
