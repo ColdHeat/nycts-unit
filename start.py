@@ -16,24 +16,12 @@ from base import base
 
 #with open('config.json') as config_file:
 #    config = json.load(config_file)
-config = json.loads('{}')
-baseurl = "http://127.0.0.1:3000/"
-try:
-    result = urllib2.urlopen(baseurl)
-except urllib2.URLError as e:
-    print 'error'
-else:
-    config = json.loads(result.read())
 
 
-print config
-##### DEV MODE #####
-dev = config["dev"]
 
 client = '29'
 b = base(client)
 
-transition_time = config["transition_time"]
 ##### MATRIX #####
 width          = 128
 height         = 32
@@ -96,6 +84,20 @@ signal.signal(signal.SIGINT, signal_handler)
 swap = b.matrix.CreateFrameCanvas()
 
 while True:
+    config = json.loads('{}')
+    baseurl = "http://127.0.0.1:3000/"
+    try:
+        result = urllib2.urlopen(baseurl)
+    except urllib2.URLError as e:
+        print 'error'
+    else:
+        config = json.loads(result.read())
+
+    ##### DEV MODE #####
+    dev = config["dev"]
+
+    transition_time = config["transition_time"]
+
 
     try:
 
