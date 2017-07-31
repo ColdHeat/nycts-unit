@@ -96,7 +96,7 @@ while True:
     ##### DEV MODE #####
     dev = config["dev"]
 
-    transition_time = config["transition_time"]
+    transition_time = int(config["transition_time"])
 
 
     try:
