@@ -14,8 +14,16 @@ import socket
 import urllib2
 from base import base
 
-with open('config.json') as config_file:
-    config = json.load(config_file)
+#with open('config.json') as config_file:
+#    config = json.load(config_file)
+
+baseurl = "https://localhost:3000"
+try:
+    result = urllib2.urlopen(baseurl)
+except urllib2.URLError as e:
+    print 'error'
+else:
+    config = json.loads(result.read())
 
 
 
