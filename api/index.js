@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const bonjour = require('bonjour');
+const bonjour = require('bonjour')();
 
 let config = {
   "client_id" : 29,
