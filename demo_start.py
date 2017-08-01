@@ -154,7 +154,7 @@ while True:
                 min2 = '*'
 
             if frame == 'ln':
-                min1 = str(stimes[0] - loop_count)
+                min1 = str(times[0] - loop_count)
                 min2 = str(times[1] - loop_count)
 
             if frame == 'ls':
