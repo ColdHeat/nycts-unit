@@ -14,7 +14,7 @@ import socket
 import urllib2
 from base import base
 
-#with open('config.json') as config_file:
+# with open('config.json') as config_file:
 #    config = json.load(config_file)
 
 
@@ -83,9 +83,9 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.matrix.CreateFrameCanvas()
 
-loop_count = 0
 
 while True:
+    loop_count = 0
     config = json.loads('{}')
     baseurl = "http://127.0.0.1:3000/"
     try:
@@ -149,7 +149,7 @@ while True:
         else :
             frame ='ls'
 
-        times = [4, 8, 5, 9]
+        times = ['4', '8', '5', '9']
 
         if frame == 'ln':
             dirLabel = '    MANHATTAN '
@@ -210,7 +210,7 @@ while True:
 
         if loop_count == 4:
             loop_count == 0
-        else
+        else:
             loop_count += 1
 
     except Exception as e:
