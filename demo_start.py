@@ -83,9 +83,9 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.matrix.CreateFrameCanvas()
 
+loop_count = 0
 
 while True:
-    loop_count = 0
     config = json.loads('{}')
     baseurl = "http://127.0.0.1:3000/"
     try:
@@ -168,6 +168,9 @@ while True:
             if frame == 'ln':
                 min1 = times[0] - loop_count
                 min2 = times[1] - loop_count
+
+                print(min1)
+                print(loop_count)
             if frame == 'ls':
                 min1 = times[2] - loop_count
                 min2 = times[3] - loop_count
