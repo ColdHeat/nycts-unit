@@ -18,7 +18,6 @@ with open('config.json') as config_file:
    config = json.load(config_file)
 
 
-
 client = '29'
 b = base(client)
 
@@ -55,9 +54,6 @@ slideLength = 10
 pic = Image.open("emoji.png")
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
-
-weather = '74'
-conditions = 'Mostly Sunny'
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
@@ -158,23 +154,20 @@ while True:
                 min2 = '*'
 
             if frame == 'ln':
-                min1 = times[0] - loop_count
-                min2 = times[1] - loop_count
+                min1 = str(stimes[0] - loop_count)
+                min2 = str(times[1] - loop_count)
 
             if frame == 'ls':
-                min1 = times[2] - loop_count
-                min2 = times[3] - loop_count
+                min1 = str(times[2] - loop_count)
+                min2 = str(times[3] - loop_count)
         else:
             min1 = '*'
             min2 = '*'
 
-        if len(min1) < 2:
-            min1 = min1.rjust(3)
-        time1Offset = minOffset - font.getsize(min1)[0]
+        time1Offset = 99
 
-        if len(min2) < 2:
-            min2 = min2.rjust(3)
-        time2Offset = minOffset - font.getsize(min2)[0]
+        time2Offset = 98
+
 
         dirLabelw = font.getsize(dirLabel)[0]
         draw.rectangle((0, 0, width, height), fill=black)
@@ -202,7 +195,7 @@ while True:
         swap = b.matrix.SwapOnVSync(swap)
 
         if loop_count == 4:
-            loop_count == 0
+            loop_count -= 4
         else:
             loop_count += 1
 
