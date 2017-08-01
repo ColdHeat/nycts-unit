@@ -12,7 +12,7 @@ import logging
 import json
 import socket
 import urllib2
-from base import base
+# from base import base
 
 # with open('config.json') as config_file:
 #    config = json.load(config_file)
@@ -20,7 +20,7 @@ from base import base
 
 
 client = '29'
-b = base(client)
+# b = base(client)
 
 ##### MATRIX #####
 width          = 128
@@ -149,7 +149,7 @@ while True:
         else :
             frame ='ls'
 
-        times = ['4', '8', '5', '9']
+        times = [4, 8, 5, 9]
 
         if frame == 'ln':
             dirLabel = '    MANHATTAN '
@@ -160,7 +160,7 @@ while True:
 
         if len(times) > 3:
             try:
-                val = int(times[0])
+                val = times[0]
             except ValueError:
                 min1 = '*'
                 min2 = '*'
