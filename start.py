@@ -85,7 +85,7 @@ swap = b.matrix.CreateFrameCanvas()
 
 while True:
     config = json.loads('{}')
-    baseurl = "http://127.0.0.1:3000/"
+    baseurl = "http://127.0.0.1:3000/getConfig"
     try:
         result = urllib2.urlopen(baseurl)
     except urllib2.URLError as e:
@@ -97,7 +97,7 @@ while True:
     dev = config["dev"]
 
     transition_time = int(config["transition_time"])
-    b.matrix.brightness = int(config["brightness"])
+    b.matrix.brightness = 50
 
     try:
 
