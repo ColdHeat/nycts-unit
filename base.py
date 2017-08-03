@@ -14,7 +14,6 @@ class base:
         self.power = 'on'
         self.matrix.brightness = 50
         self.client        = client
-        self.matrix.pwm_bits = 5
         self.lastQueryTime = time.time()
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
