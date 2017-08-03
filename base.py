@@ -14,7 +14,7 @@ class base:
         self.power = 'on'
         self.matrix.brightness = 50
         self.client        = client
-        self.matrix.slowdown-gpio = 0
+        self.matrix.slowdown-gpio = 2
         self.lastQueryTime = time.time()
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
