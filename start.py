@@ -97,7 +97,7 @@ while True:
     dev = config["dev"]
 
     transition_time = int(config["transition_time"])
-    b.matrix.brightness = 50
+    b.matrix.brightness = int(config["brightness"])
 
     try:
 
