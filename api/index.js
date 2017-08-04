@@ -10,7 +10,8 @@ let config = {
   "text_line_2": "$2 SHOT  $3 PBR  $4 WELL",
   "weather_zip": 11237,
   "transition_time": 0.05,
-  "brightness": 50
+  "brightness": 50,
+  "reboot": false
 };
 
 bonjour.publish({ name: 'NYCTS', type: 'http', port: 3000 });

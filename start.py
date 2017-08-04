@@ -103,6 +103,17 @@ while True:
     ##### DEV MODE #####
     dev = config["dev"]
 
+    if config["reboot"] == True:
+        baseurl = "http://127.0.0.1:3000/setConfig/reboot/false"
+        try:
+            result = urllib2.urlopen(baseurl)
+        except urllib2.URLError as e:
+            print 'error'
+        else:
+            config = json.loads(result.read())
+            os.system('reboot')
+
+
     transition_time = int(config["transition_time"])
     b.matrix.brightness = int(config["brightness"])
 
