@@ -14,11 +14,6 @@ import socket
 import urllib2
 from base import base
 
-#with open('config.json') as config_file:
-#    config = json.load(config_file)
-
-
-
 client = '29'
 b = base(client)
 
