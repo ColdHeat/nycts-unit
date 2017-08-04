@@ -32,7 +32,7 @@ class base:
 
             self.lastQueryTime = time.time()
 
-            self.matrix.brightness = int(parsed['data']['brightness'])
+            #self.matrix.brightness = int(parsed['data']['brightness'])
             self.power = parsed['data']['power']
             self.line  = parsed['data']['line']
 
