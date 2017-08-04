@@ -103,8 +103,8 @@ while True:
     ##### DEV MODE #####
     dev = config["dev"]
 
-    if config["reboot"] == True:
-        baseurl = "http://127.0.0.1:3000/setConfig/reboot/false"
+    if config["reboot"] == "1":
+        baseurl = "http://127.0.0.1:3000/setConfig/reboot/0"
         try:
             result = urllib2.urlopen(baseurl)
         except urllib2.URLError as e:

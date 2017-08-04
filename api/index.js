@@ -9,9 +9,9 @@ let config = {
   "text_line_1": "HAPPY HOUR 4-8PM",
   "text_line_2": "$2 SHOT  $3 PBR  $4 WELL",
   "weather_zip": 11237,
-  "transition_time": 0.05,
-  "brightness": 50,
-  "reboot": false
+  "transition_time": 5,
+  "brightness": 80,
+  "reboot": "0"
 };
 
 bonjour.publish({ name: 'NYCTS', type: 'http', port: 3000 });
