@@ -18,11 +18,10 @@ from uber_rides.client import UberRidesClient
 session = Session(server_token='SwCeg2TnOPjU77G_ruHHtnVY_nEwhdO9J14wotto')
 uberClient = UberRidesClient(session)
 response = uberClient.get_price_estimates(
-    start_latitude=37.770,
-    start_longitude=-122.411,
-    end_latitude=37.791,
-    end_longitude=-122.405,
-    seat_count=2
+    start_latitude=40.749810,
+    start_longitude=-73.987771,
+    end_latitude=40.746498,
+    end_longitude=-74.001369
 )
 
 estimate = response.json.get('prices')
