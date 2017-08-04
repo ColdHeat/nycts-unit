@@ -1,0 +1,250 @@
+interactions:
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://sandbox-api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:13:07 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-sandbox, migrator-uberex-sandbox-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:13:07 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-nonsandbox, migrator-uberex-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://sandbox-api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:41:34 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-sandbox, migrator-uberex-sandbox-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:41:34 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-nonsandbox, migrator-uberex-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://sandbox-api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:48:02 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-sandbox, migrator-uberex-sandbox-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:48:03 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-nonsandbox, migrator-uberex-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://sandbox-api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:49:28 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-sandbox, migrator-uberex-sandbox-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://api.uber.com/v1.2/products?latitude=37.7899886&longitude=-122.4021253
+  response:
+    body: {string: !!python/unicode '{"products":[{"upfront_fare_enabled":true,"capacity":2,"product_id":"26546650-e557-4a7b-86e7-6a3942445247","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":true,"short_description":"POOL","display_name":"POOL","product_group":"Rideshare","description":"Share
+        the ride, split the cost."},{"upfront_fare_enabled":true,"capacity":4,"product_id":"a1111c8c-c720-46c3-8534-2fcdd730040d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"uberX","display_name":"uberX","product_group":"UberX","description":"THE
+        LOW-COST UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"821415d8-3bd5-4e27-9604-194e4359a449","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberxl2.png","cash_enabled":false,"shared":false,"short_description":"uberXL","display_name":"uberXL","product_group":"UberXL","description":"LOW-COST
+        RIDES FOR LARGE GROUPS"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"57c0ff4e-1493-4ef9-a4df-6b961525cf92","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberselect.png","cash_enabled":false,"shared":false,"short_description":"SELECT","display_name":"SELECT","product_group":"UberX","description":"A
+        STEP ABOVE THE EVERY DAY"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"d4abaae7-f4d6-4152-91cc-77523e8165a4","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-black.png","cash_enabled":false,"shared":false,"short_description":"BLACK","display_name":"BLACK","product_group":"UberBLACK","description":"THE
+        ORIGINAL UBER"},{"upfront_fare_enabled":true,"capacity":6,"product_id":"8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-suv.png","cash_enabled":false,"shared":false,"short_description":"SUV","display_name":"SUV","product_group":"SUV","description":"ROOM
+        FOR EVERYONE"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"ff5ed8fe-6585-4803-be13-3ca541235de3","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-uberx.png","cash_enabled":false,"shared":false,"short_description":"ASSIST","display_name":"ASSIST","product_group":"UberX","description":"uberX
+        with extra assistance"},{"upfront_fare_enabled":true,"capacity":4,"product_id":"2832a1f5-cfc0-48bb-ab76-7ea7a62060e7","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-wheelchair.png","cash_enabled":false,"shared":false,"short_description":"WAV","display_name":"WAV","product_group":"UberX","description":"WHEELCHAIR
+        ACCESSIBLE VEHICLES"},{"upfront_fare_enabled":false,"capacity":4,"product_id":"3ab64887-4842-4c8e-9780-ccecd3a0391d","image":"http:\/\/d1a3f4spazzrp4.cloudfront.net\/car-types\/mono\/mono-taxi.png","cash_enabled":false,"shared":false,"short_description":"TAXI","display_name":"TAXI","product_group":"Taxi","description":"TAXI
+        WITHOUT THE HASSLE"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-geo-system: [wgs-84]
+      content-language: [en]
+      content-length: ['2987']
+      content-type: [application/json]
+      date: ['Thu, 20 Oct 2016 08:49:28 GMT']
+      etag: ['"641593c62c4d9338b27bd86622bc9a12706419af"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-nonsandbox, migrator-uberex-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

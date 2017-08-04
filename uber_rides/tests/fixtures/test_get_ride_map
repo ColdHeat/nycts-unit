@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: null
+    headers:
+      X-Uber-User-Agent: [!!python/unicode Python Rides SDK v0.3.0]
+    method: GET
+    uri: https://sandbox-api.uber.com/v1.2/requests/0aec0061-1e20-4239-a0b7-78328e9afec8/map
+  response:
+    body: {string: !!python/unicode '{"href":"https:\/\/sandbox-api.uber.com\/v1\/sandbox\/map","request_id":"0aec0061-1e20-4239-a0b7-78328e9afec8"}'}
+    headers:
+      connection: [keep-alive]
+      content-language: [en]
+      content-length: ['111']
+      content-type: [application/json]
+      date: ['Fri, 21 Oct 2016 01:15:00 GMT']
+      etag: ['"0843ec9a5bf0314e51a0e83b2de31b5d3ac21f47"']
+      server: [nginx]
+      strict-transport-security: [max-age=0]
+      x-content-type-options: [nosniff]
+      x-uber-app: [uberex-sandbox, migrator-uberex-sandbox-optimus]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
