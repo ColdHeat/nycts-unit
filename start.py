@@ -13,12 +13,19 @@ import json
 import socket
 import urllib2
 from base import base
+from uber_rides.session import Session
+from uber_rides.client import UberRidesClient
+session = Session(server_token='SwCeg2TnOPjU77G_ruHHtnVY_nEwhdO9J14wotto')
+uberClient = UberRidesClient(session)
+response = uberClient.get_price_estimates(
+    start_latitude=40.749810,
+    start_longitude=-73.987771,
+    end_latitude=40.746498,
+    end_longitude=-74.001369
+)
 
-#with open('config.json') as config_file:
-#    config = json.load(config_file)
-
-
-
+estimate = response.json.get('prices')
+print estimate
 client = '29'
 b = base(client)
 
@@ -52,7 +59,7 @@ count = True
 
 slideLength = 10
 
-pic = Image.open("emoji.png")
+pic = Image.open("emoji.gif")
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
@@ -85,7 +92,7 @@ swap = b.matrix.CreateFrameCanvas()
 
 while True:
     config = json.loads('{}')
-    baseurl = "http://127.0.0.1:3000/"
+    baseurl = "http://127.0.0.1:3000/getConfig"
     try:
         result = urllib2.urlopen(baseurl)
     except urllib2.URLError as e:
@@ -96,8 +103,19 @@ while True:
     ##### DEV MODE #####
     dev = config["dev"]
 
-    transition_time = int(config["transition_time"])
+    if config["reboot"] == "1":
+        baseurl = "http://127.0.0.1:3000/setConfig/reboot/0"
+        try:
+            result = urllib2.urlopen(baseurl)
+        except urllib2.URLError as e:
+            print 'error'
+        else:
+            config = json.loads(result.read())
+            os.system('reboot now')
 
+
+    transition_time = int(config["transition_time"])
+    b.matrix.brightness = int(config["brightness"])
 
     try:
 
