@@ -17,7 +17,7 @@ from uber_rides.session import Session
 from uber_rides.client import UberRidesClient
 session = Session(server_token='SwCeg2TnOPjU77G_ruHHtnVY_nEwhdO9J14wotto')
 uberClient = UberRidesClient(session)
-response = uberClient.get_price_estimates(
+response = uberClient.estimate_ride(
     start_latitude=40.749810,
     start_longitude=-73.987771,
     end_latitude=40.746498,
