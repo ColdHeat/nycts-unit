@@ -111,7 +111,7 @@ while True:
             print 'error'
         else:
             config = json.loads(result.read())
-            os.system('reboot')
+            os.system('reboot now')
 
 
     transition_time = int(config["transition_time"])
