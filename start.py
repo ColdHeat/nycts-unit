@@ -13,19 +13,7 @@ import json
 import socket
 import urllib2
 from base import base
-from uber_rides.session import Session
-from uber_rides.client import UberRidesClient
-session = Session(server_token='SwCeg2TnOPjU77G_ruHHtnVY_nEwhdO9J14wotto')
-uberClient = UberRidesClient(session)
-response = uberClient.get_price_estimates(
-    start_latitude=40.749810,
-    start_longitude=-73.987771,
-    end_latitude=40.746498,
-    end_longitude=-74.001369
-)
 
-estimate = response.json.get('prices')
-print estimate
 client = '29'
 b = base(client)
 
