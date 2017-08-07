@@ -3,23 +3,15 @@ import atexit
 import Image
 import ImageDraw
 import ImageFont
-import math
 import os
 import time
-import urllib
 import signal
 import logging
-import json
-import socket
-import urllib2
 from rgbmatrix import RGBMatrix
 
 
-client = '29'
 b = RGBMatrix(32,4)
 b.brightness = 50
-
-dev = True
 
 ##### MATRIX #####
 width          = 128
@@ -51,9 +43,6 @@ count = True
 
 slideLength = 10
 
-pic = Image.open("emoji.gif")
-pic = pic.convert('RGB')
-pic.thumbnail((128,32), Image.ANTIALIAS)
 
 weather = '74'
 conditions = 'Mostly Sunny'
