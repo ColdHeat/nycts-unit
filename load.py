@@ -39,7 +39,7 @@ lOffset = 4
 minLabel = 'MIn'
 minOffset = width - 6 - font.getsize(minLabel)[0]
 
-transition_time = 0.5
+transition_time = 0.05
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
