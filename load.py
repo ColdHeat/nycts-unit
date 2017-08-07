@@ -39,14 +39,7 @@ lOffset = 4
 minLabel = 'MIn'
 minOffset = width - 6 - font.getsize(minLabel)[0]
 
-count = True
-
-slideLength = 10
-
-
-weather = '74'
-conditions = 'Mostly Sunny'
-transition_time = 4
+transition_time = 30
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
