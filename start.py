@@ -64,9 +64,9 @@ def drawClear():
     draw.rectangle((0, 0, width, height), fill=black)
     b.matrix.SetImage(image, 0, 0)
 
-def displayError():
+def displayError(e):
     drawClear()
-    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), "something ha", font=font, fill=orange)
+    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), e, font=font, fill=orange)
     b.matrix.SetImage(image, 0, 0)
     time.sleep(transition_time)
     drawClear()
