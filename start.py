@@ -66,7 +66,7 @@ def drawClear():
 
 def displayError():
     drawClear()
-    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), "something happened", font=font, fill=orange)
+    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), "something ha", font=font, fill=orange)
     b.matrix.SetImage(image, 0, 0)
     time.sleep(transition_time)
     drawClear()
@@ -97,6 +97,8 @@ while True:
             result = urllib2.urlopen(baseurl)
         except urllib2.URLError as e:
             print 'error'
+            print e
+            displayError(e)
         else:
             config = json.loads(result.read())
             os.system('reboot now')
@@ -144,7 +146,7 @@ while True:
             result = urllib2.urlopen(yql_url)
         except urllib2.URLError as e:
             print 'error'
-            displayError()
+            displayError(e)
         else:
             data = json.loads(result.read())
             weather = data['query']['results']['channel']['item']['condition']['temp']
