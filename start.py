@@ -145,8 +145,9 @@ while True:
         try:
             result = urllib2.urlopen(yql_url)
         except urllib2.URLError as e:
-            print e.reason.message
-            displayError(e.reason.message)
+            error_message = e.reason
+            print error_message
+            displayError(error_message)
             weather = '75'
             conditions = 'Cloudy'
         else:
