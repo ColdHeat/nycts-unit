@@ -137,7 +137,7 @@ while True:
     ##### WEATHER SCREEN #####
         swap.Clear()
 
-        baseurl = "https://query.yahooapis.com/v1/public/yql?"
+        baseurl = "https://query.yahooapis.com/v1/aa/yql?"
         yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
