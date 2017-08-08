@@ -52,6 +52,10 @@ pic = Image.open("emoji.gif")
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
+##### WEATHER  #####
+weather = '75'
+conditions = 'CLOUDY'
+
 ##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
@@ -146,8 +150,6 @@ while True:
         except urllib2.URLError as e:
             error_message = e.reason
             print "Weather module experienced and error: " + error_message
-            weather = '75'
-            conditions = 'CLOUDY'
         else:
             data = json.loads(result.read())
             weather = data['query']['results']['channel']['item']['condition']['temp']
