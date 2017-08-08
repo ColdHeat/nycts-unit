@@ -147,7 +147,6 @@ while True:
         except urllib2.URLError as e:
             error_message = e.reason
             print error_message
-            displayError(error_message)
             weather = '75'
             conditions = 'Cloudy'
         else:
@@ -157,8 +156,6 @@ while True:
 
         weatherImage = Image.new('RGB', (width, height))
         weatherDraw  = ImageDraw.Draw(weatherImage)
-
-
 
         weatherDraw.text((2, 0), 'IT IS ' + weather + ' FUCKING DEGREES' , font=font, fill=red)
         weatherDraw.text((2, 16), '& ' + conditions + ' OUTSIDE', font=font, fill=green)
