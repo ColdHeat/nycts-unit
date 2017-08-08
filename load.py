@@ -65,20 +65,19 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.CreateFrameCanvas()
 
-while True:
-    try:
 
-        swap.Clear()
-        swapImage = Image.new('RGB', (width, height))
-        swapDraw  = ImageDraw.Draw(swapImage)
-        swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=font, fill=red)
-        swapDraw.text((68, 0), ' legit. realtime.'  , font=font, fill=green)
-        swapDraw.text((2, 16), 'Loading...', font=font, fill=red)
-        swap.SetImage(swapImage, 0, 0)
-        time.sleep(transition_time)
-        swap = b.SwapOnVSync(swap)
+swap.Clear()
+swapImage = Image.new('RGB', (width, height))
+swapDraw  = ImageDraw.Draw(swapImage)
+swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=font, fill=red)
+swapDraw.text((68, 0), ' legit. realtime.'  , font=font, fill=green)
+swapDraw.text((2, 16), 'Loading...', font=font, fill=red)
+swap.SetImage(swapImage, 0, 0)
+time.sleep(transition_time)
+swap = b.SwapOnVSync(swap)
 
-    except Exception as e:
-        logging.exception("message")
-        displayError()
-        pass
+try:
+    while True:
+        time.sleep(100)
+except KeyboardInterrupt:
+    sys.exit(0)
