@@ -14,13 +14,14 @@ import socket
 import urllib2
 from base import base
 
+
+##### CLIENT CONFIGURATION #####
 client = '29'
 b = base(client)
 
 ##### MATRIX #####
 width          = 128
 height         = 32
-
 
 ##### IMAGE / COLORS / FONTS / OFFSET #####
 image     = Image.new('RGB', (width, height))
@@ -51,9 +52,6 @@ pic = Image.open("emoji.gif")
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
-weather = '74'
-conditions = 'Mostly Sunny'
-
 ##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
@@ -66,9 +64,9 @@ def drawClear():
     draw.rectangle((0, 0, width, height), fill=black)
     b.matrix.SetImage(image, 0, 0)
 
-def displayError():
+def displayError(error):
     drawClear()
-    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), 'WiFi Connection Error', font=font, fill=orange)
+    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), error, font=font, fill=orange)
     b.matrix.SetImage(image, 0, 0)
     time.sleep(transition_time)
     drawClear()
@@ -79,6 +77,8 @@ signal.signal(signal.SIGINT, signal_handler)
 swap = b.matrix.CreateFrameCanvas()
 
 while True:
+
+    ##### NODE API #####
     config = json.loads('{}')
     baseurl = "http://127.0.0.1:3000/getConfig"
     try:
@@ -105,6 +105,7 @@ while True:
     transition_time = int(config["transition_time"])
     b.matrix.brightness = int(config["brightness"])
 
+    ##### BOOT SCREEN #####
     try:
 
         swap.Clear()
@@ -133,6 +134,7 @@ while True:
         swap = b.matrix.SwapOnVSync(swap)
 
 
+    ##### WEATHER SCREEN #####
         swap.Clear()
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
@@ -159,6 +161,7 @@ while True:
         time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
+    ##### TRAIN SCREEN #####
         swap.Clear()
 
         count = not count
@@ -232,7 +235,8 @@ while True:
         time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
 
+##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
-        displayError()
+        displayError(e)
         pass
