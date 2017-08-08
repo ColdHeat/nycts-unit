@@ -39,8 +39,6 @@ lOffset = 4
 minLabel = 'MIn'
 minOffset = width - 6 - font.getsize(minLabel)[0]
 
-transition_time = 0.05
-
 ##### HANDLERS #####
 def signal_handler(signal, frame):
     b.Clear()
@@ -73,7 +71,6 @@ swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=font, fill=red)
 swapDraw.text((68, 0), ' legit. realtime.'  , font=font, fill=green)
 swapDraw.text((2, 16), 'Loading...', font=font, fill=red)
 swap.SetImage(swapImage, 0, 0)
-time.sleep(transition_time)
 swap = b.SwapOnVSync(swap)
 
 try:
