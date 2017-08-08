@@ -96,9 +96,8 @@ while True:
         try:
             result = urllib2.urlopen(baseurl)
         except urllib2.URLError as e:
-            print 'error'
-            print e
-            displayError(e)
+            error_message = e.reason
+            print "API is having an issue connecting: " + error_message
         else:
             config = json.loads(result.read())
             os.system('reboot now')
@@ -139,16 +138,16 @@ while True:
     ##### WEATHER SCREEN #####
         swap.Clear()
 
-        baseurl = "https://query.yahooapis.com/v1/aa/yql?"
+        baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
         except urllib2.URLError as e:
             error_message = e.reason
-            print error_message
+            print "Weather module experienced and error: " + error_message
             weather = '75'
-            conditions = 'Cloudy'
+            conditions = 'CLOUDY'
         else:
             data = json.loads(result.read())
             weather = data['query']['results']['channel']['item']['condition']['temp']
@@ -174,19 +173,23 @@ while True:
         else :
             frame ='ls'
 
-        connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
-        raw = connection.read()
-        times = raw.split()
-        connection.close()
-
-
-
         if frame == 'ln':
             dirLabel = '    MANHATTAN '
             dirOffset = 22
         if frame == 'ls':
             dirLabel = '   ROCKAWAY PKWY'
             dirOffset = 12
+
+        try:
+            connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
+        except urllib2.URLError as e:
+            error_message = e.reason
+            print "Can't get train times. Error: " + error_message
+            times = [4, 8, 5, 9]
+        else:
+            raw = connection.read()
+            times = raw.split()
+            connection.close()
 
         if len(times) > 3:
             try:
