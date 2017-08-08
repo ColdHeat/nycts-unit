@@ -145,8 +145,10 @@ while True:
         try:
             result = urllib2.urlopen(yql_url)
         except urllib2.URLError as e:
-            print 'error'
-            displayError(e)
+            print e.reason.message
+            displayError(e.reason.message)
+            weather = '75'
+            conditions = 'Cloudy'
         else:
             data = json.loads(result.read())
             weather = data['query']['results']['channel']['item']['condition']['temp']
