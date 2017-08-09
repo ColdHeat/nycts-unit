@@ -89,12 +89,13 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.matrix.CreateFrameCanvas()
 
+logger.info('Starting Node API')
+
 while True:
 
     ##### NODE API #####
     config = json.loads('{}')
     baseurl = "http://127.0.0.1:3000/getConfig"
-    logger.info('Starting Node API')
     try:
         result = urllib2.urlopen(baseurl)
         logger.info('Localhost is up and running')
