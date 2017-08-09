@@ -187,7 +187,12 @@ while True:
         except urllib2.URLError as e:
             error_message = e.reason
             print "Can't get train times. Error: " + error_message
-            times = [4, 8, 5, 9]
+            min1 = min1
+            min2 = min2
+
+            time1Offset = time1Offset
+            time2Offset = time2Offset
+            
         else:
             raw = connection.read()
             times = raw.split()
