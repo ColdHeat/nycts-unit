@@ -91,6 +91,8 @@ swap = b.matrix.CreateFrameCanvas()
 
 logger.info('Starting Node API')
 
+weather_offline_data = {'weather': 75, 'conditions': 'SUNNY'}
+
 while True:
 
     ##### NODE API #####
@@ -167,10 +169,15 @@ while True:
         except urllib2.URLError as e:
             error_message = e.reason
             logger.info('Weather screen ran into an error: ' + error_message, extra={'screen': 'weather_screen'}, exc_info=True)
+            weather = weather_offline_data['weather']
+            conditions = weather_offline_data['conditions']
         else:
             data = json.loads(result.read())
             weather = data['query']['results']['channel']['item']['condition']['temp']
             conditions = data['query']['results']['channel']['item']['condition']['text'].upper()
+
+            weather_offline_data['weather'] = weather
+            weather_offline_data['conditions'] = conditions
 
         weatherImage = Image.new('RGB', (width, height))
         weatherDraw  = ImageDraw.Draw(weatherImage)
@@ -223,6 +230,7 @@ while True:
             if frame == 'ln':
                 min1 = times[0]
                 min2 = times[1]
+
             if frame == 'ls':
                 min1 = times[2]
                 min2 = times[3]
