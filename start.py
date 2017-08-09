@@ -283,5 +283,5 @@ while True:
     except Exception as e:
         logging.exception("message")
         logger.info('Boot Screen', extra={'status': 0, 'job': 'boot_screen'})
-        displayError()
+        displayError(e)
         pass
