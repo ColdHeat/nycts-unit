@@ -13,6 +13,7 @@ import json
 import socket
 import urllib2
 from base import base
+from pythonjsonlogger import jsonlogger
 
 
 ##### CLIENT CONFIGURATION #####
@@ -192,7 +193,7 @@ while True:
 
             time1Offset = time1Offset
             time2Offset = time2Offset
-            
+
         else:
             raw = connection.read()
             times = raw.split()
@@ -247,6 +248,14 @@ while True:
 
         time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
+
+### LOGGING ###
+    logger = logging.getLogger()
+
+    logHandler = logging.StreamHandler()
+    formatter = jsonlogger.JsonFormatter()
+    logHandler.setFormatter(formatter)
+    logger.addHandler(logHandler)
 
 ##### EXCEPTION SCREEN #####
     except Exception as e:
