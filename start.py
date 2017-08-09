@@ -10,10 +10,20 @@ import urllib
 import signal
 import logging
 import json
+import json_log_formatter
 import socket
 import urllib2
 from base import base
-from pythonjsonlogger import jsonlogger
+
+### LOGGING ###
+formatter = json_log_formatter.JSONFormatter()
+
+json_handler = logging.FileHandler(filename='./log/log.json')
+json_handler.setFormatter(formatter)
+
+logger = logging.getLogger('log')
+logger.addHandler(json_handler)
+logger.setLevel(logging.INFO)
 
 
 ##### CLIENT CONFIGURATION #####
@@ -86,9 +96,12 @@ while True:
     ##### NODE API #####
     config = json.loads('{}')
     baseurl = "http://127.0.0.1:3000/getConfig"
+    logger.info('Startup API', extra={'referral_code': 'blah'})
     try:
+        logger.info('It worked')
         result = urllib2.urlopen(baseurl)
     except urllib2.URLError as e:
+        logger.error('Request failed', exc_info=True)
         print 'error'
     else:
         config = json.loads(result.read())
@@ -248,14 +261,6 @@ while True:
 
         time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
-
-### LOGGING ###
-    logger = logging.getLogger()
-
-    logHandler = logging.StreamHandler()
-    formatter = jsonlogger.JsonFormatter()
-    logHandler.setFormatter(formatter)
-    logger.addHandler(logHandler)
 
 ##### EXCEPTION SCREEN #####
     except Exception as e:
