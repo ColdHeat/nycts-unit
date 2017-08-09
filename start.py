@@ -15,20 +15,21 @@ import socket
 import urllib2
 from base import base
 
+
+##### CLIENT CONFIGURATION #####
+client = '29'
+b = base(client)
+
 ### LOGGING ###
 formatter = json_log_formatter.JSONFormatter()
 
-json_handler = logging.FileHandler(filename='./log/log.json')
+json_handler = logging.FileHandler(filename='./logs/' + client + '_logs.json')
 json_handler.setFormatter(formatter)
 
 logger = logging.getLogger('log')
 logger.addHandler(json_handler)
 logger.setLevel(logging.INFO)
 
-
-##### CLIENT CONFIGURATION #####
-client = '29'
-b = base(client)
 
 ##### MATRIX #####
 width          = 128
