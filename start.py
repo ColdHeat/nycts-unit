@@ -91,20 +91,15 @@ swap = b.matrix.CreateFrameCanvas()
 
 while True:
 
-    ##### WEATHER  #####
-    weather = weather
-    conditions = conditions
-
     ##### NODE API #####
     config = json.loads('{}')
     baseurl = "http://127.0.0.1:3000/getConfig"
-    logger.info('Startup API', extra={'referral_code': 'blah'})
+    logger.info('Starting Node API')
     try:
-        logger.info('It worked')
         result = urllib2.urlopen(baseurl)
+        logger.info('Localhost is up and running')
     except urllib2.URLError as e:
-        logger.error('Request failed', exc_info=True)
-        print 'error'
+        logger.error('Request failed. API might be down.', exc_info=True)
     else:
         config = json.loads(result.read())
 
@@ -113,11 +108,13 @@ while True:
 
     if config["reboot"] == "1":
         baseurl = "http://127.0.0.1:3000/setConfig/reboot/0"
+        logger.info('Attempting to reboot Node API...')
         try:
             result = urllib2.urlopen(baseurl)
+            logger.info('Localhost successfully restarted!')
         except urllib2.URLError as e:
             error_message = e.reason
-            print "API is having an issue connecting: " + error_message
+            logger.error('API is having an issue rebooting:' + error_message, exc_info=True)
         else:
             config = json.loads(result.read())
             os.system('reboot now')
@@ -128,7 +125,7 @@ while True:
 
     ##### BOOT SCREEN #####
     try:
-
+        logger.info('Loading boot screen', extra={'screen': 'boot_screen'})
         swap.Clear()
         swapImage = Image.new('RGB', (width, height))
         swapDraw  = ImageDraw.Draw(swapImage)
@@ -158,14 +155,17 @@ while True:
     ##### WEATHER SCREEN #####
         swap.Clear()
 
+        logger.info('Loading weather screen', extra={'screen': 'weather_screen'})
+
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
+            logger.info('Successfully pulled weather info for weather screen', extra={'screen': 'weather_screen'})
         except urllib2.URLError as e:
             error_message = e.reason
-            print "Weather module experienced and error: " + error_message
+            logger.info('Weather screen ran into an error: ' + error_message, extra={'screen': 'weather_screen'}, exc_info=True)
         else:
             data = json.loads(result.read())
             weather = data['query']['results']['channel']['item']['condition']['temp']
@@ -184,6 +184,8 @@ while True:
     ##### TRAIN SCREEN #####
         swap.Clear()
 
+        logger.info('Loading train screen', extra={'screen': 'train_screen'})
+
         count = not count
 
         if count == True:
@@ -200,15 +202,11 @@ while True:
 
         try:
             connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
+            logger.info('Successfully pulled train info', extra={'screen': 'train_screen'})
+
         except urllib2.URLError as e:
             error_message = e.reason
-            print "Can't get train times. Error: " + error_message
-            min1 = min1
-            min2 = min2
-
-            time1Offset = time1Offset
-            time2Offset = time2Offset
-
+            logger.info('Train screen ran into an error: ' + error_message, extra={'screen': 'train_screen'}, exc_info=True)
         else:
             raw = connection.read()
             times = raw.split()
@@ -267,5 +265,7 @@ while True:
 ##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
+        error_message = e.reason
+        logger.info('Something script wide failed, and idk what to do...: ' + error_message, extra={'screen': 'exception_screen'}, exc_info=True)
         displayError()
         pass
