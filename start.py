@@ -165,7 +165,7 @@ while True:
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
-            logger.info('Successfully pulled weather info for weather screen', extra={'screen': 'weather_screen'})
+            logger.info('Successfully pulled weather info for weather screen', extra={'screen': 'weather_screen', 'last_known_data': weather_offline_data})
         except urllib2.URLError as e:
             error_message = e.reason
             logger.info('Weather screen ran into an error: ' + error_message, extra={'screen': 'weather_screen', 'last_known_data': weather_offline_data}, exc_info=True)
