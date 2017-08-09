@@ -267,7 +267,6 @@ while True:
 ##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
-        error_message = e.reason
         logger.info('Boot Screen', extra={'status': 0, 'job': 'boot_screen'})
         displayError()
         pass
