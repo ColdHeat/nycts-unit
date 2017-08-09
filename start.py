@@ -213,11 +213,14 @@ while True:
 
             if frame == 'ln':
                 min1 = row_1_train_offline_data['min1'] - loop_count
-                min2 = row_2_train_offline_data['min2'] - loop_count
-
+                min2 = row_1_train_offline_data['min2'] - loop_count
+                row_1_train_offline_data['min1'] = min1
+                row_1_train_offline_data['min2'] = min2
             if frame == 'ls':
                 min1 = row_2_train_offline_data['min1'] - loop_count
                 min2 = row_2_train_offline_data['min2'] - loop_count
+                row_2_train_offline_data['min1'] = min1
+                row_2_train_offline_data['min2'] = min2
         else:
             raw = connection.read()
             times = raw.split()
