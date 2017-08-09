@@ -64,9 +64,6 @@ pic = Image.open("emoji.gif")
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
-##### WEATHER  #####
-weather = '75'
-conditions = 'CLOUDY'
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
@@ -93,6 +90,10 @@ signal.signal(signal.SIGINT, signal_handler)
 swap = b.matrix.CreateFrameCanvas()
 
 while True:
+
+    ##### WEATHER  #####
+    weather = weather
+    conditions = conditions
 
     ##### NODE API #####
     config = json.loads('{}')
