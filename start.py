@@ -168,7 +168,7 @@ while True:
             logger.info('Successfully pulled weather info for weather screen', extra={'screen': 'weather_screen'})
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info('Weather screen ran into an error: ' + error_message, extra={'screen': 'weather_screen'}, exc_info=True)
+            logger.info('Weather screen ran into an error: ' + error_message, extra={'screen': 'weather_screen', 'last_known_data': weather_offline_data}, exc_info=True)
             weather = weather_offline_data['weather']
             conditions = weather_offline_data['conditions']
         else:
