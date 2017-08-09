@@ -29,7 +29,7 @@ json_handler.setFormatter(formatter)
 logger = logging.getLogger('log')
 logger.addHandler(json_handler)
 logger.setLevel(logging.INFO)
-
+logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
 
 ##### MATRIX #####
 width          = 128
@@ -89,7 +89,6 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.matrix.CreateFrameCanvas()
 
-logger.info('Starting Node API')
 
 weather_offline_data = {'weather': 75, 'conditions': 'SUNNY'}
 
@@ -100,9 +99,9 @@ while True:
     baseurl = "http://127.0.0.1:3000/getConfig"
     try:
         result = urllib2.urlopen(baseurl)
-        logger.info('Localhost is up and running')
+        logger.info(extra={'status': 1, 'job': 'api_config'})
     except urllib2.URLError as e:
-        logger.error('Request failed. API might be down.', exc_info=True)
+        logger.info(extra={'status': 0, 'job': 'api_config'})
     else:
         config = json.loads(result.read())
 
@@ -111,13 +110,12 @@ while True:
 
     if config["reboot"] == "1":
         baseurl = "http://127.0.0.1:3000/setConfig/reboot/0"
-        logger.info('Attempting to reboot Node API...')
         try:
             result = urllib2.urlopen(baseurl)
-            logger.info('Localhost successfully restarted!')
+            logger.info(extra={'status': 1, 'job': 'api_reboot'})
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.error('API is having an issue rebooting:' + error_message, exc_info=True)
+            logger.info(extra={'status': 0, 'job': 'api_reboot'})
         else:
             config = json.loads(result.read())
             os.system('reboot now')
@@ -128,7 +126,6 @@ while True:
 
     ##### BOOT SCREEN #####
     try:
-        logger.info('Loading boot screen', extra={'screen': 'boot_screen'})
         swap.Clear()
         swapImage = Image.new('RGB', (width, height))
         swapDraw  = ImageDraw.Draw(swapImage)
@@ -165,10 +162,10 @@ while True:
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
-            logger.info('Successfully pulled weather info for weather screen', extra={'screen': 'weather_screen', 'last_known_data': weather_offline_data})
+
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info('Weather screen ran into an error: ' + error_message, extra={'screen': 'weather_screen', 'last_known_data': weather_offline_data}, exc_info=True)
+            logger.info(extra={'status': 0, 'job': 'weather_screen'})
             weather = weather_offline_data['weather']
             conditions = weather_offline_data['conditions']
         else:
@@ -192,8 +189,6 @@ while True:
     ##### TRAIN SCREEN #####
         swap.Clear()
 
-        logger.info('Loading train screen', extra={'screen': 'train_screen'})
-
         count = not count
 
         if count == True:
@@ -210,11 +205,11 @@ while True:
 
         try:
             connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
-            logger.info('Successfully pulled train info', extra={'screen': 'train_screen'})
+            logger.info(extra={'status': 1, 'job': 'train_screen'})
 
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info('Train screen ran into an error: ' + error_message, extra={'screen': 'train_screen'}, exc_info=True)
+            logger.info(extra={'status': 0, 'job': 'train_screen'})
         else:
             raw = connection.read()
             times = raw.split()
@@ -275,6 +270,6 @@ while True:
     except Exception as e:
         logging.exception("message")
         error_message = e.reason
-        logger.info('Something script wide failed, and idk what to do...: ' + error_message, extra={'screen': 'exception_screen'}, exc_info=True)
+        logger.info(extra={'status': 0, 'job': 'boot_screen'})
         displayError()
         pass
