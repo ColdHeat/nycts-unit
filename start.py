@@ -99,9 +99,9 @@ while True:
     baseurl = "http://127.0.0.1:3000/getConfig"
     try:
         result = urllib2.urlopen(baseurl)
-        logger.info(extra={'status': 1, 'job': 'api_config'})
+        logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
     except urllib2.URLError as e:
-        logger.info(extra={'status': 0, 'job': 'api_config'})
+        logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
     else:
         config = json.loads(result.read())
 
@@ -112,10 +112,10 @@ while True:
         baseurl = "http://127.0.0.1:3000/setConfig/reboot/0"
         try:
             result = urllib2.urlopen(baseurl)
-            logger.info(extra={'status': 1, 'job': 'api_reboot'})
+            logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info(extra={'status': 0, 'job': 'api_reboot'})
+            logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
         else:
             config = json.loads(result.read())
             os.system('reboot now')
@@ -155,17 +155,15 @@ while True:
     ##### WEATHER SCREEN #####
         swap.Clear()
 
-        logger.info('Loading weather screen', extra={'screen': 'weather_screen'})
-
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
-
+            logger.info('Weather Screen', extra={'status': 1, 'job': 'weather_screen'})
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info(extra={'status': 0, 'job': 'weather_screen'})
+            logger.info('Weather Screen', extra={'status': 0, 'job': 'weather_screen'})
             weather = weather_offline_data['weather']
             conditions = weather_offline_data['conditions']
         else:
@@ -205,11 +203,11 @@ while True:
 
         try:
             connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
-            logger.info(extra={'status': 1, 'job': 'train_screen'})
+            logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
 
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info(extra={'status': 0, 'job': 'train_screen'})
+            logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen'})
         else:
             raw = connection.read()
             times = raw.split()
@@ -270,6 +268,6 @@ while True:
     except Exception as e:
         logging.exception("message")
         error_message = e.reason
-        logger.info(extra={'status': 0, 'job': 'boot_screen'})
+        logger.info('Boot Screen', extra={'status': 0, 'job': 'boot_screen'})
         displayError()
         pass
