@@ -205,7 +205,7 @@ while True:
             dirOffset = 12
 
         try:
-            connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
+            connection = urllib2.urlopen('http://riotpros.com/mta/v1/?client=' + client)
             logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
         except urllib2.URLError as e:
             error_message = e.reason
