@@ -11,6 +11,7 @@ import logging
 import json
 import json_log_formatter
 import socket
+import urllib
 import urllib2
 from base import base
 
@@ -165,7 +166,7 @@ while True:
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
         yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
-        yql_url = baseurl + urllib2.urlencode({'q':yql_query}) + "&format=json"
+        yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
             logger.info('Weather Screen', extra={'status': 1, 'job': 'weather_screen'})
