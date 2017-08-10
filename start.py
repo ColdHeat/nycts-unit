@@ -217,14 +217,18 @@ while True:
             error_message = e.reason
             logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'data': [row_1_train_offline_data, row_2_train_offline_data]})
 
+            print loop_count
+            
             if frame == 'ln':
                 min1 = row_1_train_offline_data['min1'] - loop_count
                 min2 = row_1_train_offline_data['min2'] - loop_count
+
                 row_1_train_offline_data['min1'] = min1
                 row_1_train_offline_data['min2'] = min2
             if frame == 'ls':
                 min1 = row_2_train_offline_data['min1'] - loop_count
                 min2 = row_2_train_offline_data['min2'] - loop_count
+
                 row_2_train_offline_data['min1'] = min1
                 row_2_train_offline_data['min2'] = min2
         else:
