@@ -213,7 +213,7 @@ while True:
         try:
             connection = urllib2.urlopen('http://riotpros.com/mta/v1/?client=' + client)
             logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
-        except urllib2.URLError as e:
+        except Exception as e:
             error_message = e.reason
             logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
 
