@@ -6,7 +6,6 @@ import ImageFont
 import math
 import os
 import time
-import urllib
 import signal
 import logging
 import json
@@ -92,7 +91,7 @@ swap = b.matrix.CreateFrameCanvas()
 weather_offline_data = {'weather': 75, 'conditions': 'SUNNY'}
 
 loop_count = 0
-row_1_train_offline_data = {'min1': 4, 'min2': 8}
+row_1_train_offline_data = {'min1': 5, 'min2': 10}
 row_2_train_offline_data = {'min1': 5, 'min2': 10}
 
 while True:
@@ -215,10 +214,8 @@ while True:
             logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
         except urllib2.URLError as e:
             error_message = e.reason
-            logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'data': [row_1_train_offline_data, row_2_train_offline_data]})
+            logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
 
-            print loop_count
-            
             if frame == 'ln':
                 min1 = row_1_train_offline_data['min1'] - loop_count
                 min2 = row_1_train_offline_data['min2'] - loop_count
