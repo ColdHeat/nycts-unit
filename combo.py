@@ -59,14 +59,6 @@ atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
 while True:
-
-    print "Powr:" + b.power
-
-    if b.power  == 'off':
-        print "its off"
-        time.sleep(3)
-        continue
-
     try:
         connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
         raw = connection.read()
@@ -78,8 +70,6 @@ while True:
         for dirs,direction in enumerate(parsed):
             drawClear()
 
-            if b.power  == 'off':
-                break
             for row in [0, 1]:
                 data = parsed[direction][row]
 
@@ -94,6 +84,8 @@ while True:
                 dirLabel = '  ' + data['term']
 
                 nums = data['line']
+
+                print "These are nums: " + nums
 
                 circleColor = green
                 if nums in ['1', '2', '3']:
@@ -133,25 +125,6 @@ while True:
 
             b.matrix.SetImage(image, 0, 0)
 
-            if b.power  == 'off':
-                break
-            time.sleep(2)
-
-            if b.power  == 'off':
-                break
-            time.sleep(2)
-
-            if b.power  == 'off':
-                break
-            time.sleep(2)
-
-            if b.power  == 'off':
-                break
-            time.sleep(2)
-
-            if b.power  == 'off':
-                break
-            time.sleep(2)
     except Exception as e:
         logging.exception("message")
         displayError()
