@@ -36,7 +36,7 @@ fontXoffset = 0
 
 slideLength = 3
 
-transition_time = int(config["transition_time"])
+transition_time = 4
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
