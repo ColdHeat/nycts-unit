@@ -27,6 +27,7 @@ draw      = ImageDraw.Draw(image)
 
 yellow    = (252, 203, 7)
 orange    = (255, 100, 0)
+grey      = (105,105,105)
 green     = (0,   255, 0)
 black     = (0,     0, 0)
 red       = (255,   0, 0)
@@ -36,7 +37,7 @@ fontXoffset = 0
 
 slideLength = 3
 
-transition_time = 4
+transition_time = 6
 
 ##### HANDLERS #####
 def signal_handler(signal, frame):
@@ -92,6 +93,8 @@ while True:
                     circleColor = green
                 if nums in ['N', 'Q', 'R', 'W']:
                     circleColor = yellow
+                if nums in ['L']:
+                    circleColor = grey
 
                 if row == 1:
                     yOff = 18
