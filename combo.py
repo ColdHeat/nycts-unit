@@ -25,7 +25,7 @@ b = base(client)
 image     = Image.new('RGB', (width, height))
 draw      = ImageDraw.Draw(image)
 
-yellow    = (255,   255, 0)
+yellow    = (252, 203, 7)
 orange    = (255, 100, 0)
 green     = (0,   255, 0)
 black     = (0,     0, 0)
