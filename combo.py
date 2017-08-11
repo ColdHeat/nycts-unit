@@ -36,6 +36,8 @@ fontXoffset = 0
 
 slideLength = 3
 
+transition_time = int(config["transition_time"])
+
 ##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
@@ -90,7 +92,6 @@ while True:
                 if nums in ['4', '5', '6']:
                     circleColor = green
                 if nums in ['N', 'Q', 'R', 'W']:
-                    print 'true'
                     circleColor = yellow
 
                 if row == 1:
@@ -111,7 +112,7 @@ while True:
                 circleYend = circleYoffset + 8
 
                 draw.text((fontXoffset, fontYoffset), numLabel, font=font, fill=green)
-                draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=green)
+                draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
                 draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=font, fill=black)
                 draw.text((circleXend, fontYoffset), dirLabel, font=font, fill=green)
                 draw.text((minPos, fontYoffset), minLabel, font=font, fill=green)
@@ -122,6 +123,7 @@ while True:
                 draw.point((width - 9, 22), fill=black)
 
             b.matrix.SetImage(image, 0, 0)
+            time.sleep(transition_time)
 
     except Exception as e:
         logging.exception("message")
