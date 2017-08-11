@@ -67,7 +67,6 @@ while True:
         connection.close()
 
         parsed = json.loads(raw)
-        print parsed
 
         for dirs,direction in enumerate(parsed):
             drawClear()
