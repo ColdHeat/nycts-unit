@@ -84,12 +84,13 @@ while True:
                 dirLabel = '  ' + data['term']
 
                 nums = data['line']
-                
+
                 if nums in ['1', '2', '3']:
                     circleColor = red
                 if nums in ['4', '5', '6']:
                     circleColor = green
                 if nums in ['N', 'Q', 'R', 'W']:
+                    print 'true'
                     circleColor = yellow
 
                 if row == 1:
