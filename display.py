@@ -3,11 +3,7 @@ import Image
 import ImageDraw
 import ImageFont
 import signal
-from base import base
 
-client = '29'
-
-b = base(client)
 
 ##### MATRIX #####
 width          = 128
@@ -38,11 +34,9 @@ count = True
 
 slideLength = 10
 
-
-atexit.register(clearOnExit)
-signal.signal(signal.SIGINT, signal_handler)
-
-swap = b.matrix.CreateFrameCanvas()
+pic = Image.open("emoji.gif")
+pic = pic.convert('RGB')
+pic.thumbnail((128,32), Image.ANTIALIAS)
 
 
 def signal_handler(signal, frame):
@@ -55,3 +49,14 @@ def clearOnExit():
 def drawClear():
     draw.rectangle((0, 0, width, height), fill=black)
     b.matrix.SetImage(image, 0, 0)
+
+def displayError(e):
+    drawClear()
+    draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), e, font=font, fill=orange)
+    b.matrix.SetImage(image, 0, 0)
+    time.sleep(transition_time)
+    drawClear()
+
+atexit.register(clearOnExit)
+signal.signal(signal.SIGINT, signal_handler)
+swap = b.matrix.CreateFrameCanvas()

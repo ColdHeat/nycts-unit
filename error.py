@@ -1,5 +1,3 @@
-##### HANDLERS #####
-
 def displayError(e):
     drawClear()
     draw.text((0 + fontXoffset + 3, 0 + topOffset + 0), e, font=font, fill=orange)

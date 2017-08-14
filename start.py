@@ -4,45 +4,43 @@ import os
 import time
 import logging
 import json
-import socket
+
 import urllib
 import urllib2
 from base import base
-from log import log
-from display import display
-from image import image
-from fallback import fallback
-from boot import boot
-from api import api
-from train import train
+from log import config_log
+from display import *
+# from fallback import fallback
+from boot import config_matrix
+from api import config_api
+from train import initialize_train
 from weather import weather
-from error import error
+# from error import error
 
 client = 29
 b = base(client)
-log.config_log()
-display.function()
-image.function()
-fallback.function()
+logger = log.config_log()
+
 
 while True:
     def boot():
         try:
-            boot.config_matrix(b, config)
+            boot.config_matrix(b, config, logger)
             logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
         except Exception as e:
             logger.info('Booting Up', extra={'status': 0, 'job': 'boot_screen'})
 
     def api():
-        api.config_api
+        api.config_api(logger)
 
     def train():
-        train.initialize_train
-        weather()
-        text()
+        train.initialize_train(b, logger)
+        weatherb, logger()
 
-    def weather():
-        train()
+
+    def weather(b, logger):
+        train(b, logger)
+        text(b, logger)
 
     def text():
         swap.Clear()
@@ -57,4 +55,4 @@ while True:
 
 
     except Exception as e:
-        #throw exception from excption script
+        #throw exception from exception script
