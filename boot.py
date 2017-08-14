@@ -27,6 +27,6 @@ def config_matrix(b, config, logger):
             swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=display.font, fill=display.orange)
 
 
-        swap.SetImage(swapImage, 0, 0)
-        time.sleep(transition_time)
-        swap = b.matrix.SwapOnVSync(swap)
+    swap.SetImage(swapImage, 0, 0)
+    time.sleep(transition_time)
+    swap = b.matrix.SwapOnVSync(swap)
