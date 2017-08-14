@@ -3,7 +3,7 @@ import Image
 import ImageDraw
 import ImageFont
 import signal
-
+import os
 
 ##### MATRIX #####
 width          = 128
