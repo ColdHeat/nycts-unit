@@ -52,7 +52,3 @@ while True:
         time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
         train()
-
-
-    except Exception as e:
-        #throw exception from exception script
