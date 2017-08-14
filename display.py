@@ -4,6 +4,7 @@ import ImageDraw
 import ImageFont
 import signal
 import os
+from start import b
 
 ##### MATRIX #####
 width          = 128
