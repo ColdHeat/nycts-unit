@@ -23,17 +23,17 @@ logger = log.config_log()
 
 
 while True:
-    def boot():
+    def boot(b):
         try:
             boot.config_matrix(b, config, logger)
             logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
         except Exception as e:
             logger.info('Booting Up', extra={'status': 0, 'job': 'boot_screen'})
 
-    def api():
+    def api(b):
         api.config_api(logger)
 
-    def train():
+    def train(b):
         train.initialize_train(b, logger)
         weatherb, logger()
 
@@ -42,7 +42,7 @@ while True:
         train(b, logger)
         text(b, logger)
 
-    def text():
+    def text(b):
         swap.Clear()
         textImage = Image.new('RGB', (width, height))
         textDraw  = ImageDraw.Draw(textImage)
