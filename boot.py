@@ -6,6 +6,8 @@ def config_matrix(b, config, logger):
     swap = b.matrix.CreateFrameCanvas()
     transition_time = int(config["transition_time"])
     b.matrix.brightness = int(config["brightness"])
+    print transition_time
+
     try:
         swap.Clear()
         swapImage = display.Image.new('RGB', (width, height))
@@ -25,8 +27,6 @@ def config_matrix(b, config, logger):
             swapDraw.text((68, 0), ' legit. realtime.'  , font=display.font, fill=display.green)
             swapDraw.text((2, 16), '@' , font=display.font, fill=display.green)
             swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=display.font, fill=display.orange)
-
-
-    swap.SetImage(swapImage, 0, 0)
-    time.sleep(transition_time)
-    swap = b.matrix.SwapOnVSync(swap)
+        swap.SetImage(swapImage, 0, 0)
+        time.sleep(transition_time)
+        swap = b.matrix.SwapOnVSync(swap)
