@@ -72,8 +72,12 @@ while True:
         connection.close()
 
         parsed = json.loads(raw)
+        print 'This is paresd: ' + parsed
     except Exception as e:
+        print e.reason
         parsed = backup_train_data
+
+        print 'Fake parsed: ' + parsed
         for dirs,direction in enumerate(parsed):
             drawClear()
 
