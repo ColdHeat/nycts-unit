@@ -75,7 +75,7 @@ while True:
         parsed = json.loads(raw)
     except urllib2.URLError as e:
         time_difference = math.ceil(end - start)
-        
+
         parsed = backup_train_data
         for dirs,direction in enumerate(parsed):
             drawClear()
@@ -194,13 +194,6 @@ while True:
 
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
-
-            end_time = time.time()
-
-            if loop_count == 4:
-                loop_count -= 4
-            else:
-                loop_count += 1
 
     # except Exception as e:
     #     logging.exception("message")
