@@ -73,6 +73,7 @@ while True:
 
         parsed = json.loads(raw)
     except urllib2.URLError as e:
+        print loop_count
         parsed = backup_train_data
         for dirs,direction in enumerate(parsed):
             drawClear()
