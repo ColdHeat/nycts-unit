@@ -80,7 +80,7 @@ while True:
 
         time_difference = math.ceil(end - start)
 
-        if time_difference > 300:
+        if time_difference >= 300:
             start = time.time()
 
         parsed = backup_train_data
@@ -93,10 +93,9 @@ while True:
                 xOff = 2
                 yOff = 2
 
-                mins = str(data['min'])
-                if len(mins) < 2:
-                    if int(mins) < 0:
-                        mins = str(int(mins) + 6)
+                if len(str(mins)) < 2:
+                    if mins <= 0:
+                        mins = str(6)
                     else:
                         mins = str((int(mins) - int(time_difference)/ 60))
 
