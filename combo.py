@@ -95,7 +95,7 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    if int(mins) < 2:
+                    if int(mins) = 0:
                         mins = str(int(mins) + 6)
                     else:
                         mins = str((int(mins) - int(time_difference)/ 60))
