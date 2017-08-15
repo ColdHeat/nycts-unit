@@ -62,10 +62,13 @@ def displayError():
 atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
-loop_count = 0
+start = time.time()
+
 backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "},{"line":"W","min":6,"term":"Brooklyn "}]}
 
 while True:
+    time_difference = math.ceil(end - start)
+
     try:
         connection = urllib2.urlopen('http://riotpros.com/mta/v1/?client=' + client)
         raw = connection.read()
@@ -73,7 +76,6 @@ while True:
 
         parsed = json.loads(raw)
     except urllib2.URLError as e:
-        print loop_count
         parsed = backup_train_data
         for dirs,direction in enumerate(parsed):
             drawClear()
@@ -86,7 +88,7 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    mins = mins.rjust(3)
+                    mins = (mins - time_difference).rjust(3)
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
@@ -132,6 +134,8 @@ while True:
 
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
+
+            end_time = time.time()
     else:
         for dirs,direction in enumerate(parsed):
             drawClear()
@@ -190,6 +194,8 @@ while True:
 
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
+
+            end_time = time.time()
 
             if loop_count == 4:
                 loop_count -= 4
