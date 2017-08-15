@@ -90,7 +90,7 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    mins = (int(mins) - int(time_difference))
+                    mins = str(int(mins) - int(time_difference))
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
