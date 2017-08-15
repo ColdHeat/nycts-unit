@@ -74,21 +74,21 @@ while True:
         parsed = json.loads(raw)
     except Exception as e:
         parsed = json.loads(backup_train_data)
-            for dirs,direction in enumerate(parsed):
-                drawClear()
+        for dirs,direction in enumerate(parsed):
+            drawClear()
 
-                for row in [0, 1]:
-                    data = parsed[direction][row]
+            for row in [0, 1]:
+                data = parsed[direction][row]
 
-                    xOff = 2
-                    yOff = 2
+                xOff = 2
+                yOff = 2
 
-                    mins = str(data['min'])
-                    if len(mins) < 2:
-                        mins = mins.rjust(3)
+                mins = str(data['min'])
+                if len(mins) < 2:
+                    mins = mins.rjust(3)
 
-                    minLabel = mins + 'mIn'
-                    dirLabel = '  ' + data['term']
+                minLabel = mins + 'mIn'
+                dirLabel = '  ' + data['term']
     else:
         for dirs,direction in enumerate(parsed):
             drawClear()
