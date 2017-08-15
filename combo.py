@@ -75,7 +75,7 @@ while True:
         parsed = json.loads(raw)
     except urllib2.URLError as e:
         end = time.time()
-        
+
         time_difference = math.ceil(end - start)
 
         parsed = backup_train_data
@@ -90,7 +90,7 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    mins = (mins - time_difference).rjust(3)
+                    mins = (int(mins) - int(time_difference))
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
