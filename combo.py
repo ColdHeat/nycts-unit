@@ -67,8 +67,6 @@ start = time.time()
 backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "},{"line":"W","min":6,"term":"Brooklyn "}]}
 
 while True:
-    time_difference = math.ceil(end - start)
-
     try:
         connection = urllib2.urlopen('http://riotpros.com/mta/v1/?client=' + client)
         raw = connection.read()
@@ -76,6 +74,8 @@ while True:
 
         parsed = json.loads(raw)
     except urllib2.URLError as e:
+        time_difference = math.ceil(end - start)
+        
         parsed = backup_train_data
         for dirs,direction in enumerate(parsed):
             drawClear()
