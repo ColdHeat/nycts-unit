@@ -79,12 +79,8 @@ while True:
         end = time.time()
 
         time_difference = math.ceil(end - start)
-        print int(start)
-        print int(end)
-        print int(time_difference)
-        print int(time_difference/60)
 
-        if time_difference > 5:
+        if time_difference > 300:
             print "Restarting time"
             start = time.time()
 
@@ -100,7 +96,7 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    mins = str(round(int(mins) - int(time_difference)/ 60))
+                    mins = str((int(mins) - int(time_difference)/ 60))
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
