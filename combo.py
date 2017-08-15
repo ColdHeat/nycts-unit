@@ -137,7 +137,7 @@ while True:
             else:
                 loop_count += 1
 
-    except Exception as e:
-        logging.exception("message")
-        displayError()
-        pass
+    # except Exception as e:
+    #     logging.exception("message")
+    #     displayError()
+    #     pass
