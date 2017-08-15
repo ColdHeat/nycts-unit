@@ -61,6 +61,9 @@ def displayError():
 atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
+loop_count = 0
+backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "},{"line":"W","min":6,"term":"Brooklyn "}]}
+
 while True:
     try:
         connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
@@ -68,7 +71,9 @@ while True:
         connection.close()
 
         parsed = json.loads(raw)
-
+    except urllib2.URLError as e:
+        parsed = json.loads(backup_train_data)
+    else:
         for dirs,direction in enumerate(parsed):
             drawClear()
 
@@ -126,6 +131,11 @@ while True:
 
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
+
+            if loop_count == 4:
+                loop_count -= 4
+            else:
+                loop_count += 1
 
     except Exception as e:
         logging.exception("message")
