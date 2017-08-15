@@ -135,7 +135,7 @@ while True:
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
 
-            end_time = time.time()
+            end = time.time()
     else:
         for dirs,direction in enumerate(parsed):
             drawClear()
