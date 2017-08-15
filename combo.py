@@ -81,7 +81,6 @@ while True:
         time_difference = math.ceil(end - start)
 
         if time_difference > 300:
-            print "Restarting time"
             start = time.time()
 
         parsed = backup_train_data
@@ -96,7 +95,10 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    mins = str((int(mins) - int(time_difference)/ 60))
+                    if int(mins) < 2:
+                        mins = str(int(mins) + 6)
+                    else:
+                        mins = str((int(mins) - int(time_difference)/ 60))
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
