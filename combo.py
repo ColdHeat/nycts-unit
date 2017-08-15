@@ -72,14 +72,8 @@ while True:
         connection.close()
 
         parsed = json.loads(raw)
-        print 'This is paresd: '
-        print parsed
     except urllib2.URLError as e:
-        print e.reason
         parsed = backup_train_data
-
-        print 'Fake parsed: '
-        print parsed
         for dirs,direction in enumerate(parsed):
             drawClear()
 
@@ -95,6 +89,48 @@ while True:
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
+
+                nums = data['line']
+
+                if nums in ['1', '2', '3']:
+                    circleColor = red
+                if nums in ['4', '5', '6']:
+                    circleColor = green
+                if nums in ['N', 'Q', 'R', 'W']:
+                    circleColor = yellow
+                if nums in ['L']:
+                    circleColor = grey
+
+                if row == 1:
+                    yOff = 18
+
+                fontXoffset = xOff
+                fontYoffset = yOff
+
+                numLabel = str(row + 1) + '. '
+                numLabelW = font.getsize(numLabel)[0]
+
+                minPos = width - font.getsize(minLabel)[0] - 3
+
+                circleXoffset = fontXoffset + numLabelW
+                circleYoffset = yOff + 1;
+
+                circleXend = circleXoffset + 8
+                circleYend = circleYoffset + 8
+
+                draw.text((fontXoffset, fontYoffset), numLabel, font=font, fill=green)
+                draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
+                draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=font, fill=black)
+                draw.text((circleXend, fontYoffset), dirLabel, font=font, fill=green)
+                draw.text((minPos, fontYoffset), minLabel, font=font, fill=green)
+
+                #draw.point((width - 9, 3), fill=red)
+                draw.point((width - 9, 6), fill=black)
+                #draw.point((width - 9, 19), fill=red)
+                draw.point((width - 9, 22), fill=black)
+
+            b.matrix.SetImage(image, 0, 0)
+            time.sleep(transition_time)
     else:
         for dirs,direction in enumerate(parsed):
             drawClear()
