@@ -73,7 +73,7 @@ while True:
 
         parsed = json.loads(raw)
     except Exception as e:
-        parsed = json.loads(backup_train_data)
+        parsed = backup_train_data
         for dirs,direction in enumerate(parsed):
             drawClear()
 
