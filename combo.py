@@ -67,13 +67,13 @@ backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min
 
 while True:
     try:
-        connection = urllib.urlopen('http://riotpros.com/mta/v1/?client=' + client)
+        connection = urllib2.urlopen('http://riotpros.com/mta/v1/?client=' + client)
         raw = connection.read()
         connection.close()
 
         parsed = json.loads(raw)
         print 'This is paresd: ' + parsed
-    except Exception as e:
+    except urllib2.URLError as e:
         print e.reason
         parsed = backup_train_data
 
