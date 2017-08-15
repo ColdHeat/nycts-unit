@@ -73,10 +73,15 @@ while True:
         connection.close()
 
         parsed = json.loads(raw)
+        backup_train_data = parsed
+
     except urllib2.URLError as e:
         end = time.time()
 
         time_difference = math.ceil(end - start)
+
+        if time_difference > 5:
+            start = time.time()
 
         parsed = backup_train_data
         for dirs,direction in enumerate(parsed):
@@ -90,7 +95,7 @@ while True:
 
                 mins = str(data['min'])
                 if len(mins) < 2:
-                    mins = str(int(mins) - int(time_difference))
+                    mins = str(int(mins) - int(time_difference)/ 60)
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
