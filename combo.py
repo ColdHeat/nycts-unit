@@ -81,8 +81,9 @@ while True:
 
         print time_difference
 
-        if time_difference >= 180:
+        if time_difference >= 60:
             start = time.time()
+            end = time.time()
 
         parsed = backup_train_data
 
@@ -98,7 +99,7 @@ while True:
                 mins = str(data['min'])
 
                 if len(mins) < 2:
-                    if data['min'] <= 1:
+                    if data['min'] <= 0:
                         mins = str((int(data['min']) + 6))
                         data['min'] = mins
                         print "After updating mins"
