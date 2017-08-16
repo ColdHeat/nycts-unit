@@ -94,10 +94,10 @@ while True:
                 yOff = 2
 
                 if len(str(mins)) < 2:
-                    if mins <= 0:
-                        mins = str(6)
-                    else:
-                        mins = str((int(mins) - int(time_difference)/ 60))
+                    mins = str((int(mins) - int(time_difference)/ 60))
+
+                if int(mins) <= 0:
+                    mins = str(6)
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
