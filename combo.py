@@ -98,17 +98,17 @@ while True:
 
                 mins = str(data['min'])
 
-                if len(mins) < 2:
+                if len(mins) < 3:
                     if data['min'] <= 0:
                         print "is less than 0"
                         print data['min']
                         mins = str((int(data['min']) + 6))
-                        data['min'] = mins
+                        data['min'] = int(mins)
                         print "After updating mins"
                         print data['min']
                     else:
                         mins = str((int(data['min']) - int(time_difference)/ 60))
-                        data['min'] = mins
+                        data['min'] = int(mins)
                         print "Subtracitng time"
                         print data['min']
 
