@@ -12,8 +12,8 @@ import signal
 import json
 import logging
 
-
-client = '32'
+# AC Gears
+client = '33'
 ##### MATRIX #####
 width          = 128
 height         = 32
@@ -79,8 +79,6 @@ while True:
 
         time_difference = math.ceil(end - start)
 
-        print time_difference
-
         if time_difference >= 60:
             start = time.time()
             end = time.time()
@@ -100,17 +98,11 @@ while True:
 
                 if len(mins) < 3:
                     if data['min'] <= 0:
-                        print "is less than 0"
-                        print data['min']
                         mins = str((int(data['min']) + 6))
                         data['min'] = int(mins)
-                        print "After updating mins"
-                        print data['min']
                     else:
                         mins = str((int(data['min']) - int(time_difference)/ 60))
                         data['min'] = int(mins)
-                        print "Subtracitng time"
-                        print data['min']
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
