@@ -95,12 +95,17 @@ while True:
                 xOff = 2
                 yOff = 2
 
-                if len(str(data['min'])) < 2:
+                mins = str(data['min'])
+
+                if len(mins) < 2:
+                    print data['min']
                     if data['min'] <= 1:
                         print data['min']
-                        mins = str(6)
+                        mins = str((int(data['min']) - int(time_difference)/ 60))
+                        data['min'] = mins
                     else:
                         mins = str((int(data['min']) - int(time_difference)/ 60))
+                        data['min'] = mins
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
