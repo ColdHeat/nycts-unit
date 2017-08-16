@@ -101,7 +101,7 @@ while True:
                     print data['min']
                     if data['min'] <= 1:
                         print data['min']
-                        mins = str((int(data['min']) - int(time_difference)/ 60))
+                        mins = str((int(data['min']) + 6)
                         data['min'] = mins
                     else:
                         mins = str((int(data['min']) - int(time_difference)/ 60))
