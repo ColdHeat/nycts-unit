@@ -64,7 +64,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 start = time.time()
 
-backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "},{"line":"W","min":6,"term":"Brooklyn "}]}
+backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
 
 while True:
     try:
@@ -81,7 +81,7 @@ while True:
 
         print time_difference
 
-        if time_difference >= 300:
+        if time_difference >= 180:
             start = time.time()
 
         parsed = backup_train_data
@@ -98,14 +98,16 @@ while True:
                 mins = str(data['min'])
 
                 if len(mins) < 2:
-                    print data['min']
                     if data['min'] <= 1:
-                        print data['min']
                         mins = str((int(data['min']) + 6))
                         data['min'] = mins
+                        print "After updating mins"
+                        print data['min']
                     else:
                         mins = str((int(data['min']) - int(time_difference)/ 60))
                         data['min'] = mins
+                        print "Subtracitng time"
+                        print data['min']
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
