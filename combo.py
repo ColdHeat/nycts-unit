@@ -100,6 +100,8 @@ while True:
 
                 if len(mins) < 2:
                     if data['min'] <= 0:
+                        print "is less than 0"
+                        print data['min']
                         mins = str((int(data['min']) + 6))
                         data['min'] = mins
                         print "After updating mins"
