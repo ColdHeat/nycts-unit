@@ -74,7 +74,8 @@ while True:
 
         parsed = json.loads(raw)
         backup_train_data = parsed
-
+        print "parsed with wifi: "
+        print backup_train_data
     except urllib2.URLError as e:
         end = time.time()
 
@@ -84,6 +85,9 @@ while True:
             start = time.time()
 
         parsed = backup_train_data
+
+        print "parsed from no wifi:"
+        print parsed
         for dirs,direction in enumerate(parsed):
             drawClear()
 
