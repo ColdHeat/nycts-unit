@@ -74,20 +74,17 @@ while True:
 
         parsed = json.loads(raw)
         backup_train_data = parsed
-        print "parsed with wifi: "
-        print backup_train_data
     except urllib2.URLError as e:
         end = time.time()
 
         time_difference = math.ceil(end - start)
+        print time_difference / 60
 
         if time_difference >= 300:
             start = time.time()
 
         parsed = backup_train_data
 
-        print "parsed from no wifi:"
-        print parsed
         for dirs,direction in enumerate(parsed):
             drawClear()
 
@@ -97,11 +94,11 @@ while True:
                 xOff = 2
                 yOff = 2
 
-                if len(str(mins)) < 2:
-                    mins = str((int(mins) - int(time_difference)/ 60))
-
-                if int(mins) <= 0:
-                    mins = str(6)
+                if len(str(data['min'])) < 2:
+                    if data['min'] <= 0:
+                        mins = '6'
+                    else:
+                        mins = str((int(data['min']) - int(time_difference)/ 60))
 
                 minLabel = mins + 'mIn'
                 dirLabel = '  ' + data['term']
