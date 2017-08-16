@@ -79,6 +79,8 @@ while True:
 
         time_difference = math.ceil(end - start)
 
+        print time_difference
+
         if time_difference >= 300:
             start = time.time()
 
@@ -94,8 +96,8 @@ while True:
                 yOff = 2
 
                 if len(str(data['min'])) < 2:
-                    print data['min']
                     if data['min'] <= 1:
+                        print data['min']
                         mins = str(6)
                     else:
                         mins = str((int(data['min']) - int(time_difference)/ 60))
