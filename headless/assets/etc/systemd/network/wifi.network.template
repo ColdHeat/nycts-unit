@@ -1,0 +1,5 @@
+[Match]
+name={{ wifi_interface }}
+
+[Network]
+Address={{ ip_addr }}{{ subnet_notation }}

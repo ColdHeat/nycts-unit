@@ -1,0 +1,11 @@
+#
+# wifi-configuration auto-generated file
+#
+
+Description='Wifi profile managed by Captive Wifi Configuration'
+Interface={{ wifi_interface }}
+Connection=wireless
+Security=wpa
+ESSID={{ wifi_ssid }}
+IP=dhcp
+Key=\"{{ wifi_passcode }}

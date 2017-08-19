@@ -1,0 +1,248 @@
+html, body {
+    margin: 0; padding: 0;
+    font-family: "Roboto", "PT Sans", sans-serif;
+    height: 100%; min-height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-header {
+    width: 100%;
+    height: 50px; line-height: 50px;
+    color: white;
+
+    font-size: 20pt;
+    text-align: center;
+
+    -webkit-user-select: none;
+
+    background: #000000; /*#039be5;*/
+    border-bottom: 2px solid #ffffff;
+}
+.page-header a {
+    position: absolute;
+    right: 0; margin: 8px 5px;
+    text-decoration: none;
+
+    color: white;
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 2px solid white;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition:    all 0.3s ease;
+    -ms-transition:     all 0.3s ease;
+    -o-transition:      all 0.3s ease;
+    transition:         all 0.3s ease;
+}
+.page-header a:hover {
+    color: yellow;
+    background: #444444;
+}
+.page-header .active {
+    color: yellow;
+    background: #444444;
+}
+.page-header a i {
+    font-size: 18pt;
+    position: absolute;
+    top: 3px; left: 5px;
+    padding-bottom: 0;
+}
+
+.page-content {
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.scan-results-container {
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    width: 100%; max-width: 400px;
+    height: calc(100% - 5px);
+    border-bottom: 2px solid white;
+
+    background: #ffffff;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scan-result {
+    color: white;
+    position: relative;
+    height: 40px; line-height: 40px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition:    all 0.3s ease;
+    -ms-transition:     all 0.3s ease;
+    -o-transition:      all 0.3s ease;
+    transition:         all 0.3s ease;
+    cursor: pointer;
+
+    border-bottom: 2px solid #666666;
+    background: #222222;
+}
+.scan-result:hover {
+    color: yellow;
+    background: #444444;
+}
+.scan-result.selected {
+    color: yellow;
+    background: #888888;
+}
+.scan-result .ssid {
+    position: absolute;
+    top: 0; left: 10%;
+    width: 80%; height: 100%;
+}
+.scan-result .secure {
+    color: white;
+    padding-left: 3px;
+}
+.scan-result .signal_stength {
+    position: absolute;
+    top: 0; left: 85%;
+    width: 10%; height: 100%;
+}
+
+/*
+
+.password_input {
+    margin: 0 auto;
+
+    width: 80%; max-width: 300px;
+    height: 45px;
+
+    background: #f0f9fe;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition:    all 0.3s ease;
+    -ms-transition:     all 0.3s ease;
+    -o-transition:      all 0.3s ease;
+    transition:         all 0.3s ease;
+
+    overflow: hidden;
+}
+
+.password_input.hidden {
+    height: 0px;
+}
+
+.password_input input {
+    width: 98%;
+    height: 87%;
+    line-height: 134%;
+
+    font-size: 17pt;
+}
+
+.submit_btn {
+    margin: 0 auto;
+
+    width: 80%; max-width: 300px;
+    height: 45px; line-height: 45px;
+
+    background: #222222;
+    color: white;
+    cursor: pointer;
+
+    font-size: 18pt;
+    text-align: center;
+
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition:    all 0.3s ease;
+    -ms-transition:     all 0.3s ease;
+    -o-transition:      all 0.3s ease;
+    transition:         all 0.3s ease;
+}
+
+.submit_btn:hover {
+    background: #28e602;
+    color: black;
+}
+*/
+
+
+.rwc-password-entry-container {
+    position: absolute;
+
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    background: rgba(0,0,0,0.85);
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition:    all 0.3s ease;
+    -ms-transition:     all 0.3s ease;
+    -o-transition:      all 0.3s ease;
+    transition:         all 0.3s ease;
+}
+
+.rwc-password-entry-container.hide-me {
+    top: 100%;
+    opacity: 0;
+}
+
+.rwc-password-entry-container .box {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    width: 320px;
+    height: 150px;
+
+    background: rgba(0,0,0,1.0);
+    border: 2px solid #666666;
+}
+
+.rwc-password-entry-container .box input {
+    width: 90%;
+    height: 50px; line-height: 50px;
+
+    font-size: 18pt;
+    border: 0;
+
+    margin-left: 5%;
+    margin-top: 15px;
+}
+
+.rwc-password-entry-container .box .btn {
+    width: 130px;
+    height: 40px; line-height: 40px;
+    text-align: center;
+
+    border: 2px solid #000000;
+
+    position: absolute;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition:    all 0.3s ease;
+    -ms-transition:     all 0.3s ease;
+    -o-transition:      all 0.3s ease;
+    transition:         all 0.3s ease;
+
+    cursor: pointer;
+}
+.btn-cancel {
+    background: #881111;
+    top: 90px; left: 20px;
+}
+.btn-ok {
+    top: 90px; left: 170px;
+    background: #118811;
+}
+.btn-cancel:hover {
+    background: #ff2222;
+}
+.btn-ok:hover {
+    background: #22ff22;
+}

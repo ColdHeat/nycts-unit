@@ -1,0 +1,17 @@
+[Unit]
+Description=Captive Wifi Configuration Server
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/node /opt/wifi-configuration/server.js
+WorkingDirectory=/opt/wifi-configuration
+Restart=on-failure
+RestartSec=30
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=wifi-configuration
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

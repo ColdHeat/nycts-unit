@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CaptiveWifiConfig">
+
+<head>
+    <title>Captive Wifi Config</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="/external/font-awesome/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="/app.css">
+</head>
+
+
+<body ng-controller = "AppController"
+      ng-keyup      = "$event.keyCode == 27 ? change_selection(null) : ''">
+
+    <div class = "page-header">
+        <i class = "fa fa-wifi"></i> Choose a Wifi Ap
+        <a href = "#" ng-click = "rescan()" ng-class = "{ 'active': scan_running }">
+            <i class = "fa fa-refresh"
+               ng-class = "{ 'fa-spin': scan_running }"></i>
+        </a>
+    </div>
+
+    <div class = "page-content">
+        <div class = "scan-results-container">
+
+            <div class = "scan-result"
+                 ng-repeat = "cell in scan_results | orderBy:orderScanResults:true"
+                 ng-class = "{ selected: (cell.address == selected_cell.address) }"
+                 ng-click = "change_selection(cell)">
+                <div class = "secure" ng-if = "cell.encrypted"><i class = "fa fa-key"></i></div>
+                <div class = "ssid">{{ cell.ssid }}</div>
+                <div class = "signal_stength">{{ cell.signal_strength }}</div>
+            </div>
+
+        </div>
+    </div>
+
+    <rwc-password-entry
+        visible     = "show_passcode_entry_field"
+        passcode    = "network_passcode"
+        reset       = "change_selection()"
+        submit      = "submit_selection()"
+        ng-keydown  = "{esc: 'close_password_entry()'}" />
+
+    <!-- Scripts load last -->
+    <script src="/external/angularjs/angular.min.js"></script>
+    <script src="/app.js"></script>
+
+</body>
+
+</html>
