@@ -258,7 +258,7 @@ module.exports = function() {
                 function update_interfaces(next_step) {
                     write_template_to_file(
                         "./assets/etc/wpa_supplicant/wpa_supplicant.conf.template",
-                        "/etc/wpa_supplicant",
+                        "/etc/wpa_supplicant/wpa_supplicant.conf",
                         connection_info, next_step);
                 },
 
