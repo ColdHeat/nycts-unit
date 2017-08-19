@@ -4,7 +4,7 @@
  *  Define the app and inject any modules we wish to
  *  refer to.
 ***/
-var app = angular.module("CaptiveWifiConfig", []);
+var app = angular.module("RpiWifiConfig", []);
 
 /******************************************************************************\
 Function:
@@ -16,9 +16,9 @@ Dependencies:
 Description:
     Main application controller
 \******************************************************************************/
-app.controller("AppController", ["ConfigServer", "$scope", "$location", "$timeout",
+app.controller("AppController", ["PiManager", "$scope", "$location", "$timeout",
 
-    function(ConfigServer, $scope, $location, $timeout) {
+    function(PiManager, $scope, $location, $timeout) {
         // Scope variable declaration
         $scope.scan_results              = [];
         $scope.selected_cell             = null;
@@ -31,19 +31,19 @@ app.controller("AppController", ["ConfigServer", "$scope", "$location", "$timeou
             return parseInt(cell.signal_strength);
         }
 
+        $scope.foo = function() { console.log("foo"); }
+        $scope.bar = function() { console.log("bar"); }
+
         // Scope function definitions
         $scope.rescan = function() {
             $scope.scan_results = [];
             $scope.selected_cell = null;
             $scope.scan_running = true;
-
-            ConfigServer.rescan_wifi().then(function(response) {
+            PiManager.rescan_wifi().then(function(response) {
                 console.log(response.data);
-
                 if (response.data.status == "SUCCESS") {
                     $scope.scan_results = response.data.scan_results;
                 }
-
                 $scope.scan_running = false;
             });
         }
@@ -62,24 +62,23 @@ app.controller("AppController", ["ConfigServer", "$scope", "$location", "$timeou
                 wifi_passcode:  $scope.network_passcode,
             };
 
-            ConfigServer.enable_wifi(wifi_info).then(function(response) {
+            PiManager.enable_wifi(wifi_info).then(function(response) {
                 console.log(response.data);
-                
                 if (response.data.status == "SUCCESS") {
                     console.log("AP Enabled - nothing left to do...");
                 }
             });
         }
 
-        // Defer load the scanned results
+        // Defer load the scanned results from the rpi
         $scope.rescan();
     }]
 );
 
 /*****************************************************************************\
-    Service to hit the Captive Wifi config server
+    Service to hit the rpi wifi config server
 \*****************************************************************************/
-app.service("ConfigServer", ["$http",
+app.service("PiManager", ["$http",
 
     function($http) {
         return {

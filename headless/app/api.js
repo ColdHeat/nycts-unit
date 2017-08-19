@@ -17,7 +17,6 @@ function log_error_send_success_with(success_obj, error, response) {
         success_obj["status"] = "SUCCESS";
         response.send(success_obj);
     }
-    
     response.end();
 }
 

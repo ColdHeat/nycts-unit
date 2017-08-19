@@ -1,10 +1,8 @@
-var _         = require("underscore")._,
-    async     = require("async"),
-    fs        = require("fs"),
-    systemctl = require("./systemctl")(),
-    exec      = require("child_process").exec,
-    config    = require("../config.json"),
-    iwconfig  = require("./iwconfig");
+var _       = require("underscore")._,
+    async   = require("async"),
+    fs      = require("fs"),
+    exec    = require("child_process").exec,
+    config  = require("../config.json");
 
 // Better template format
 _.templateSettings = {
@@ -12,7 +10,8 @@ _.templateSettings = {
     evaluate :   /\{\[([\s\S]+?)\]\}/g
 };
 
-// Helper function to write a given template to a file based on a given context
+// Helper function to write a given template to a file based on a given
+// context
 function write_template_to_file(template_path, file_name, context, callback) {
     async.waterfall([
 
@@ -51,9 +50,9 @@ module.exports = function() {
         "ap_addr":         /Access Point:\s([^\s]+)/,
         "ap_ssid":         /ESSID:\"([^\"]+)\"/,
         "unassociated":    /(unassociated)\s+Nick/,
-    };
+    },  last_wifi_info = null;
 
-    // TODO: wifi-config-ap hardcoded, should derive from a constant
+    // TODO: rpi-config-ap hardcoded, should derive from a constant
 
     // Get generic info on an interface
     var _get_wifi_info = function(callback) {
@@ -83,38 +82,33 @@ module.exports = function() {
         // Run a bunch of commands and aggregate info
         async.series([
             function run_ifconfig(next_step) {
-                run_command_and_set_fields("ifconfig " + config.wifi_interface, ifconfig_fields, next_step);
+                run_command_and_set_fields("ifconfig wlan0", ifconfig_fields, next_step);
             },
             function run_iwconfig(next_step) {
-                run_command_and_set_fields("iwconfig " + config.wifi_interface, iwconfig_fields, next_step);
+                run_command_and_set_fields("iwconfig wlan0", iwconfig_fields, next_step);
             },
         ], function(error) {
+            last_wifi_info = output;
             return callback(error, output);
         });
     },
 
-    _restart_wireless_network = function(wlan_iface, callback) {
+    _reboot_wireless_network = function(wlan_iface, callback) {
         async.series([
             function down(next_step) {
-                exec("sudo ip link set " + wlan_iface + " down", function(error, stdout, stderr) {
+                exec("sudo ifdown " + wlan_iface, function(error, stdout, stderr) {
                     if (!error) console.log("ifdown " + wlan_iface + " successful...");
                     next_step();
                 });
             },
             function up(next_step) {
-                exec("sudo ip link set " + wlan_iface + " up", function(error, stdout, stderr) {
+                exec("sudo ifup " + wlan_iface, function(error, stdout, stderr) {
                     if (!error) console.log("ifup " + wlan_iface + " successful...");
                     next_step();
                 });
             },
         ], callback);
     },
-
-    _get_wifi_interface_name = function(callback) {
-        iwconfig.status(function(error, status) {
-            callback(error, status[0]['interface'] || null);
-        });
-    }
 
     // Wifi related functions
     _is_wifi_enabled_sync = function(info) {
@@ -138,7 +132,7 @@ module.exports = function() {
     // Access Point related functions
     _is_ap_enabled_sync = function(info) {
         // If the hw_addr matches the ap_addr
-        // and the ap_ssid matches "wifi-config-ap"
+        // and the ap_ssid matches "rpi-config-ap"
         // then we are in AP mode
         var is_ap  =
             info["hw_addr"].toLowerCase() == info["ap_addr"].toLowerCase() &&
@@ -178,16 +172,13 @@ module.exports = function() {
 
             // Here we need to actually follow the steps to enable the ap
             async.series([
-                function disable_auto_wifi(next_step) {
-                    systemctl.stop('netctl-auto@' + context["wifi_interface"], next_step)
-                },
 
                 // Enable the access point ip and netmask + static
                 // DHCP for the wlan0 interface
                 function update_interfaces(next_step) {
                     write_template_to_file(
-                        "./assets/etc/systemd/network/wifi.network.template",
-                        "/etc/systemd/network/" + context["wifi_interface"] + ".network",
+                        "./assets/etc/network/interfaces.ap.template",
+                        "/etc/network/interfaces",
                         context, next_step);
                 },
 
@@ -196,18 +187,20 @@ module.exports = function() {
                     var context = config.access_point;
                     // We must enable this to turn on the access point
                     write_template_to_file(
-                        "./assets/etc/dhcpd.conf.template",
-                        "/etc/dhcpd.conf",
+                        "./assets/etc/dhcp/dhcpd.conf.template",
+                        "/etc/dhcp/dhcpd.conf",
                         context, next_step);
                 },
 
-                function copy_custom_dhcpd_service(next_step) {
+                // Enable the interface in the dhcp server
+                function update_dhcp_interface(next_step) {
                     write_template_to_file(
-                        "./assets/etc/systemd/system/dhcpd4@.service.template",
-                        "/etc/systemd/system/dhcpd4@.service",
+                        "./assets/etc/default/isc-dhcp-server.template",
+                        "/etc/default/isc-dhcp-server",
                         context, next_step);
                 },
 
+                // Enable hostapd.conf file
                 function update_hostapd_conf(next_step) {
                     write_template_to_file(
                         "./assets/etc/hostapd/hostapd.conf.template",
@@ -215,32 +208,42 @@ module.exports = function() {
                         context, next_step);
                 },
 
-                function reload_systemd(next_step) {
-                    systemctl.daemon_reload(next_step);
+                function update_hostapd_default(next_step) {
+                    write_template_to_file(
+                        "./assets/etc/default/hostapd.template",
+                        "/etc/default/hostapd",
+                        context, next_step);
                 },
 
-                function restart_systemd_networkd(next_step) {
-                    systemctl.restart('systemd-networkd', next_step);
-                },
-
-                function restart_network_interfaces(next_step) {
-                    _restart_wireless_network(context.wifi_interface, next_step);
+                function reboot_network_interfaces(next_step) {
+                    _reboot_wireless_network(context.wifi_interface, next_step);
                 },
 
                 function restart_dhcp_service(next_step) {
-                    systemctl.restart('dhcpd4@' + context.wifi_interface, next_step);
+                    exec("service isc-dhcp-server restart", function(error, stdout, stderr) {
+                        //console.log(stdout);
+                        if (!error) console.log("... dhcp server restarted!");
+                        next_step();
+                    });
                 },
 
                 function restart_hostapd_service(next_step) {
-                    systemctl.restart('hostapd', next_step);
-                }
-                
+                    exec("service hostapd restart", function(error, stdout, stderr) {
+                        //console.log(stdout);
+                        if (!error) console.log("... hostapd restarted!");
+                        next_step();
+                    });
+                },
+
+                // TODO: Do we need to issue a reboot here?
+
             ], callback);
         });
     },
 
     // Disables AP mode and reverts to wifi connection
     _enable_wifi_mode = function(connection_info, callback) {
+
         _is_wifi_enabled(function(error, result_ip) {
             if (error) return callback(error);
 
@@ -250,35 +253,26 @@ module.exports = function() {
             }
 
             async.series([
-                function remove_networkd_wifi_profile(next_step) {
-                    fs.unlink("/etc/systemd/network/" + context["wifi_interface"] + ".template", next_step);
-                },
 
-                function restart_systemd_networkd_service(next_step) {
-                    systemctl.restart('systemd-networkd', next_step);
-                },
-
+                // Update /etc/network/interface with correct info...
                 function update_interfaces(next_step) {
                     write_template_to_file(
-                        "./assets/etc/netctl/wifi.template",
-                        "/etc/netctl/" + context.wifi_interface,
+                        "./assets/etc/network/interfaces.wifi.template",
+                        "/etc/network/interfaces",
                         connection_info, next_step);
                 },
 
-                function stop_dhcp_service(next_step) {
-                    systemctl.stop('dhcpd4@' + context.wifi_interface, next_step);
+                // Stop the DHCP server...
+                function restart_dhcp_service(next_step) {
+                    exec("service isc-dhcp-server stop", function(error, stdout, stderr) {
+                        //console.log(stdout);
+                        if (!error) console.log("... dhcp server stopped!");
+                        next_step();
+                    });
                 },
 
-                function stop_hostapd_service(next_step) {
-                    systemctl.stop('hostapd', next_step);
-                },
-
-                function enable_netctl_auto(next_step) {
-                    systemctl.restart('netctl-auto@' + context.wifi_interface, next_step);
-                },
-
-                function restart_network_interfaces(next_step) {
-                    _restart_wireless_network(config.wifi_interface, next_step);
+                function reboot_network_interfaces(next_step) {
+                    _reboot_wireless_network(config.wifi_interface, next_step);
                 },
 
             ], callback);
@@ -287,14 +281,16 @@ module.exports = function() {
     };
 
     return {
-        enable_ap_mode:           _enable_ap_mode,
-        enable_wifi_mode:         _enable_wifi_mode,
-        get_wifi_info:            _get_wifi_info,
-        is_wifi_enabled:          _is_wifi_enabled,
-        is_wifi_enabled_sync:     _is_wifi_enabled_sync,
-        is_ap_enabled:            _is_ap_enabled,
-        is_ap_enabled_sync:       _is_ap_enabled_sync,
-        restart_wireless_network: _restart_wireless_network,
-        get_wifi_interface_name:  _get_wifi_interface_name
+        get_wifi_info:           _get_wifi_info,
+        reboot_wireless_network: _reboot_wireless_network,
+
+        is_wifi_enabled:         _is_wifi_enabled,
+        is_wifi_enabled_sync:    _is_wifi_enabled_sync,
+
+        is_ap_enabled:           _is_ap_enabled,
+        is_ap_enabled_sync:      _is_ap_enabled_sync,
+
+        enable_ap_mode:          _enable_ap_mode,
+        enable_wifi_mode:        _enable_wifi_mode,
     };
 }

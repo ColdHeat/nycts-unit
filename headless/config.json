@@ -5,12 +5,11 @@
     "access_point": {
         "force_reconfigure": true,
         "wifi_interface":    "wlan0",
-        "ssid":              "wifi-config-ap",
-        "passphrase":        "piconfig",
-        "domain":            "wifi.config",
+        "ssid":              "rpi-config-ap",
+        "passphrase":        "zzzzzzzz",
+        "domain":            "rpi.config",
         "ip_addr":           "192.168.44.1",
         "netmask":           "255.255.255.0",
-        "subnet_notation":   "/24",
         "subnet_ip":         "192.168.44.0",
         "broadcast_address": "192.168.44.255",
         "subnet_range": {
