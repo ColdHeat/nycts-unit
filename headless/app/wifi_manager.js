@@ -254,8 +254,15 @@ module.exports = function() {
 
             async.series([
 
+              function update_interfaces(next_step) {
+                                  write_template_to_file(
+                                      "./assets/etc/network/interfaces.wifi.template",
+                                      "/etc/network/interfaces",
+                                      connection_info, next_step);
+               },
+
                 // Update /etc/network/interface with correct info...
-                function update_interfaces(next_step) {
+                function update_wpa(next_step) {
                     write_template_to_file(
                         "./assets/etc/wpa_supplicant/wpa_supplicant.conf.template",
                         "/etc/wpa_supplicant/wpa_supplicant.conf",
