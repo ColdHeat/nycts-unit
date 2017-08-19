@@ -1,6 +1,8 @@
 var async               = require("async"),
     wifi_manager        = require("./app/wifi_manager")(),
     dependency_manager  = require("./app/dependency_manager")(),
+    ping                = require("net-ping").createSession(),
+    fs                  = require("fs"),
     config              = require("./config.json");
 
 /*****************************************************************************\
@@ -19,6 +21,16 @@ var async               = require("async"),
        its bound to, reboot the pi and re-run this script on startup.
 \*****************************************************************************/
 async.series([
+
+  function test_wpa_conf_exists(next_step) {
+    if (fs.existsSync("/etc/wpa_supplicant/wpa_supplicant.conf")) {
+        // Do something
+        console.log("wpa_supplicant.conf exists. Exiting...")
+        process.exit(0);
+    }
+    console.log("Could not locate wpa_supplicant.conf. Lets onboard this sign!");
+    next_step();
+  },
 
     // 1. Check if we have the required dependencies installed
     function test_deps(next_step) {
