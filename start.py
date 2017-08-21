@@ -15,6 +15,18 @@ import urllib
 import urllib2
 from base import base
 
+### LOGGING ###
+formatter = json_log_formatter.JSONFormatter()
+
+json_handler = logging.FileHandler(filename='./device_logs/logs.json')
+json_handler.setFormatter(formatter)
+
+logger = logging.getLogger('log')
+logger.addHandler(json_handler)
+logger.setLevel(logging.INFO)
+logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
+
+
 ##### LOAD CONFIG #######
 baseurl = "http://127.0.0.1:3000/getConfig"
 try:
@@ -29,16 +41,6 @@ client = config["settings"]["client_id"]
 
 b = base(client)
 
-### LOGGING ###
-formatter = json_log_formatter.JSONFormatter()
-
-json_handler = logging.FileHandler(filename='./device_logs/logs.json')
-json_handler.setFormatter(formatter)
-
-logger = logging.getLogger('log')
-logger.addHandler(json_handler)
-logger.setLevel(logging.INFO)
-logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
 
 ##### MATRIX #####
 width          = 128
