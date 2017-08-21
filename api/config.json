@@ -22,7 +22,7 @@
     "image_file": "emoji.jpg"
   },
   "settings": {
-    "client_id": 29,
+    "client_id": "29",
     "dev": true,
     "transition_time": "9",
     "brightness": "50",

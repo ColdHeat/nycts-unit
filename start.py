@@ -73,7 +73,7 @@ count = True
 
 slideLength = 10
 
-pic = Image.open("./api/uploads/"+ config["logo"]["image_file"])
+pic = Image.open("./api/uploads/" + config["logo"]["image_file"])
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
