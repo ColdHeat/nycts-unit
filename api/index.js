@@ -54,6 +54,7 @@ app.get('/getLogo', function (req, res) {
 });
 
 app.post('/setLogo', upload.single('image'), function (req, res) {
+  config['logo']['updated'] = true;
   console.log(req.body);
   res.json(req.body);
 });
