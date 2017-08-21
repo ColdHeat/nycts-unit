@@ -336,6 +336,8 @@ while True:
             swap.Clear()
             swap.SetImage(pic.convert('RGB'), 0, 0)
             time.sleep(transition_time)
+            swap = b.matrix.SwapOnVSync(swap)
+
 
 ##### EXCEPTION SCREEN #####
     except Exception as e:
