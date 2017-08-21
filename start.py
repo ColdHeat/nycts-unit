@@ -15,9 +15,18 @@ import urllib
 import urllib2
 from base import base
 
-
+##### LOAD CONFIG #######
+baseurl = "http://127.0.0.1:3000/getConfig"
+try:
+    result = urllib2.urlopen(baseurl)
+    logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
+except urllib2.URLError as e:
+    logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+else:
+    config = json.loads(result.read())
 ##### CLIENT CONFIGURATION #####
-client = '29'
+client = config["settings"]["client_id"]
+
 b = base(client)
 
 ### LOGGING ###
@@ -62,7 +71,7 @@ count = True
 
 slideLength = 10
 
-pic = Image.open("emoji.gif")
+pic = Image.open("./api/uploads/"+ config["logo"]["image_file"])
 pic = pic.convert('RGB')
 pic.thumbnail((128,32), Image.ANTIALIAS)
 
