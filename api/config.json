@@ -1,0 +1,31 @@
+{
+  "subway": {
+    "name": "Subway",
+    "enabled": true,
+    "line": "L",
+    "train": "L15"
+  },
+  "weather": {
+    "name": "Weather",
+    "enabled": true,
+    "zip_code": "11237"
+  },
+  "customtext": {
+    "name": "Custom Text",
+    "enabled": true,
+    "line_1": "Free",
+    "line_2": "$2 SHOT  $3 PBR  $4 WELL"
+  },
+  "logo": {
+    "name": "Logo",
+    "enabled": true,
+    "image_file": "./emoji.jpg"
+  },
+  "settings": {
+    "client_id": 29,
+    "dev": true,
+    "transition_time": "9",
+    "brightness": "50",
+    "reboot": false
+  }
+}

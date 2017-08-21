@@ -113,10 +113,10 @@ while True:
         config = json.loads(result.read())
 
     ##### DEV MODE #####
-    dev = config["dev"]
+    dev = config["settings"]["dev"]
 
-    if config["reboot"] == "1":
-        baseurl = "http://127.0.0.1:3000/setConfig/reboot/0"
+    if config["settings"]["reboot"] == "1":
+        baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/0"
         try:
             result = urllib2.urlopen(baseurl)
             logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
@@ -128,8 +128,8 @@ while True:
             os.system('reboot now')
 
 
-    transition_time = int(config["transition_time"])
-    b.matrix.brightness = int(config["brightness"])
+    transition_time = int(config["settings"]["transition_time"])
+    b.matrix.brightness = int(config["settings"]["brightness"])
 
     ##### BOOT SCREEN #####
     try:
@@ -158,8 +158,8 @@ while True:
         swap.Clear()
         textImage = Image.new('RGB', (width, height))
         textDraw  = ImageDraw.Draw(textImage)
-        textDraw.text((2, 0), config["text_line_1"] , font=font, fill=red)
-        textDraw.text((2, 16), config["text_line_2"] , font=font, fill=blue)
+        textDraw.text((2, 0), config["customtext"]["line_1"] , font=font, fill=red)
+        textDraw.text((2, 16), config["customtext"]["line_2"] , font=font, fill=blue)
         swap.SetImage(textImage, 0, 0)
         time.sleep(transition_time)
         swap = b.matrix.SwapOnVSync(swap)
@@ -169,7 +169,7 @@ while True:
         swap.Clear()
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
-        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather_zip"]) + "')"
+        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather"]["zip_code"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
@@ -229,7 +229,7 @@ while True:
             error_message = e.reason
             logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
 
-        
+
         for dirs,direction in enumerate(parsed):
             time.sleep(transition_time)
             drawClear()
