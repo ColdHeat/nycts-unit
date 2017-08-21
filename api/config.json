@@ -19,7 +19,8 @@
   "logo": {
     "name": "Logo",
     "enabled": true,
-    "image_file": "emoji.jpg"
+    "image_file": "emoji.jpg",
+    "updated": true
   },
   "settings": {
     "client_id": "29",
