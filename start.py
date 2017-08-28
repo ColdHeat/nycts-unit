@@ -166,7 +166,7 @@ while True:
             swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=font, fill=orange)
         swap.SetImage(swapImage, 0, 0)
         time.sleep(transition_time)
-        swap = b.matrix.SwapOnVSync(swap)
+        #swap = b.matrix.SwapOnVSync(swap)
 
 
         swap.Clear()
@@ -176,7 +176,7 @@ while True:
         textDraw.text((2, 16), config["customtext"]["line_2"] , font=font, fill=blue)
         swap.SetImage(textImage, 0, 0)
         time.sleep(transition_time)
-        swap = b.matrix.SwapOnVSync(swap)
+        #swap = b.matrix.SwapOnVSync(swap)
 
 
     ##### WEATHER SCREEN #####
@@ -209,7 +209,7 @@ while True:
 
         swap.SetImage(weatherImage, 0, 0)
         time.sleep(transition_time)
-        swap = b.matrix.SwapOnVSync(swap)
+        #swap = b.matrix.SwapOnVSync(swap)
 
     ##### TRAIN SCREEN #####
         try:
@@ -318,7 +318,7 @@ while True:
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
 
-            swap = b.matrix.SwapOnVSync(swap)
+            #swap = b.matrix.SwapOnVSync(swap)
 
         #### LOGO #####
         if config["logo"]["updated"] == True:
@@ -339,7 +339,7 @@ while True:
         swap.Clear()
         swap.SetImage(pic.convert('RGB'), 0, 0)
         time.sleep(transition_time)
-        swap = b.matrix.SwapOnVSync(swap)
+        #swap = b.matrix.SwapOnVSync(swap)
 
 
 ##### EXCEPTION SCREEN #####
