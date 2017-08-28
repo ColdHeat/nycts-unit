@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const mdns = require('mdns');
+//const mdns = require('mdns');
 const fs = require('fs');
 const multer = require('multer');
 
@@ -18,8 +18,8 @@ let upload = multer({
 
 let config = require('./config.json');
 
-let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTS'});
-ad.start();
+//let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTS'});
+//ad.start();
 
 const jsonReplacer = (key, value) => {
   if(value === 'false') return false
