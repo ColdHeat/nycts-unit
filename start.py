@@ -164,7 +164,7 @@ while True:
             swapDraw.text((68, 0), ' legit. realtime.'  , font=font, fill=green)
             swapDraw.text((2, 16), '@' , font=font, fill=green)
             swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=font, fill=orange)
-        swap.SetImage(swapImage, 0, 0)
+        b.matrix.SetImage(swapImage, 0, 0)
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
 
@@ -174,7 +174,7 @@ while True:
         textDraw  = ImageDraw.Draw(textImage)
         textDraw.text((2, 0), config["customtext"]["line_1"] , font=font, fill=red)
         textDraw.text((2, 16), config["customtext"]["line_2"] , font=font, fill=blue)
-        swap.SetImage(textImage, 0, 0)
+        b.matrix.SetImage(textImage, 0, 0)
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
 
@@ -207,7 +207,7 @@ while True:
         weatherDraw.text((2, 0), 'IT IS ' + weather + ' FUCKING DEGREES' , font=font, fill=red)
         weatherDraw.text((2, 16), '& ' + conditions + ' OUTSIDE', font=font, fill=green)
 
-        swap.SetImage(weatherImage, 0, 0)
+        b.matrix.SetImage(weatherImage, 0, 0)
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
 
@@ -337,7 +337,7 @@ while True:
                 pic.thumbnail((128,32), Image.ANTIALIAS)
 
         swap.Clear()
-        swap.SetImage(pic.convert('RGB'), 0, 0)
+        b.matrix.SetImage(pic.convert('RGB'), 0, 0)
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
 
