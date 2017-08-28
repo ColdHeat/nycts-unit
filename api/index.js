@@ -44,7 +44,11 @@ app.get('/getConfig', function (req, res) {
 });
 
 app.get('/setConfig/:route/:settingKey/:settingValue', function (req, res) {
-  config[req.params.route][req.params.settingKey] = req.params.settingValue;
+  let value = req.params.settingValue;
+  if(value === 'false' && typeof config[req.params.route][req.params.settingKey] === 'boolean') value = false
+  if(value === 'true') value = true
+
+  config[req.params.route][req.params.settingKey] = value;
   writeToConfigFile(() => res.json(config));
 });
 
