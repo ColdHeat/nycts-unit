@@ -29,12 +29,13 @@ class base:
         while True:
 
             parsed = base.req(self.client)
-            base.getConfig()
+            config = base.getConfig()
+            self.matrix.brightness = int(config["settings"]["brightness"])
+
             if parsed is None: return     # Connection error
 
             self.lastQueryTime = time.time()
 
-            #self.matrix.brightness = int(parsed['data']['brightness'])
             self.power = parsed['data']['power']
             self.line  = parsed['data']['line']
 
@@ -55,6 +56,7 @@ class base:
             return parsed
     @staticmethod
     def getConfig():
+        config = None
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
@@ -64,7 +66,7 @@ class base:
             # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
         else:
             config = json.loads(result.read())
-        self.matrix.brightness = config["settings"]["brightness"]
+        return config
     # Set polling interval (seconds) -------------------------------------
     @staticmethod
     def setInterval(i):
