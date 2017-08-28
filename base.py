@@ -23,11 +23,11 @@ class base:
     def thread(self):
         initSleep          = 3
         base.initSleep += 5   # Thread staggering may
-        time.sleep(initSleep)    # drift over time, no problem
+        #time.sleep(initSleep)    # drift over time, no problem
         while True:
 
             parsed = base.req(self.client)
-
+            base.getConfig()
             if parsed is None: return     # Connection error
 
             self.lastQueryTime = time.time()
@@ -51,7 +51,18 @@ class base:
         except Exception,e: print "errr" + str(e)
         finally:
             return parsed
-
+    @staticmethod
+    def getConfig():
+        baseurl = "http://127.0.0.1:3000/getConfig"
+        try:
+            result = urllib2.urlopen(baseurl)
+            # logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
+        except urllib2.URLError as e:
+            print e
+            # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+        else:
+            config = json.loads(result.read())
+        self.matrix.brightness = config["settings"]["brightness"]
     # Set polling interval (seconds) -------------------------------------
     @staticmethod
     def setInterval(i):

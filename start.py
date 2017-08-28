@@ -143,7 +143,7 @@ while True:
 
 
     transition_time = int(config["settings"]["transition_time"])
-    b.matrix.brightness = int(config["settings"]["brightness"])
+    #b.matrix.brightness = int(config["settings"]["brightness"])
 
     ##### BOOT SCREEN #####
     try:
