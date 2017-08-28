@@ -212,7 +212,7 @@ while True:
         swap = b.matrix.SwapOnVSync(swap)
 
     ##### TRAIN SCREEN #####
-
+    '''
         try:
             connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + client)
             # logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
@@ -320,7 +320,7 @@ while True:
             time.sleep(transition_time)
 
             swap = b.matrix.SwapOnVSync(swap)
-
+        '''
         #### LOGO #####
         if config["logo"]["updated"] == True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
