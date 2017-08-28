@@ -2,6 +2,8 @@ import threading
 import time
 import urllib
 import json
+import urllib2
+
 from rgbmatrix import RGBMatrix
 
 class base:
@@ -36,7 +38,7 @@ class base:
             self.power = parsed['data']['power']
             self.line  = parsed['data']['line']
 
-            time.sleep(base.interval)
+            time.sleep(1)
 
     # Open URL, send request, read & parse XML response ------------------
     @staticmethod
