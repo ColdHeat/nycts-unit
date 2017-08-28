@@ -39,7 +39,7 @@ class base:
             self.power = parsed['data']['power']
             self.line  = parsed['data']['line']
 
-            time.sleep(1)
+            time.sleep(0.1)
 
     # Open URL, send request, read & parse XML response ------------------
     @staticmethod
