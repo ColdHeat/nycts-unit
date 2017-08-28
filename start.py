@@ -321,26 +321,26 @@ while True:
 
             swap = b.matrix.SwapOnVSync(swap)
 
-            #### LOGO #####
-            if config["logo"]["updated"] == True:
-                baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
-                try:
-                    result = urllib2.urlopen(baseurl)
-                    # logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
-                except urllib2.URLError as e:
-                    error_message = e.reason
-                    print error_message
-                    # logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
-                else:
-                    config = json.loads(result.read())
-                    pic = Image.open("./api/uploads/" + config["logo"]["image_file"])
-                    pic = pic.convert('RGB')
-                    pic.thumbnail((128,32), Image.ANTIALIAS)
+        #### LOGO #####
+        if config["logo"]["updated"] == True:
+            baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
+            try:
+                result = urllib2.urlopen(baseurl)
+                # logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
+            except urllib2.URLError as e:
+                error_message = e.reason
+                print error_message
+                # logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
+            else:
+                config = json.loads(result.read())
+                pic = Image.open("./api/uploads/" + config["logo"]["image_file"])
+                pic = pic.convert('RGB')
+                pic.thumbnail((128,32), Image.ANTIALIAS)
 
-            swap.Clear()
-            swap.SetImage(pic.convert('RGB'), 0, 0)
-            time.sleep(transition_time)
-            swap = b.matrix.SwapOnVSync(swap)
+        swap.Clear()
+        swap.SetImage(pic.convert('RGB'), 0, 0)
+        time.sleep(transition_time)
+        swap = b.matrix.SwapOnVSync(swap)
 
 
 ##### EXCEPTION SCREEN #####
