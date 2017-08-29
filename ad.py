@@ -6,6 +6,7 @@ import urllib2
 import Image
 import ImageDraw
 import constants
+import socket
 
 class ad:
 
