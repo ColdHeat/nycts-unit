@@ -8,13 +8,14 @@ import ImageDraw
 import constants
 import math
 
-start = time.time()
 
 class train:
 
     def __init__(self, base):
         self.base          = base
         self.config        = base.config
+        self.start         = time.time()
+
         self.train_data    = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
@@ -34,10 +35,10 @@ class train:
 
                 end = time.time()
 
-                time_difference = math.ceil(end - start)
+                time_difference = math.ceil(end - self.start)
 
                 if time_difference >= 60:
-                    start = time.time()
+                    self.start = time.time()
                     end = time.time()
 
                 parsed = self.train_data
