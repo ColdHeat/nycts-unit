@@ -8,6 +8,8 @@ import ImageDraw
 import constants
 import math
 
+start = time.time()
+
 class train:
 
     def __init__(self, base):
@@ -72,13 +74,13 @@ class train:
                 nums = self.data['line']
 
                 if nums in ['1', '2', '3']:
-                    circleColor = red
+                    circleColor = constants.red
                 if nums in ['4', '5', '6']:
-                    circleColor = green
+                    circleColor = constants.green
                 if nums in ['N', 'Q', 'R', 'W']:
-                    circleColor = yellow
+                    circleColor = constants.yellow
                 if nums in ['L']:
-                    circleColor = grey
+                    circleColor = constants.grey
 
                 if row == 1:
                     yOff = 18
