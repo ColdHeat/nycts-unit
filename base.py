@@ -56,7 +56,8 @@ class base:
         except Exception,e: print "errr" + str(e)
         finally:
             return parsed
-    def getConfig(self):
+    @staticmethod
+    def getConfig():
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
