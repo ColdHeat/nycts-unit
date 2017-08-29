@@ -20,7 +20,7 @@ from base import base
 ### LOGGING ###
 formatter = json_log_formatter.JSONFormatter()
 
-json_handler = logging.FileHandler(filename='./device_logs/logs.json', maxBytes=1*1024*1024)
+json_handler = logging.FileHandler(filename='./device_logs/logs.json')
 json_handler.setFormatter(formatter)
 
 logger = logging.getLogger('log')
