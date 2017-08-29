@@ -14,7 +14,7 @@ class customtext:
         self.config        = base.getConfig()
 
     def draw(self):
-        image = Image.new('RGB', (width, height))
+        image = Image.new('RGB', (constants.width, constants.height))
         draw  = ImageDraw.Draw(draw)
         draw.text((2, 0), self.config["customtext"]["line_1"] , font=constants.font, fill=constants.red)
         draw.text((2, 16), self.config["customtext"]["line_2"] , font=contstants.font, fill=constants.blue)
