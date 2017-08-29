@@ -182,7 +182,7 @@ while True:
         swap.Clear()
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
-        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather"]["zip_code"]) + "')"
+        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='11237')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
