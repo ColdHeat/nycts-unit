@@ -40,7 +40,7 @@ class weather:
             time.sleep(5)
 
     def draw(self):
-        image = Image.new('RGB', (width, height))
+        image = Image.new('RGB', (constants.width, constants.height))
         draw  = ImageDraw.Draw(image)
 
         draw.text((2, 0), 'IT IS ' + self.weather["weather"] + ' DEGREES' , font=constants.font, fill=constants.red)
