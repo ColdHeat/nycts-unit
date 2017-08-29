@@ -6,6 +6,7 @@ import urllib2
 import Image
 import ImageDraw
 import ImageFont
+import os
 black     = (0,     0, 0)
 blue      = (0, 200, 255)
 green     = (0,   255, 0)
