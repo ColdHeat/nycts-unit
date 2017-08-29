@@ -60,7 +60,7 @@ class weather:
         image = Image.new('RGB', (width, height))
         draw  = ImageDraw.Draw(image)
 
-        draw.text((2, 0), 'IT IS ' + self.weather.weather + ' DEGREES' , font=font, fill=red)
-        draw.text((2, 16), '& ' + self.weather.conditions + ' OUTSIDE', font=font, fill=green)
+        draw.text((2, 0), 'IT IS ' + self.weather["weather"] + ' DEGREES' , font=font, fill=red)
+        draw.text((2, 16), '& ' + self.weather["conditions"] + ' OUTSIDE', font=font, fill=green)
 
         self.base.matrix.SetImage(image, 0, 0)
