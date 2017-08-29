@@ -66,6 +66,7 @@ class train:
         draw      = ImageDraw.Draw(image)
 
         for dirs,direction in enumerate(self.train_data):
+            time.sleep(int(self.config["settings"]["transition_time"]))
             self.drawClear()
             for row in [0, 1]:
 
@@ -139,4 +140,4 @@ class train:
 
             self.base.matrix.SetImage(image, 0, 0)
             time.sleep(int(self.config["settings"]["transition_time"]))
-            self.drawClear()
+        self.drawClear()
