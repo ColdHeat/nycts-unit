@@ -152,16 +152,16 @@ while True:
         weatherScreen.draw()
         time.sleep(transition_time)
 
-    ##### TRAIN SCREEN NORTH #####
+    ##### TRAIN SCREEN SOUTH #####
 
         swap.Clear()
-        trainScreen.draw('N')
+        trainScreen.draw('S')
         time.sleep(transition_time)
 
     ##### TRAIN SCREEN NORTH #####
 
         swap.Clear()
-        trainScreen.draw('S')
+        trainScreen.draw('N')
         time.sleep(transition_time)
 
     #### LOGO #####
