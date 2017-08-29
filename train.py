@@ -58,7 +58,7 @@ class train:
     def drawClear(self):
         image     = Image.new('RGB', (constants.width, constants.height))
         draw      = ImageDraw.Draw(image)
-        draw.rectangle((0, 0, width, height), fill=black)
+        draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
 
     def draw(self):
@@ -66,7 +66,7 @@ class train:
         draw      = ImageDraw.Draw(image)
 
         for dirs,direction in enumerate(self.train_data):
-            time.sleep(self.config["settings"]["transition_time"])
+            time.sleep(int(self.config["settings"]["transition_time"]))
             self.drawClear()
             for row in [0, 1]:
 
