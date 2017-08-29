@@ -11,10 +11,10 @@ class customtext:
 
     def __init__(self, base):
         self.base          = base
-        self.config        = base.getConfig()
+        self.config        = base.config
 
     def draw(self):
-        self.config = self.base.getConfig()
+        #self.config = self.base.getConfig()
         image = Image.new('RGB', (constants.width, constants.height))
         draw  = ImageDraw.Draw(image)
         draw.text((2, 0), self.config["customtext"]["line_1"] , font=constants.font, fill=constants.red)

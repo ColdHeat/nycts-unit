@@ -17,6 +17,7 @@ from base import base
 from weather import weather
 from customtext import customtext
 from logo import logo
+from ad import ad
 
 ### LOGGING ###
 # formatter = json_log_formatter.JSONFormatter()
@@ -47,6 +48,7 @@ b = base(client)
 weatherScreen = weather(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
+adScreen = ad(b)
 
 ##### MATRIX #####
 width          = 128
@@ -118,8 +120,6 @@ while True:
     else:
         config = json.loads(result.read())
 
-    ##### DEV MODE #####
-    dev = b.config["settings"]["dev"]
 
     if b.config["settings"]["reboot"] == True:
         baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
@@ -134,38 +134,17 @@ while True:
             os.system('reboot now')
 
     transition_time = int(b.config["settings"]["transition_time"])
-    print transition_time
-    #b.matrix.brightness = int(config["settings"]["brightness"])
 
     ##### BOOT SCREEN #####
     try:
         swap.Clear()
-        swapImage = Image.new('RGB', (width, height))
-        swapDraw  = ImageDraw.Draw(swapImage)
-        if dev == True:
-            try:
-                ip = str([l for l in ([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2] if not ip.startswith("127.")][:1], [[(s.connect(('8.8.8.8', 53)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]]) if l][0][0])
-                # logger.info('IP screen', extra={'status': 1, 'job': 'ip_screen'})
-            except Exception as e:
-                # logger.info('IP screen', extra={'status': 0, 'job': 'ip_screen'}, exc_info=True)
-                ip = '192.168.0.xxx'
-
-            swapDraw.text((2, 0), 'IP: ' + ip , font=font, fill=red)
-        else:
-            swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=font, fill=red)
-            swapDraw.text((68, 0), ' legit. realtime.'  , font=font, fill=green)
-            swapDraw.text((2, 16), '@' , font=font, fill=green)
-            swapDraw.text((12, 16), 'n y c t r a i n s i g n' , font=font, fill=orange)
-        b.matrix.SetImage(swapImage, 0, 0)
+        adScreen.draw()
         time.sleep(transition_time)
-        #swap = b.matrix.SwapOnVSync(swap)
 
-
+    ##### CUSTOM TEXT SCREEN #####
         swap.Clear()
         customTextScreen.draw()
         time.sleep(transition_time)
-        #swap = b.matrix.SwapOnVSync(swap)
-
 
     ##### WEATHER SCREEN #####
         swap.Clear()
@@ -201,7 +180,7 @@ while True:
                     data['min'] = int(mins)
 
             error_message = e.reason
-            logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
+            #logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
 
 
         for dirs,direction in enumerate(parsed):
@@ -279,13 +258,11 @@ while True:
             b.matrix.SetImage(image, 0, 0)
             time.sleep(transition_time)
 
-            #swap = b.matrix.SwapOnVSync(swap)
 
         #### LOGO #####
         swap.Clear()
         logoScreen.draw()
         time.sleep(transition_time)
-        #swap = b.matrix.SwapOnVSync(swap)
 
 
 ##### EXCEPTION SCREEN #####
