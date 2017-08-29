@@ -193,7 +193,9 @@ while True:
             weather = weather_offline_data['weather']
             conditions = weather_offline_data['conditions']
         else:
+            print transition_time
             data = json.loads(result.read())
+            print data
             weather = data['query']['results']['channel']['item']['condition']['temp']
             conditions = data['query']['results']['channel']['item']['condition']['text'].upper()
 
