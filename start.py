@@ -57,8 +57,6 @@ width          = 128
 height         = 32
 
 ##### IMAGE / COLORS / FONTS / OFFSET #####
-image     = Image.new('RGB', (width, height))
-draw      = ImageDraw.Draw(image)
 
 black     = (0,     0, 0)
 blue      = (0, 200, 255)
