@@ -15,6 +15,7 @@ import urllib
 import urllib2
 from base import base
 from weather import weather
+from customtext import customtext
 
 ### LOGGING ###
 # formatter = json_log_formatter.JSONFormatter()
@@ -42,7 +43,8 @@ else:
 client = config["settings"]["client_id"]
 
 b = base(client)
-weatherDaemon = weather(b)
+weatherScreen = weather(b)
+customTextScreen = customtext(b)
 
 ##### MATRIX #####
 width          = 128
@@ -104,7 +106,6 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.matrix.CreateFrameCanvas()
 
-weather_offline_data = {'weather': '75', 'conditions': 'SUNNY'}
 
 start = time.time()
 
@@ -170,21 +171,15 @@ while True:
 
 
         swap.Clear()
-        textImage = Image.new('RGB', (width, height))
-        textDraw  = ImageDraw.Draw(textImage)
-        textDraw.text((2, 0), b.config["customtext"]["line_1"] , font=font, fill=red)
-        textDraw.text((2, 16), b.config["customtext"]["line_2"] , font=font, fill=blue)
-        b.matrix.SetImage(textImage, 0, 0)
+        customTextScreen.draw()
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
 
 
     ##### WEATHER SCREEN #####
         swap.Clear()
-
-        weatherDaemon.draw()
+        weatherScreen.draw()
         time.sleep(transition_time)
-        #swap = b.matrix.SwapOnVSync(swap)
 
     ##### TRAIN SCREEN #####
         try:
