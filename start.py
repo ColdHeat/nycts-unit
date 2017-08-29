@@ -140,8 +140,8 @@ while True:
         else:
             os.system('reboot now')
 
-
     transition_time = int(b.config["settings"]["transition_time"])
+    print transition_time
     #b.matrix.brightness = int(config["settings"]["brightness"])
 
     ##### BOOT SCREEN #####
