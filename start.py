@@ -18,6 +18,7 @@ from weather import weather
 from customtext import customtext
 from logo import logo
 from ad import ad
+from train import train
 
 ### LOGGING ###
 # formatter = json_log_formatter.JSONFormatter()
@@ -49,6 +50,7 @@ weatherScreen = weather(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
+trainScreen = train(b)
 
 ##### MATRIX #####
 width          = 128
@@ -152,114 +154,12 @@ while True:
         time.sleep(transition_time)
 
     ##### TRAIN SCREEN #####
-        try:
-            connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + client)
-            # logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
-            raw = connection.read()
-            parsed = json.loads(raw)
-            connection.close()
-            backup_train_data = parsed
-        except Exception as e:
 
-            end = time.time()
-
-            time_difference = math.ceil(end - start)
-
-            if time_difference >= 60:
-                start = time.time()
-                end = time.time()
-
-            parsed = backup_train_data
-
-            if len(mins) < 3:
-                if data['min'] <= 0:
-                    mins = str((int(data['min']) + 6))
-                    data['min'] = int(mins)
-                else:
-                    mins = str((int(data['min']) - int(time_difference)/ 60))
-                    data['min'] = int(mins)
-
-            error_message = e.reason
-            #logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
+        swap.Clear()
+        time.sleep(transition_time)
 
 
-        for dirs,direction in enumerate(parsed):
-            time.sleep(transition_time)
-            drawClear()
-
-            for row in [0, 1]:
-                data = parsed[direction][row]
-
-                xOff = 2
-                yOff = 2
-
-                mins = str(data['min'])
-                if len(mins) < 2:
-                    mins = mins.rjust(3)
-
-                minLabel = mins + 'mIn'
-                dirLabel = '  ' + data['term']
-
-                nums = data['line']
-
-                if nums in ['1', '2', '3']:
-                    circleColor = red
-                if nums in ['4', '5', '6']:
-                    circleColor = green
-                if nums in ['N', 'Q', 'R', 'W']:
-                    circleColor = yellow
-                if nums in ['L']:
-                    circleColor = grey
-
-                if row == 1:
-                    yOff = 18
-
-                fontXoffset = xOff
-                fontYoffset = yOff
-
-                numLabel = str(row + 1) + '. '
-                numLabelW = font.getsize(numLabel)[0]
-
-                minPos = width - font.getsize(minLabel)[0] - 3
-
-                circleXoffset = fontXoffset + numLabelW
-                circleYoffset = yOff + 1;
-
-                circleXend = circleXoffset + 8
-                circleYend = circleYoffset + 8
-
-                if data['line'] == 'L':
-                    dirOffset = 26
-                    lLabel = 'L '
-                    minLabel = 'MIn'
-                    lOffset = 4
-                    minOffset = width - 6 - font.getsize(minLabel)[0]
-                    timeOffset = minOffset - font.getsize(mins)[0]
-
-                    draw.text((lOffset, 0 + fontYoffset), lLabel, font=font, fill=orange)
-                    draw.text((fontXoffset + dirOffset, 0 + fontYoffset), dirLabel, font=font, fill=green)
-
-                    draw.text((timeOffset, 0 + fontYoffset), mins, font=font, fill=orange)
-                    draw.text((minOffset, 0 + fontYoffset), minLabel, font=font, fill=green)
-
-                    draw.point((width - 12, 6), fill=black)
-                    draw.point((width - 12, 22), fill=black)
-
-                else:
-                    draw.text((fontXoffset, fontYoffset), numLabel, font=font, fill=green)
-                    draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
-                    draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=font, fill=black)
-                    draw.text((circleXend, fontYoffset), dirLabel, font=font, fill=green)
-                    draw.text((minPos, fontYoffset), minLabel, font=font, fill=green)
-
-                    draw.point((width - 9, 6), fill=black)
-                    draw.point((width - 9, 22), fill=black)
-
-            b.matrix.SetImage(image, 0, 0)
-            time.sleep(transition_time)
-
-
-        #### LOGO #####
+    #### LOGO #####
         swap.Clear()
         logoScreen.draw()
         time.sleep(transition_time)
