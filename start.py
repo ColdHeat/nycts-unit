@@ -103,7 +103,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 swap = b.matrix.CreateFrameCanvas()
 
-weather_offline_data = {'weather': 75, 'conditions': 'SUNNY'}
+weather_offline_data = {'weather': '75', 'conditions': 'SUNNY'}
 
 start = time.time()
 
