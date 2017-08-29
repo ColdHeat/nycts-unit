@@ -57,7 +57,7 @@ class train:
             time.sleep(5)
 
     def draw(self):
-        image     = Image.new('RGB', (width, height))
+        image     = Image.new('RGB', (constants.width, constants.height))
         draw      = ImageDraw.Draw(image)
 
         for dirs,direction in enumerate(self.train_data):
