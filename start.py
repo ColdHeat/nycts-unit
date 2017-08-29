@@ -16,6 +16,7 @@ import urllib2
 from base import base
 from weather import weather
 from customtext import customtext
+from logo import logo
 
 ### LOGGING ###
 # formatter = json_log_formatter.JSONFormatter()
@@ -45,6 +46,7 @@ client = config["settings"]["client_id"]
 b = base(client)
 weatherScreen = weather(b)
 customTextScreen = customtext(b)
+logoScreen = logo(b)
 
 ##### MATRIX #####
 width          = 128
@@ -75,13 +77,6 @@ minOffset = width - 6 - font.getsize(minLabel)[0]
 
 count = True
 
-slideLength = 10
-
-pic = Image.open("./api/uploads/" + config["logo"]["image_file"])
-pic = pic.convert('RGB')
-pic.thumbnail((128,32), Image.ANTIALIAS)
-
-
 ##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
@@ -110,10 +105,6 @@ swap = b.matrix.CreateFrameCanvas()
 start = time.time()
 
 backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
-
-##### NODE API #####
-with open("config.json") as json_file:
-    config = json.load(json_file)
 
 while True:
 
@@ -291,22 +282,8 @@ while True:
             #swap = b.matrix.SwapOnVSync(swap)
 
         #### LOGO #####
-        if b.config["logo"]["updated"] == True:
-            baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
-            try:
-                result = urllib2.urlopen(baseurl)
-                # logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
-            except urllib2.URLError as e:
-                error_message = e.reason
-                print error_message
-                # logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
-            else:
-                pic = Image.open("./api/uploads/" + b.config["logo"]["image_file"])
-                pic = pic.convert('RGB')
-                pic.thumbnail((128,32), Image.ANTIALIAS)
-
         swap.Clear()
-        b.matrix.SetImage(pic.convert('RGB'), 0, 0)
+        logoScreen.draw()
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
 
