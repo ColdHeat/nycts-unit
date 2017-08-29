@@ -52,7 +52,7 @@ weatherScreen = weather(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
-trainScreen = train(b, swap)
+trainScreen = train(b)
 
 ##### MATRIX #####
 width          = 128
@@ -152,12 +152,17 @@ while True:
         weatherScreen.draw()
         time.sleep(transition_time)
 
-    ##### TRAIN SCREEN #####
+    ##### TRAIN SCREEN NORTH #####
 
         swap.Clear()
-        trainScreen.draw()
+        trainScreen.draw('N')
         time.sleep(transition_time)
 
+    ##### TRAIN SCREEN NORTH #####
+
+        swap.Clear()
+        trainScreen.draw('S')
+        time.sleep(transition_time)
 
     #### LOGO #####
         swap.Clear()
