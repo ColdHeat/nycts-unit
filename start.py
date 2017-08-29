@@ -104,11 +104,6 @@ atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
 
-
-start = time.time()
-
-backup_train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
-
 while True:
 
     baseurl = "http://127.0.0.1:3000/getConfig"

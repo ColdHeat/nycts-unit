@@ -11,7 +11,7 @@ class weather:
 
     def __init__(self, base):
         self.base          = base
-        self.config        = base.getConfig()
+        self.config        = base.config
         self.weather       = {'weather': '75', 'conditions': 'SUNNY'}
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
@@ -20,6 +20,7 @@ class weather:
     # Periodically get predictions from server ---------------------------
     def thread(self):
         while True:
+            self.config = self.base.config
             baseurl = "https://query.yahooapis.com/v1/public/yql?"
             yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + self.config["weather"]["zip_code"] + "')"
             yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"

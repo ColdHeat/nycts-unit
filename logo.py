@@ -11,17 +11,17 @@ class logo:
 
     def __init__(self, base):
         self.base          = base
-        self.config        = base.getConfig()
+        self.config        = base.config
         self.pic = Image.open("./api/uploads/" + self.config["logo"]["image_file"])
         self.pic.thumbnail((128,32), Image.ANTIALIAS)
 
 
     def draw(self):
-        self.config = self.base.getConfig()
+        self.config = self.base.config
         if self.config["logo"]["updated"] == True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
             try:
-                result = urllib2.urlopen(baseurl)
+                result = urllib2.urlopen(baseurl, timeout = 5)
                 # logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
             except urllib2.URLError as e:
                 error_message = e.reason
