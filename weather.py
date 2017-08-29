@@ -3,6 +3,19 @@ import time
 import urllib
 import json
 import urllib2
+import Image
+import ImageDraw
+import ImageFont
+black     = (0,     0, 0)
+blue      = (0, 200, 255)
+green     = (0,   255, 0)
+grey      = (105,105,105)
+orange    = (255, 100, 0)
+red       = (255,   0, 0)
+yellow    = (252, 203, 7)
+
+font      = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
+
 
 
 class weather:
