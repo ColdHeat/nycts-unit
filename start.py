@@ -156,6 +156,7 @@ while True:
     ##### TRAIN SCREEN #####
 
         swap.Clear()
+        trainScreen.draw()
         time.sleep(transition_time)
 
 
