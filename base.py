@@ -31,7 +31,7 @@ class base:
 
             parsed = base.req(self.client)
             self.config = self.getConfig()
-            self.matrix.brightness = int(config["settings"]["brightness"])
+            self.matrix.brightness = int(self.config["settings"]["brightness"])
 
             if parsed is None: return     # Connection error
 
