@@ -7,6 +7,11 @@ import Image
 import ImageDraw
 import ImageFont
 import os
+
+##### MATRIX #####
+width          = 128
+height         = 32
+
 black     = (0,     0, 0)
 blue      = (0, 200, 255)
 green     = (0,   255, 0)
