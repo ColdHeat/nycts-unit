@@ -63,6 +63,8 @@ class train:
         for dirs,direction in enumerate(self.train_data):
 
             for row in [0, 1]:
+                self.base.matrix.Clear()
+
                 self.data = self.train_data[direction][row]
 
                 xOff = 2
@@ -129,6 +131,6 @@ class train:
 
                     draw.point((constants.width - 9, 6), fill=constants.black)
                     draw.point((constants.width - 9, 22), fill=constants.black)
-            self.base.matrix.Clear()
             self.base.matrix.SetImage(image, 0, 0)
-            time.sleep(5)
+            time.sleep(self.config["settings"]["transition_time"])
+            self.base.matrix.Clear()
