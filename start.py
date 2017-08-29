@@ -8,33 +8,36 @@ import os
 import time
 import signal
 import logging
+from logging.handlers import RotatingFileHandler
 import json
 import json_log_formatter
 import socket
 import urllib
 import urllib2
+import psutil
+import subprocess
 from base import base
 
 ### LOGGING ###
-# formatter = json_log_formatter.JSONFormatter()
-#
-# json_handler = logging.FileHandler(filename='./device_logs/logs.json')
-# json_handler.setFormatter(formatter)
-#
-# logger = logging.getLogger('log')
-# logger.addHandler(json_handler)
-# logger.setLevel(logging.INFO)
-# logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
+formatter = json_log_formatter.JSONFormatter()
+
+json_handler = logging.RotatingFileHandler(filename='./device_logs/logs.json', maxBytes=1*1024*1024)
+json_handler.setFormatter(formatter)
+
+logger = logging.getLogger('log')
+logger.addHandler(json_handler)
+logger.setLevel(logging.INFO)
+logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
 
 
 ##### LOAD CONFIG #######
 baseurl = "http://127.0.0.1:3000/getConfig"
 try:
     result = urllib2.urlopen(baseurl)
-    # logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
+    logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
 except urllib2.URLError as e:
     print e
-    # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+    logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
 else:
     config = json.loads(result.read())
 ##### CLIENT CONFIGURATION #####
@@ -118,10 +121,10 @@ while True:
     baseurl = "http://127.0.0.1:3000/getConfig"
     try:
         result = urllib2.urlopen(baseurl)
-        # logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
+        logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
     except urllib2.URLError as e:
         print e
-        # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+        logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
     else:
         config = json.loads(result.read())
 
@@ -132,11 +135,10 @@ while True:
         baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
         try:
             result = urllib2.urlopen(baseurl)
-            # logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
+            logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
         except urllib2.URLError as e:
             error_message = e.reason
-            print error_message
-            # logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
+            logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
         else:
             config = json.loads(result.read())
             os.system('reboot now')
@@ -153,9 +155,9 @@ while True:
         if dev == True:
             try:
                 ip = str([l for l in ([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2] if not ip.startswith("127.")][:1], [[(s.connect(('8.8.8.8', 53)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]]) if l][0][0])
-                # logger.info('IP screen', extra={'status': 1, 'job': 'ip_screen'})
+                logger.info('IP screen', extra={'status': 1, 'job': 'ip_screen'})
             except Exception as e:
-                # logger.info('IP screen', extra={'status': 0, 'job': 'ip_screen'}, exc_info=True)
+                logger.info('IP screen', extra={'status': 0, 'job': 'ip_screen'}, exc_info=True)
                 ip = '192.168.0.xxx'
 
             swapDraw.text((2, 0), 'IP: ' + ip , font=font, fill=red)
@@ -187,10 +189,10 @@ while True:
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
-            # logger.info('Weather Screen', extra={'status': 1, 'job': 'weather_screen'})
+            logger.info('Weather Screen', extra={'status': 1, 'job': 'weather_screen'})
         except urllib2.URLError as e:
             error_message = e.reason
-            # logger.info('Weather Screen', extra={'status': 0, 'job': 'weather_screen'})
+            logger.info('Weather Screen', extra={'status': 0, 'job': 'weather_screen'})
             weather = weather_offline_data['weather']
             conditions = weather_offline_data['conditions']
         else:
@@ -214,7 +216,7 @@ while True:
     ##### TRAIN SCREEN #####
         try:
             connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + client)
-            # logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
+            logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
             raw = connection.read()
             parsed = json.loads(raw)
             connection.close()
@@ -325,11 +327,11 @@ while True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
             try:
                 result = urllib2.urlopen(baseurl)
-                # logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
+                logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
             except urllib2.URLError as e:
                 error_message = e.reason
                 print error_message
-                # logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
+                logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
             else:
                 config = json.loads(result.read())
                 pic = Image.open("./api/uploads/" + config["logo"]["image_file"])
@@ -342,9 +344,19 @@ while True:
         #swap = b.matrix.SwapOnVSync(swap)
 
 
+        logger.info('CPU', extra={'percentage': psutil.cpu_percent(interval=1)})
+        logger.info('Virtual Memory', extra={'percentage': psutil.virtual_memory()[2]})
+        logger.info('Swap Memory', extra={'percentage': psutil.swap_memory()[3]})
+        logger.info('Disk Usage', extra={'percentage': psutil.disk_usage('/')[3]})
+
+        temp_in_celsius = subprocess.check_output(['cat', '/sys/class/thermal/thermal_zone0/temp'])
+        logger.info('Device Temp', extra={'temp': str((int(temp_in_celsius)/1000) * 9/5 + 32) + ' F'})
+        # logger.info('SpeedTest Results', extra={'results': subprocess.check_output(['speedtest-cli', '--simple'])})
+
+
 ##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
-        # logger.info('Boot Screen', extra={'status': 1, 'job': 'boot_screen'})
+        logger.info('Boot Screen', extra={'status': 1, 'job': 'boot_screen'})
         displayError(e)
         pass
