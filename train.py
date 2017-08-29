@@ -67,7 +67,7 @@ class train:
 
         for dirs,direction in enumerate(self.train_data):
             time.sleep(int(self.config["settings"]["transition_time"]))
-            self.drawClear()
+            self.base.matrix.Clear()
             for row in [0, 1]:
 
                 self.data = self.train_data[direction][row]
