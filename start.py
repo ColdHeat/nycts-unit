@@ -8,7 +8,6 @@ import os
 import time
 import signal
 import logging
-from logging.handlers import RotatingFileHandler
 import json
 import json_log_formatter
 import socket
@@ -21,7 +20,7 @@ from base import base
 ### LOGGING ###
 formatter = json_log_formatter.JSONFormatter()
 
-json_handler = logging.RotatingFileHandler(filename='./device_logs/logs.json', maxBytes=1*1024*1024)
+json_handler = logging.FileHandler(filename='./device_logs/logs.json', maxBytes=1*1024*1024)
 json_handler.setFormatter(formatter)
 
 logger = logging.getLogger('log')
