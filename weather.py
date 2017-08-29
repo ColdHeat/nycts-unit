@@ -7,18 +7,11 @@ import Image
 import ImageDraw
 import ImageFont
 import os
-
+import colors
 ##### MATRIX #####
 width          = 128
 height         = 32
 
-black     = (0,     0, 0)
-blue      = (0, 200, 255)
-green     = (0,   255, 0)
-grey      = (105,105,105)
-orange    = (255, 100, 0)
-red       = (255,   0, 0)
-yellow    = (252, 203, 7)
 
 font      = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
 
@@ -60,7 +53,7 @@ class weather:
         image = Image.new('RGB', (width, height))
         draw  = ImageDraw.Draw(image)
 
-        draw.text((2, 0), 'IT IS ' + self.weather["weather"] + ' DEGREES' , font=font, fill=red)
-        draw.text((2, 16), '& ' + self.weather["conditions"] + ' OUTSIDE', font=font, fill=green)
+        draw.text((2, 0), 'IT IS ' + self.weather["weather"] + ' DEGREES' , font=font, fill=colors.red)
+        draw.text((2, 16), '& ' + self.weather["conditions"] + ' OUTSIDE', font=font, fill=colors.green)
 
         self.base.matrix.SetImage(image, 0, 0)
