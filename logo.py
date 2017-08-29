@@ -17,6 +17,7 @@ class logo:
 
 
     def draw(self):
+        self.config = self.base.getConfig()
         if self.config["logo"]["updated"] == True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
             try:
