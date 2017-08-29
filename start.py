@@ -46,11 +46,13 @@ else:
 client = config["settings"]["client_id"]
 
 b = base(client)
+swap = b.matrix.CreateFrameCanvas()
+
 weatherScreen = weather(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
-trainScreen = train(b)
+trainScreen = train(b, swap)
 
 ##### MATRIX #####
 width          = 128
@@ -101,7 +103,6 @@ def displayError(e):
 atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
-swap = b.matrix.CreateFrameCanvas()
 
 
 start = time.time()

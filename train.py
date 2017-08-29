@@ -11,7 +11,8 @@ import math
 
 class train:
 
-    def __init__(self, base):
+    def __init__(self, base, swap):
+        self.swap          = swap
         self.base          = base
         self.config        = base.config
         self.start         = time.time()
@@ -64,14 +65,11 @@ class train:
     def draw(self):
         image     = Image.new('RGB', (constants.width, constants.height))
         draw      = ImageDraw.Draw(image)
-        self.drawClear()
 
         for dirs,direction in enumerate(self.train_data):
             self.base.matrix.Clear()
             for row in [0, 1]:
-
                 self.data = self.train_data[direction][row]
-
                 xOff = 2
                 yOff = 2
 
@@ -109,7 +107,6 @@ class train:
 
                 circleXend = circleXoffset + 8
                 circleYend = circleYoffset + 8
-                self.base.matrix.Clear()
 
                 if self.data['line'] == 'L':
                     dirOffset = 26
@@ -140,3 +137,4 @@ class train:
 
             self.base.matrix.SetImage(image, 0, 0)
             time.sleep(int(self.config["settings"]["transition_time"]))
+            this.swap.Clear()
