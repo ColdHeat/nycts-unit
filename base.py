@@ -5,6 +5,15 @@ import json
 import urllib2
 
 from rgbmatrix import RGBMatrix
+baseurl = "http://127.0.0.1:3000/getConfig"
+try:
+    result = urllib2.urlopen(baseurl)
+    # logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
+except urllib2.URLError as e:
+    print e
+    # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+else:
+    config = json.loads(result.read())
 
 class base:
     interval  = 3 # Default polling interval = 2 minutes
@@ -17,6 +26,7 @@ class base:
         self.matrix.brightness = 50
         self.client        = client
         self.lastQueryTime = time.time()
+        self.config        = config
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
@@ -30,6 +40,7 @@ class base:
 
             parsed = base.req(self.client)
             config = base.getConfig()
+            self.config = config
             self.matrix.brightness = int(config["settings"]["brightness"])
 
             if parsed is None: return     # Connection error
@@ -56,7 +67,6 @@ class base:
             return parsed
     @staticmethod
     def getConfig():
-        config = None
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)

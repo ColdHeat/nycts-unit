@@ -126,9 +126,9 @@ while True:
         config = json.loads(result.read())
 
     ##### DEV MODE #####
-    dev = config["settings"]["dev"]
+    dev = b.config["settings"]["dev"]
 
-    if config["settings"]["reboot"] == True:
+    if b.config["settings"]["reboot"] == True:
         baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
         try:
             result = urllib2.urlopen(baseurl)
@@ -138,11 +138,10 @@ while True:
             print error_message
             # logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
         else:
-            config = json.loads(result.read())
             os.system('reboot now')
 
 
-    transition_time = int(config["settings"]["transition_time"])
+    transition_time = int(b.config["settings"]["transition_time"])
     #b.matrix.brightness = int(config["settings"]["brightness"])
 
     ##### BOOT SCREEN #####
@@ -172,8 +171,8 @@ while True:
         swap.Clear()
         textImage = Image.new('RGB', (width, height))
         textDraw  = ImageDraw.Draw(textImage)
-        textDraw.text((2, 0), config["customtext"]["line_1"] , font=font, fill=red)
-        textDraw.text((2, 16), config["customtext"]["line_2"] , font=font, fill=blue)
+        textDraw.text((2, 0), b.config["customtext"]["line_1"] , font=font, fill=red)
+        textDraw.text((2, 16), b.config["customtext"]["line_2"] , font=font, fill=blue)
         b.matrix.SetImage(textImage, 0, 0)
         time.sleep(transition_time)
         #swap = b.matrix.SwapOnVSync(swap)
@@ -183,7 +182,7 @@ while True:
         swap.Clear()
 
         baseurl = "https://query.yahooapis.com/v1/public/yql?"
-        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(config["weather"]["zip_code"]) + "')"
+        yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+ str(b.config["weather"]["zip_code"]) + "')"
         yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
         try:
             result = urllib2.urlopen(yql_url)
@@ -321,7 +320,7 @@ while True:
             #swap = b.matrix.SwapOnVSync(swap)
 
         #### LOGO #####
-        if config["logo"]["updated"] == True:
+        if b.config["logo"]["updated"] == True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
             try:
                 result = urllib2.urlopen(baseurl)
@@ -331,8 +330,7 @@ while True:
                 print error_message
                 # logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
             else:
-                config = json.loads(result.read())
-                pic = Image.open("./api/uploads/" + config["logo"]["image_file"])
+                pic = Image.open("./api/uploads/" + b.config["logo"]["image_file"])
                 pic = pic.convert('RGB')
                 pic.thumbnail((128,32), Image.ANTIALIAS)
 
