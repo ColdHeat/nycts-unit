@@ -104,6 +104,7 @@ class train:
 
                 circleXend = circleXoffset + 8
                 circleYend = circleYoffset + 8
+                self.base.matrix.Clear()
 
                 if self.data['line'] == 'L':
                     dirOffset = 26
@@ -133,4 +134,3 @@ class train:
                     draw.point((constants.width - 9, 22), fill=constants.black)
             self.base.matrix.SetImage(image, 0, 0)
             time.sleep(int(self.config["settings"]["transition_time"]))
-            self.base.matrix.Clear()
