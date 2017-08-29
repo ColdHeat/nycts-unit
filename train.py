@@ -55,14 +55,19 @@ class train:
                 #logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
 
             time.sleep(5)
+    def drawClear(self):
+        image     = Image.new('RGB', (constants.width, constants.height))
+        draw      = ImageDraw.Draw(image)
+        draw.rectangle((0, 0, width, height), fill=black)
+        self.base.matrix.SetImage(image, 0, 0)
 
     def draw(self):
         image     = Image.new('RGB', (constants.width, constants.height))
         draw      = ImageDraw.Draw(image)
 
         for dirs,direction in enumerate(self.train_data):
-            self.base.matrix.Clear()
-            time.sleep(int(self.config["settings"]["transition_time"]))
+            time.sleep(self.config["settings"]["transition_time"])
+ -          self.drawClear()
             for row in [0, 1]:
 
                 self.data = self.train_data[direction][row]
@@ -132,4 +137,5 @@ class train:
 
                     draw.point((constants.width - 9, 6), fill=constants.black)
                     draw.point((constants.width - 9, 22), fill=constants.black)
+
             self.base.matrix.SetImage(image, 0, 0)
