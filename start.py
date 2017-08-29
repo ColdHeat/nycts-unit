@@ -129,40 +129,39 @@ while True:
         else:
             os.system('reboot now')
 
-    transition_time = int(b.config["settings"]["transition_time"])
 
     ##### BOOT SCREEN #####
     try:
         swap.Clear()
         adScreen.draw()
-        time.sleep(transition_time)
+        time.sleep(b.getTransitionTime())
 
     ##### CUSTOM TEXT SCREEN #####
         swap.Clear()
         customTextScreen.draw()
-        time.sleep(transition_time)
+        time.sleep(b.getTransitionTime())
 
     ##### WEATHER SCREEN #####
         swap.Clear()
         weatherScreen.draw()
-        time.sleep(transition_time)
+        time.sleep(b.getTransitionTime())
 
     ##### TRAIN SCREEN SOUTH #####
 
         swap.Clear()
         trainScreen.draw('S')
-        time.sleep(transition_time)
+        time.sleep(b.getTransitionTime())
 
     ##### TRAIN SCREEN NORTH #####
 
         swap.Clear()
         trainScreen.draw('N')
-        time.sleep(transition_time)
+        time.sleep(b.getTransitionTime())
 
     #### LOGO #####
         swap.Clear()
         logoScreen.draw()
-        time.sleep(transition_time)
+        time.sleep(b.getTransitionTime())
 
 
 ##### EXCEPTION SCREEN #####

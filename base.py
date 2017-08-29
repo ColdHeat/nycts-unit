@@ -66,6 +66,8 @@ class base:
         else:
             config = json.loads(result.read())
         return config
+    def getTransitionTime(self):
+        return self.config["settings"]["transition_time"]
     # Set polling interval (seconds) -------------------------------------
     @staticmethod
     def setInterval(i):
