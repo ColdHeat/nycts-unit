@@ -30,8 +30,7 @@ class base:
         while True:
 
             parsed = base.req(self.client)
-            config = base.getConfig()
-            self.config = config
+            self.config = self.getConfig()
             self.matrix.brightness = int(config["settings"]["brightness"])
 
             if parsed is None: return     # Connection error
@@ -56,8 +55,7 @@ class base:
         except Exception,e: print "errr" + str(e)
         finally:
             return parsed
-    @staticmethod
-    def getConfig():
+    def getConfig(self):
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
