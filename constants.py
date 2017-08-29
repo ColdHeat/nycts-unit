@@ -1,3 +1,11 @@
+import os
+import ImageFont
+
+width          = 128
+height         = 32
+
+font      = ImageFont.load(os.path.dirname(os.path.realpath(__file__)) + '/helvR08.pil')
+
 black     = (0,     0, 0)
 blue      = (0, 200, 255)
 green     = (0,   255, 0)
