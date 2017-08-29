@@ -92,7 +92,7 @@ class train:
                 numLabel = str(row + 1) + '. '
                 numLabelW = constants.font.getsize(numLabel)[0]
 
-                minPos = width - constants.font.getsize(minLabel)[0] - 3
+                minPos = constants.width - constants.font.getsize(minLabel)[0] - 3
 
                 circleXoffset = fontXoffset + numLabelW
                 circleYoffset = yOff + 1;
@@ -114,8 +114,8 @@ class train:
                     draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
                     draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
 
-                    draw.point((width - 12, 6), fill=constants.black)
-                    draw.point((width - 12, 22), fill=constants.black)
+                    draw.point((constants.width - 12, 6), fill=constants.black)
+                    draw.point((constants.width - 12, 22), fill=constants.black)
 
                 else:
                     draw.text((fontXoffset, fontYoffset), numLabel, font=constants.font, fill=constants.green)
