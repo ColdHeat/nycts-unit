@@ -137,4 +137,4 @@ class train:
 
             self.base.matrix.SetImage(image, 0, 0)
             time.sleep(int(self.config["settings"]["transition_time"]))
-            this.swap.Clear()
+            self.swap.Clear()
