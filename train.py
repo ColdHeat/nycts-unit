@@ -74,7 +74,7 @@ class train:
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
-            minLabel = mins + 'mIn'
+            minLabel = 'mIn'
             dirLabel = '  ' + self.data['term']
 
             nums = self.data['line']
