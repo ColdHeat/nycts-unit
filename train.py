@@ -127,7 +127,7 @@ class train:
             draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
             draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=constants.font, fill=constants.black)
             draw.text((circleXend, fontYoffset), dirLabel, font=constants.font, fill=constants.green)
-            draw.text((minPos, fontYoffset), minLabel, font=constants.font, fill=constants.green)
+            draw.text((minPos, fontYoffset), minLabel, font=constants.font, fill=constants.orange)
 
             draw.point((constants.width - 9, 6), fill=constants.black)
             draw.point((constants.width - 9, 22), fill=constants.black)
