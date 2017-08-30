@@ -33,3 +33,4 @@ class logo:
                 self.pic.thumbnail((128,32), Image.ANTIALIAS)
 
         self.base.matrix.SetImage(self.pic.convert('RGB'), 0, 0)
+        time.sleep(self.base.getTransitionTime())

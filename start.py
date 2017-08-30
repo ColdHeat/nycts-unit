@@ -69,32 +69,26 @@ while True:
     try:
         swap.Clear()
         adScreen.draw()
-        time.sleep(b.getTransitionTime())
 
     ##### CUSTOM TEXT SCREEN #####
         swap.Clear()
         customTextScreen.draw()
-        time.sleep(b.getTransitionTime())
 
     ##### WEATHER SCREEN #####
         swap.Clear()
         weatherScreen.draw()
-        time.sleep(b.getTransitionTime())
 
     ##### TRAIN SCREEN SOUTH #####
         swap.Clear()
         trainScreen.draw('S')
-        time.sleep(b.getTransitionTime())
 
     ##### TRAIN SCREEN NORTH #####
         swap.Clear()
         trainScreen.draw('N')
-        time.sleep(b.getTransitionTime())
 
     #### LOGO #####
         swap.Clear()
         logoScreen.draw()
-        time.sleep(b.getTransitionTime())
 
 ##### EXCEPTION SCREEN #####
     except Exception as e:

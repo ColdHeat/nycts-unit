@@ -48,3 +48,4 @@ class weather:
         draw.text((2, 16), '& ' + self.weather["conditions"] + ' OUTSIDE', font=constants.font, fill=constants.green)
 
         self.base.matrix.SetImage(image, 0, 0)
+        time.sleep(self.base.getTransitionTime())

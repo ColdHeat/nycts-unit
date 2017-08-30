@@ -20,3 +20,4 @@ class customtext:
         draw.text((2, 0), self.config["customtext"]["line_1"] , font=constants.font, fill=constants.red)
         draw.text((2, 16), self.config["customtext"]["line_2"] , font=constants.font, fill=constants.blue)
         self.base.matrix.SetImage(image, 0, 0)
+        time.sleep(self.base.getTransitionTime())

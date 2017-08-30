@@ -34,3 +34,4 @@ class ad:
             draw.text((2, 16), '@' , font=constants.font, fill=constants.green)
             draw.text((12, 16), 'n y c t r a i n s i g n' , font=constants.font, fill=constants.orange)
         self.base.matrix.SetImage(image, 0, 0)
+        time.sleep(self.base.getTransitionTime())
