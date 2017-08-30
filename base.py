@@ -3,6 +3,7 @@ import time
 import urllib
 import json
 import urllib2
+import os
 
 from rgbmatrix import RGBMatrix
 
@@ -10,14 +11,14 @@ class base:
     interval  = 3 # Default polling interval = 2 minutes
     initSleep = 0   # Stagger polling threads to avoid load spikes
 
-    def __init__(self, client):
+    def __init__(self):
         self.matrix = RGBMatrix(32, 4)
         self.line = "#"
         self.power = 'on'
         self.matrix.brightness = 50
-        self.client        = client
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
+        self.client        = self.config["settings"]["client_id"]
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
@@ -32,6 +33,20 @@ class base:
             parsed = base.req(self.client)
             self.config = self.getConfig()
             self.matrix.brightness = int(self.config["settings"]["brightness"])
+
+            if self.config["settings"]["reboot"] == True:
+                baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
+                try:
+                    result = urllib2.urlopen(baseurl)
+                    # logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
+                except urllib2.URLError as e:
+                    error_message = e.reason
+                    print error_message
+                    # logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
+                else:
+                    os.system('reboot now')
+
+
 
             if parsed is None: return     # Connection error
 
