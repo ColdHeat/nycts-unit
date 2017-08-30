@@ -124,11 +124,12 @@ class train:
 
             #else:
             minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
+            timeOffset = minOffset - constants.font.getsize(mins)[0]
             #draw.text((fontXoffset, fontYoffset), numLabel, font=constants.font, fill=constants.green)
             draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
             draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=constants.font, fill=constants.black)
             draw.text((circleXend, fontYoffset), dirLabel, font=constants.font, fill=constants.green)
-            draw.text((minPos, fontYoffset), mins, font=constants.font, fill=constants.orange)
+            draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
             draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
 
             draw.point((constants.width - 9, 6), fill=constants.black)
