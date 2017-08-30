@@ -105,32 +105,32 @@ class train:
             circleXend = circleXoffset + 8
             circleYend = circleYoffset + 8
 
-            if self.data['line'] == 'L':
-                dirOffset = 26
-                lLabel = 'L '
-                minLabel = 'MIn'
-                lOffset = 4
-                minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
-                timeOffset = minOffset - constants.font.getsize(mins)[0]
+            #if self.data['line'] == 'L':
+            #    dirOffset = 26
+            #    lLabel = 'L '
+            #    minLabel = 'MIn'
+            #    lOffset = 4
+            #    minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
+            #    timeOffset = minOffset - constants.font.getsize(mins)[0]
 
-                draw.text((lOffset, 0 + fontYoffset), lLabel, font=constants.font, fill=constants.orange)
-                draw.text((fontXoffset + dirOffset, 0 + fontYoffset), dirLabel, font=constants.font, fill=constants.green)
+            #    draw.text((lOffset, 0 + fontYoffset), lLabel, font=constants.font, fill=constants.orange)
+            #    draw.text((fontXoffset + dirOffset, 0 + fontYoffset), dirLabel, font=constants.font, fill=constants.green)
 
-                draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
-                draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
+            #    draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
+            #    draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
 
-                draw.point((constants.width - 12, 6), fill=constants.black)
-                draw.point((constants.width - 12, 22), fill=constants.black)
+            #    draw.point((constants.width - 12, 6), fill=constants.black)
+            #    draw.point((constants.width - 12, 22), fill=constants.black)
 
-            else:
-                draw.text((fontXoffset, fontYoffset), numLabel, font=constants.font, fill=constants.green)
-                draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=constants.circleColor)
-                draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=constants.font, fill=constants.black)
-                draw.text((circleXend, fontYoffset), dirLabel, font=constants.font, fill=constants.green)
-                draw.text((minPos, fontYoffset), minLabel, font=constants.font, fill=constants.green)
+            #else:
+            #draw.text((fontXoffset, fontYoffset), numLabel, font=constants.font, fill=constants.green)
+            draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
+            draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=constants.font, fill=constants.black)
+            draw.text((circleXend, fontYoffset), dirLabel, font=constants.font, fill=constants.green)
+            draw.text((minPos, fontYoffset), minLabel, font=constants.font, fill=constants.green)
 
-                draw.point((constants.width - 9, 6), fill=constants.black)
-                draw.point((constants.width - 9, 22), fill=constants.black)
+            draw.point((constants.width - 9, 6), fill=constants.black)
+            draw.point((constants.width - 9, 22), fill=constants.black)
 
         self.base.matrix.SetImage(image, 0, 0)
         time.sleep(self.base.getTransitionTime())
