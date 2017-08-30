@@ -72,23 +72,25 @@ while True:
 
     ##### CUSTOM TEXT SCREEN #####
         swap.Clear()
-        customTextScreen.draw()
+        if b.config["customtext"]["enabled"] == True:
+            customTextScreen.draw()
 
     ##### WEATHER SCREEN #####
         swap.Clear()
-        weatherScreen.draw()
+        if b.config["weather"]["enabled"] == True:
+            weatherScreen.draw()
 
     ##### TRAIN SCREEN SOUTH #####
         swap.Clear()
-        trainScreen.draw('S')
-
-    ##### TRAIN SCREEN NORTH #####
-        swap.Clear()
-        trainScreen.draw('N')
+        if b.config["subway"]["enabled"] == True:
+            trainScreen.draw('S')
+            swap.Clear()
+            trainScreen.draw('N')
 
     #### LOGO #####
         swap.Clear()
-        logoScreen.draw()
+        if b.config["logo"]["enabled"] == True:
+            logoScreen.draw()
 
 ##### EXCEPTION SCREEN #####
     except Exception as e:
