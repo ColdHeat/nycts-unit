@@ -31,8 +31,8 @@ class weather:
             response = requests.request("GET", url, headers=headers, params=querystring)
 
             data = json.loads(response.text)
-            self.weather["weather"] = data['data']['temperature']
-            self.weather["conditions"] = data['data']['summary'].upper()
+            self.weather["weather"] = str(data['data']['temperature'])
+            self.weather["conditions"] = str(data['data']['summary']).upper()
 
             time.sleep(5)
 
