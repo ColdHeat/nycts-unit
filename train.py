@@ -41,8 +41,6 @@ class train:
                     self.start = time.time()
                     end = time.time()
 
-                parsed = self.train_data
-
                 if len(mins) < 3:
                     if self.data['min'] <= 0:
                         mins = str((int(self.data['min']) + 6))
@@ -105,24 +103,6 @@ class train:
             circleXend = circleXoffset + 8
             circleYend = circleYoffset + 8
 
-            #if self.data['line'] == 'L':
-            #    dirOffset = 26
-            #    lLabel = 'L '
-            #    minLabel = 'MIn'
-            #    lOffset = 4
-            #    minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
-            #    timeOffset = minOffset - constants.font.getsize(mins)[0]
-
-            #    draw.text((lOffset, 0 + fontYoffset), lLabel, font=constants.font, fill=constants.orange)
-            #    draw.text((fontXoffset + dirOffset, 0 + fontYoffset), dirLabel, font=constants.font, fill=constants.green)
-
-            #    draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
-            #    draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
-
-            #    draw.point((constants.width - 12, 6), fill=constants.black)
-            #    draw.point((constants.width - 12, 22), fill=constants.black)
-
-            #else:
             minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
             timeOffset = minOffset - constants.font.getsize(mins)[0]
             #draw.text((fontXoffset, fontYoffset), numLabel, font=constants.font, fill=constants.green)

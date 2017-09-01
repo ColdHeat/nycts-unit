@@ -21,22 +21,17 @@ class weather:
     def thread(self):
         while True:
             self.config = self.base.config
-            baseurl = "https://query.yahooapis.com/v1/public/yql?"
-            yql_query = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + self.config["weather"]["zip_code"] + "')"
-            yql_url = baseurl + urllib.urlencode({'q':yql_query}) + "&format=json"
+            baseurl = "https://api.trainsignapi.com/dev-weather/weatherInfo?zipCode=11237"
             try:
-                result = urllib2.urlopen(yql_url, timeout=5)
+                result = urllib2.urlopen(baseurl, timeout=5)
                 # logger.info('Weather Screen', extra={'status': 1, 'job': 'weather_screen'})
             except urllib2.URLError as e:
                 error_message = e.reason
                 # logger.info('Weather Screen', extra={'status': 0, 'job': 'weather_screen'})
             else:
                 data = json.loads(result.read())
-                weather = data['query']['results']['channel']['item']['condition']['temp']
-                conditions = data['query']['results']['channel']['item']['condition']['text'].upper()
-
-                self.weather['weather'] = weather
-                self.weather['conditions'] = conditions
+                self.weather = data['data']['temperature']
+                self.conditions = data['data']['summary'].upper()
 
             time.sleep(5)
 
