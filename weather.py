@@ -22,9 +22,9 @@ class weather:
         while True:
             self.config = self.base.config
 
-            url = "https://api.trainsignapi.com/dev-weather/weatherInfo"
+            url = "https://api.trainsignapi.com/dev-weather/zipCode/11216"
 
-            querystring = {"zipCode":"11237","":""}
+            querystring = {"":""}
 
             headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
 
