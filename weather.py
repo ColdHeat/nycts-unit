@@ -6,7 +6,7 @@ import urllib2
 import Image
 import ImageDraw
 import constants
-
+import requests
 class weather:
 
     def __init__(self, base):
@@ -21,6 +21,16 @@ class weather:
     def thread(self):
         while True:
             self.config = self.base.config
+
+            url = "https://api.trainsignapi.com/dev-weather/weatherInfo"
+
+            querystring = {"zipCode":"11237","":""}
+
+            headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
+
+            response = requests.request("GET", url, headers=headers, params=querystring)
+
+            print(response.text)
             baseurl = "https://api.trainsignapi.com/dev-weather/weatherInfo?zipCode=11237"
             try:
                 result = urllib2.urlopen(baseurl, timeout=5)
