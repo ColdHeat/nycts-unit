@@ -27,6 +27,7 @@ class weather:
                 # logger.info('Weather Screen', extra={'status': 1, 'job': 'weather_screen'})
             except urllib2.URLError as e:
                 error_message = e.reason
+                print e
                 # logger.info('Weather Screen', extra={'status': 0, 'job': 'weather_screen'})
             else:
                 data = json.loads(result.read())
