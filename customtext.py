@@ -6,6 +6,7 @@ import urllib2
 import Image
 import ImageDraw
 import constants
+import logs
 
 class customtext:
 
@@ -19,5 +20,8 @@ class customtext:
         draw  = ImageDraw.Draw(image)
         draw.text((2, 0), self.config["customtext"]["line_1"] , font=constants.font, fill=constants.red)
         draw.text((2, 16), self.config["customtext"]["line_2"] , font=constants.font, fill=constants.blue)
+
+        logs.logger.info('Custom text module', extra={'status': 1, 'job': 'custom_text_module'})
+
         self.base.matrix.SetImage(image, 0, 0)
         time.sleep(self.base.getTransitionTime())

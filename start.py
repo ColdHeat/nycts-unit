@@ -7,7 +7,6 @@ import time
 import signal
 import logging
 import json
-import json_log_formatter
 from base import base
 from weather import weather
 from customtext import customtext
@@ -15,16 +14,7 @@ from logo import logo
 from ad import ad
 from train import train
 import constants
-
-### LOGGING ###
-# formatter = json_log_formatter.JSONFormatter()
-# json_handler = logging.FileHandler(filename='./device_logs/logs.json')
-# json_handler.setFormatter(formatter)
-#
-# logger = logging.getLogger('log')
-# logger.addHandler(json_handler)
-# logger.setLevel(logging.INFO)
-# logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
+import logs
 
 b = base()
 swap = b.matrix.CreateFrameCanvas()
@@ -95,6 +85,6 @@ while True:
 ##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
-        # logger.info('Boot Screen', extra={'status': 1, 'job': 'boot_screen'})
+        logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen'})
         displayError(e)
         pass

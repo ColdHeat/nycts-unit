@@ -6,6 +6,7 @@ import urllib2
 import Image
 import ImageDraw
 import constants
+import logs
 
 class logo:
 
@@ -15,18 +16,16 @@ class logo:
         self.pic = Image.open("./api/uploads/" + self.config["logo"]["image_file"])
         self.pic.thumbnail((128,32), Image.ANTIALIAS)
 
-
     def draw(self):
         self.config = self.base.config
         if self.config["logo"]["updated"] == True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
             try:
                 result = urllib2.urlopen(baseurl, timeout = 5)
-                # logger.info('API Logo Updated', extra={'status': 1, 'job': 'api_logo_update'})
+                logs.logger.info('API logo module', extra={'status': 1, 'job': 'api_logo_update'})
             except urllib2.URLError as e:
                 error_message = e.reason
-                print error_message
-                # logger.info('API Logo Updated', extra={'status': 0, 'job': 'api_logo_update'})
+                logs.logger.info('API logo module', extra={'status': 0, 'job': 'api_logo_update'})
             else:
                 self.pic = Image.open("./api/uploads/" + self.config["logo"]["image_file"])
                 self.pic = self.pic.convert('RGB')

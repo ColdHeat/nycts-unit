@@ -13,3 +13,6 @@ grey      = (90,90,90)
 orange    = (255, 100, 0)
 red       = (255,   0, 0)
 yellow    = (252, 203, 7)
+
+dev_api_url = "https://api.trainsignapi.com/dev"
+prod_api_url = "https://api.trainsignapi.com/prod"

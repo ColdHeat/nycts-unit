@@ -7,6 +7,7 @@ import Image
 import ImageDraw
 import constants
 import math
+import logs
 
 
 class train:
@@ -26,13 +27,13 @@ class train:
         while True:
             try:
                 connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])
-                # logger.info('Train Screen', extra={'status': 1, 'job': 'train_screen'})
+                logs.logger.info('Train module', extra={'status': 1, 'job': 'train_module'})
                 raw = connection.read()
                 parsed = json.loads(raw)
                 connection.close()
                 self.train_data = parsed
             except Exception as e:
-
+                logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', 'error': error_message})
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)
@@ -48,9 +49,8 @@ class train:
                     else:
                         mins = str((int(self.data['min']) - int(time_difference)/ 60))
                         self.data['min'] = int(mins)
-
                 error_message = e.reason
-                #logger.info('Train Screen', extra={'status': 0, 'job': 'train_screen', 'error': error_message})
+
 
             time.sleep(5)
     def drawClear(self):
@@ -105,7 +105,6 @@ class train:
 
             minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
             timeOffset = minOffset - constants.font.getsize(mins)[0]
-            #draw.text((fontXoffset, fontYoffset), numLabel, font=constants.font, fill=constants.green)
             draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
             draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=constants.font, fill=constants.black)
             draw.text((circleXend, fontYoffset), dirLabel, font=constants.font, fill=constants.green)
