@@ -3,7 +3,7 @@ import json
 import json_log_formatter
 
 formatter = json_log_formatter.JSONFormatter()
-json_handler = logging.FileHandler(filename='/logs/logs.json')
+json_handler = logging.FileHandler(filename='logs/logs.json')
 json_handler.setFormatter(formatter)
 
 logger = logging.getLogger('log')
