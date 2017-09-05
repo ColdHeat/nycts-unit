@@ -33,7 +33,7 @@ class train:
                 connection.close()
                 self.train_data = parsed
             except Exception as e:
-                logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', 'error': error_message})
+                logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)
