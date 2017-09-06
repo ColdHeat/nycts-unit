@@ -4,7 +4,7 @@ url = "https://api.trainsignapi.com/dev-logs/logs/29/upload"
 
 querystring = {"clientId":"29"}
 
-payload = ""
+payload = "~/nycts-unit/logs/logs.json"
 
 headers = {
     'content-type': "application/octet-stream",

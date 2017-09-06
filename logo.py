@@ -20,9 +20,9 @@ class logo:
         self.config = self.base.config
         if self.config["logo"]["updated"] == True:
             baseurl = "http://127.0.0.1:3000/setConfig/logo/updated/false"
+            logs.logger.info('API logo module', extra={'status': 1, 'job': 'api_logo_update'})
             try:
-                result = urllib2.urlopen(baseurl, timeout = 5)
-                logs.logger.info('API logo module', extra={'status': 1, 'job': 'api_logo_update'})
+                result = urllib2.urlopen(baseurl, timeout = 5)                
             except urllib2.URLError as e:
                 error_message = e.reason
                 logs.logger.info('API logo module', extra={'status': 0, 'job': 'api_logo_update'})
