@@ -7,6 +7,8 @@ import time
 import signal
 import logging
 import json
+import psutil
+import subprocess
 from base import base
 from weather import weather
 from customtext import customtext
