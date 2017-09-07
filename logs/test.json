@@ -1,0 +1,1261 @@
+{"status": 1, "job": "boot_screen", "message": "Booting Up", "time": "2017-08-29T03:03:35.990144"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:03:36.118712"}
+{"status": 1, "job": "boot_screen", "message": "Booting Up", "time": "2017-08-29T03:06:42.648122"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:06:42.775631"}
+{"status": 1, "job": "boot_screen", "message": "Booting Up", "time": "2017-08-29T03:07:31.002353"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:07:31.130787"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:07:31.250569"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:07:31.259587"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:07:49.738270"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:07:59.037295"}
+{"percentage": 17.5, "message": "CPU", "time": "2017-08-29T03:08:36.086976"}
+{"percentage": 11.4, "message": "Virtual Memory", "time": "2017-08-29T03:08:36.089015"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:08:36.090405"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:08:36.091169"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:08:36.109057"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:08:36.118273"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:08:36.121608"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:08:54.424396"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:09:03.729146"}
+{"percentage": 15.2, "message": "CPU", "time": "2017-08-29T03:09:40.777053"}
+{"percentage": 11.7, "message": "Virtual Memory", "time": "2017-08-29T03:09:40.779668"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:09:40.781685"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:09:40.783145"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:09:40.809142"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:09:40.834222"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:09:40.838249"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:09:59.064576"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:10:08.341878"}
+{"percentage": 15.6, "message": "CPU", "time": "2017-08-29T03:10:45.387100"}
+{"percentage": 11.6, "message": "Virtual Memory", "time": "2017-08-29T03:10:45.390200"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:10:45.392808"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:10:45.401618"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:10:45.427754"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:10:45.438050"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:10:45.441870"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:11:03.724941"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:11:13.009991"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T03:11:50.066989"}
+{"percentage": 11.7, "message": "Virtual Memory", "time": "2017-08-29T03:11:50.069332"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:11:50.071167"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:11:50.072510"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:11:50.091160"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:11:50.103945"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:11:50.115091"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:12:08.369331"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:12:17.650131"}
+{"percentage": 18.9, "message": "CPU", "time": "2017-08-29T03:12:54.693996"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:12:54.696060"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:12:54.697453"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:12:54.698213"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:12:54.721090"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:12:54.730401"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:12:54.734368"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:13:12.972406"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:13:22.262542"}
+{"percentage": 16.8, "message": "CPU", "time": "2017-08-29T03:13:59.322170"}
+{"percentage": 12.0, "message": "Virtual Memory", "time": "2017-08-29T03:13:59.325431"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:13:59.329750"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:13:59.330716"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:13:59.355599"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:13:59.364171"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:13:59.367655"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:14:17.695034"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:14:27.204558"}
+{"percentage": 15.8, "message": "CPU", "time": "2017-08-29T03:15:04.264177"}
+{"percentage": 11.8, "message": "Virtual Memory", "time": "2017-08-29T03:15:04.266107"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:15:04.267536"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:15:04.268309"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:15:04.287650"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:15:04.296127"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:15:04.299492"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:15:22.550906"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:15:31.826588"}
+{"percentage": 20.2, "message": "CPU", "time": "2017-08-29T03:16:08.884993"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:16:08.886906"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:16:08.888307"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:16:08.889068"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:16:08.908892"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:16:08.918499"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:16:08.921783"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:16:27.150354"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:16:36.445055"}
+{"percentage": 17.3, "message": "CPU", "time": "2017-08-29T03:17:13.503774"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:17:13.505757"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:17:13.507204"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:17:13.507984"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:17:13.533142"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:17:13.541928"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:17:13.545467"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:17:31.766960"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:17:41.043949"}
+{"percentage": 16.7, "message": "CPU", "time": "2017-08-29T03:18:18.102547"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:18:18.104575"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:18:18.106016"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:18:18.106801"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:18:18.132340"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:18:18.141075"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:18:18.144573"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:18:36.413192"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:18:45.699435"}
+{"percentage": 18.3, "message": "CPU", "time": "2017-08-29T03:19:22.758025"}
+{"percentage": 12.0, "message": "Virtual Memory", "time": "2017-08-29T03:19:22.759933"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:19:22.761323"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:19:22.762107"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:19:22.783137"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:19:22.791641"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:19:22.795154"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:19:41.030953"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:19:50.302780"}
+{"percentage": 14.9, "message": "CPU", "time": "2017-08-29T03:20:27.369930"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T03:20:27.371870"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:20:27.373460"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:20:27.374318"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:20:27.395273"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:20:27.404354"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:20:27.407743"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:20:45.643711"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:20:54.937071"}
+{"percentage": 15.0, "message": "CPU", "time": "2017-08-29T03:21:31.997083"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T03:21:31.999020"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:21:32.000446"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:21:32.001302"}
+{"message": "Device Temp", "temp": "122 F", "time": "2017-08-29T03:21:32.026983"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:21:32.035698"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:21:32.039034"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:21:50.286709"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:21:59.560215"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T03:22:36.619518"}
+{"percentage": 12.0, "message": "Virtual Memory", "time": "2017-08-29T03:22:36.621517"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:22:36.622894"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:22:36.623786"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:22:36.648634"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:22:36.657129"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:22:36.660520"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:22:54.905704"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:23:04.413704"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T03:23:41.473883"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T03:23:41.475824"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:23:41.477239"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:23:41.478001"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:23:41.497387"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:23:41.507623"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:23:41.512229"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:23:59.772992"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:24:09.045409"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T03:24:46.104087"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T03:24:46.106038"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:24:46.107449"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:24:46.108205"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:24:46.133547"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:24:46.142152"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:24:46.145681"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:25:04.388837"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:25:13.663494"}
+{"percentage": 17.9, "message": "CPU", "time": "2017-08-29T03:25:50.721901"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T03:25:50.723966"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:25:50.725447"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:25:50.726246"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:25:50.751895"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:25:50.760300"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:25:50.763797"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:26:09.058363"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:26:18.352559"}
+{"percentage": 16.7, "message": "CPU", "time": "2017-08-29T03:26:55.412866"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T03:26:55.417863"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:26:55.422084"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:26:55.424105"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:26:55.446942"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:26:55.455115"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:26:55.458543"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:27:13.737677"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:27:23.016251"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T03:28:00.076916"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T03:28:00.078876"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:28:00.080290"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:28:00.081058"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:28:00.099782"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:28:00.108444"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:28:00.111901"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:28:18.346622"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:28:27.648229"}
+{"percentage": 15.9, "message": "CPU", "time": "2017-08-29T03:29:04.708014"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T03:29:04.709993"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:29:04.711384"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:29:04.712155"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:29:04.745644"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:29:04.754705"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:29:04.758017"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:29:22.984462"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:29:32.261694"}
+{"percentage": 14.9, "message": "CPU", "time": "2017-08-29T03:30:09.303910"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T03:30:09.305890"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:30:09.307301"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:30:09.308067"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:30:09.328868"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:30:09.338581"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:30:09.342028"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:30:27.769926"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:30:37.086886"}
+{"percentage": 15.6, "message": "CPU", "time": "2017-08-29T03:31:14.127093"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T03:31:14.129034"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:31:14.130449"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:31:14.131241"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:31:14.156659"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:31:14.166173"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:31:14.169561"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:31:32.432353"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:31:41.693476"}
+{"percentage": 14.2, "message": "CPU", "time": "2017-08-29T03:32:18.748396"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T03:32:18.750404"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:32:18.751787"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:32:18.752538"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:32:18.771604"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:32:18.779951"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:32:18.783411"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:32:37.041397"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:32:46.310139"}
+{"percentage": 18.2, "message": "CPU", "time": "2017-08-29T03:33:23.361957"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T03:33:23.364121"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:33:23.365624"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:33:23.366399"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:33:23.386579"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:33:23.395138"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:33:23.398455"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:33:41.648314"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:33:50.920859"}
+{"percentage": 18.0, "message": "CPU", "time": "2017-08-29T03:34:27.979205"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T03:34:27.981075"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:34:27.982472"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:34:27.983313"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:34:28.001581"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:34:28.010060"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:34:28.013561"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:34:46.257418"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:34:55.524463"}
+{"percentage": 17.6, "message": "CPU", "time": "2017-08-29T03:35:32.567287"}
+{"percentage": 12.6, "message": "Virtual Memory", "time": "2017-08-29T03:35:32.569449"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:35:32.571275"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:35:32.572186"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:35:32.594655"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:35:32.606245"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:35:32.609925"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:35:50.841162"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:36:00.291740"}
+{"percentage": 17.7, "message": "CPU", "time": "2017-08-29T03:36:37.337046"}
+{"percentage": 11.5, "message": "Virtual Memory", "time": "2017-08-29T03:36:37.339012"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:36:37.340398"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:36:37.341180"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:36:37.366872"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:36:37.376005"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:36:37.380058"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:36:55.635475"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:37:04.894066"}
+{"percentage": 20.3, "message": "CPU", "time": "2017-08-29T03:37:41.952856"}
+{"percentage": 11.6, "message": "Virtual Memory", "time": "2017-08-29T03:37:41.955115"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:37:41.956634"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:37:41.957413"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:37:41.975218"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:37:41.985585"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:37:41.989192"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:38:00.283647"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:38:09.553526"}
+{"percentage": 16.7, "message": "CPU", "time": "2017-08-29T03:38:46.603959"}
+{"percentage": 11.6, "message": "Virtual Memory", "time": "2017-08-29T03:38:46.605930"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:38:46.607326"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:38:46.608077"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:38:46.625690"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:38:46.635198"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:38:46.638544"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:39:04.890439"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:39:14.164729"}
+{"percentage": 16.6, "message": "CPU", "time": "2017-08-29T03:39:51.217160"}
+{"percentage": 11.7, "message": "Virtual Memory", "time": "2017-08-29T03:39:51.219099"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:39:51.220791"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:39:51.221619"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:39:51.247714"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:39:51.256273"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:39:51.259677"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:40:09.551084"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:40:18.828669"}
+{"percentage": 17.7, "message": "CPU", "time": "2017-08-29T03:40:55.879369"}
+{"percentage": 11.7, "message": "Virtual Memory", "time": "2017-08-29T03:40:55.881295"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:40:55.882697"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:40:55.883612"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:40:55.904868"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:40:55.913373"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:40:55.916957"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:41:14.153133"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:41:23.421208"}
+{"percentage": 15.3, "message": "CPU", "time": "2017-08-29T03:42:00.464339"}
+{"percentage": 11.7, "message": "Virtual Memory", "time": "2017-08-29T03:42:00.466343"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:42:00.467802"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:42:00.468564"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:42:00.486346"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:42:00.494889"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:42:00.498358"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:42:18.743472"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:42:28.008706"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T03:43:05.068430"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:43:05.070337"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:43:05.071717"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:43:05.072479"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:43:05.090526"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:43:05.099088"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:43:05.102410"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:43:23.405759"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:43:32.664673"}
+{"percentage": 15.8, "message": "CPU", "time": "2017-08-29T03:44:09.723657"}
+{"percentage": 11.8, "message": "Virtual Memory", "time": "2017-08-29T03:44:09.725632"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:44:09.727040"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:44:09.727794"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:44:09.745460"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:44:09.753798"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:44:09.757351"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:44:28.050898"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:44:37.312642"}
+{"percentage": 18.4, "message": "CPU", "time": "2017-08-29T03:45:14.357121"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:45:14.359097"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:45:14.360473"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:45:14.361223"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:45:14.379210"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:45:14.388693"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:45:14.392005"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:45:32.624027"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:45:42.099923"}
+{"percentage": 15.6, "message": "CPU", "time": "2017-08-29T03:46:19.151474"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:46:19.153656"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:46:19.155276"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:46:19.156055"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:46:19.173851"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:46:19.182051"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:46:19.185538"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:46:37.420174"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:46:46.677041"}
+{"percentage": 17.5, "message": "CPU", "time": "2017-08-29T03:47:23.735533"}
+{"percentage": 11.9, "message": "Virtual Memory", "time": "2017-08-29T03:47:23.737525"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:47:23.738951"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:47:23.739706"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:47:23.759925"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:47:23.768559"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:47:23.771922"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:47:42.125555"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:47:51.382758"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T03:48:28.426926"}
+{"percentage": 12.0, "message": "Virtual Memory", "time": "2017-08-29T03:48:28.428840"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:48:28.430181"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:48:28.430939"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:48:28.456502"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:48:28.465610"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:48:28.468891"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:48:46.704667"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:48:55.960319"}
+{"percentage": 15.4, "message": "CPU", "time": "2017-08-29T03:49:33.014845"}
+{"percentage": 12.0, "message": "Virtual Memory", "time": "2017-08-29T03:49:33.016757"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:49:33.018139"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:49:33.018911"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:49:33.048526"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:49:33.057435"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:49:33.060742"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:49:51.303180"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:50:00.575094"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T03:50:37.631633"}
+{"percentage": 12.0, "message": "Virtual Memory", "time": "2017-08-29T03:50:37.633775"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:50:37.635325"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:50:37.636336"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:50:37.668072"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:50:37.677117"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:50:37.680403"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:50:55.933493"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:51:05.197309"}
+{"percentage": 15.3, "message": "CPU", "time": "2017-08-29T03:51:42.247105"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T03:51:42.249021"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:51:42.250417"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:51:42.251181"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:51:42.274116"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:51:42.283843"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:51:42.287254"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:52:00.561192"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:52:09.840511"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T03:52:46.883856"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T03:52:46.885757"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:52:46.887169"}
+{"percentage": 34.3, "message": "Disk Usage", "time": "2017-08-29T03:52:46.887952"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:52:46.907124"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:52:46.915417"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:52:46.918809"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:53:05.161653"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:53:14.430002"}
+{"percentage": 23.0, "message": "CPU", "time": "2017-08-29T03:53:51.475193"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T03:53:51.477408"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:53:51.479564"}
+{"percentage": 34.7, "message": "Disk Usage", "time": "2017-08-29T03:53:51.480828"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T03:53:51.523844"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:53:51.533845"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:53:51.538391"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:54:09.775211"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:54:19.036713"}
+{"percentage": 48.8, "message": "CPU", "time": "2017-08-29T03:54:56.088453"}
+{"percentage": 18.5, "message": "Virtual Memory", "time": "2017-08-29T03:54:56.090399"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:54:56.091777"}
+{"percentage": 35.2, "message": "Disk Usage", "time": "2017-08-29T03:54:56.092534"}
+{"message": "Device Temp", "temp": "125 F", "time": "2017-08-29T03:54:56.121998"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:54:56.140025"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:54:56.144195"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:55:14.463788"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:55:23.725883"}
+{"percentage": 43.9, "message": "CPU", "time": "2017-08-29T03:56:00.796912"}
+{"percentage": 27.0, "message": "Virtual Memory", "time": "2017-08-29T03:56:00.799648"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:56:00.801541"}
+{"percentage": 36.2, "message": "Disk Usage", "time": "2017-08-29T03:56:00.802583"}
+{"message": "Device Temp", "temp": "125 F", "time": "2017-08-29T03:56:00.834890"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:56:00.847457"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:56:00.871133"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:56:19.095007"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:56:28.352458"}
+{"percentage": 42.0, "message": "CPU", "time": "2017-08-29T03:57:05.427349"}
+{"percentage": 21.4, "message": "Virtual Memory", "time": "2017-08-29T03:57:05.430160"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:57:05.432192"}
+{"percentage": 36.4, "message": "Disk Usage", "time": "2017-08-29T03:57:05.433547"}
+{"message": "Device Temp", "temp": "125 F", "time": "2017-08-29T03:57:05.467895"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:57:05.478701"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:57:05.482669"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:57:23.688030"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:57:32.941586"}
+{"percentage": 16.3, "message": "CPU", "time": "2017-08-29T03:58:09.995364"}
+{"percentage": 13.0, "message": "Virtual Memory", "time": "2017-08-29T03:58:09.997269"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:58:09.998711"}
+{"percentage": 36.5, "message": "Disk Usage", "time": "2017-08-29T03:58:09.999457"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:58:10.017149"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:58:10.025888"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:58:10.029202"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:58:28.886072"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:58:38.359231"}
+{"percentage": 16.5, "message": "CPU", "time": "2017-08-29T03:59:15.417724"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T03:59:15.419630"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T03:59:15.421032"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T03:59:15.421877"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T03:59:15.439755"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T03:59:15.448222"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T03:59:15.451611"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T03:59:33.685415"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T03:59:42.948649"}
+{"percentage": 14.9, "message": "CPU", "time": "2017-08-29T04:00:20.001779"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:00:20.003845"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:00:20.005613"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:00:20.006432"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:00:20.032588"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:00:20.045808"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:00:20.049244"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:00:38.290819"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:00:47.552823"}
+{"percentage": 15.9, "message": "CPU", "time": "2017-08-29T04:01:24.604778"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:01:24.606728"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:01:24.608097"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:01:24.608885"}
+{"message": "Device Temp", "temp": "120 F", "time": "2017-08-29T04:01:24.626455"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:01:24.636656"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:01:24.639991"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:01:42.918251"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:01:52.191127"}
+{"percentage": 16.3, "message": "CPU", "time": "2017-08-29T04:02:29.237236"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:02:29.239210"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:02:29.240866"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:02:29.241713"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:02:29.267857"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:02:29.277167"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:02:29.280489"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:02:47.653151"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:02:56.928510"}
+{"percentage": 17.3, "message": "CPU", "time": "2017-08-29T04:03:34.002674"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T04:03:34.006928"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:03:34.008829"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:03:34.009659"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:03:34.032409"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:03:34.040779"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:03:34.044279"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:03:52.297917"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:04:01.561082"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T04:04:38.617757"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:04:38.619802"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:04:38.621193"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:04:38.621944"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:04:38.639758"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:04:38.648758"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:04:38.652124"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:04:57.006072"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:05:06.266043"}
+{"percentage": 18.8, "message": "CPU", "time": "2017-08-29T04:05:43.323870"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:05:43.325780"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:05:43.327177"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:05:43.327957"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:05:43.352637"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:05:43.362122"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:05:43.365647"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:06:01.603325"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:06:10.895060"}
+{"percentage": 15.8, "message": "CPU", "time": "2017-08-29T04:06:47.947037"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:06:47.948917"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:06:47.950265"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:06:47.951017"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:06:47.974115"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:06:47.983585"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:06:47.986899"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:07:06.208817"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:07:15.472739"}
+{"percentage": 16.5, "message": "CPU", "time": "2017-08-29T04:07:52.531209"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:07:52.533088"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:07:52.534669"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:07:52.535459"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:07:52.559213"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:07:52.567482"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:07:52.570824"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:08:10.835110"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:08:20.099750"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T04:08:57.147012"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:08:57.148878"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:08:57.150237"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:08:57.150980"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:08:57.170152"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:08:57.178514"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:08:57.181828"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:09:15.397088"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:09:24.659066"}
+{"percentage": 16.4, "message": "CPU", "time": "2017-08-29T04:10:01.706979"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T04:10:01.708894"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:10:01.710284"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:10:01.711044"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:10:01.730222"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:10:01.739106"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:10:01.745351"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:10:19.997591"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:10:29.252430"}
+{"percentage": 17.7, "message": "CPU", "time": "2017-08-29T04:11:06.297039"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T04:11:06.298968"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:11:06.300333"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:11:06.301095"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:11:06.327134"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:11:06.335512"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:11:06.338916"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:11:24.582034"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:11:33.864766"}
+{"percentage": 16.6, "message": "CPU", "time": "2017-08-29T04:12:10.907067"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:12:10.909249"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:12:10.911226"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:12:10.912119"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:12:10.934494"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:12:10.942848"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:12:10.946631"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:12:29.171993"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:12:38.449695"}
+{"percentage": 15.6, "message": "CPU", "time": "2017-08-29T04:13:15.508611"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:13:15.510536"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:13:15.511934"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:13:15.512697"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:13:15.530935"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:13:15.539378"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:13:15.542766"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:13:33.788099"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:13:43.058690"}
+{"percentage": 17.0, "message": "CPU", "time": "2017-08-29T04:14:20.117633"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:14:20.119530"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:14:20.121056"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:14:20.121824"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:14:20.154793"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:14:20.163848"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:14:20.167205"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:14:38.389764"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:14:47.701082"}
+{"percentage": 15.5, "message": "CPU", "time": "2017-08-29T04:15:24.760510"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:15:24.762513"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:15:24.764030"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:15:24.764870"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:15:24.786879"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:15:24.795303"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:15:24.798640"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:15:43.035977"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:15:52.328160"}
+{"percentage": 16.6, "message": "CPU", "time": "2017-08-29T04:16:29.375167"}
+{"percentage": 12.6, "message": "Virtual Memory", "time": "2017-08-29T04:16:29.377196"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:16:29.378604"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:16:29.379348"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:16:29.396952"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:16:29.405485"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:16:29.408838"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:16:47.922348"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:16:57.184308"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T04:17:34.237016"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T04:17:34.238975"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:17:34.240365"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:17:34.241122"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:17:34.283716"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:17:34.292679"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:17:34.296167"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:17:52.534713"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:18:01.815164"}
+{"percentage": 13.6, "message": "CPU", "time": "2017-08-29T04:18:38.873613"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T04:18:38.875641"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:18:38.877034"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:18:38.877787"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:18:38.897393"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:18:38.905892"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:18:38.909234"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:18:57.141679"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:19:06.639761"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T04:19:43.677012"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:19:43.678951"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:19:43.680338"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:19:43.681123"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:19:43.704444"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:19:43.713659"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:19:43.720940"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:20:02.998948"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:20:12.489709"}
+{"percentage": 16.1, "message": "CPU", "time": "2017-08-29T04:20:49.533802"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:20:49.535897"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:20:49.537315"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:20:49.538080"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:20:49.564116"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:20:49.572507"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:20:49.576176"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:21:07.814568"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:21:17.066488"}
+{"percentage": 19.9, "message": "CPU", "time": "2017-08-29T04:21:54.126359"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:21:54.128270"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:21:54.129652"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:21:54.130431"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:21:54.154611"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:21:54.163370"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:21:54.166819"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:22:12.431188"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:22:21.689064"}
+{"percentage": 15.3, "message": "CPU", "time": "2017-08-29T04:22:58.734712"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:22:58.736624"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:22:58.738023"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:22:58.738811"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:22:58.757969"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:22:58.766370"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:22:58.769715"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:23:17.020036"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:23:26.291183"}
+{"percentage": 17.3, "message": "CPU", "time": "2017-08-29T04:24:03.349690"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:24:03.351542"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:24:03.352892"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:24:03.353866"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:24:03.380578"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:24:03.389628"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:24:03.392955"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:24:21.626786"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:24:30.887918"}
+{"percentage": 14.5, "message": "CPU", "time": "2017-08-29T04:25:07.946497"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T04:25:07.948392"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:25:07.949790"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:25:07.950548"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:25:07.968832"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:25:07.977743"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:25:07.982861"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:25:26.219478"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:25:35.480427"}
+{"percentage": 16.6, "message": "CPU", "time": "2017-08-29T04:26:12.514893"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:26:12.516945"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:26:12.518364"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:26:12.519138"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:26:12.536876"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:26:12.546341"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:26:12.549724"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:26:30.818333"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:26:40.076632"}
+{"percentage": 15.4, "message": "CPU", "time": "2017-08-29T04:27:17.136294"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:27:17.138265"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:27:17.139659"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:27:17.140614"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:27:17.168221"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:27:17.187467"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:27:17.191173"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:27:35.451148"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:27:44.710774"}
+{"percentage": 16.1, "message": "CPU", "time": "2017-08-29T04:28:21.754578"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:28:21.756625"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:28:21.758030"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:28:21.758780"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:28:21.783944"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:28:21.793059"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:28:21.796753"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:28:40.032638"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:28:49.294744"}
+{"percentage": 15.3, "message": "CPU", "time": "2017-08-29T04:29:26.337113"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:29:26.339031"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:29:26.340455"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:29:26.341245"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:29:26.359700"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:29:26.368110"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:29:26.371439"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:29:44.805678"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:29:54.135888"}
+{"percentage": 16.3, "message": "CPU", "time": "2017-08-29T04:30:31.186984"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T04:30:31.188932"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:30:31.190365"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:30:31.191166"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:30:31.217349"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:30:31.226212"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:30:31.230476"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:30:49.456974"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:30:58.705495"}
+{"percentage": 16.7, "message": "CPU", "time": "2017-08-29T04:31:35.746969"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T04:31:35.748856"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:31:35.750249"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:31:35.751045"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:31:35.769452"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:31:35.777596"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:31:35.780972"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:31:54.006107"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:32:03.266830"}
+{"percentage": 17.7, "message": "CPU", "time": "2017-08-29T04:32:40.329996"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:32:40.331926"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:32:40.333414"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:32:40.334231"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:32:40.353137"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:32:40.362374"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:32:40.365811"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:32:58.602263"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:33:08.095783"}
+{"percentage": 16.8, "message": "CPU", "time": "2017-08-29T04:33:45.144936"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:33:45.147009"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:33:45.148403"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:33:45.149154"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:33:45.173853"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:33:45.186505"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:33:45.192482"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:34:03.455099"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:34:12.710547"}
+{"percentage": 16.3, "message": "CPU", "time": "2017-08-29T04:34:49.773454"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T04:34:49.775459"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:34:49.776893"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:34:49.777670"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:34:49.805370"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:34:49.813531"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:34:49.816926"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:35:08.036416"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:35:17.292881"}
+{"percentage": 17.1, "message": "CPU", "time": "2017-08-29T04:35:54.357095"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T04:35:54.358976"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:35:54.360358"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:35:54.361135"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:35:54.379122"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:35:54.388621"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:35:54.391965"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:36:12.625614"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:36:21.880566"}
+{"percentage": 14.9, "message": "CPU", "time": "2017-08-29T04:36:58.923952"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T04:36:58.925889"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:36:58.927280"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:36:58.928032"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:36:58.945892"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:36:58.954243"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:36:58.957713"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:37:17.248401"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:37:26.509154"}
+{"percentage": 13.8, "message": "CPU", "time": "2017-08-29T04:38:03.557512"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T04:38:03.559407"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:38:03.560850"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:38:03.561658"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:38:03.579399"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:38:03.590140"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:38:03.593638"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:38:21.850556"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:38:31.125356"}
+{"percentage": 15.6, "message": "CPU", "time": "2017-08-29T04:39:08.181529"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T04:39:08.183606"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:39:08.185174"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:39:08.185977"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:39:08.203817"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:39:08.211895"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:39:08.215594"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:39:26.449781"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:39:35.708800"}
+{"percentage": 16.6, "message": "CPU", "time": "2017-08-29T04:40:12.764745"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:40:12.766643"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:40:12.768027"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:40:12.768924"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:40:12.788934"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:40:12.797151"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:40:12.800563"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:40:31.136364"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:40:40.385258"}
+{"percentage": 15.5, "message": "CPU", "time": "2017-08-29T04:41:17.432256"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:41:17.434335"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:41:17.435815"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:41:17.436619"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:41:17.454420"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:41:17.462537"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:41:17.466315"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:41:35.689225"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:41:44.943977"}
+{"percentage": 14.3, "message": "CPU", "time": "2017-08-29T04:42:22.002045"}
+{"percentage": 12.6, "message": "Virtual Memory", "time": "2017-08-29T04:42:22.004289"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:42:22.005798"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:42:22.006588"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:42:22.025754"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:42:22.034084"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:42:22.038953"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:42:40.282846"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:42:49.817601"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T04:43:26.863893"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T04:43:26.865870"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:43:26.867301"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:43:26.868064"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:43:26.889187"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:43:26.897807"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:43:26.904191"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:43:45.139574"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:43:54.627108"}
+{"percentage": 15.7, "message": "CPU", "time": "2017-08-29T04:44:31.685528"}
+{"percentage": 12.6, "message": "Virtual Memory", "time": "2017-08-29T04:44:31.687621"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:44:31.689077"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:44:31.689867"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:44:31.708957"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:44:31.717305"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:44:31.720812"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:44:49.969704"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:44:59.219520"}
+{"percentage": 15.9, "message": "CPU", "time": "2017-08-29T04:45:36.277985"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T04:45:36.279995"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:45:36.281431"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:45:36.282226"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:45:36.301295"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:45:36.309572"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:45:36.313030"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:45:54.548245"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:46:03.832308"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T04:46:40.894610"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T04:46:40.896523"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:46:40.897910"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:46:40.898670"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:46:40.924043"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:46:40.936573"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:46:40.940005"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:46:59.423451"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:47:08.679302"}
+{"percentage": 17.9, "message": "CPU", "time": "2017-08-29T04:47:45.744083"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T04:47:45.746230"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:47:45.747714"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:47:45.748710"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:47:45.768851"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:47:45.777315"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:47:45.781854"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:48:04.056099"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:48:13.301027"}
+{"percentage": 16.7, "message": "CPU", "time": "2017-08-29T04:48:50.360982"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:48:50.362903"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:48:50.364524"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:48:50.365353"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:48:50.390902"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:48:50.399687"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:48:50.402995"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:49:08.652536"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:49:17.969861"}
+{"percentage": 19.6, "message": "CPU", "time": "2017-08-29T04:49:55.034484"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:49:55.036545"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:49:55.037985"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:49:55.038760"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:49:55.066301"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:49:55.074517"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:49:55.077859"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:50:13.309023"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:50:22.567096"}
+{"percentage": 15.7, "message": "CPU", "time": "2017-08-29T04:50:59.625561"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:50:59.627597"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:50:59.629218"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:50:59.630354"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:50:59.660584"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:50:59.669297"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:50:59.672659"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:51:18.088346"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:51:27.573464"}
+{"percentage": 17.5, "message": "CPU", "time": "2017-08-29T04:52:04.634771"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T04:52:04.636789"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:52:04.638202"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:52:04.638979"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:52:04.659673"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:52:04.667620"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:52:04.670989"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:52:22.890643"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:52:32.137978"}
+{"percentage": 17.5, "message": "CPU", "time": "2017-08-29T04:53:09.196615"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T04:53:09.198627"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:53:09.200035"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:53:09.200817"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:53:09.219795"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:53:09.228577"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:53:09.231995"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:53:27.462252"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:53:36.719226"}
+{"percentage": 17.3, "message": "CPU", "time": "2017-08-29T04:54:13.763840"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T04:54:13.765917"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:54:13.767347"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:54:13.768131"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:54:13.788638"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:54:13.796947"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:54:13.800290"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:54:32.020345"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:54:41.279079"}
+{"percentage": 15.3, "message": "CPU", "time": "2017-08-29T04:55:18.337770"}
+{"percentage": 13.0, "message": "Virtual Memory", "time": "2017-08-29T04:55:18.339827"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:55:18.341245"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:55:18.342033"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:55:18.367622"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:55:18.375952"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:55:18.379319"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:55:36.629517"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:55:45.878035"}
+{"percentage": 16.7, "message": "CPU", "time": "2017-08-29T04:56:22.937572"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T04:56:22.939977"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:56:22.941753"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:56:22.942893"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:56:22.983552"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:56:23.014134"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:56:23.018075"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:56:41.240101"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:56:50.503823"}
+{"percentage": 15.6, "message": "CPU", "time": "2017-08-29T04:57:27.562996"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:57:27.565332"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:57:27.567174"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:57:27.568328"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:57:27.588874"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:57:27.597658"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:57:27.600978"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:57:45.818710"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:57:55.069857"}
+{"percentage": 14.0, "message": "CPU", "time": "2017-08-29T04:58:32.113908"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T04:58:32.115928"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:58:32.117367"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:58:32.118169"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T04:58:32.139637"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:58:32.148199"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:58:32.151628"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:58:50.465078"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T04:58:59.701121"}
+{"percentage": 17.8, "message": "CPU", "time": "2017-08-29T04:59:36.759716"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T04:59:36.761752"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T04:59:36.764126"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T04:59:36.765102"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T04:59:36.786284"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T04:59:36.794861"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T04:59:36.798233"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T04:59:55.025330"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:00:04.295967"}
+{"percentage": 16.3, "message": "CPU", "time": "2017-08-29T05:00:41.351576"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T05:00:41.353793"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:00:41.355379"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:00:41.356183"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:00:41.377514"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:00:41.385941"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:00:41.389404"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:00:59.622789"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:01:08.914560"}
+{"percentage": 15.2, "message": "CPU", "time": "2017-08-29T05:01:45.973121"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T05:01:45.975224"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:01:45.976757"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:01:45.977600"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:01:46.002938"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:01:46.012125"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:01:46.016169"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:02:04.254906"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:02:13.525461"}
+{"percentage": 14.9, "message": "CPU", "time": "2017-08-29T05:02:50.584085"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T05:02:50.586108"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:02:50.587567"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:02:50.588359"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:02:50.606880"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:02:50.616837"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:02:50.620688"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:03:08.951736"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:03:18.206042"}
+{"percentage": 15.0, "message": "CPU", "time": "2017-08-29T05:03:55.264630"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T05:03:55.266574"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:03:55.267996"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:03:55.268769"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:03:55.294196"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:03:55.302759"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:03:55.306382"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:04:13.549136"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:04:22.804939"}
+{"percentage": 14.4, "message": "CPU", "time": "2017-08-29T05:04:59.863485"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T05:04:59.865567"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:04:59.867035"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:04:59.867828"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:04:59.888988"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:04:59.900442"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:04:59.906196"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:05:18.117163"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:05:27.367141"}
+{"percentage": 13.6, "message": "CPU", "time": "2017-08-29T05:06:04.426079"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:06:04.428119"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:06:04.429561"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:06:04.430343"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:06:04.461618"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:06:04.470726"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:06:04.474174"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:06:22.717355"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:06:31.959938"}
+{"percentage": 15.4, "message": "CPU", "time": "2017-08-29T05:07:09.018667"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:07:09.020637"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:07:09.022051"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:07:09.022818"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:07:09.049455"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:07:09.057988"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:07:09.061497"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:07:27.293529"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:07:36.534820"}
+{"percentage": 15.4, "message": "CPU", "time": "2017-08-29T05:08:13.593598"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:08:13.595547"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:08:13.596972"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:08:13.597744"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:08:13.618629"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:08:13.627089"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:08:13.630531"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:08:31.931578"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:08:41.182142"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T05:09:18.241403"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T05:09:18.244469"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:09:18.248369"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:09:18.249292"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:09:18.270584"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:09:18.278996"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:09:18.282542"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:09:36.505460"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:09:45.746846"}
+{"percentage": 14.7, "message": "CPU", "time": "2017-08-29T05:10:22.805628"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T05:10:22.807559"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:10:22.808957"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:10:22.809723"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:10:22.835106"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:10:22.847769"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:10:22.851201"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:10:41.105172"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:10:50.355450"}
+{"percentage": 14.8, "message": "CPU", "time": "2017-08-29T05:11:27.413991"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T05:11:27.415984"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:11:27.417463"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:11:27.418252"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:11:27.438711"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:11:27.447557"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:11:27.451418"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:11:45.734328"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:11:54.977765"}
+{"percentage": 15.8, "message": "CPU", "time": "2017-08-29T05:12:32.037230"}
+{"percentage": 12.5, "message": "Virtual Memory", "time": "2017-08-29T05:12:32.039165"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:12:32.040593"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:12:32.041384"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:12:32.063497"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:12:32.072134"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:12:32.075591"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:12:50.303039"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:12:59.547917"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T05:13:36.606821"}
+{"percentage": 12.6, "message": "Virtual Memory", "time": "2017-08-29T05:13:36.608862"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:13:36.610274"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:13:36.611051"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:13:36.630065"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:13:36.639026"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:13:36.642976"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:13:54.878926"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:14:04.123286"}
+{"percentage": 16.1, "message": "CPU", "time": "2017-08-29T05:14:41.181842"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T05:14:41.183988"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:14:41.185542"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:14:41.186330"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:14:41.213194"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:14:41.221563"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:14:41.225032"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:14:59.461209"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:15:08.708948"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T05:15:45.772826"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T05:15:45.775020"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:15:45.776525"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:15:45.777294"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:15:45.802755"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:15:45.811576"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:15:45.815146"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:16:04.069062"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:16:13.315372"}
+{"percentage": 17.5, "message": "CPU", "time": "2017-08-29T05:16:50.375916"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T05:16:50.377801"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:16:50.379302"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:16:50.380067"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:16:50.405244"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:16:50.413681"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:16:50.417231"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:17:08.651178"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:17:17.894934"}
+{"percentage": 17.2, "message": "CPU", "time": "2017-08-29T05:17:54.953687"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T05:17:54.955665"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:17:54.957103"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:17:54.957878"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:17:54.983601"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:17:54.992190"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:17:54.995807"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:18:13.219956"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:18:22.463084"}
+{"percentage": 16.8, "message": "CPU", "time": "2017-08-29T05:18:59.521925"}
+{"percentage": 12.7, "message": "Virtual Memory", "time": "2017-08-29T05:18:59.526818"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:18:59.530634"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:18:59.532516"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:18:59.563780"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:18:59.571615"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:18:59.575032"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:19:17.790401"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:19:27.037542"}
+{"percentage": 16.0, "message": "CPU", "time": "2017-08-29T05:20:04.096532"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T05:20:04.098426"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:20:04.099843"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:20:04.100640"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:20:04.119960"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:20:04.128340"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:20:04.131751"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:20:22.375778"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:20:31.619153"}
+{"percentage": 14.8, "message": "CPU", "time": "2017-08-29T05:21:08.679816"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T05:21:08.681720"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:21:08.683127"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:21:08.684086"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:21:08.709429"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:21:08.718411"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:21:08.722415"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:21:26.964030"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:21:36.217625"}
+{"percentage": 15.3, "message": "CPU", "time": "2017-08-29T05:22:13.280979"}
+{"percentage": 12.8, "message": "Virtual Memory", "time": "2017-08-29T05:22:13.286232"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:22:13.289384"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:22:13.293147"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:22:13.318880"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:22:13.327395"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:22:13.330901"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:22:31.571092"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:22:40.824177"}
+{"percentage": 14.7, "message": "CPU", "time": "2017-08-29T05:23:17.882686"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T05:23:17.884996"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:23:17.888704"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:23:17.891956"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:23:17.920004"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:23:17.928728"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:23:17.932131"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:23:36.161829"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:23:45.421704"}
+{"percentage": 17.1, "message": "CPU", "time": "2017-08-29T05:24:22.477068"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T05:24:22.479076"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:24:22.480474"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:24:22.481246"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:24:22.500476"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:24:22.508725"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:24:22.512178"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:24:40.751123"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:24:50.038494"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T05:25:27.091655"}
+{"percentage": 12.9, "message": "Virtual Memory", "time": "2017-08-29T05:25:27.093859"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:25:27.095360"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:25:27.096178"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:25:27.117859"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:25:27.126415"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:25:27.129807"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:25:45.375747"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:25:54.619510"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T05:26:31.667081"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T05:26:31.669055"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:26:31.670453"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:26:31.671222"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:26:31.691368"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:26:31.701285"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:26:31.704772"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:26:49.934774"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:26:59.173097"}
+{"percentage": 17.8, "message": "CPU", "time": "2017-08-29T05:27:36.242539"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T05:27:36.244642"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:27:36.246217"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:27:36.247021"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:27:36.273078"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:27:36.281912"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:27:36.285476"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:27:54.513406"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:28:03.980092"}
+{"percentage": 17.5, "message": "CPU", "time": "2017-08-29T05:28:41.034051"}
+{"percentage": 12.1, "message": "Virtual Memory", "time": "2017-08-29T05:28:41.036001"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:28:41.037403"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:28:41.038190"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:28:41.059334"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:28:41.067939"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:28:41.071339"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:28:59.295616"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:29:08.767462"}
+{"percentage": 15.7, "message": "CPU", "time": "2017-08-29T05:29:45.826001"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T05:29:45.827928"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:29:45.829342"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:29:45.830132"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:29:45.849448"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:29:45.858085"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:29:45.861451"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:30:04.083564"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:30:13.332733"}
+{"percentage": 14.7, "message": "CPU", "time": "2017-08-29T05:30:50.391248"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T05:30:50.393176"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:30:50.394920"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:30:50.395738"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:30:50.429833"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:30:50.437825"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:30:50.441284"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:31:08.678212"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:31:17.927145"}
+{"percentage": 15.1, "message": "CPU", "time": "2017-08-29T05:31:54.977332"}
+{"percentage": 12.3, "message": "Virtual Memory", "time": "2017-08-29T05:31:54.979268"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:31:54.980674"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:31:54.981444"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:31:55.004854"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:31:55.013522"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:31:55.016907"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:32:13.262358"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:32:22.507270"}
+{"percentage": 18.5, "message": "CPU", "time": "2017-08-29T05:32:59.565706"}
+{"percentage": 12.2, "message": "Virtual Memory", "time": "2017-08-29T05:32:59.567641"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:32:59.569155"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:32:59.569939"}
+{"message": "Device Temp", "temp": "118 F", "time": "2017-08-29T05:32:59.595066"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:32:59.603534"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:32:59.607175"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:33:17.844301"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:33:27.084432"}
+{"percentage": 14.5, "message": "CPU", "time": "2017-08-29T05:34:04.127091"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:34:04.129112"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:34:04.130525"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:34:04.131295"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:34:04.150325"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:34:04.158781"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:34:04.162453"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:34:22.408719"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:34:31.670375"}
+{"percentage": 15.2, "message": "CPU", "time": "2017-08-29T05:35:08.730217"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:35:08.732231"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:35:08.733808"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:35:08.734638"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:35:08.760602"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:35:08.769081"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:35:08.772550"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:35:27.027311"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:35:36.273163"}
+{"percentage": 16.2, "message": "CPU", "time": "2017-08-29T05:36:13.331810"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:36:13.334111"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:36:13.335708"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:36:13.336531"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:36:13.358074"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:36:13.366546"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:36:13.371130"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:36:31.618618"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:36:40.874257"}
+{"percentage": 15.8, "message": "CPU", "time": "2017-08-29T05:37:17.924416"}
+{"percentage": 12.4, "message": "Virtual Memory", "time": "2017-08-29T05:37:17.926357"}
+{"percentage": 0.0, "message": "Swap Memory", "time": "2017-08-29T05:37:17.927791"}
+{"percentage": 35.9, "message": "Disk Usage", "time": "2017-08-29T05:37:17.928605"}
+{"message": "Device Temp", "temp": "116 F", "time": "2017-08-29T05:37:17.954058"}
+{"status": 1, "job": "api_config", "message": "API Config", "time": "2017-08-29T05:37:17.962351"}
+{"status": 1, "job": "ip_screen", "message": "IP screen", "time": "2017-08-29T05:37:17.965912"}
+{"status": 1, "job": "weather_screen", "message": "Weather Screen", "time": "2017-08-29T05:37:36.215350"}
+{"status": 1, "job": "train_screen", "message": "Train Screen", "time": "2017-08-29T05:37:45.464320"}

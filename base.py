@@ -4,6 +4,7 @@ import urllib
 import json
 import urllib2
 import os
+from logs import logs
 
 from rgbmatrix import RGBMatrix
 
@@ -15,6 +16,7 @@ class base:
         self.matrix = RGBMatrix(32, 4)
         self.line = "#"
         self.power = 'on'
+        self.logs = logs()
         self.matrix.brightness = 50
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
@@ -38,14 +40,11 @@ class base:
                 baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
                 try:
                     result = urllib2.urlopen(baseurl)
-                    # logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
+                    logs.logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
                 except urllib2.URLError as e:
-                    error_message = e.reason
-                    print error_message
-                    # logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
+                    logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
                 else:
                     os.system('reboot now')
-
 
 
             if parsed is None: return     # Connection error
@@ -74,10 +73,9 @@ class base:
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
-            # logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
+            logs.logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
         except urllib2.URLError as e:
-            print e
-            # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+            logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
         else:
             config = json.loads(result.read())
         return config
