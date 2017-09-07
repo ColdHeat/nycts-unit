@@ -16,13 +16,14 @@ querystring = {client_id: client_id}
 
 file_path = config_path + "/nycts-unit/logs/logs.json"
 
-payload = {'log_file': (None, open(file_path,'rb'))}
+with open(file_path, "rb") as f:
+    payload = f.read()
 
 headers = {
     'content-type': "application/octet-stream",
     'x-api-key': config_file['settings']['dev_api_key']
     }
 
-response = requests.request("POST", url, files=payload, headers=headers, params=querystring)
+response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
 
 open(file_path, 'w').close()
