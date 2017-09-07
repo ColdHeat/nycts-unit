@@ -4,7 +4,7 @@ import urllib
 import json
 import urllib2
 import os
-from logs import logs
+import logs
 
 from rgbmatrix import RGBMatrix
 

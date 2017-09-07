@@ -14,7 +14,7 @@ from logo import logo
 from ad import ad
 from train import train
 import constants
-from logs import logs
+import logs
 
 b = base()
 swap = b.matrix.CreateFrameCanvas()
