@@ -16,7 +16,6 @@ class base:
         self.matrix = RGBMatrix(32, 4)
         self.line = "#"
         self.power = 'on'
-        self.logs = logs()
         self.matrix.brightness = 50
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
