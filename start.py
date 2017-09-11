@@ -25,7 +25,7 @@ customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
 trainScreen = train(b)
-
+weatherScreen = weather(b)
 fontXoffset = 0
 topOffset   = 3
 
@@ -88,7 +88,7 @@ while True:
         if b.config["weather"]["enabled"] == True:
             weatherQuery = threading.Timer(300.0, weather, [b])
             weatherQuery.start()
-            weather.draw()
+            weatherScreen.draw()
 
     ##### TRAIN SCREEN SOUTH #####
         swap.Clear()
