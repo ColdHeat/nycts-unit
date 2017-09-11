@@ -69,7 +69,6 @@ signal.signal(signal.SIGINT, signal_handler)
 
 while True:
     try:
-        swap.Clear()
         loadScreen.draw()
 
         swap.Clear()
