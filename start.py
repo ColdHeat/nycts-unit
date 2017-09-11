@@ -65,7 +65,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 while True:
 
-    threading.Timer(10.0, systemLog)
+    t = threading.Timer(10.0, systemLog)
     t.start()
     ##### BOOT SCREEN #####
     try:
