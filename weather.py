@@ -21,7 +21,6 @@ class weather:
         t.daemon           = True
         t.start()
 
-    # Periodically get predictions from server ---------------------------
     def thread(self):
         while True:
             def queryWeatherEndpoint():

@@ -9,24 +9,21 @@ import constants
 import math
 import logs
 
-
 class train:
 
     def __init__(self, base):
         self.base          = base
         self.config        = base.config
         self.start         = time.time()
-
         self.train_data    = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
 
-    # Periodically get predictions from server ---------------------------
     def thread(self):
         while True:
             try:
-                connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])                
+                connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])
                 raw = connection.read()
                 parsed = json.loads(raw)
                 connection.close()
@@ -50,8 +47,8 @@ class train:
                         self.data['min'] = int(mins)
                 error_message = e.reason
 
-
             time.sleep(5)
+
     def drawClear(self):
         image     = Image.new('RGB', (constants.width, constants.height))
         draw      = ImageDraw.Draw(image)
@@ -78,7 +75,7 @@ class train:
 
             if nums in ['1', '2', '3']:
                 circleColor = constants.red
-            if nums in ['4', '5', '6']:
+            if nums in ['4', '5', '6', 'G']:
                 circleColor = constants.green
             if nums in ['N', 'Q', 'R', 'W']:
                 circleColor = constants.yellow

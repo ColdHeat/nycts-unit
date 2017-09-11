@@ -5,12 +5,11 @@ import json
 import urllib2
 import os
 import logs
-
 from rgbmatrix import RGBMatrix
 
 class base:
-    interval  = 3 # Default polling interval = 2 minutes
-    initSleep = 0   # Stagger polling threads to avoid load spikes
+    interval  = 3
+    initSleep = 0
 
     def __init__(self):
         self.matrix = RGBMatrix(32, 4)
@@ -24,11 +23,9 @@ class base:
         t.daemon           = True
         t.start()
 
-    # Periodically get predictions from server ---------------------------
     def thread(self):
         initSleep          = 3
-        base.initSleep += 5   # Thread staggering may
-        #time.sleep(initSleep)    # drift over time, no problem
+        base.initSleep    += 5
         while True:
 
             parsed = base.req(self.client)
@@ -44,8 +41,7 @@ class base:
                 else:
                     os.system('reboot now')
 
-
-            if parsed is None: return     # Connection error
+            if parsed is None: return
 
             self.lastQueryTime = time.time()
 
@@ -54,7 +50,6 @@ class base:
 
             time.sleep(0.1)
 
-    # Open URL, send request, read & parse XML response ------------------
     @staticmethod
     def req(client):
         parsed = None
@@ -78,7 +73,7 @@ class base:
         return config
     def getTransitionTime(self):
         return int(self.config["settings"]["transition_time"])
-    # Set polling interval (seconds) -------------------------------------
+
     @staticmethod
     def setInterval(i):
         interval = i

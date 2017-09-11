@@ -26,13 +26,12 @@ logoScreen = logo(b)
 adScreen = ad(b)
 trainScreen = train(b)
 weatherScreen = weather(b)
+
 fontXoffset = 0
 topOffset   = 3
-
 image     = Image.new('RGB', (constants.width, constants.height))
 draw      = ImageDraw.Draw(image)
 
-##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
     sys.exit(0)
@@ -67,7 +66,6 @@ atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
 while True:
-    ##### BOOT SCREEN #####
     try:
         swap.Clear()
         adScreen.draw()
@@ -78,30 +76,24 @@ while True:
         internetSpeedLogger = threading.Timer(300.0, internetSpeedLog)
         internetSpeedLogger.start()
 
-    ##### CUSTOM TEXT SCREEN #####
         swap.Clear()
         if b.config["customtext"]["enabled"] == True:
             customTextScreen.draw()
 
-    ##### WEATHER SCREEN #####
         swap.Clear()
         if b.config["weather"]["enabled"] == True:
             weatherScreen.draw()
 
-    ##### TRAIN SCREEN SOUTH #####
         swap.Clear()
         if b.config["subway"]["enabled"] == True:
             trainScreen.draw('S')
             swap.Clear()
             trainScreen.draw('N')
 
-    #### LOGO #####
         swap.Clear()
         if b.config["logo"]["enabled"] == True:
             logoScreen.draw()
 
-
-##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
         logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen'})
