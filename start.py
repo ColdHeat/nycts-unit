@@ -60,17 +60,25 @@ def systemLog():
     })
     time.sleep(1)
 
+def internetSpeedLog():
+    speed_data = subprocess.check_output(['speedtest-cli', '--simple'])
+    logs.logger.info('Internet Speed', extra={'speed_data': speed_data})
+    time.sleep(1)
+
 atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
 while True:
-
-    t = threading.Timer(10.0, systemLog)
-    t.start()
     ##### BOOT SCREEN #####
     try:
         swap.Clear()
         adScreen.draw()
+
+        systemLogger = threading.Timer(10.0, systemLog)
+        systemLogger.start()
+
+        internetSpeedLogger = threading.Timer(1800.0, internetSpeedLog)
+        internetSpeedLogger.start()
 
     ##### CUSTOM TEXT SCREEN #####
         swap.Clear()

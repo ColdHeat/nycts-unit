@@ -39,7 +39,6 @@ class base:
                 baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
                 try:
                     result = urllib2.urlopen(baseurl)
-                    logs.logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
                 except urllib2.URLError as e:
                     logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
                 else:
@@ -72,7 +71,6 @@ class base:
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
-            logs.logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
         except urllib2.URLError as e:
             logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
         else:
