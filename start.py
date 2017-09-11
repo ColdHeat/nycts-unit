@@ -61,8 +61,8 @@ def systemLog():
     time.sleep(1)
 
 def internetSpeedLog():
-    speed_data = subprocess.check_output(['speedtest-cli', '--simple'])
-    logs.logger.info('Internet Speed', extra={'speed_data': speed_data})
+    speed_data = subprocess.check_output(['speedtest-cli', '--json'])
+    logs.logger.info('Internet Speed', extra={'speed_test': speed_data})
     time.sleep(1)
 
 atexit.register(clearOnExit)
@@ -77,7 +77,7 @@ while True:
         systemLogger = threading.Timer(10.0, systemLog)
         systemLogger.start()
 
-        internetSpeedLogger = threading.Timer(60.0, internetSpeedLog)
+        internetSpeedLogger = threading.Timer(300.0, internetSpeedLog)
         internetSpeedLogger.start()
 
     ##### CUSTOM TEXT SCREEN #####
