@@ -16,7 +16,7 @@ let upload = multer({
   storage: storage
 });
 
-let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTS'});
+let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTrainSign'});
 ad.start();
 
 const jsonReplacer = (key, value) => {
