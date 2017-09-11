@@ -39,7 +39,7 @@ class weather:
                     data = json.loads(response.text)
                     self.weather["weather"] = str(int(data['data']['temperature']))
                     self.weather["conditions"] = str(data['data']['summary']).upper()
-                    self.weather["demo"] = "live"
+                    self.weather["state"] = "live"
 
                 except Exception as e:
                     logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
