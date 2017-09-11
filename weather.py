@@ -49,12 +49,12 @@ class weather:
                     weatherQuery = threading.Timer(300.0, queryWeatherEndpoint)
                     weatherQuery.start()
 
-    def draw(self):
-        image = Image.new('RGB', (constants.width, constants.height))
-        draw  = ImageDraw.Draw(image)
+        def draw(self):
+            image = Image.new('RGB', (constants.width, constants.height))
+            draw  = ImageDraw.Draw(image)
 
-        draw.text((2, 0), 'IT IS ' + self.weather["weather"] + ' DEGREES' , font=constants.font, fill=constants.red)
-        draw.text((2, 16), '& ' + self.weather["conditions"] + ' OUTSIDE', font=constants.font, fill=constants.green)
+            draw.text((2, 0), 'IT IS ' + self.weather["weather"] + ' DEGREES' , font=constants.font, fill=constants.red)
+            draw.text((2, 16), '& ' + self.weather["conditions"] + ' OUTSIDE', font=constants.font, fill=constants.green)
 
-        self.base.matrix.SetImage(image, 0, 0)
-        time.sleep(self.base.getTransitionTime())
+            self.base.matrix.SetImage(image, 0, 0)
+            time.sleep(self.base.getTransitionTime())
