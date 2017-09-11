@@ -26,8 +26,7 @@ class train:
     def thread(self):
         while True:
             try:
-                connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])
-                logs.logger.info('Train module', extra={'status': 1, 'job': 'train_module'})
+                connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])                
                 raw = connection.read()
                 parsed = json.loads(raw)
                 connection.close()

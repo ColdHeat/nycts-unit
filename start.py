@@ -77,7 +77,7 @@ while True:
         systemLogger = threading.Timer(10.0, systemLog)
         systemLogger.start()
 
-        internetSpeedLogger = threading.Timer(1800.0, internetSpeedLog)
+        internetSpeedLogger = threading.Timer(300.0, internetSpeedLog)
         internetSpeedLogger.start()
 
     ##### CUSTOM TEXT SCREEN #####
