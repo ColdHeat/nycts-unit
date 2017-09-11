@@ -16,11 +16,13 @@ from customtext import customtext
 from logo import logo
 from ad import ad
 from train import train
+from load import load
 import constants
 import logs
 
 b = base()
 swap = b.matrix.CreateFrameCanvas()
+loadScreen = load(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
@@ -67,6 +69,9 @@ signal.signal(signal.SIGINT, signal_handler)
 
 while True:
     try:
+        swap.clear()
+        loadScreen.draw()
+
         swap.Clear()
         adScreen.draw()
 
