@@ -17,7 +17,8 @@ let upload = multer({
 });
 
 let config = require('./config.json');
-let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTrainSign'});
+
+let ad = mdns.createAdvertisement(mdns.tcp('afpovertcp'), 3000, {name: 'NYCTrainSign'});
 ad.start();
 
 const jsonReplacer = (key, value) => {
