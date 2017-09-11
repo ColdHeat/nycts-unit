@@ -3,6 +3,7 @@ import atexit
 import Image
 import ImageDraw
 import ImageFont
+import threading
 import os
 import time
 import signal
