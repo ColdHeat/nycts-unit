@@ -16,12 +16,12 @@ class load:
         self.base = base
         self.config = base.config
 
-    def thread(self):
-        def draw(self):
-            swapImage = Image.new('RGB', (constants.width, constants.height))
-            swapDraw  = ImageDraw.Draw(swapImage)
-            swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=constants.font, fill=constants.red)
-            swapDraw.text((68, 0), ' legit. realtime.'  , font=constants.font, fill=constants.green)
-            swapDraw.text((2, 16), 'Loading...', font=constants.font, fill=constants.red)
-            swap.SetImage(swapImage, 0, 0)
-            swap = b.SwapOnVSync(swap)
+
+    def draw(self):
+        swapImage = Image.new('RGB', (constants.width, constants.height))
+        swapDraw  = ImageDraw.Draw(swapImage)
+        swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=constants.font, fill=constants.red)
+        swapDraw.text((68, 0), ' legit. realtime.'  , font=constants.font, fill=constants.green)
+        swapDraw.text((2, 16), 'Loading...', font=constants.font, fill=constants.red)
+        swap.SetImage(swapImage, 0, 0)
+        swap = b.SwapOnVSync(swap)
