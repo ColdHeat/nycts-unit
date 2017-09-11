@@ -16,12 +16,10 @@ class load:
         self.base = base
         self.config = base.config
 
-
     def draw(self):
-        swapImage = Image.new('RGB', (constants.width, constants.height))
-        swapDraw  = ImageDraw.Draw(swapImage)
-        swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=constants.font, fill=constants.red)
-        swapDraw.text((68, 0), ' legit. realtime.'  , font=constants.font, fill=constants.green)
-        swapDraw.text((2, 16), 'Loading...', font=constants.font, fill=constants.red)
-        swap.SetImage(swapImage, 0, 0)
-        swap = b.SwapOnVSync(swap)
+        image = Image.new('RGB', (constants.width, constants.height))
+        draw  = ImageDraw.Draw(image)
+        draw.text((2, 0), 'NYC TRAIN SIGN'  , font=constants.font, fill=constants.red)
+        draw.text((68, 0), ' legit. realtime.'  , font=constants.font, fill=constants.green)
+        draw.text((2, 16), 'Loading...', font=constants.font, fill=constants.red)
+        self.base.matrix.SetImage(image, 0, 0)
