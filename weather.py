@@ -8,6 +8,7 @@ import ImageDraw
 import constants
 import requests
 import logs
+import math
 
 class weather:
 
@@ -27,7 +28,6 @@ class weather:
                 try:
                     self.config = self.base.config
 
-                    print self.weather
                     url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/11216"
 
                     querystring = {"":""}
@@ -53,6 +53,7 @@ class weather:
 
             if time_difference >= 300:
                 queryWeatherEndpoint()
+                self.start = time.time()
 
 
     def draw(self):
