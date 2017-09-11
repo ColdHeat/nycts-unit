@@ -26,6 +26,7 @@ class weather:
                 try:
                     self.config = self.base.config
 
+                    print self.weather
                     url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/11216"
 
                     querystring = {"":""}
@@ -45,6 +46,7 @@ class weather:
 
             if self.weather['state'] == 'demo':
                 queryWeatherEndpoint()
+
 
     def draw(self):
         image = Image.new('RGB', (constants.width, constants.height))
