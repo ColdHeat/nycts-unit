@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const bonjour = require('bonjour')();
+const mdns = require('mdns');
 const fs = require('fs');
 const multer = require('multer');
 
@@ -16,8 +16,8 @@ let upload = multer({
   storage: storage
 });
 
-let config = require('./config.json');
-bonjour.publish({ name: 'NYCTRAINSIGN', type: 'http', port: 3000 })
+let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTS'});
+ad.start();
 
 const jsonReplacer = (key, value) => {
   if(value === 'false') return false
