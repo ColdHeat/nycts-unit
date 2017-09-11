@@ -22,33 +22,33 @@ class weather:
     # Periodically get predictions from server ---------------------------
     def thread(self):
         def queryWeatherEndpoint():
-            self.config = self.base.config
-
-            url = "https://api.trainsignapi.com/dev-weather/zipCode/11216"
-
-            querystring = {"":""}
-
-            headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
-
-            response = requests.request("GET", url, headers=headers, params=querystring)
-
-            data = json.loads(response.text)
-            self.weather["weather"] = str(int(data['data']['temperature']))
-            self.weather["conditions"] = str(data['data']['summary']).upper()
-
-            time.sleep(5)
-
-        while True:
             try:
-                if self.weather['state'] == 'demo':
-                    queryWeatherEndpoint()
-                else:
-                    weatherQuery = threading.Timer(300.0, queryWeatherEndpoint)
-                    weatherQuery.start()
+                self.config = self.base.config
+
+                url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/11216"
+
+                querystring = {"":""}
+
+                headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
+
+                response = requests.request("GET", url, headers=headers, params=querystring)
+
+                data = json.loads(response.text)
+                self.weather["weather"] = str(int(data['data']['temperature']))
+                self.weather["conditions"] = str(data['data']['summary']).upper()
 
             except Exception as e:
                 logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
 
+            time.sleep(5)
+
+        while True:
+            weatherQuery = threading.Timer(300.0, queryWeatherEndpoint)
+            weatherQuery.start()
+
+            if self.weather['state'] == 'demo':
+                queryWeatherEndpoint()
+                
     def draw(self):
         image = Image.new('RGB', (constants.width, constants.height))
         draw  = ImageDraw.Draw(image)
