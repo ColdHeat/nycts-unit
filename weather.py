@@ -15,6 +15,7 @@ class weather:
         self.base          = base
         self.config        = base.config
         self.weather       = {'weather': '75', 'conditions': 'SUNNY', 'state': 'demo'}
+        self.start         = time.time()
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
@@ -38,6 +39,7 @@ class weather:
                     data = json.loads(response.text)
                     self.weather["weather"] = str(int(data['data']['temperature']))
                     self.weather["conditions"] = str(data['data']['summary']).upper()
+                    self.weather["demo"] = "live"
 
                 except Exception as e:
                     logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
@@ -45,6 +47,11 @@ class weather:
                 time.sleep(5)
 
             if self.weather['state'] == 'demo':
+                queryWeatherEndpoint()
+
+            time_difference = math.ceil(time.time() - self.start)
+
+            if time_difference >= 300:
                 queryWeatherEndpoint()
 
 

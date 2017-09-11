@@ -86,8 +86,6 @@ while True:
     ##### WEATHER SCREEN #####
         swap.Clear()
         if b.config["weather"]["enabled"] == True:
-            weatherQuery = threading.Timer(300.0, weather, [b])
-            weatherQuery.start()
             weatherScreen.draw()
 
     ##### TRAIN SCREEN SOUTH #####
