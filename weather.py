@@ -7,34 +7,53 @@ import Image
 import ImageDraw
 import constants
 import requests
+import logs
+import math
+
 class weather:
 
     def __init__(self, base):
         self.base          = base
         self.config        = base.config
-        self.weather       = {'weather': '75', 'conditions': 'SUNNY'}
+        self.weather       = {'weather': '75', 'conditions': 'SUNNY', 'state': 'demo'}
+        self.start         = time.time()
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
 
-    # Periodically get predictions from server ---------------------------
     def thread(self):
         while True:
-            self.config = self.base.config
+            def queryWeatherEndpoint():
+                try:
+                    self.config = self.base.config
 
-            url = "https://api.trainsignapi.com/dev-weather/zipCode/11216"
+                    url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/11216"
 
-            querystring = {"":""}
+                    querystring = {"":""}
 
-            headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
+                    headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
 
-            response = requests.request("GET", url, headers=headers, params=querystring)
+                    response = requests.request("GET", url, headers=headers, params=querystring)
 
-            data = json.loads(response.text)
-            self.weather["weather"] = str(int(data['data']['temperature']))
-            self.weather["conditions"] = str(data['data']['summary']).upper()
+                    data = json.loads(response.text)
+                    self.weather["weather"] = str(int(data['data']['temperature']))
+                    self.weather["conditions"] = str(data['data']['summary']).upper()
+                    self.weather["state"] = "live"
 
-            time.sleep(5)
+                except Exception as e:
+                    logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
+
+                time.sleep(5)
+
+            if self.weather['state'] == 'demo':
+                queryWeatherEndpoint()
+
+            time_difference = math.ceil(time.time() - self.start)
+
+            if time_difference >= 300:
+                queryWeatherEndpoint()
+                self.start = time.time()
+
 
     def draw(self):
         image = Image.new('RGB', (constants.width, constants.height))

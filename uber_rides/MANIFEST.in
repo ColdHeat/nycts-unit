@@ -1,3 +1,0 @@
-recursive-include uber_rides *
-recursive-include tests *
-recursive-include example *

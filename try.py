@@ -1,7 +1,7 @@
 import time
 from settings import settings
 
-time.sleep(1) # Allow a moment for initial results
+time.sleep(1)
 
 sets = settings('19')
 

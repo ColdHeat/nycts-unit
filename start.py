@@ -7,7 +7,9 @@ import time
 import signal
 import logging
 import json
-import json_log_formatter
+import psutil
+import subprocess
+import threading
 from base import base
 from weather import weather
 from customtext import customtext
@@ -15,33 +17,21 @@ from logo import logo
 from ad import ad
 from train import train
 import constants
-
-### LOGGING ###
-# formatter = json_log_formatter.JSONFormatter()
-# json_handler = logging.FileHandler(filename='./device_logs/logs.json')
-# json_handler.setFormatter(formatter)
-#
-# logger = logging.getLogger('log')
-# logger.addHandler(json_handler)
-# logger.setLevel(logging.INFO)
-# logger.info('Booting Up', extra={'status': 1, 'job': 'boot_screen'})
+import logs
 
 b = base()
 swap = b.matrix.CreateFrameCanvas()
-
-weatherScreen = weather(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
 trainScreen = train(b)
+weatherScreen = weather(b)
 
 fontXoffset = 0
 topOffset   = 3
-
 image     = Image.new('RGB', (constants.width, constants.height))
 draw      = ImageDraw.Draw(image)
 
-##### HANDLERS #####
 def signal_handler(signal, frame):
     b.matrix.Clear()
     sys.exit(0)
@@ -60,41 +50,52 @@ def displayError(e):
     time.sleep(1)
     drawClear()
 
+def systemLog():
+    logs.logger.info('System Diagnostic', extra={'cpu_usage': psutil.cpu_percent(interval=1),
+    'virtual_memory': psutil.virtual_memory()[2], 'swap_memory': psutil.swap_memory()[3],
+    'disk_usage': psutil.disk_usage('/')[3], 'temp': str((int(subprocess.check_output(['cat', '/sys/class/thermal/thermal_zone0/temp']))/1000) * 9/5 + 32) + ' F',
+    })
+    time.sleep(1)
+
+def internetSpeedLog():
+    speed_data = subprocess.check_output(['speedtest-cli', '--json'])
+    logs.logger.info('Internet Speed', extra={'speed_test': speed_data})
+    time.sleep(1)
+
 atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
 while True:
-
-    ##### BOOT SCREEN #####
     try:
         swap.Clear()
         adScreen.draw()
 
-    ##### CUSTOM TEXT SCREEN #####
+        systemLogger = threading.Timer(10.0, systemLog)
+        systemLogger.start()
+
+        internetSpeedLogger = threading.Timer(300.0, internetSpeedLog)
+        internetSpeedLogger.start()
+
         swap.Clear()
         if b.config["customtext"]["enabled"] == True:
             customTextScreen.draw()
 
-    ##### WEATHER SCREEN #####
         swap.Clear()
         if b.config["weather"]["enabled"] == True:
             weatherScreen.draw()
 
-    ##### TRAIN SCREEN SOUTH #####
         swap.Clear()
         if b.config["subway"]["enabled"] == True:
             trainScreen.draw('S')
             swap.Clear()
             trainScreen.draw('N')
 
-    #### LOGO #####
         swap.Clear()
         if b.config["logo"]["enabled"] == True:
             logoScreen.draw()
 
-##### EXCEPTION SCREEN #####
     except Exception as e:
         logging.exception("message")
-        # logger.info('Boot Screen', extra={'status': 1, 'job': 'boot_screen'})
+        logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen'})
         displayError(e)
         pass

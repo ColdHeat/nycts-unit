@@ -4,12 +4,12 @@ import urllib
 import json
 import urllib2
 import os
-
+import logs
 from rgbmatrix import RGBMatrix
 
 class base:
-    interval  = 3 # Default polling interval = 2 minutes
-    initSleep = 0   # Stagger polling threads to avoid load spikes
+    interval  = 3
+    initSleep = 0
 
     def __init__(self):
         self.matrix = RGBMatrix(32, 4)
@@ -23,11 +23,9 @@ class base:
         t.daemon           = True
         t.start()
 
-    # Periodically get predictions from server ---------------------------
     def thread(self):
         initSleep          = 3
-        base.initSleep += 5   # Thread staggering may
-        #time.sleep(initSleep)    # drift over time, no problem
+        base.initSleep    += 5
         while True:
 
             parsed = base.req(self.client)
@@ -38,17 +36,12 @@ class base:
                 baseurl = "http://127.0.0.1:3000/setConfig/settings/reboot/false"
                 try:
                     result = urllib2.urlopen(baseurl)
-                    # logger.info('API Reboot', extra={'status': 1, 'job': 'api_reboot'})
                 except urllib2.URLError as e:
-                    error_message = e.reason
-                    print error_message
-                    # logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
+                    logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'})
                 else:
                     os.system('reboot now')
 
-
-
-            if parsed is None: return     # Connection error
+            if parsed is None: return
 
             self.lastQueryTime = time.time()
 
@@ -57,7 +50,6 @@ class base:
 
             time.sleep(0.1)
 
-    # Open URL, send request, read & parse XML response ------------------
     @staticmethod
     def req(client):
         parsed = None
@@ -74,16 +66,14 @@ class base:
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
-            # logger.info('API Config', extra={'status': 1, 'job': 'api_config'})
         except urllib2.URLError as e:
-            print e
-            # logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
+            logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'})
         else:
             config = json.loads(result.read())
         return config
     def getTransitionTime(self):
         return int(self.config["settings"]["transition_time"])
-    # Set polling interval (seconds) -------------------------------------
+
     @staticmethod
     def setInterval(i):
         interval = i

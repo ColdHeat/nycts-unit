@@ -27,6 +27,8 @@
     "dev": true,
     "transition_time": "9",
     "brightness": "50",
-    "reboot": false
+    "reboot": false,
+    "dev_api_key": "5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf",
+    "prod_api_key":""
   }
 }
