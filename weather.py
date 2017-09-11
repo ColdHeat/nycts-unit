@@ -22,9 +22,6 @@ class weather:
     # Periodically get predictions from server ---------------------------
     def thread(self):
         while True:
-            if self.weather['state'] == 'demo':
-                queryWeatherEndpoint()
-
             def queryWeatherEndpoint():
                 try:
                     self.config = self.base.config
@@ -45,6 +42,9 @@ class weather:
                     logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
 
                 time.sleep(5)
+
+            if self.weather['state'] == 'demo':
+                queryWeatherEndpoint()
 
     def draw(self):
         image = Image.new('RGB', (constants.width, constants.height))
