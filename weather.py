@@ -27,7 +27,7 @@ class weather:
                 try:
                     self.config = self.base.config
 
-                    url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/11216"
+                    url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/" + self.config["weather"]["zipCode"]
 
                     querystring = {"":""}
 
