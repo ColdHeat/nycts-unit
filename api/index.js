@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-//const mdns = require('mdns');
+const bonjour = require('bonjour')();
 const fs = require('fs');
 const multer = require('multer');
 
@@ -17,9 +17,7 @@ let upload = multer({
 });
 
 let config = require('./config.json');
-
-//let ad = mdns.createAdvertisement(mdns.tcp('http'), 3000, {name: 'NYCTS'});
-//ad.start();
+bonjour.publish({ name: 'NYCTRAINSIGN', type: 'http', port: 3000 })
 
 const jsonReplacer = (key, value) => {
   if(value === 'false') return false
@@ -53,13 +51,11 @@ app.get('/setConfig/:route/:settingKey/:settingValue', function (req, res) {
 });
 
 app.get('/getLogo', function (req, res) {
-  console.log(config.logo.image_file);
   res.sendFile(config.logo.image_file, {root: __dirname + '/uploads/'});
 });
 
 app.post('/setLogo', upload.single('image'), function (req, res) {
   config['logo']['updated'] = true;
-  console.log(req.body);
   res.json(req.body);
 });
 
