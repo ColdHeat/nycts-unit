@@ -21,8 +21,6 @@ import logs
 
 b = base()
 swap = b.matrix.CreateFrameCanvas()
-
-
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
@@ -52,10 +50,6 @@ def displayError(e):
     b.matrix.SetImage(image, 0, 0)
     time.sleep(1)
     drawClear()
-
-def weather(b):
-    weatherQuery = threading.Timer(300.0, weather, [b])
-    weatherQuery.start()
 
 def systemLog():
     logs.logger.info('System Diagnostic', extra={'cpu_usage': psutil.cpu_percent(interval=1),
@@ -92,7 +86,9 @@ while True:
     ##### WEATHER SCREEN #####
         swap.Clear()
         if b.config["weather"]["enabled"] == True:
-            weatherScreen.draw()
+            weatherQuery = threading.Timer(300.0, weather, [b])
+            weatherQuery.start()
+            weather.draw()
 
     ##### TRAIN SCREEN SOUTH #####
         swap.Clear()
