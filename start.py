@@ -16,13 +16,11 @@ from customtext import customtext
 from logo import logo
 from ad import ad
 from train import train
-from load import load
 import constants
 import logs
 
 b = base()
 swap = b.matrix.CreateFrameCanvas()
-loadScreen = load(b)
 customTextScreen = customtext(b)
 logoScreen = logo(b)
 adScreen = ad(b)
