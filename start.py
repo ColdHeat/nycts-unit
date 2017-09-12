@@ -69,8 +69,6 @@ signal.signal(signal.SIGINT, signal_handler)
 
 while True:
     try:
-        loadScreen.draw()
-
         swap.Clear()
         adScreen.draw()
 
