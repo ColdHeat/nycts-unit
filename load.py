@@ -7,7 +7,7 @@ import os
 import time
 import signal
 import logging
-import contstants
+import constants
 from rgbmatrix import RGBMatrix
 
 b = RGBMatrix(32,4)
