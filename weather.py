@@ -21,38 +21,32 @@ class weather:
         t.daemon           = True
         t.start()
 
+    def queryWeatherEndpoint(self):
+        try:
+            self.config = self.base.config
+
+            url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/" + self.config["weather"]["zip_code"]
+
+            querystring = {"":""}
+
+            headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
+
+            response = requests.request("GET", url, headers=headers, params=querystring)
+
+            data = json.loads(response.text)
+            self.weather["weather"] = str(int(data['data']['temperature']))
+            self.weather["conditions"] = str(data['data']['summary']).upper()
+            self.weather["state"] = "live"
+
+        except Exception as e:
+            logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
+
     def thread(self):
         while True:
-            def queryWeatherEndpoint():
-                try:
-                    self.config = self.base.config
 
-                    url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/" + self.config["weather"]["zip_code"]
+            self.queryWeatherEndpoint()
 
-                    querystring = {"":""}
-
-                    headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
-
-                    response = requests.request("GET", url, headers=headers, params=querystring)
-
-                    data = json.loads(response.text)
-                    self.weather["weather"] = str(int(data['data']['temperature']))
-                    self.weather["conditions"] = str(data['data']['summary']).upper()
-                    self.weather["state"] = "live"
-
-                except Exception as e:
-                    logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
-
-                time.sleep(5)
-
-            if self.weather['state'] == 'demo':
-                queryWeatherEndpoint()
-
-            time_difference = math.ceil(time.time() - self.start)
-
-            if time_difference >= 300:
-                queryWeatherEndpoint()
-                self.start = time.time()
+            time.sleep(300)
 
 
     def draw(self):
