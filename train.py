@@ -49,7 +49,7 @@ class train:
                     for direction in ['N', 'S']:
                         for row in [0, 1]:
                             mins = self.train_data[direction]['schedule'][row]['arrivalTime']
-                            if arrivalTime > 0:
+                            if self.train_data[direction]['schedule'][row]['arrivalTime'] > 0:
                                 self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
                             else:
                                 if row == 0 and direction == 'N':
