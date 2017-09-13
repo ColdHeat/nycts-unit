@@ -23,7 +23,6 @@ class weather:
 
     def queryWeatherEndpoint(self):
         try:
-            self.config = self.base.config
 
             url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/" + self.config["weather"]["zip_code"]
 
@@ -43,8 +42,9 @@ class weather:
 
     def thread(self):
         while True:
-
-            self.queryWeatherEndpoint()
+            self.config = self.base.config
+            if self.config["weather"]["enabled"] == True:
+                self.queryWeatherEndpoint()
 
             time.sleep(300)
 
