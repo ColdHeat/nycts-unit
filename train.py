@@ -60,8 +60,6 @@ class train:
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
                                 if row == 0 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
-                error_message = e.reason
-
             time.sleep(5)
 
     def drawClear(self):
