@@ -68,7 +68,7 @@ class train:
                 self.train_data["state"] = "live"
                 self.train_data = data
             except Exception as e:
-                error_message = e.reason
+                error_message = e
                 print error_message
                 # logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
                 # end = time.time()
