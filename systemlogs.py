@@ -25,12 +25,10 @@ class systemlogs:
         'virtual_memory': psutil.virtual_memory()[2], 'swap_memory': psutil.swap_memory()[3],
         'disk_usage': psutil.disk_usage('/')[3], 'temp': str((int(subprocess.check_output(['cat', '/sys/class/thermal/thermal_zone0/temp']))/1000) * 9/5 + 32) + ' F',
         })
-        time.sleep(5)
 
     def internetSpeedLog(self):
         speed_data = subprocess.check_output(['speedtest-cli', '--json'])
         logs.logger.info('Internet Speed', extra={'speed_test': speed_data})
-        time.sleep(1)
 
     def thread(self):
         while True:
@@ -40,4 +38,4 @@ class systemlogs:
 
             self.internetSpeedLog()
 
-            time.sleep(600)
+            time.sleep(300)
