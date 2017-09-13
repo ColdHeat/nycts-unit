@@ -40,4 +40,4 @@ class systemlogs:
 
             self.internetSpeedLog()
 
-            time.sleep(300)
+            time.sleep(600)

@@ -82,4 +82,5 @@ while True:
         logging.exception("message")
         logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen'})
         displayError(e)
+        print e
         pass
