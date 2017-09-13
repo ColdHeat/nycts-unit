@@ -15,7 +15,7 @@ class train:
         self.base          = base
         self.config        = base.config
         self.start         = time.time()
-        self.train_data    = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
+        self.train_data    = {"N":[{"line":"R","arrivalTime":6,"term":"Queens "},{"line":"N","arrivalTime":7,"term":"Astoria "}],"S":[{"line":"R","arrivalTime":2,"term":"Whitehall "},{"line":"N","arrivalTime":6,"term":"Coney Island "}]}
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
@@ -45,12 +45,12 @@ class train:
                     end = time.time()
 
                 if len(mins) < 3:
-                    if self.data['min'] <= 0:
-                        mins = str((int(self.data['min']) + 6))
-                        self.data['min'] = int(mins)
+                    if self.data['arrivalTime'] <= 0:
+                        mins = str((int(self.data['arrivalTime']) + 6))
+                        self.data['arrivalTime'] = int(mins)
                     else:
-                        mins = str((int(self.data['min']) - int(time_difference)/ 60))
-                        self.data['min'] = int(mins)
+                        mins = str((int(self.data['arrivalTime']) - int(time_difference)/ 60))
+                        self.data['arrivalTime'] = int(mins)
                 error_message = e.reason
 
             time.sleep(5)
@@ -70,7 +70,7 @@ class train:
             xOff = 2
             yOff = 2
 
-            mins = str(self.data['min'])
+            mins = str(self.data['arrivalTime'])
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
