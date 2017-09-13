@@ -51,7 +51,7 @@ class train:
                 #         self.data['arrivalTime'] = int(mins)
                 # error_message = e.reason
 
-            # time.sleep(5)
+            time.sleep(5)
 
     def drawClear(self):
         image     = Image.new('RGB', (constants.width, constants.height))
