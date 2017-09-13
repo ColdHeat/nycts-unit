@@ -58,7 +58,7 @@ class train:
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 7
                                 if row == 0 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
-                                if row == 0 and direction == 'S':
+                                if row == 1 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
             time.sleep(5)
 
