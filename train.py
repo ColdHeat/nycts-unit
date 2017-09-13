@@ -17,7 +17,7 @@ class train:
         self.base = base
         self.config = base.config
         self.start = time.time()
-        self.train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
+        self.train_data = {"N":{"schedule":[{"routeId":"L","delay":null,"arrivalTime":0,"departureTime":1505327610},{"routeId":"L","delay":null,"arrivalTime":7,"departureTime":1505328052}],"term":"MANHATTAN"},"S":{"schedule":[{"routeId":"L","delay":null,"arrivalTime":0,"departureTime":1505327613},{"routeId":"L","delay":null,"arrivalTime":8,"departureTime":1505328098}],"term":"ROCKAWAY PKWY"}}
         t = threading.Thread(target=self.thread)
         t.daemon = True
         t.start()
@@ -46,16 +46,20 @@ class train:
 
                 if time_difference >= 60:
                     self.start = time.time()
-                    end = time.time()
-
-                if len(mins) < 3:
-                    if self.data['arrivalTime'] <= 0:
-                        mins = str(int(self.data['arrivalTime']) + 6)
-                        self.data['arrivalTime'] = int(mins)
-                    else:
-                        mins = str(int(self.data['arrivalTime'])
-                                   - int(time_difference) / 60)
-                        self.data['arrivalTime'] = int(mins)
+                    for direction in ['N', 'S']:
+                        for row in [0, 1]:
+                            mins = self.train_data[direction]['schedule'][row]['arrivalTime']
+                            if arrivalTime > 0:
+                                self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
+                            else:
+                                if row == 0 && direction == 'N':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 2
+                                if row == 1 && direction == 'N':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 7
+                                if row == 0 && direction == 'S':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
+                                if row == 0 && direction == 'S':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
                 error_message = e.reason
 
             time.sleep(5)
