@@ -43,8 +43,8 @@ class weather:
     def thread(self):
         while True:
             self.config = self.base.config
-            if self.config["weather"]["enabled"] == True:
-                self.queryWeatherEndpoint()
+
+            self.queryWeatherEndpoint()
 
             time.sleep(300)
 
