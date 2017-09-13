@@ -31,7 +31,7 @@ class weather:
 
                     querystring = {"":""}
 
-                    headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
+                    headers = {'x-api-key': self.config["settings"]["dev_api_key"]}
 
                     response = requests.request("GET", url, headers=headers, params=querystring)
 

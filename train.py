@@ -23,11 +23,15 @@ class train:
     def thread(self):
         while True:
             try:
-                connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])
-                raw = connection.read()
-                parsed = json.loads(raw)
-                connection.close()
-                self.train_data = parsed
+                url = "https://api.trainsignapi.com/dev-trains/stations/" + self.config["subway"]["train"]
+                querystring = {"":""}
+                headers = {'x-api-key': self.config["settings"]["dev_api_key"]}
+
+                response = requests.request("GET", url, headers=headers, params=querystring)
+                data = json.loads(response.text)
+
+                self.train_data["state"] = "live"
+                self.train_data = data
             except Exception as e:
                 logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
                 end = time.time()
