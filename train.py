@@ -21,13 +21,11 @@ class train:
         			"schedule": [
         				{
         					"routeId": "G",
-        					"delay": null,
         					"arrivalTime": 5,
         					"departureTime": 1505320882
         				},
         				{
         					"routeId": "G",
-        					"delay": null,
         					"arrivalTime": 10,
         					"departureTime": 1505321185
         				}
@@ -38,13 +36,11 @@ class train:
         			"schedule": [
         				{
         					"routeId": "G",
-        					"delay": null,
         					"arrivalTime": 5,
         					"departureTime": 1505320882
         				},
         				{
         					"routeId": "G",
-        					"delay": null,
         					"arrivalTime": 14,
         					"departureTime": 1505321400
         				}
