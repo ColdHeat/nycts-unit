@@ -52,13 +52,13 @@ class train:
                             if arrivalTime > 0:
                                 self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
                             else:
-                                if row == 0 && direction == 'N':
+                                if row == 0 and direction == 'N':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 2
-                                if row == 1 && direction == 'N':
+                                if row == 1 and direction == 'N':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 7
-                                if row == 0 && direction == 'S':
+                                if row == 0 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
-                                if row == 0 && direction == 'S':
+                                if row == 0 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
                 error_message = e.reason
 
