@@ -8,6 +8,7 @@ import ImageDraw
 import constants
 import math
 import logs
+import requests
 
 class train:
 
