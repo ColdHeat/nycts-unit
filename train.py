@@ -17,7 +17,7 @@ class train:
         self.base = base
         self.config = base.config
         self.start = time.time()
-        self.train_data = {}
+        self.train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
         t = threading.Thread(target=self.thread)
         t.daemon = True
         t.start()
