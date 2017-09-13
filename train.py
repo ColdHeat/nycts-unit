@@ -15,7 +15,44 @@ class train:
         self.base          = base
         self.config        = base.config
         self.start         = time.time()
-        self.train_data    = {"N":[{"line":"R","arrivalTime":6,"term":"Queens "},{"line":"N","arrivalTime":7,"term":"Astoria "}],"S":[{"line":"R","arrivalTime":2,"term":"Whitehall "},{"line":"N","arrivalTime":6,"term":"Coney Island "}]}
+        self.train_data    = {
+        	"data": {
+        		"N": {
+        			"schedule": [
+        				{
+        					"routeId": "G",
+        					"delay": null,
+        					"arrivalTime": 5,
+        					"departureTime": 1505320882
+        				},
+        				{
+        					"routeId": "G",
+        					"delay": null,
+        					"arrivalTime": 10,
+        					"departureTime": 1505321185
+        				}
+        			],
+        			"term": "QUEENS"
+        		},
+        		"S": {
+        			"schedule": [
+        				{
+        					"routeId": "G",
+        					"delay": null,
+        					"arrivalTime": 5,
+        					"departureTime": 1505320882
+        				},
+        				{
+        					"routeId": "G",
+        					"delay": null,
+        					"arrivalTime": 14,
+        					"departureTime": 1505321400
+        				}
+        			],
+        			"term": "BROOKLYN"
+        		}
+        	}
+        }
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
@@ -35,23 +72,23 @@ class train:
                 self.train_data["state"] = "live"
                 self.train_data = data
             except Exception as e:
-                logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
-                end = time.time()
-
-                time_difference = math.ceil(end - self.start)
-
-                if time_difference >= 60:
-                    self.start = time.time()
-                    end = time.time()
-
-                if len(mins) < 3:
-                    if self.data['arrivalTime'] <= 0:
-                        mins = str((int(self.data['arrivalTime']) + 6))
-                        self.data['arrivalTime'] = int(mins)
-                    else:
-                        mins = str((int(self.data['arrivalTime']) - int(time_difference)/ 60))
-                        self.data['arrivalTime'] = int(mins)
-                error_message = e.reason
+                # logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
+                # end = time.time()
+                #
+                # time_difference = math.ceil(end - self.start)
+                #
+                # if time_difference >= 60:
+                #     self.start = time.time()
+                #     end = time.time()
+                #
+                # if len(mins) < 3:
+                #     if self.data['arrivalTime'] <= 0:
+                #         mins = str((int(self.data['arrivalTime']) + 6))
+                #         self.data['arrivalTime'] = int(mins)
+                #     else:
+                #         mins = str((int(self.data['arrivalTime']) - int(time_difference)/ 60))
+                #         self.data['arrivalTime'] = int(mins)
+                # error_message = e.reason
 
             time.sleep(5)
 
@@ -70,7 +107,7 @@ class train:
             xOff = 2
             yOff = 2
 
-            mins = str(self.data['arrivalTime'])
+            mins = str(self.data['schedule']['arrivalTime'])
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
