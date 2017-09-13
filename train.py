@@ -72,6 +72,8 @@ class train:
                 self.train_data["state"] = "live"
                 self.train_data = data
             except Exception as e:
+                error_message = e.reason
+                print error_message
                 # logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
                 # end = time.time()
                 #
@@ -90,7 +92,7 @@ class train:
                 #         self.data['arrivalTime'] = int(mins)
                 # error_message = e.reason
 
-            time.sleep(5)
+            # time.sleep(5)
 
     def drawClear(self):
         image     = Image.new('RGB', (constants.width, constants.height))
