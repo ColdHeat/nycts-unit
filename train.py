@@ -36,7 +36,7 @@ class train:
                         headers=headers, params=querystring)
                 data = json.loads(response.text)
 
-                self.train_data = data
+                self.train_data = data['data']
             except Exception, e:
                 logs.logger.info('Train module', extra={'status': 0,
                                  'job': 'train_module'})
