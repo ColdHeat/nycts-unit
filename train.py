@@ -17,7 +17,6 @@ class train:
         self.config        = base.config
         self.start         = time.time()
         self.train_data    = {
-        	"data": {
         		"N": {
         			"schedule": [
         				{
@@ -49,7 +48,6 @@ class train:
         			"term": "BROOKLYN"
         		}
         	}
-        }
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
@@ -69,8 +67,6 @@ class train:
                 self.train_data["state"] = "live"
                 self.train_data = data
             except Exception as e:
-                error_message = e
-                print error_message
                 # logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
                 # end = time.time()
                 #
@@ -102,18 +98,18 @@ class train:
         draw      = ImageDraw.Draw(image)
 
         for row in [0, 1]:
-            self.data = self.train_data[direction][row]
+            self.data = self.train_data[direction]['schedule'][row]
             xOff = 2
             yOff = 2
 
-            mins = str(self.data['schedule']['arrivalTime'])
+            mins = str(self.data['arrivalTime'])
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
             minLabel = 'mIn'
-            dirLabel = '  ' + self.data['term']
+            dirLabel = '  ' + self.train_data[direction]['term']
 
-            nums = self.data['line']
+            nums = self.data['routeId']
 
             if nums in ['1', '2', '3']:
                 circleColor = constants.red
