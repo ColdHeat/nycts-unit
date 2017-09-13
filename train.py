@@ -30,6 +30,8 @@ class train:
                 response = requests.request("GET", url, headers=headers, params=querystring)
                 data = json.loads(response.text)
 
+                print data
+
                 self.train_data["state"] = "live"
                 self.train_data = data
             except Exception as e:
