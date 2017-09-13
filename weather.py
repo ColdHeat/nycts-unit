@@ -26,9 +26,9 @@ class weather:
 
             url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/" + self.config["weather"]["zip_code"]
 
+            headers = {'x-api-key': self.config["settings"]["dev_api_key"]}
+            
             querystring = {"":""}
-
-            headers = {'x-api-key': '5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf'}
 
             response = requests.request("GET", url, headers=headers, params=querystring)
 

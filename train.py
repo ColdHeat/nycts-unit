@@ -8,28 +8,38 @@ import ImageDraw
 import constants
 import math
 import logs
+import requests
+
 
 class train:
 
     def __init__(self, base):
-        self.base          = base
-        self.config        = base.config
-        self.start         = time.time()
-        self.train_data    = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
-        t                  = threading.Thread(target=self.thread)
-        t.daemon           = True
+        self.base = base
+        self.config = base.config
+        self.start = time.time()
+        self.train_data = {"N":[{"line":"R","min":6,"term":"Queens "},{"line":"N","min":7,"term":"Astoria "}],"S":[{"line":"R","min":2,"term":"Whitehall "},{"line":"N","min":6,"term":"Coney Island "}]}
+        t = threading.Thread(target=self.thread)
+        t.daemon = True
         t.start()
 
     def thread(self):
         while True:
             try:
-                connection = urllib2.urlopen('http://riotpros.com/mta/v1/combo.php?client=' + self.config["settings"]["client_id"])
-                raw = connection.read()
-                parsed = json.loads(raw)
-                connection.close()
-                self.train_data = parsed
-            except Exception as e:
-                logs.logger.info('Train module', extra={'status': 0, 'job': 'train_module', })
+                url = \
+                    'https://api.trainsignapi.com/dev-trains/stations/' \
+                    + self.config['subway']['train']
+                querystring = {'': ''}
+                headers = {'x-api-key': self.config['settings'
+                           ]['dev_api_key']}
+
+                response = requests.request('GET', url,
+                        headers=headers, params=querystring)
+                data = json.loads(response.text)
+
+                self.train_data = data['data']
+            except Exception, e:
+                logs.logger.info('Train module', extra={'status': 0,
+                                 'job': 'train_module'})
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)
@@ -39,39 +49,41 @@ class train:
                     end = time.time()
 
                 if len(mins) < 3:
-                    if self.data['min'] <= 0:
-                        mins = str((int(self.data['min']) + 6))
-                        self.data['min'] = int(mins)
+                    if self.data['arrivalTime'] <= 0:
+                        mins = str(int(self.data['arrivalTime']) + 6)
+                        self.data['arrivalTime'] = int(mins)
                     else:
-                        mins = str((int(self.data['min']) - int(time_difference)/ 60))
-                        self.data['min'] = int(mins)
+                        mins = str(int(self.data['arrivalTime'])
+                                   - int(time_difference) / 60)
+                        self.data['arrivalTime'] = int(mins)
                 error_message = e.reason
 
             time.sleep(5)
 
     def drawClear(self):
-        image     = Image.new('RGB', (constants.width, constants.height))
-        draw      = ImageDraw.Draw(image)
-        draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
+        image = Image.new('RGB', (constants.width, constants.height))
+        draw = ImageDraw.Draw(image)
+        draw.rectangle((0, 0, constants.width, constants.height),
+                       fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
 
     def draw(self, direction):
-        image     = Image.new('RGB', (constants.width, constants.height))
-        draw      = ImageDraw.Draw(image)
+        image = Image.new('RGB', (constants.width, constants.height))
+        draw = ImageDraw.Draw(image)
 
         for row in [0, 1]:
-            self.data = self.train_data[direction][row]
+            self.data = self.train_data[direction]['schedule'][row]
             xOff = 2
             yOff = 2
 
-            mins = str(self.data['min'])
+            mins = str(self.data['arrivalTime'])
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
             minLabel = 'mIn'
-            dirLabel = '  ' + self.data['term']
+            dirLabel = '  ' + self.train_data[direction]['term']
 
-            nums = self.data['line']
+            nums = self.data['routeId']
 
             if nums in ['1', '2', '3']:
                 circleColor = constants.red
@@ -91,21 +103,28 @@ class train:
             numLabel = str(row + 1) + '. '
             numLabelW = constants.font.getsize(numLabel)[0]
 
-            minPos = constants.width - constants.font.getsize(minLabel)[0] - 3
+            minPos = constants.width \
+                - constants.font.getsize(minLabel)[0] - 3
 
             circleXoffset = fontXoffset + numLabelW
-            circleYoffset = yOff + 1;
+            circleYoffset = yOff + 1
 
             circleXend = circleXoffset + 8
             circleYend = circleYoffset + 8
 
-            minOffset = constants.width - 6 - constants.font.getsize(minLabel)[0]
+            minOffset = constants.width - 6 \
+                - constants.font.getsize(minLabel)[0]
             timeOffset = minOffset - constants.font.getsize(mins)[0]
-            draw.ellipse((circleXoffset, circleYoffset, circleXend, circleYend), fill=circleColor)
-            draw.text((circleXoffset + 1, circleYoffset - 2), nums, font=constants.font, fill=constants.black)
-            draw.text((circleXend, fontYoffset), dirLabel, font=constants.font, fill=constants.green)
-            draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
-            draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
+            draw.ellipse((circleXoffset, circleYoffset, circleXend,
+                         circleYend), fill=circleColor)
+            draw.text((circleXoffset + 1, circleYoffset - 2), nums,
+                      font=constants.font, fill=constants.black)
+            draw.text((circleXend, fontYoffset), dirLabel,
+                      font=constants.font, fill=constants.green)
+            draw.text((timeOffset, 0 + fontYoffset), mins,
+                      font=constants.font, fill=constants.orange)
+            draw.text((minOffset, 0 + fontYoffset), minLabel,
+                      font=constants.font, fill=constants.green)
 
             draw.point((constants.width - 9, 6), fill=constants.black)
             draw.point((constants.width - 9, 22), fill=constants.black)
