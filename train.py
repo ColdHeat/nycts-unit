@@ -37,7 +37,10 @@ class train:
                 if time_difference >= 60:
                     self.start = time.time()
                     end = time.time()
-
+                try:
+                    mins
+                except NameError:
+                    mins = 8
                 if len(mins) < 3:
                     if self.data['min'] <= 0:
                         mins = str((int(self.data['min']) + 6))
