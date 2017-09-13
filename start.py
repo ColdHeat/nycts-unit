@@ -52,7 +52,6 @@ def displayError(e):
     time.sleep(1)
     drawClear()
 
-
 atexit.register(clearOnExit)
 signal.signal(signal.SIGINT, signal_handler)
 
