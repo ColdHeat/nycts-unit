@@ -24,6 +24,7 @@ class train:
 
     def thread(self):
         while True:
+            self.config = self.base.config
             try:
                 url = \
                     'https://api.trainsignapi.com/dev-trains/stations/' \
