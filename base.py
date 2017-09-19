@@ -5,18 +5,18 @@ import json
 import urllib2
 import os
 import logs
-from rgbmatrix import RGBMatrix
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 class base:
     interval  = 3
     initSleep = 0
-
+    options = RGBMatrixOptions()
+    options.gpio_slowdown = 2
     def __init__(self):
-        self.matrix = RGBMatrix(32, 4)
+        self.matrix = RGBMatrix(32, 4, options = options)
         self.line = "#"
         self.power = 'on'
         self.matrix.brightness = 50
-        self.matrix.gpio_slowdown = 2
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
         self.client        = self.config["settings"]["client_id"]
