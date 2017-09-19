@@ -130,7 +130,7 @@ class train:
                 draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
 
             if mins == 'DELAY ':
-                draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
+                draw.text((timeOffset+10, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
 
             draw.point((constants.width - 9, 6), fill=constants.black)
             draw.point((constants.width - 9, 22), fill=constants.black)
