@@ -9,6 +9,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 options = RGBMatrixOptions()
 options.gpio_slowdown = 2
+options.pwm_bits = 10
 class base:
     interval  = 3
     initSleep = 0

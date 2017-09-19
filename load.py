@@ -8,9 +8,13 @@ import time
 import signal
 import logging
 import constants
-from rgbmatrix import RGBMatrix
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
-b = RGBMatrix(32,4)
+options = RGBMatrixOptions()
+options.gpio_slowdown = 2
+options.pwm_bits = 10
+
+b = RGBMatrix(32,4, options = options)
 b.brightness = 50
 
 fontXoffset = 0
