@@ -10,6 +10,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 options = RGBMatrixOptions()
 options.gpio_slowdown = 2
 options.pwm_bits = 10
+options.hardware_mapping = 'adafruit-hat-pwm'
 class base:
     interval  = 3
     initSleep = 0
