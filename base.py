@@ -16,7 +16,7 @@ class base:
         self.line = "#"
         self.power = 'on'
         self.matrix.brightness = 50
-        self.matrix.slowdown_gpio = 2
+        self.matrix.gpio_slowdown = 2
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
         self.client        = self.config["settings"]["client_id"]
