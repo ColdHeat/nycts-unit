@@ -13,7 +13,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 options = RGBMatrixOptions()
 options.gpio_slowdown = 2
 options.pwm_bits = 10
-
+options.hardware_mapping = 'adafruit-hat-pwm'
 b = RGBMatrix(32,4, options = options)
 b.brightness = 50
 direction = True
@@ -67,6 +67,6 @@ try:
         swap.Clear()
         swap.SetImage(swapImage, 0, 0)
         swap = b.SwapOnVSync(swap)
-        time.sleep(0.1)
+        time.sleep(0.01)
 except KeyboardInterrupt:
     sys.exit(0)
