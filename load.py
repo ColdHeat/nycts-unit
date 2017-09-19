@@ -67,6 +67,6 @@ try:
         swap.Clear()
         swap.SetImage(swapImage, 0, 0)
         swap = b.SwapOnVSync(swap)
-        time.sleep(0.01)
+        time.sleep(0.02)
 except KeyboardInterrupt:
     sys.exit(0)
