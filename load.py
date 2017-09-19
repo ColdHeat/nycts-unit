@@ -59,11 +59,14 @@ try:
             direction = False
         if b.brightness == 0:
             direction = True
-            
+
         if direction == True:
             b.brightness += 1
         else:
             b.brightness -= 1
+        swap.Clear()
+        swap.SetImage(swapImage, 0, 0)
+        swap = b.SwapOnVSync(swap)
         time.sleep(0.1)
 except KeyboardInterrupt:
     sys.exit(0)
