@@ -16,7 +16,7 @@ options.pwm_bits = 10
 
 b = RGBMatrix(32,4, options = options)
 b.brightness = 50
-
+direction = True
 fontXoffset = 0
 topOffset   = 3
 
@@ -55,6 +55,15 @@ swap = b.SwapOnVSync(swap)
 
 try:
     while True:
-        time.sleep(100)
+        if b.brightness == 50:
+            direction = False
+        if b.brightness == 0:
+            direction = True
+            
+        if direction == True:
+            b.brightness += 1
+        else:
+            b.brightness -= 1
+        time.sleep(0.1)
 except KeyboardInterrupt:
     sys.exit(0)
