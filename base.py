@@ -7,11 +7,11 @@ import os
 import logs
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
+options = RGBMatrixOptions()
+options.gpio_slowdown = 2
 class base:
     interval  = 3
     initSleep = 0
-    options = RGBMatrixOptions()
-    options.gpio_slowdown = 2
     def __init__(self):
         self.matrix = RGBMatrix(32, 4, options = options)
         self.line = "#"
