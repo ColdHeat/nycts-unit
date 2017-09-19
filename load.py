@@ -57,7 +57,7 @@ try:
     while True:
         if b.brightness == 60:
             direction = False
-        if b.brightness == 20:
+        if b.brightness == 30:
             direction = True
 
         if direction == True:
