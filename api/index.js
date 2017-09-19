@@ -47,8 +47,6 @@ const checkPin = pin => {
   try {
     fileContents = fs.readFileSync('pin', 'utf-8');
     json = JSON.parse(fileContents);
-    console.log(pin);
-    console.log(json.pin);
     if (pin === json.pin) {
       return true;
     }
@@ -90,11 +88,10 @@ app.post('/setLogo', upload.single('image'), function(req, res) {
 });
 
 app.post('/checkPin', jsonParser, function(req, res) {
-  console.log(typeof req.body.pin);
   const isRight = checkPin(req.body.pin);
   res.json(isRight);
 });
 
 app.listen(3000, function() {
-  console.log('Example app listening on port 3000!');
+  console.log('NYC Train Sign Server listening on port 3000!');
 });
