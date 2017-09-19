@@ -15,7 +15,7 @@ options.gpio_slowdown = 2
 options.pwm_bits = 10
 options.hardware_mapping = 'adafruit-hat-pwm'
 b = RGBMatrix(32,4, options = options)
-b.brightness = 50
+b.brightness = 60
 direction = True
 fontXoffset = 0
 topOffset   = 3
@@ -55,9 +55,9 @@ swap = b.SwapOnVSync(swap)
 
 try:
     while True:
-        if b.brightness == 50:
+        if b.brightness == 60:
             direction = False
-        if b.brightness == 0:
+        if b.brightness == 20:
             direction = True
 
         if direction == True:
