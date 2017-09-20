@@ -269,6 +269,20 @@ module.exports = function() {
                         connection_info, next_step);
                 },
 
+                function create_pin(next_step) {
+                    write_template_to_file(
+                        "./assets/home/pi/nycts-unit/api/pin.template",
+                        "/home/pi/nycts-unit/api/pin",
+                        connection_info, next_step);
+                },
+
+                function create_config(next_step) {
+                    write_template_to_file(
+                        "./assets/home/pi/nycts-unit/api/config.json.template",
+                        "/home/pi/nycts-unit/api/config.json",
+                        connection_info, next_step);
+                },
+
                 // Stop the DHCP server...
                 function restart_dhcp_service(next_step) {
                     exec("service isc-dhcp-server stop", function(error, stdout, stderr) {

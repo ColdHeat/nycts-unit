@@ -57,6 +57,19 @@ const checkPin = pin => {
   return false;
 };
 
+const setPin = pin => {
+  const fileContents = {
+    pin: pin
+  };
+  const json = JSON.stringify(fileContents);
+  fs.writeFile('./pin', json, 'utf8', function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log('The file was saved!');
+  });
+};
+
 app.get('/', function(req, res) {
   res.json(config);
 });
@@ -90,6 +103,11 @@ app.post('/setLogo', upload.single('image'), function(req, res) {
 app.post('/checkPin', jsonParser, function(req, res) {
   const isRight = checkPin(req.body.pin);
   res.json(isRight);
+});
+
+app.post('/setPin', jsonParser, function(req, res) {
+  setPin(req.body.pin);
+  res.json(req.body);
 });
 
 app.listen(3000, function() {
