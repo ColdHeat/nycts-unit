@@ -22,7 +22,7 @@ let upload = multer({
 let config = require('./config.json');
 
 let ad = mdns.createAdvertisement(mdns.tcp('http-nycts'), 3000, {
-  name: 'NYCTrainSign-' + Date.now()
+  name: 'NYCTrainSign-' + config["settings"]["name"]
 });
 ad.start();
 
