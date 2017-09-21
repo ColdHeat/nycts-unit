@@ -122,7 +122,7 @@ class train:
                          circleYend), fill=circleColor)
             draw.text((circleXoffset + 1, circleYoffset - 2), nums,
                       font=constants.font, fill=constants.black)
-            draw.text((circleXend - 2, fontYoffset), dirLabel,
+            draw.text((circleXend, fontYoffset), dirLabel,
                       font=constants.font, fill=constants.green)
 
             if mins != 'DELAY ':
