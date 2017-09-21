@@ -83,7 +83,7 @@ class train:
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
-            minLabel = 'min'
+            minLabel = 'Min'
             dirLabel = '  ' + self.train_data[direction]['term']
 
             nums = self.data['routeId']
