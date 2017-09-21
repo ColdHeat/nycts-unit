@@ -109,7 +109,7 @@ class train:
             minPos = constants.width \
                 - constants.font.getsize(minLabel)[0] - 3
 
-            circleXoffset = fontXoffset + numLabelW - 5
+            circleXoffset = fontXoffset + numLabelW - 6
             circleYoffset = yOff + 1
 
             circleXend = circleXoffset + 8
