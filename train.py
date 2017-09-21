@@ -109,7 +109,7 @@ class train:
             minPos = constants.width \
                 - constants.font.getsize(minLabel)[0] - 3
 
-            circleXoffset = fontXoffset + numLabelW
+            circleXoffset = fontXoffset + numLabelW - 5
             circleYoffset = yOff + 1
 
             circleXend = circleXoffset + 8
@@ -122,7 +122,7 @@ class train:
                          circleYend), fill=circleColor)
             draw.text((circleXoffset + 1, circleYoffset - 2), nums,
                       font=constants.font, fill=constants.black)
-            draw.text((circleXend, fontYoffset), dirLabel,
+            draw.text((circleXend -5, fontYoffset), dirLabel,
                       font=constants.font, fill=constants.green)
 
             if mins != 'DELAY ':
