@@ -22,6 +22,8 @@ class train:
         t.daemon = True
         t.start()
 
+    loop_count = 0
+
     def thread(self):
         while True:
             self.config = self.base.config
@@ -41,6 +43,14 @@ class train:
             except Exception, e:
                 logs.logger.info('Train module', extra={'status': 0,
                                  'job': 'train_module'}, exc_info=True)
+
+                if loop_count >= 3:
+                    self.base.reboot_system(self)
+                    loop_count = 0
+                else:
+                    self.base.reset_wifi(self)
+                    loop_count = +1
+
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)

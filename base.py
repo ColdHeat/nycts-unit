@@ -26,6 +26,17 @@ class base:
         t.daemon           = True
         t.start()
 
+    def reset_wifi(self):
+        os.system('sudo ifconfig wlan0 down')
+        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+        os.system('sudo ifconfig wlan0 up')
+        logs.logger.info('WiFi Bootup', extra={'status': 1, 'job': 'wifi_reboot'})
+        time.sleep(5)
+
+    def reboot_system(self):
+        logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
+        os.system('sudo reboot now')
+
     def thread(self):
         initSleep          = 3
         base.initSleep    += 5
