@@ -40,7 +40,7 @@ class train:
                 self.train_data = data['data']
             except Exception, e:
                 logs.logger.info('Train module', extra={'status': 0,
-                                 'job': 'train_module'})
+                                 'job': 'train_module'}, exc_info=True)
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)
@@ -54,11 +54,11 @@ class train:
                                 self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
                             else:
                                 if row == 0 and direction == 'N':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 2
-                                if row == 1 and direction == 'N':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 7
-                                if row == 0 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
+                                if row == 1 and direction == 'N':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 8
+                                if row == 0 and direction == 'S':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
                                 if row == 1 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
             time.sleep(5)
