@@ -1,6 +1,5 @@
 interface={{ wifi_interface }}
 
-driver={{ wifi_driver_type }}
 
 ssid={{ ssid }}
 hw_mode=g
