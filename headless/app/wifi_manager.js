@@ -236,7 +236,23 @@ module.exports = function() {
                 },
                 function reboot_network_interfaces(next_step) {
                     _reboot_wireless_network(context.wifi_interface, next_step);
-                }
+                },
+                function restart_dhcp_service(next_step) {
+                    exec("service isc-dhcp-server restart", function(error, stdout, stderr) {
+                        //console.log(stdout);
+                        if (!error) console.log("... dhcp server restarted!");
+                        next_step();
+                    });
+                },
+
+                function restart_hostapd_service(next_step) {
+                    exec("service hostapd restart", function(error, stdout, stderr) {
+                        //console.log(stdout);
+                        if (!error) console.log("... hostapd restarted!");
+                        next_step();
+                    });
+                },
+
                 // TODO: Do we need to issue a reboot here?
 
             ], callback);
