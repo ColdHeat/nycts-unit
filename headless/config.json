@@ -5,8 +5,8 @@
     "access_point": {
         "force_reconfigure": true,
         "wifi_interface":    "wlan0",
-        "ssid":              "rpi-config-ap",
-        "passphrase":        "zzzzzzzz",
+        "ssid":              "NYCTrainSign",
+        "passphrase":        "",
         "domain":            "rpi.config",
         "ip_addr":           "192.168.44.1",
         "netmask":           "255.255.255.0",
