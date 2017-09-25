@@ -22,10 +22,10 @@ class train:
         t.daemon = True
         t.start()
 
-    loop_count = 0
-
     def thread(self):
         while True:
+            loop_count = 0
+            
             self.config = self.base.config
             try:
                 url = \
