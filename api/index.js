@@ -71,7 +71,7 @@ const setPin = pin => {
 };
 
 app.get('/', function(req, res) {
-  res.json(config);
+  res.send("Hello darkness my old friend, I've come to talk with you again.");
 });
 
 app.get('/getConfig', function(req, res) {
