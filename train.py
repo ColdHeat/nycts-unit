@@ -25,7 +25,7 @@ class train:
     def thread(self):
         while True:
             loop_count = 0
-            
+
             self.config = self.base.config
             try:
                 url = \
@@ -45,10 +45,10 @@ class train:
                                  'job': 'train_module'}, exc_info=True)
 
                 if loop_count >= 3:
-                    self.base.reboot_system(self)
+                    self.base.reboot_system()
                     loop_count = 0
                 else:
-                    self.base.reset_wifi(self)
+                    self.base.reset_wifi()
                     loop_count = +1
 
                 end = time.time()
