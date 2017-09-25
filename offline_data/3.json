@@ -1,0 +1,62 @@
+{
+	"data": {
+		"N": {
+			"schedule": [
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 2,
+					"departureTime": 1506104794
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 10,
+					"departureTime": 1506105300
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 17,
+					"departureTime": 1506105672
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 22,
+					"departureTime": 1506106020
+				}
+			],
+			"term": "8 AV"
+		},
+		"S": {
+			"schedule": [
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 3,
+					"departureTime": 1506104679
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 4,
+					"departureTime": 1506104934
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 10,
+					"departureTime": 1506105267
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 15,
+					"departureTime": 1506105570
+				}
+			],
+			"term": "ROCKAWAY PKWY"
+		}
+	}
+}

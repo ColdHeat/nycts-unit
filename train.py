@@ -24,7 +24,6 @@ class train:
 
     def thread(self):
         while True:
-            self.config = self.base.config
             try:
                 url = \
                     'https://api.trainsignapi.com/dev-trains/stations/' \
@@ -71,10 +70,15 @@ class train:
         self.base.matrix.SetImage(image, 0, 0)
 
     def draw(self, direction):
+        self.config = self.base.config
         image = Image.new('RGB', (constants.width, constants.height))
         draw = ImageDraw.Draw(image)
 
-        for row in [0, 1]:
+        indexRange = [0,1]
+        if "customer_retention" in self.config["settings"] and self.config["settings"]["customer_retention"] == True:
+            indexRange = [1,2]
+
+        for row in indexRange:
             self.data = self.train_data[direction]['schedule'][row]
             xOff = 2
             yOff = 2
