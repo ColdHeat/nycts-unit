@@ -27,10 +27,8 @@ class base:
         t.start()
 
     def reset_wifi(self):
-        os.system('sudo ifconfig wlan0 down')
+        os.system('sudo /system/restartWifi.js')
         logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-        os.system('sudo ifconfig wlan0 up')
-        logs.logger.info('WiFi Bootup', extra={'status': 1, 'job': 'wifi_reboot'})
         time.sleep(5)
 
     def reboot_system(self):
