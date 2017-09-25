@@ -234,7 +234,9 @@ module.exports = function() {
                         next_step();
                     });
                 },
-
+                function reboot_network_interfaces(next_step) {
+                    _reboot_wireless_network(context.wifi_interface, next_step);
+                }
                 // TODO: Do we need to issue a reboot here?
 
             ], callback);

@@ -53,6 +53,8 @@ module.exports = function(wifi_manager, callback) {
         var conn_info = {
             wifi_ssid:      request.body.wifi_ssid,
             wifi_passcode:  request.body.wifi_passcode,
+            name:  request.body.name,
+            pin:  request.body.pin
         };
 
         // TODO: If wifi did not come up correctly, it should fail
