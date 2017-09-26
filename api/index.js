@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const mdns = require('mdns');
 const fs = require('fs');
 const multer = require('multer');
 const bodyParser = require('body-parser');
@@ -20,11 +19,6 @@ let upload = multer({
 });
 
 let config = require('./config.json');
-
-let ad = mdns.createAdvertisement(mdns.tcp('http-nycts'), 3000, {
-  name: 'NYCTrainSign-' + config["settings"]["name"]
-});
-ad.start();
 
 const jsonReplacer = (key, value) => {
   if (value === 'false') return false;
