@@ -4,7 +4,6 @@ import logs
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-
 class Watcher:
     DIRECTORY_TO_WATCH = "/home/pi/nycts-unit/tmp/"
 
@@ -12,10 +11,11 @@ class Watcher:
         self.observer = Observer()
 
     def run(self):
-        os.system("sudo node /home/pi/nycts-unit/system/resetWifi.js")
+
         event_handler = Handler()
         self.observer.schedule(event_handler, self.DIRECTORY_TO_WATCH, recursive=True)
         self.observer.start()
+
         try:
             while True:
                 time.sleep(1)
@@ -29,19 +29,23 @@ class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
+        fail_count = 0
+
         if event.is_directory:
             return None
 
         elif event.event_type == 'created':
             # Take any action here when a file is first created.
             print "Received created event - %s." % event.src_path
-            logs.logger.info('Handler module', extra={'status': 0,'job': 'created_event'})
-
-        elif event.event_type == 'modified':
-            # Taken any action here when a file is modified.
-            print "Received modified event - %s." % event.src_path
-            logs.logger.info('Handler module', extra={'status': 0,'job': 'modified_event'})
-
+            if fail_count > 5:
+                os.system('sudo reboot now')
+            else:
+                os.system('sudo ifconfig wlan0 down')
+                os.system('sudo ifconfig wlan0 up')
+                # os.system("sudo python /home/pi/nycts-unit/system/test.py")
+                logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+                time.sleep(10)
+                fail_count += 1
 
 if __name__ == '__main__':
     w = Watcher()
