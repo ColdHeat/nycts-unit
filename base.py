@@ -5,20 +5,13 @@ import json
 import urllib2
 import os
 import logs
-import pwd
-import grp
-
-uid = pwd.getpwnam("nobody").pw_uid
-gid = grp.getgrnam("nogroup").gr_gid
-path = '/system/restartWifi.js'
-os.chown(path, uid, gid)
-
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 options = RGBMatrixOptions()
 options.gpio_slowdown = 2
 options.pwm_bits = 10
 options.hardware_mapping = 'adafruit-hat-pwm'
+
 class base:
     interval  = 3
     initSleep = 0
