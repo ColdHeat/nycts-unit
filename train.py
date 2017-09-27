@@ -45,10 +45,10 @@ class train:
                                  'job': 'train_module'}, exc_info=True)
 
                 if loop_count >= 3:
-                    os.system('sudo touch /tmp/a.txt')
+                    open('/tmp/fail.txt', 'w').close()
                     loop_count = 0
                 else:
-                    os.system('sudo touch /tmp/a.txt')
+                    open('/tmp/fail.txt', 'w').close()
                     loop_count = +1
 
                 end = time.time()

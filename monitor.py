@@ -11,7 +11,7 @@ class Watcher:
         self.observer = Observer()
 
     def run(self):
-
+        print "Starting NYC Train Sign Watchdog monitor..."
         event_handler = Handler()
         self.observer.schedule(event_handler, self.DIRECTORY_TO_WATCH, recursive=True)
         self.observer.start()
@@ -35,17 +35,24 @@ class Handler(FileSystemEventHandler):
             return None
 
         elif event.event_type == 'created':
-            # Take any action here when a file is first created.
             print "Received created event - %s." % event.src_path
+            print "Current fail count: " + fail_count
+
             if fail_count > 5:
+                print "Rebooting system...."
+                logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
                 os.system('sudo reboot now')
             else:
+                print "Turning wifi off..."
                 os.system('sudo ifconfig wlan0 down')
+                print "Turning wifi on..."
                 os.system('sudo ifconfig wlan0 up')
                 # os.system("sudo python /home/pi/nycts-unit/system/test.py")
                 logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
                 time.sleep(10)
                 fail_count += 1
+                print "Removing tmp file..."
+                os.system('sudo rm -rf /home/pi/nycts-unit/tmp/*')
 
 if __name__ == '__main__':
     w = Watcher()
