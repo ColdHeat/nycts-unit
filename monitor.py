@@ -6,7 +6,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 class Watcher:
-    FILE_TO_WATCH = "/home/pi/nycts-unit/logs/logs.json"
+    FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
 
     def __init__(self):
         self.observer = Observer()
@@ -25,7 +25,7 @@ class Watcher:
 
         self.observer.join()
 
-class Handler(FileModifiedEvent):
+class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
