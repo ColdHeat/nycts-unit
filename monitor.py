@@ -31,10 +31,7 @@ class Handler(FileModifiedEvent):
     def on_any_event(event):
         fail_count = 0
 
-        if event.is_directory:
-            return None
-
-        elif event.event_type == 'modified':
+        if event.event_type == 'modified':
             print "Current fail count: " + str(fail_count)
 
             data = []
