@@ -38,26 +38,25 @@ class Handler(FileSystemEventHandler):
                 for line in f:
                     data.append(json.loads(line))
 
-                if fail_count > 3:
-                    print "Rebooting system...."
-                    logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
-                    os.system('sudo reboot now')
-                else:
-                    try:
-                        if data[-1]['status'] == 0:
+                try:
+                    log_status = data[-1]['status']
+                    if log_status == None:
+                        continue
+                    else:
+                        if fail_count > 3:
+                            print "Rebooting system...."
+                            logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
+                            os.system('sudo reboot now')
+                        else:
                             print "Turning wifi off..."
                             os.system('sudo ifconfig wlan0 down')
                             print "Turning wifi on..."
                             os.system('sudo ifconfig wlan0 up')
                             logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-                            print "Removing tmp file..."
-                            logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'remove_tmp_files'})
-                            os.system('sudo rm -rf /home/pi/nycts-unit/tmp/*')
-                            time.sleep(10)
                             fail_count += 1
-
-                    except Exception as e:
-                        pass
+                            time.sleep(5)
+                except Exception, e:
+                    print e
 
 
 if __name__ == '__main__':
