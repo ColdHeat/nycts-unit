@@ -25,7 +25,7 @@ class Watcher:
 
         self.observer.join()
 
-class Handler(FileSystemEventHandler):
+class Handler(FileModifiedEvent):
 
     @staticmethod
     def on_any_event(event):
