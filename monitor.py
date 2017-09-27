@@ -32,34 +32,32 @@ class Handler(FileSystemEventHandler):
         fail_count = 0
 
         if event.event_type == 'modified':
-            print "Current fail count: " + str(fail_count)
-
             data = []
 
             with open('/home/pi/nycts-unit/logs/logs.json') as f:
                 for line in f:
                     data.append(json.loads(line))
 
-            try:
-                if data[-1]['status'] == 0:
-                    if fail_count > 3:
-                        print "Rebooting system...."
-                        logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
-                        os.system('sudo reboot now')
-                    else:
-                        print "Turning wifi off..."
-                        os.system('sudo ifconfig wlan0 down')
-                        print "Turning wifi on..."
-                        os.system('sudo ifconfig wlan0 up')
-                        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-                        print "Removing tmp file..."
-                        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'remove_tmp_files'})
-                        os.system('sudo rm -rf /home/pi/nycts-unit/tmp/*')
-                        time.sleep(10)
-                        fail_count += 1
+                if fail_count > 3:
+                    print "Rebooting system...."
+                    logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
+                    os.system('sudo reboot now')
+                else:
+                    try:
+                        if data[-1]['status'] == 0:
+                            print "Turning wifi off..."
+                            os.system('sudo ifconfig wlan0 down')
+                            print "Turning wifi on..."
+                            os.system('sudo ifconfig wlan0 up')
+                            logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+                            print "Removing tmp file..."
+                            logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'remove_tmp_files'})
+                            os.system('sudo rm -rf /home/pi/nycts-unit/tmp/*')
+                            time.sleep(10)
+                            fail_count += 1
 
-            except Exception as e:
-                pass
+                    except Exception as e:
+                        pass
 
 
 if __name__ == '__main__':
