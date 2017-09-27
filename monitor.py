@@ -12,7 +12,7 @@ class Watcher:
         self.observer = Observer()
 
     def run(self):
-        print "Woof woof! <_< <_<      >_> >_>"
+        print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
@@ -39,6 +39,7 @@ class Handler(FileSystemEventHandler):
                     data.append(json.loads(line))
 
                 log_status = data[-1]['status']
+
                 if log_status == 1:
                     print "Normal Log...not doing anything"
                 else:
@@ -52,8 +53,8 @@ class Handler(FileSystemEventHandler):
                         os.system('sudo ifconfig wlan0 down')
                         print "Turning wifi on..."
                         os.system('sudo ifconfig wlan0 up')
+                        time.sleep(60)
                         fail_count += 1
-                        time.sleep(5)
 
 
 if __name__ == '__main__':

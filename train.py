@@ -41,32 +41,30 @@ class train:
 
                 self.train_data = data['data']
             except Exception, e:
+                logs.logger.info('Train module', extra={'status': 0,
+                                 'job': 'train_module'}, exc_info=True)
 
-                if fail_count == 0:
-                    logs.logger.info('Train module', extra={'status': 0,
-                                     'job': 'train_module'}, exc_info=True)
-                else:
-                    end = time.time()
+                end = time.time()
 
-                    time_difference = math.ceil(end - self.start)
+                time_difference = math.ceil(end - self.start)
 
-                    if time_difference >= 60:
-                        self.start = time.time()
-                        for direction in ['N', 'S']:
-                            for row in [0, 1]:
-                                mins = self.train_data[direction]['schedule'][row]['arrivalTime']
-                                if self.train_data[direction]['schedule'][row]['arrivalTime'] > 0:
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
-                                else:
-                                    if row == 0 and direction == 'N':
-                                        self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
-                                    if row == 1 and direction == 'N':
-                                        self.train_data[direction]['schedule'][row]['arrivalTime'] = 8
-                                    if row == 0 and direction == 'S':
-                                        self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
-                                    if row == 1 and direction == 'S':
-                                        self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
-                    time.sleep(5)
+                if time_difference >= 60:
+                    self.start = time.time()
+                    for direction in ['N', 'S']:
+                        for row in [0, 1]:
+                            mins = self.train_data[direction]['schedule'][row]['arrivalTime']
+                            if self.train_data[direction]['schedule'][row]['arrivalTime'] > 0:
+                                self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
+                            else:
+                                if row == 0 and direction == 'N':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
+                                if row == 1 and direction == 'N':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 8
+                                if row == 0 and direction == 'S':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
+                                if row == 1 and direction == 'S':
+                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
+            time.sleep(5)
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))
