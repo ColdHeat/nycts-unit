@@ -11,7 +11,7 @@ class Watcher:
         self.observer = Observer()
 
     def run(self):
-        print "Woof woof! 🐶"
+        print "Woof woof! <_< <_<      >_> >_>"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.DIRECTORY_TO_WATCH, recursive=True)
         self.observer.start()
