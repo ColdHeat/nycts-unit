@@ -20,8 +20,8 @@ do
     sleep 5
 
     if [ $i == 10 ]; then
-  		offline=true
-	fi
+			offline=true
+		fi
 done
 
 cd /home/pi/nycts-unit/api
