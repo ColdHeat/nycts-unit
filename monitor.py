@@ -38,25 +38,22 @@ class Handler(FileSystemEventHandler):
                 for line in f:
                     data.append(json.loads(line))
 
-                try:
-                    log_status = data[-1]['status']
-                    if log_status == None:
-                        continue
+                log_status = data[-1]['status']
+                if log_status == 1:
+                    print "Normal Log...not doing anything"
+                else:
+                    if fail_count > 3:
+                        logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
+                        print "Rebooting system...."
+                        os.system('sudo reboot now')
                     else:
-                        if fail_count > 3:
-                            print "Rebooting system...."
-                            logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
-                            os.system('sudo reboot now')
-                        else:
-                            print "Turning wifi off..."
-                            os.system('sudo ifconfig wlan0 down')
-                            print "Turning wifi on..."
-                            os.system('sudo ifconfig wlan0 up')
-                            logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-                            fail_count += 1
-                            time.sleep(5)
-                except Exception, e:
-                    print e
+                        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+                        print "Turning wifi off..."
+                        os.system('sudo ifconfig wlan0 down')
+                        print "Turning wifi on..."
+                        os.system('sudo ifconfig wlan0 up')
+                        fail_count += 1
+                        time.sleep(5)
 
 
 if __name__ == '__main__':
