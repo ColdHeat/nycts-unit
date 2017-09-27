@@ -1,7 +1,11 @@
 #!/bin/bash
 
 cd /home/pi/nycts-unit
+sudo python reset.py &
 sudo python load.py &
+
+cd /home/pi/nycts-unit/headless
+sudo npm run start
 
 STATE="loading";
 i=0;
@@ -20,17 +24,19 @@ do
 	fi
 done
 
-if [ offline == false ]; then
-	GIT_STATE=$(su pi --preserve-environment -c "cd /home/pi/nycts-unit && git pull" > "Already up to date." &&  echo ok || echo bad)
-	if [ $GIT_STATE == "bad" ]; then
-	  yarn install
-	fi
-fi
-
 cd /home/pi/nycts-unit/api
-sudo pkill -f load.py
+node bonjour.js &
 node index.js &
+pkill -f load.py
 sleep 10
 cd /home/pi/nycts-unit
-sudo python start.py
-#sudo python combo.p
+sudo python start.py &
+sudo /etc/init.d/avahi-daemon restart
+
+while true; do
+	sleep 60
+	pkill -f bonjour.js
+	sleep 1
+	cd /home/pi/nycts-unit/api
+	node bonjour.js &
+done
