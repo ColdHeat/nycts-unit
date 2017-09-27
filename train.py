@@ -45,10 +45,10 @@ class train:
                                  'job': 'train_module'}, exc_info=True)
 
                 if loop_count >= 3:
-                    open('/tmp/fail.txt', 'w').close()
+                    open('/home/pi/nycts-unit/tmp/fail.txt', 'w').close()
                     loop_count = 0
                 else:
-                    open('/tmp/fail.txt', 'w').close()
+                    open('/home/pi/nycts-unit/tmp/fail.txt', 'w').close()
                     loop_count = +1
 
                 end = time.time()
