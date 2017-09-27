@@ -18,8 +18,7 @@ do
 
     #sleep for 1 seconds and try again
     sleep 5
-
-    if [ $i == 10 ]; then
+		if [ $i == 10 ]; then
 			offline=true
 		fi
 done
