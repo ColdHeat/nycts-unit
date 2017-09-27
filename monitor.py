@@ -2,10 +2,10 @@ import time
 import os
 import logs
 from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+from watchdog.events import FileModifiedEvent
 
 class Watcher:
-    DIRECTORY_TO_WATCH = "/home/pi/nycts-unit/tmp/"
+    FILE_TO_WATCH = "/home/pi/nycts-unit/logs/logs.json"
 
     def __init__(self):
         self.observer = Observer()
@@ -13,7 +13,7 @@ class Watcher:
     def run(self):
         print "Woof woof! <_< <_<      >_> >_>"
         event_handler = Handler()
-        self.observer.schedule(event_handler, self.DIRECTORY_TO_WATCH, recursive=True)
+        self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
 
         try:
@@ -21,11 +21,10 @@ class Watcher:
                 time.sleep(1)
         except:
             self.observer.stop()
-            print "Error"
 
         self.observer.join()
 
-class Handler(FileSystemEventHandler):
+class Handler(FileModifiedEvent):
 
     @staticmethod
     def on_any_event(event):
@@ -34,8 +33,7 @@ class Handler(FileSystemEventHandler):
         if event.is_directory:
             return None
 
-        elif event.event_type == 'created':
-            print "Received created event - %s." % event.src_path
+        elif event.event_type == 'modified':
             print "Current fail count: " + str(fail_count)
 
             if fail_count > 3:
@@ -47,7 +45,6 @@ class Handler(FileSystemEventHandler):
                 os.system('sudo ifconfig wlan0 down')
                 print "Turning wifi on..."
                 os.system('sudo ifconfig wlan0 up')
-                # os.system("sudo python /home/pi/nycts-unit/system/test.py")
                 logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
                 print "Removing tmp file..."
                 logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'remove_tmp_files'})

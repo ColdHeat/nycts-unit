@@ -24,8 +24,6 @@ class train:
 
     def thread(self):
         while True:
-            loop_count = 0
-
             self.config = self.base.config
             try:
                 url = \
@@ -43,13 +41,6 @@ class train:
             except Exception, e:
                 logs.logger.info('Train module', extra={'status': 0,
                                  'job': 'train_module'}, exc_info=True)
-
-                if loop_count >= 3:
-                    open('/home/pi/nycts-unit/tmp/fail.txt', 'w').close()
-                    loop_count = 0
-                else:
-                    open('/home/pi/nycts-unit/tmp/fail.txt', 'w').close()
-                    loop_count = +1
 
                 end = time.time()
 
