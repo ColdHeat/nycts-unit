@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "W",
 					"delay": null,
 					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"departureTime": 1506557061
 				},
 				{
-					"routeId": "L",
+					"routeId": "W",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"arrivalTime": 11,
+					"departureTime": 1506557603
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 14,
+					"departureTime": 1506557785
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 19,
+					"departureTime": 1506558051
 				}
 			],
-			"term": "8 AV"
+			"term": "DITMARS BLVD"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 5,
+					"departureTime": 1506557220
 				},
 				{
-					"routeId": "L",
+					"routeId": "W",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 11,
+					"departureTime": 1506557550
 				},
 				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
-				},
-				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
 					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"departureTime": 1506557820
+				},
+				{
+					"routeId": "W",
+					"delay": null,
+					"arrivalTime": 21,
+					"departureTime": 1506558150
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "WHITEHALL ST"
 		}
 	}
 }

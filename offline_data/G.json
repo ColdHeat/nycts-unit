@@ -6,25 +6,25 @@
 					"routeId": "L",
 					"delay": null,
 					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"departureTime": 1506556627
+				},
+				{
+					"routeId": "L",
+					"delay": null,
+					"arrivalTime": 6,
+					"departureTime": 1506557020
 				},
 				{
 					"routeId": "L",
 					"delay": null,
 					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"departureTime": 1506557244
 				},
 				{
 					"routeId": "L",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
-				},
-				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 14,
+					"departureTime": 1506557473
 				}
 			],
 			"term": "8 AV"
@@ -34,26 +34,26 @@
 				{
 					"routeId": "L",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 1,
+					"departureTime": 1506556730
 				},
 				{
 					"routeId": "L",
 					"delay": null,
 					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"departureTime": 1506556893
 				},
 				{
 					"routeId": "L",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 7,
+					"departureTime": 1506557045
 				},
 				{
 					"routeId": "L",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 11,
+					"departureTime": 1506557313
 				}
 			],
 			"term": "ROCKAWAY PKWY"

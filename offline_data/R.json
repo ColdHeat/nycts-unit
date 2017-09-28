@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 2,
-					"departureTime": 1506104794
-				},
-				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
 					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"departureTime": 1506617365
 				},
 				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 19,
+					"departureTime": 1506617928
 				},
 				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 28,
+					"departureTime": 1506618477
+				},
+				{
+					"routeId": "R",
+					"delay": null,
+					"arrivalTime": 38,
+					"departureTime": 1506619077
 				}
 			],
-			"term": "8 AV"
+			"term": "71 AV"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 2,
+					"departureTime": 1506616796
 				},
 				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 7,
+					"departureTime": 1506617217
 				},
 				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 13,
+					"departureTime": 1506617547
 				},
 				{
-					"routeId": "L",
+					"routeId": "R",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 21,
+					"departureTime": 1506618053
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "BAY RIDGE"
 		}
 	}
 }

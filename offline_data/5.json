@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
-					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"arrivalTime": 11,
+					"departureTime": 1506617895
 				},
 				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"arrivalTime": 15,
+					"departureTime": 1506618132
 				},
 				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
-				},
-				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
 					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"departureTime": 1506618572
+				},
+				{
+					"routeId": "5",
+					"delay": null,
+					"arrivalTime": 33,
+					"departureTime": 1506619237
 				}
 			],
-			"term": "8 AV"
+			"term": "DYRE AV"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
-				},
-				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
 					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"departureTime": 1506616980
 				},
 				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 12,
+					"departureTime": 1506617460
 				},
 				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 20,
+					"departureTime": 1506617940
+				},
+				{
+					"routeId": "5",
+					"delay": null,
+					"arrivalTime": 28,
+					"departureTime": 1506618420
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "BK COLLEGE"
 		}
 	}
 }

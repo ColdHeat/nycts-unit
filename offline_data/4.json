@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"arrivalTime": 3,
+					"departureTime": 1506556931
 				},
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"arrivalTime": 6,
+					"departureTime": 1506557121
 				},
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 15,
+					"departureTime": 1506557634
 				},
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 16,
+					"departureTime": 1506557730
 				}
 			],
-			"term": "8 AV"
+			"term": "WOODLAWN"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 8,
+					"departureTime": 1506557225
 				},
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 21,
+					"departureTime": 1506558030
 				},
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 29,
+					"departureTime": 1506558510
 				},
 				{
-					"routeId": "L",
+					"routeId": "4",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 36,
+					"departureTime": 1506558900
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "NEW LOTS"
 		}
 	}
 }

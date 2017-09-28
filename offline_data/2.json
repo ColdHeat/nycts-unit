@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "2",
 					"delay": null,
-					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"arrivalTime": 7,
+					"departureTime": 1506557102
 				},
 				{
-					"routeId": "L",
+					"routeId": "2",
 					"delay": null,
 					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"departureTime": 1506557337
 				},
 				{
-					"routeId": "L",
+					"routeId": "2",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 19,
+					"departureTime": 1506557875
 				},
 				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 27,
+					"departureTime": 1506558324
 				}
 			],
-			"term": "8 AV"
+			"term": "WAKEFIELD"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "5",
+					"delay": null,
+					"arrivalTime": 1,
+					"departureTime": 1506556776
+				},
+				{
+					"routeId": "2",
 					"delay": null,
 					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"departureTime": 1506556905
 				},
 				{
-					"routeId": "L",
+					"routeId": "5",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 6,
+					"departureTime": 1506557040
 				},
 				{
-					"routeId": "L",
+					"routeId": "2",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
-				},
-				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 11,
+					"departureTime": 1506557364
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "BK COLLEGE"
 		}
 	}
 }

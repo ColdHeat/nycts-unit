@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"arrivalTime": 1,
+					"departureTime": 1506556860
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"arrivalTime": 11,
+					"departureTime": 1506557430
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 21,
+					"departureTime": 1506558060
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 31,
+					"departureTime": 1506558660
 				}
 			],
-			"term": "8 AV"
+			"term": "DITMARS AV"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 2,
+					"departureTime": 1506556925
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 16,
+					"departureTime": 1506557765
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 28,
+					"departureTime": 1506558473
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 35,
+					"departureTime": 1506558879
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "CONEY ISLAND"
 		}
 	}
 }

@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"arrivalTime": 8,
+					"departureTime": 1506617242
 				},
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"arrivalTime": 18,
+					"departureTime": 1506617805
 				},
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 21,
+					"departureTime": 1506617980
 				},
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 27,
+					"departureTime": 1506618369
 				}
 			],
-			"term": "8 AV"
+			"term": "148 ST"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 1,
+					"departureTime": 1506616770
 				},
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 9,
+					"departureTime": 1506617250
 				},
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 17,
+					"departureTime": 1506617730
 				},
 				{
-					"routeId": "L",
+					"routeId": "3",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 25,
+					"departureTime": 1506618210
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "NEW LOTS"
 		}
 	}
 }

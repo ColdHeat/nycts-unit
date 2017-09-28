@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
 					"arrivalTime": 2,
-					"departureTime": 1506104794
+					"departureTime": 1506556820
 				},
 				{
-					"routeId": "L",
+					"routeId": "Q",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105300
+					"arrivalTime": 4,
+					"departureTime": 1506556890
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 17,
-					"departureTime": 1506105672
+					"arrivalTime": 8,
+					"departureTime": 1506557363
 				},
 				{
-					"routeId": "L",
+					"routeId": "Q",
 					"delay": null,
-					"arrivalTime": 22,
-					"departureTime": 1506106020
+					"arrivalTime": 9,
+					"departureTime": 1506557440
 				}
 			],
-			"term": "8 AV"
+			"term": "96 ST"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 3,
-					"departureTime": 1506104679
+					"arrivalTime": 1,
+					"departureTime": 1506556908
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506104934
+					"arrivalTime": 12,
+					"departureTime": 1506557573
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 10,
-					"departureTime": 1506105267
+					"arrivalTime": 19,
+					"departureTime": 1506557988
 				},
 				{
-					"routeId": "L",
+					"routeId": "N",
 					"delay": null,
-					"arrivalTime": 15,
-					"departureTime": 1506105570
+					"arrivalTime": 33,
+					"departureTime": 1506558840
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "CONEY ISLAND"
 		}
 	}
 }
