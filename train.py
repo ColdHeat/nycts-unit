@@ -17,11 +17,15 @@ class train:
         self.base = base
         self.config = base.config
         self.start = time.time()
-        self.train_data = {"N":{"schedule":[{"routeId":"L","delay":None,"arrivalTime":0,"departureTime":1505327610},{"routeId":"L","delay":None,"arrivalTime":7,"departureTime":1505328052}],"term":"MANHATTAN"},"S":{"schedule":[{"routeId":"L","delay":None,"arrivalTime":0,"departureTime":1505327613},{"routeId":"L","delay":None,"arrivalTime":8,"departureTime":1505328098}],"term":"ROCKAWAY PKWY"}}
-        t = threading.Thread(target=self.thread)
+        self.train_data = self.getFakeNews()
         t.daemon = True
         t.start()
+    def getFakeNews(self):
+        line = self.config["subway"]["line"]
+        with open('./offline_data/'+ line + '.json') as json_file:
+            json_data = json.load(json_file)
 
+        return json_data
     def thread(self):
         while True:
             try:
