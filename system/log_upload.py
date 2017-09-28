@@ -10,7 +10,7 @@ with open(config_path + "/nycts-unit/api/config.json") as json_file:
 
 client_id = config_file['settings']['client_id']
 
-url = "https://api.trainsignapi.com/dev-logs/logs/" + client_id + "/upload"
+url = "https://api.trainsignapi.com/prod-logs/logs/" + client_id + "/upload"
 
 querystring = {client_id: client_id}
 
@@ -21,7 +21,7 @@ with open(file_path, "rb") as f:
 
 headers = {
     'content-type': "application/octet-stream",
-    'x-api-key': config_file['settings']['dev_api_key']
+    'x-api-key': config_file['settings']['prod_api_key']
     }
 
 response = requests.request("POST", url, data=payload, headers=headers, params=querystring)

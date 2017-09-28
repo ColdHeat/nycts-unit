@@ -11,6 +11,7 @@ import psutil
 import subprocess
 import threading
 import os
+import sys
 from base import base
 from weather import weather
 from customtext import customtext
@@ -82,5 +83,4 @@ while True:
     except Exception as e:
         logging.exception("message")
         logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen'}, exc_info=True)
-        os.system('reboot now')
         pass

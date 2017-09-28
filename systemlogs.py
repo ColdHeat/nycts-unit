@@ -28,7 +28,7 @@ class systemlogs:
             pass
         else:
             try:
-                logs.logger.info('System Diagnostic', extra={'cpu_usage': psutil.cpu_percent(interval=1),
+                logs.logger.info('System Diagnostic', extra={'status': 1, 'cpu_usage': psutil.cpu_percent(interval=1),
                 'virtual_memory': psutil.virtual_memory()[2], 'swap_memory': psutil.swap_memory()[3],
                 'disk_usage': psutil.disk_usage('/')[3], 'temp': str((int(subprocess.check_output(['cat', '/sys/class/thermal/thermal_zone0/temp']))/1000) * 9/5 + 32) + ' F',
                 })
@@ -46,7 +46,6 @@ class systemlogs:
         else:
             try:
                 speed_data = subprocess.check_output(['speedtest-cli', '--json'])
-                logs.logger.info('Internet Speed', extra={'speed_test': speed_data})
             except Exception as e:
                 logs.logger.info('Speed Test', extra={'status': 0, 'job':'speed_test'}, exc_info=True)
 
