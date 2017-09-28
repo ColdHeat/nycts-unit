@@ -8,6 +8,7 @@ import time
 import signal
 import logging
 import constants
+import sys
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 options = RGBMatrixOptions()
