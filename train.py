@@ -18,14 +18,15 @@ class train:
         self.config = base.config
         self.start = time.time()
         self.train_data = self.getFakeNews()
+        t = threading.Thread(target=self.thread)
         t.daemon = True
         t.start()
     def getFakeNews(self):
         line = self.config["subway"]["line"]
         with open('./offline_data/'+ line + '.json') as json_file:
-            json_data = json.load(json_file)
+            json_data = json.loads(json_file)
 
-        return json_data
+        return json_data["data"]
     def thread(self):
         while True:
             try:
