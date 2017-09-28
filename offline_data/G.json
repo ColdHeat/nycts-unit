@@ -3,60 +3,60 @@
 		"N": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
 					"arrivalTime": 2,
-					"departureTime": 1506556627
+					"departureTime": 1506624349
 				},
 				{
-					"routeId": "L",
-					"delay": null,
-					"arrivalTime": 6,
-					"departureTime": 1506557020
-				},
-				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
 					"arrivalTime": 10,
-					"departureTime": 1506557244
+					"departureTime": 1506624949
 				},
 				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
-					"arrivalTime": 14,
-					"departureTime": 1506557473
+					"arrivalTime": 21,
+					"departureTime": 1506625607
+				},
+				{
+					"routeId": "G",
+					"delay": null,
+					"arrivalTime": 30,
+					"departureTime": 1506626130
 				}
 			],
-			"term": "8 AV"
+			"term": "COURT SQ"
 		},
 		"S": {
 			"schedule": [
 				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
-					"arrivalTime": 1,
-					"departureTime": 1506556730
+					"arrivalTime": 3,
+					"departureTime": 1506624529
 				},
 				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
-					"arrivalTime": 4,
-					"departureTime": 1506556893
+					"arrivalTime": 14,
+					"departureTime": 1506625170
 				},
 				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
-					"arrivalTime": 7,
-					"departureTime": 1506557045
+					"arrivalTime": 24,
+					"departureTime": 1506625770
 				},
 				{
-					"routeId": "L",
+					"routeId": "G",
 					"delay": null,
-					"arrivalTime": 11,
-					"departureTime": 1506557313
+					"arrivalTime": 33,
+					"departureTime": 1506626310
 				}
 			],
-			"term": "ROCKAWAY PKWY"
+			"term": "CHURCH AV"
 		}
 	}
 }
