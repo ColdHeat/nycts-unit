@@ -39,7 +39,6 @@ class weather:
 
         except Exception as e:
             logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
-            time.sleep(60)
 
     def thread(self):
         while True:
@@ -47,7 +46,7 @@ class weather:
 
             self.queryWeatherEndpoint()
 
-            time.sleep(300)
+            time.sleep(120)
 
 
     def draw(self):
