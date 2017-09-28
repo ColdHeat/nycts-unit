@@ -24,7 +24,7 @@ class train:
     def getFakeNews(self):
         line = self.config["subway"]["line"]
         with open('./offline_data/'+ line + '.json') as json_file:
-            json_data = json.loads(json_file)
+            json_data = json.load(json_file)
 
         return json_data["data"]
     def thread(self):
