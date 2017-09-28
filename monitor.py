@@ -29,6 +29,8 @@ class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
+        last_five_log_statuses = 0
+        
         if event.event_type == 'modified':
             data = []
 
