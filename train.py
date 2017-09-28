@@ -29,11 +29,11 @@ class train:
             self.config = self.base.config
             try:
                 url = \
-                    'https://api.trainsignapi.com/dev-trains/stations/' \
+                    'https://api.trainsignapi.com/prod-trains/stations/' \
                     + self.config['subway']['train']
                 querystring = {'': ''}
                 headers = {'x-api-key': self.config['settings'
-                           ]['dev_api_key']}
+                           ]['prod_api_key']}
 
                 response = requests.request('GET', url,
                         headers=headers, params=querystring)
@@ -43,6 +43,7 @@ class train:
             except Exception, e:
                 logs.logger.info('Train module', extra={'status': 0,
                                  'job': 'train_module'}, exc_info=True)
+                time.sleep(60)
 
                 end = time.time()
 
@@ -64,7 +65,7 @@ class train:
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
                                 if row == 1 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
-            time.sleep(5)
+            # time.sleep(5)
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))

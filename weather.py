@@ -24,10 +24,10 @@ class weather:
     def queryWeatherEndpoint(self):
         try:
 
-            url = "https://api.trainsignapi.com/dev-weather/weather/zipCode/" + self.config["weather"]["zip_code"]
+            url = "https://api.trainsignapi.com/prod-weather/weather/zipCode/" + self.config["weather"]["zip_code"]
 
-            headers = {'x-api-key': self.config["settings"]["dev_api_key"]}
-            
+            headers = {'x-api-key': self.config["settings"]["prod_api_key"]}
+
             querystring = {"":""}
 
             response = requests.request("GET", url, headers=headers, params=querystring)
@@ -39,6 +39,7 @@ class weather:
 
         except Exception as e:
             logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
+            time.sleep(60)
 
     def thread(self):
         while True:

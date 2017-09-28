@@ -29,8 +29,6 @@ class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
-        fail_count = 0
-
         if event.event_type == 'modified':
             data = []
 
@@ -38,12 +36,16 @@ class Handler(FileSystemEventHandler):
                 for line in f:
                     data.append(json.loads(line))
 
-                log_status = data[-1]['status']
+                for log in data[-5:]:
+                    status_code = log['status']
+                    last_five_log_statuses += status_code
 
-                if log_status == 1:
+                last_log_status = data[-1]['status']
+
+                if last_log_status == 1:
                     print "Normal Log...not doing anything"
                 else:
-                    if fail_count > 3:
+                    if last_five_log_statuses < 1:
                         logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
                         print "Rebooting system...."
                         os.system('sudo reboot now')
@@ -54,7 +56,6 @@ class Handler(FileSystemEventHandler):
                         print "Turning wifi on..."
                         os.system('sudo ifconfig wlan0 up')
                         time.sleep(60)
-                        fail_count += 1
 
 
 if __name__ == '__main__':
