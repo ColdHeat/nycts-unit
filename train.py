@@ -47,7 +47,6 @@ class train:
             except Exception, e:
                 logs.logger.info('Train module', extra={'status': 0,
                                  'job': 'train_module'}, exc_info=True)
-                time.sleep(60)
 
                 end = time.time()
 
@@ -69,7 +68,7 @@ class train:
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
                                 if row == 1 and direction == 'S':
                                     self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
-            # time.sleep(5)
+            time.sleep(5)
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))
