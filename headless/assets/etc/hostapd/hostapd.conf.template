@@ -1,9 +1,7 @@
 interface={{ wifi_interface }}
-
-
+driver=nl80211
 ssid={{ ssid }}
-hw_mode=g
-channel=6
+channel=1
+wmm_enable=1
 macaddr_acl=0
-auth_algs=0
 ignore_broadcast_ssid=0
