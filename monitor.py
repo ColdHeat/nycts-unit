@@ -30,7 +30,7 @@ class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
         last_five_log_statuses = 0
-        
+
         if event.event_type == 'modified':
             data = []
 
@@ -54,10 +54,11 @@ class Handler(FileSystemEventHandler):
                     else:
                         logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
                         print "Turning wifi off..."
-                        os.system('sudo ifconfig wlan0 down')
+                        os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
                         print "Turning wifi on..."
-                        os.system('sudo ifconfig wlan0 up')
-                        time.sleep(60)
+                        os.system("sudo /sbin/ifup --force 'wlan0'")
+                        print "Waiting for the wifi to re-connect..."
+                        time.sleep(30)
 
 
 if __name__ == '__main__':
