@@ -9,7 +9,7 @@ class Watcher:
     FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
     LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
 
-    def __init__(self,base):
+    def __init__(self, base):
         self.observer = Observer()
         self.base     = base
         self.state    = self.config['settings']['state']

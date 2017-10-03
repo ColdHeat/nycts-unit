@@ -19,7 +19,7 @@ from logo import logo
 from ad import ad
 from train import train
 from systemlogs import systemlogs
-from monitor import monitor
+from monitor import Watcher
 import constants
 import logs
 
@@ -31,7 +31,7 @@ adScreen = ad(b)
 trainScreen = train(b)
 weatherScreen = weather(b)
 systemlogger = systemlogs(b)
-monitor = watchdog(b)
+monitor = Watcher(b)
 
 fontXoffset = 0
 topOffset   = 3
