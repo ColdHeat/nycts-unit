@@ -44,7 +44,6 @@ class Handler(FileSystemEventHandler):
             reboot_wifi(event)
         else:
             print 'Testing the wifi connection...'
-            test_connection()
 
     def check_log_file():
         last_ten_log_statuses = 0
@@ -83,15 +82,6 @@ class Handler(FileSystemEventHandler):
         logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
         print "Rebooting system...."
         os.system('sudo reboot now')
-
-    def test_connection():
-        #ping google.com
-        # every 10 seconds do a ping until connected, otherwise do nothing
-        # if in 60 seconds you can't connect, reboot
-
-        # self.state == 'connecting'
-        # self.state == 'offline'
-        # self.state == 'online'
 
 if __name__ == '__main__':
     w = Watcher()
