@@ -15,7 +15,6 @@ sleep 10
 cd /home/pi/nycts-unit
 sudo python start.py &
 sudo python monitor.py &
-sudo /etc/init.d/avahi-daemon restart
 
 while true; do
 	sleep 60

@@ -7,9 +7,12 @@ from watchdog.events import FileSystemEventHandler
 
 class Watcher:
     FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
+    LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
 
-    def __init__(self):
+    def __init__(self,base):
         self.observer = Observer()
+        self.base     = base
+        self.state    = self.config['settings']['state']
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
@@ -29,37 +32,64 @@ class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
-        last_five_log_statuses = 0
-
         if event.event_type == 'modified':
-            data = []
+            check_internet_status()
+            check_log_file()
 
-            with open('/home/pi/nycts-unit/logs/logs.json') as f:
+    def check_internet_status():
+        if self.state == 'demo' or 'online:
+            print 'Nothing to see here...'
+        elif self.state == 'offline':
+            print 'The unit is offline, attempting to re-connect...'
+            reboot_wifi(event)
+        else:
+            print 'Testing the wifi connection...'
+            test_connection()
+
+    def check_log_file():
+        last_ten_log_statuses = 0
+        data = []
+
+        try:
+            with open() as f:
                 for line in f:
                     data.append(json.loads(line))
+        except:
+            os.system("sudo rm" + LOG_FILE)
+            os.system("sudo touch" + LOG_FILE)
 
-                for log in data[-5:]:
+            if len(data) < 10:
+                print "Not enough logs to make a move"
+            else:
+                for log in data[-10:]:
                     status_code = log['status']
-                    last_five_log_statuses += status_code
+                    last_ten_log_statuses += status_code
 
-                last_log_status = data[-1]['status']
+                if last_ten_log_statuses < 4:
 
-                if last_log_status == 1:
-                    print "Normal Log...not doing anything"
-                else:
-                    if last_five_log_statuses < 1:
-                        logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
-                        print "Rebooting system...."
-                        os.system('sudo reboot now')
-                    else:
-                        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-                        print "Turning wifi off..."
-                        os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
-                        print "Turning wifi on..."
-                        os.system("sudo /sbin/ifup --force 'wlan0'")
-                        print "Waiting for the wifi to re-connect..."
-                        time.sleep(30)
 
+    def reboot_wifi():
+        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+        print "Turning wifi off..."
+        os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
+        print "Turning wifi on..."
+        os.system("sudo /sbin/ifup --force 'wlan0'")
+        print "Waiting for the wifi to re-connect..."
+        self.state == 'connecting'
+
+    def reboot_system():
+        logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
+        print "Rebooting system...."
+        os.system('sudo reboot now')
+
+    def test_connection():
+        #ping google.com
+        # every 10 seconds do a ping until connected, otherwise do nothing
+        # if in 60 seconds you can't connect, reboot
+
+        # self.state == 'connecting'
+        # self.state == 'offline'
+        # self.state == 'online'
 
 if __name__ == '__main__':
     w = Watcher()

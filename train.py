@@ -17,20 +17,22 @@ class train:
         self.base = base
         self.config = base.config
         self.start = time.time()
+        self.state = self.config['settings']['state']
         self.train_data = self.getFakeNews()
         t = threading.Thread(target=self.thread)
         t.daemon = True
         t.start()
+
     def getFakeNews(self):
-        line = self.config["subway"]["line"]
-        with open('./offline_data/'+ line + '.json') as json_file:
-            json_data = json.load(json_file)
+        while self.state == 'offline' or 'connecting':
+            line = self.config["subway"]["line"]
+            with open('./offline_data/'+ line + '.json') as json_file:
+                json_data = json.load(json_file)
 
-        return json_data["data"]
+            return json_data["data"]
+
     def thread(self):
-        fail_count = 0
-
-        while True:
+        while self.state == 'online':
             try:
                 url = \
                     'https://api.trainsignapi.com/prod-trains/stations/' \
