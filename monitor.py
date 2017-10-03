@@ -12,7 +12,7 @@ class Watcher:
     def __init__(self, base):
         self.observer = Observer()
         self.base     = base
-        self.state    = self.config['settings']['state']
+        self.state    = self.base.config['settings']['state']
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
