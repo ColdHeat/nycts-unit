@@ -37,7 +37,7 @@ class Handler(FileSystemEventHandler):
             check_log_file()
 
     def check_internet_status():
-        if self.state == 'demo' or 'online:
+        if self.state == 'demo' or 'online':
             print 'Nothing to see here...'
         elif self.state == 'offline':
             print 'The unit is offline, attempting to re-connect...'
@@ -66,7 +66,9 @@ class Handler(FileSystemEventHandler):
                     last_ten_log_statuses += status_code
 
                 if last_ten_log_statuses < 4:
-
+                    print "Not enough failures"
+                else:
+                    reboot_system()
 
     def reboot_wifi():
         logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
