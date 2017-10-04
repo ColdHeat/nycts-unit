@@ -50,6 +50,7 @@ class base:
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
             result = urllib2.urlopen(baseurl)
+            print result
         except urllib2.URLError as e:
             logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'}, exc_info=True)
         else:

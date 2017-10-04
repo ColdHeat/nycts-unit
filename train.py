@@ -17,7 +17,6 @@ class train:
         self.base = base
         self.config = base.config
         self.start = time.time()
-        self.state = self.config['settings']['state']
         self.train_data = self.getFakeNews()
         t = threading.Thread(target=self.thread)
         t.daemon = True
@@ -30,7 +29,7 @@ class train:
         return json_data["data"]
 
     def thread(self):
-        while self.state == 'online':
+        while self.config['settings']['state'] == 'online':
             try:
                 url = \
                     'https://api.trainsignapi.com/prod-trains/stations/' \
