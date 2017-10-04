@@ -24,53 +24,51 @@ class train:
         t.start()
 
     def getFakeNews(self):
-        while self.state == 'offline' or 'connecting':
-            line = self.config["subway"]["line"]
-            with open('./offline_data/'+ line + '.json') as json_file:
-                json_data = json.load(json_file)
+        line = self.config["subway"]["line"]
+        with open('./offline_data/'+ line + '.json') as json_file:
+            json_data = json.load(json_file)
 
-            return json_data["data"]
+        return json_data["data"]
 
     def thread(self):
-        while self.state == 'online':
-            try:
-                url = \
-                    'https://api.trainsignapi.com/prod-trains/stations/' \
-                    + self.config['subway']['train']
-                querystring = {'': ''}
-                headers = {'x-api-key': self.config['settings'
-                           ]['prod_api_key']}
+        try:
+            url = \
+                'https://api.trainsignapi.com/prod-trains/stations/' \
+                + self.config['subway']['train']
+            querystring = {'': ''}
+            headers = {'x-api-key': self.config['settings'
+                       ]['prod_api_key']}
 
-                response = requests.request('GET', url,
-                        headers=headers, params=querystring)
-                data = json.loads(response.text)
+            response = requests.request('GET', url,
+                    headers=headers, params=querystring)
+            data = json.loads(response.text)
 
-                self.train_data = data['data']
-            except Exception, e:
-                logs.logger.info('Train module', extra={'status': 0,
-                                 'job': 'train_module'}, exc_info=True)
+            self.train_data = data['data']
+        except Exception, e:
+            logs.logger.info('Train module', extra={'status': 0,
+                             'job': 'train_module'}, exc_info=True)
 
-                end = time.time()
+            end = time.time()
 
-                time_difference = math.ceil(end - self.start)
+            time_difference = math.ceil(end - self.start)
 
-                if time_difference >= 60:
-                    self.start = time.time()
-                    for direction in ['N', 'S']:
-                        for row in [0, 1]:
-                            mins = self.train_data[direction]['schedule'][row]['arrivalTime']
-                            if self.train_data[direction]['schedule'][row]['arrivalTime'] > 0:
-                                self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
-                            else:
-                                if row == 0 and direction == 'N':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
-                                if row == 1 and direction == 'N':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 8
-                                if row == 0 and direction == 'S':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
-                                if row == 1 and direction == 'S':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
-            time.sleep(5)
+            if time_difference >= 60:
+                self.start = time.time()
+                for direction in ['N', 'S']:
+                    for row in [0, 1]:
+                        mins = self.train_data[direction]['schedule'][row]['arrivalTime']
+                        if self.train_data[direction]['schedule'][row]['arrivalTime'] > 0:
+                            self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
+                        else:
+                            if row == 0 and direction == 'N':
+                                self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
+                            if row == 1 and direction == 'N':
+                                self.train_data[direction]['schedule'][row]['arrivalTime'] = 8
+                            if row == 0 and direction == 'S':
+                                self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
+                            if row == 1 and direction == 'S':
+                                self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
+        time.sleep(5)
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))

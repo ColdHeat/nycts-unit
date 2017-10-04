@@ -2,6 +2,7 @@ import time
 import os
 import logs
 import json
+import urllib2
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -43,7 +44,29 @@ class Handler(FileSystemEventHandler):
     def on_any_event(event):
         if event.event_type == 'modified':
             if self.state == 'demo' or 'online':
-                print 'Nothing to see here...'
+                last_ten_log_statuses = 0
+                data = []
+
+                try:
+                    with open() as f:
+                        for line in f:
+                            data.append(json.loads(line))
+                except:
+                    os.system("sudo rm" + LOG_FILE)
+                    os.system("sudo touch" + LOG_FILE)
+
+                    if len(data) < 10:
+                        print "Not enough logs to make a move"
+                    else:
+                        for log in data[-10:]:
+                            status_code = log['status']
+                            last_ten_log_statuses += status_code
+
+                        if last_ten_log_statuses > 4:
+                            logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
+                            print "Rebooting system...."
+                            os.system('sudo reboot now')
+
             elif self.state == 'offline':
                 print 'The unit is offline, attempting to re-connect...'
                 logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
@@ -53,37 +76,10 @@ class Handler(FileSystemEventHandler):
                 os.system("sudo /sbin/ifup --force 'wlan0'")
                 print "Waiting for the wifi to re-connect..."
                 self.state = 'connecting'
+
             else:
                 print 'Testing the wifi connection...'
 
-    def check_log_file():
-        last_ten_log_statuses = 0
-        data = []
-
-        try:
-            with open() as f:
-                for line in f:
-                    data.append(json.loads(line))
-        except:
-            os.system("sudo rm" + LOG_FILE)
-            os.system("sudo touch" + LOG_FILE)
-
-            if len(data) < 10:
-                print "Not enough logs to make a move"
-            else:
-                for log in data[-10:]:
-                    status_code = log['status']
-                    last_ten_log_statuses += status_code
-
-                if last_ten_log_statuses < 4:
-                    print "Not enough failures"
-                else:
-                    reboot_system()
-                    
-    def reboot_system():
-        logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
-        print "Rebooting system...."
-        os.system('sudo reboot now')
 
 if __name__ == '__main__':
     w = Watcher()
