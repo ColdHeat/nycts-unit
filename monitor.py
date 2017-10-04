@@ -10,20 +10,20 @@ class Watcher:
     LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
     CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
 
-    with open(CONFIG_FILE) as config_data:
-        config = json.loads(config_data)
-        json_data.close()
-        print config
-
     def __init__(self):
         self.observer = Observer()
-        self.state    = #something
+        self.state    = 'connecting'
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
+
+        with open(CONFIG_FILE) as config_data:
+            config = json.loads(config_data)
+            print config
+            json_data.close()
 
         try:
             while True:
