@@ -29,7 +29,7 @@ class train:
         return json_data["data"]
 
     def thread(self):
-        while self.config['settings']['state'] == 'online':
+        while True:
             try:
                 url = \
                     'https://api.trainsignapi.com/prod-trains/stations/' \
