@@ -30,22 +30,25 @@ class train:
 
     def thread(self):
         while True:
-            try:
-                url = \
-                    'https://api.trainsignapi.com/prod-trains/stations/' \
-                    + self.config['subway']['train']
-                querystring = {'': ''}
-                headers = {'x-api-key': self.config['settings'
-                           ]['prod_api_key']}
+            if self.config['settings']['state'] == 'online':
+                try:
+                    url = \
+                        'https://api.trainsignapi.com/prod-trains/stations/' \
+                        + self.config['subway']['train']
+                    querystring = {'': ''}
+                    headers = {'x-api-key': self.config['settings'
+                               ]['prod_api_key']}
 
-                response = requests.request('GET', url,
-                        headers=headers, params=querystring)
-                data = json.loads(response.text)
+                    response = requests.request('GET', url,
+                            headers=headers, params=querystring)
+                    data = json.loads(response.text)
 
-                self.train_data = data['data']
-            except Exception, e:
-                logs.logger.info('Train module', extra={'status': 0,
-                                 'job': 'train_module'}, exc_info=True)
+                    self.train_data = data['data']
+                except Exception, e:
+                    logs.logger.info('Train module', extra={'status': 0,
+                                     'job': 'train_module'}, exc_info=True)
+            else:
+                self.train_data = self.getFakeNews()
 
                 end = time.time()
 

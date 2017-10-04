@@ -25,7 +25,7 @@
   "settings": {
     "name": "{{ name }}",
     "client_id": "29",
-    "state": "connecting",
+    "state": "online",
     "dev": true,
     "transition_time": "4",
     "brightness": "50",
