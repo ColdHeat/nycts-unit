@@ -8,13 +8,14 @@ from watchdog.events import FileSystemEventHandler
 class Watcher:
     FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
     LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
-    CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
 
     def __init__(self):
         self.observer = Observer()
         self.state    = 'off'
 
     def load_config_file(self):
+        CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
+
         with open(CONFIG_FILE) as config_data:
             config = json.load(config_data)
             self.state = config['settings']['state']
