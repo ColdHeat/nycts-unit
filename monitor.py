@@ -3,6 +3,7 @@ import os
 import logs
 import json
 import urllib2
+import requests
 from base import base
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -13,28 +14,57 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.base = base()
+        self.base     = base()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
-
         try:
             while True:
                 time.sleep(1)
         except:
             self.observer.stop()
-
         self.observer.join()
+
+    def check_wifi(self):
+        response = os.system("ping -c 1 google.com")
+        if response > 0:
+            print 'Hmm, the device seems to not be online. Cylcing wifi...'
+            logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+            os.system("sudo /sbin/ifdown 'wlan0' && sleep 5 && sudo /sbin/ifup --force 'wlan0'")
+            go_offline()
+            time.sleep(60)
+            go.online()
+
+    def reboot_system(self):
+        print "Rebooting unit"
+        if self.base.config['settings']['state'] == 'offline':
+            go_online()
+            os.system('sudo reboot now')
+
+    def go_online(self):
+        try:
+            result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/online")
+        except urllib2.URLError as e:
+            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
+
+
+    def go_offline(self):
+        try:
+            result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/offline")
+        except urllib2.URLError as e:
+            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
 
 class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
         if event.event_type == 'modified':
-            if self.state == 'demo' or 'online':
+            if self.base.config['settings']['state'] =='online':
+                check_wifi()
+
                 last_ten_log_statuses = 0
                 data = []
 
@@ -42,34 +72,17 @@ class Handler(FileSystemEventHandler):
                     with open(LOG_FILE) as f:
                         for line in f:
                             data.append(json.loads(line))
-                except:
-                    os.system("sudo rm" + LOG_FILE)
-                    os.system("sudo touch" + LOG_FILE)
+                except Exception, e:
+                    os.system("sudo rm " + LOG_FILE)
+                    os.system("sudo touch " + LOG_FILE)
 
-                    if len(data) < 10:
-                        print "Not enough logs to make a move"
-                    else:
-                        for log in data[-10:]:
-                            status_code = log['status']
-                            last_ten_log_statuses += status_code
+                if len(data) > 10:
+                    for log in data[-10:]:
+                        status_code = log['status']
+                        last_ten_log_statuses += status_code
 
-                        if last_ten_log_statuses > 4:
-                            logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
-                            print "Rebooting system...."
-                            os.system('sudo reboot now')
-
-            elif self.state == 'offline':
-                print 'The unit is offline, attempting to re-connect...'
-                logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-                print "Turning wifi off..."
-                os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
-                print "Turning wifi on..."
-                os.system("sudo /sbin/ifup --force 'wlan0'")
-                print "Waiting for the wifi to re-connect..."
-                self.state = 'connecting'
-
-            else:
-                print 'Testing the wifi connection...'
+                    if last_ten_log_statuses < 1:
+                        reboot_system()
 
 
 if __name__ == '__main__':

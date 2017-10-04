@@ -38,7 +38,7 @@ class weather:
             self.weather["state"] = "live"
 
         except Exception as e:
-            logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module'}, exc_info=True)
+            logs.logger.info('Weather module', extra={'status': 0, 'job': 'weather_module', 'error': e})
 
     def thread(self):
         while True:
