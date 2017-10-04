@@ -10,7 +10,6 @@ from watchdog.events import FileSystemEventHandler
 
 class Watcher:
     FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
-    LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
 
     def __init__(self):
         self.observer = Observer()
@@ -58,6 +57,7 @@ class Watcher:
             logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
 
 class Handler(FileSystemEventHandler):
+    LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
 
     @staticmethod
     def on_any_event(event):
