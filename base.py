@@ -54,7 +54,6 @@ class base:
 
             time.sleep(0.1)
 
-    @staticmethod
     def getConfig(self):
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
