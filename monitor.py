@@ -8,11 +8,16 @@ from watchdog.events import FileSystemEventHandler
 class Watcher:
     FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
     LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
+    CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
 
-    def __init__(self, base):
+    with open(CONFIG_FILE) as config_data:
+        config = json.loads(config_data)
+        json_data.close()
+        print config
+
+    def __init__(self):
         self.observer = Observer()
-        self.base     = base
-        self.state    = self.base.config['settings']['state']
+        self.state    = #something
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
