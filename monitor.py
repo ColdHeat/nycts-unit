@@ -3,6 +3,7 @@ import os
 import logs
 import json
 import urllib2
+import base
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -12,23 +13,12 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.state    = self.get_state()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
-
-    def get_state(self):
-        baseurl = "http://127.0.0.1:3000/getConfig"
-        try:
-            result = urllib2.urlopen(baseurl)
-        except urllib2.URLError as e:
-            logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'}, exc_info=True)
-        else:
-            config = json.loads(result.read())
-        return config['settings']['state']
 
         try:
             while True:
