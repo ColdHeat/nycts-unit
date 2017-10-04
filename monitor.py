@@ -3,7 +3,7 @@ import os
 import logs
 import json
 import urllib2
-import base
+from base import base
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -13,6 +13,7 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
+        self.base = base()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
