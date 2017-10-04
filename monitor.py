@@ -62,8 +62,8 @@ class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
         if event.event_type == 'modified':
-            if self.base.config['settings']['state'] =='online':
-                check_wifi()
+            if w.base.config['settings']['state'] =='online':
+                w.check_wifi()
 
                 last_ten_log_statuses = 0
                 data = []
@@ -82,7 +82,10 @@ class Handler(FileSystemEventHandler):
                         last_ten_log_statuses += status_code
 
                     if last_ten_log_statuses < 1:
-                        reboot_system()
+                        w.reboot_system()
+            else:
+                w.go_online()
+                w.check_wifi()
 
 
 if __name__ == '__main__':
