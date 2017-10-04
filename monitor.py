@@ -48,7 +48,7 @@ class Handler(FileSystemEventHandler):
                 data = []
 
                 try:
-                    with open() as f:
+                    with open(LOG_FILE) as f:
                         for line in f:
                             data.append(json.loads(line))
                 except:
