@@ -13,14 +13,6 @@ class Watcher:
         self.observer = Observer()
         self.state    = 'off'
 
-    def load_config_file(self):
-        CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
-
-        with open(CONFIG_FILE) as config_data:
-            config = json.load(config_data)
-            self.state = config['settings']['state']
-            config_data.close()
-
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
@@ -95,5 +87,4 @@ class Handler(FileSystemEventHandler):
 
 if __name__ == '__main__':
     w = Watcher()
-    w.load_config_file()
     w.run()

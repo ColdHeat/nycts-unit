@@ -55,17 +55,6 @@ class base:
             time.sleep(0.1)
 
     @staticmethod
-    def req(client):
-        parsed = None
-        try:
-            connection = urllib.urlopen(
-              'http://riotpros.com/mta/v1/client.php?client=' + client)
-            raw = connection.read()
-            connection.close()
-            parsed = json.loads(raw)
-        except Exception,e: print "errr" + str(e)
-        finally:
-            return parsed
     def getConfig(self):
         baseurl = "http://127.0.0.1:3000/getConfig"
         try:
