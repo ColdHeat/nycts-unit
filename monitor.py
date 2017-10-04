@@ -11,13 +11,23 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.state    = 'off'
+        self.state    = self.get_state()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
+
+    def get_state(self):
+        baseurl = "http://127.0.0.1:3000/getConfig"
+        try:
+            result = urllib2.urlopen(baseurl)
+        except urllib2.URLError as e:
+            logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'}, exc_info=True)
+        else:
+            config = json.loads(result.read())
+        return config['settings']['state']
 
         try:
             while True:
@@ -32,17 +42,19 @@ class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
         if event.event_type == 'modified':
-            check_internet_status()
-            check_log_file()
-
-    def check_internet_status():
-        if self.state == 'demo' or 'online':
-            print 'Nothing to see here...'
-        elif self.state == 'offline':
-            print 'The unit is offline, attempting to re-connect...'
-            reboot_wifi(event)
-        else:
-            print 'Testing the wifi connection...'
+            if self.state == 'demo' or 'online':
+                print 'Nothing to see here...'
+            elif self.state == 'offline':
+                print 'The unit is offline, attempting to re-connect...'
+                logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+                print "Turning wifi off..."
+                os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
+                print "Turning wifi on..."
+                os.system("sudo /sbin/ifup --force 'wlan0'")
+                print "Waiting for the wifi to re-connect..."
+                self.state = 'connecting'
+            else:
+                print 'Testing the wifi connection...'
 
     def check_log_file():
         last_ten_log_statuses = 0
@@ -67,19 +79,7 @@ class Handler(FileSystemEventHandler):
                     print "Not enough failures"
                 else:
                     reboot_system()
-
-    def reboot_wifi():
-        logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-        print "Turning wifi off..."
-        os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
-        print "Turning wifi on..."
-        os.system("sudo /sbin/ifup --force 'wlan0'")
-        print "Waiting for the wifi to re-connect..."
-        self.state = 'connecting'
-
-    def check_internet_status():
-        print "Checking internet status"
-
+                    
     def reboot_system():
         logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
         print "Rebooting system...."
