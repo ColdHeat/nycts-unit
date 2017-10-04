@@ -8,22 +8,23 @@ from watchdog.events import FileSystemEventHandler
 class Watcher:
     FILE_TO_WATCH = "/home/pi/nycts-unit/logs/"
     LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
+    CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
+
+    def load_config_file():
+        with open(CONFIG_FILE) as config_data:
+            config = json.load(config_data)
+            return config['settings']['state']
+            config_data.close()
 
     def __init__(self):
         self.observer = Observer()
-        self.state    = 'connecting'
+        self.state    = self.load_config_file()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
         event_handler = Handler()
         self.observer.schedule(event_handler, self.FILE_TO_WATCH, recursive=True)
         self.observer.start()
-
-        CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
-        with open(CONFIG_FILE) as config_data:
-            config = json.load(config_data)
-            print config
-            json_data.close()
 
         try:
             while True:
