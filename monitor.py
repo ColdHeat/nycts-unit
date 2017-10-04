@@ -19,7 +19,6 @@ class Watcher:
         with open(CONFIG_FILE) as config_data:
             config = json.load(config_data)
             self.state = config['settings']['state']
-            print self.state
             config_data.close()
 
     def run(self):
@@ -84,7 +83,10 @@ class Handler(FileSystemEventHandler):
         print "Turning wifi on..."
         os.system("sudo /sbin/ifup --force 'wlan0'")
         print "Waiting for the wifi to re-connect..."
-        self.state == 'connecting'
+        self.state = 'connecting'
+
+    def check_internet_status():
+        print "Checking internet status"
 
     def reboot_system():
         logs.logger.info('System Reboot', extra={'status': 1, 'job': 'system_reboot'})
