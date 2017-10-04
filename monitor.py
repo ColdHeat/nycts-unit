@@ -10,15 +10,16 @@ class Watcher:
     LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
     CONFIG_FILE = "/home/pi/nycts-unit/api/config.json"
 
-    def load_config_file():
-        with open(CONFIG_FILE) as config_data:
-            config = json.load(config_data)
-            return config['settings']['state']
-            config_data.close()
-
     def __init__(self):
         self.observer = Observer()
-        self.state    = self.load_config_file()
+        self.state    = 'connecting'
+
+    def load_config_file(self):
+        with open(CONFIG_FILE) as config_data:
+            config = json.load(config_data)
+            self.state = config['settings']['state']
+            print self.state
+            config_data.close()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
