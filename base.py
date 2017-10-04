@@ -17,8 +17,6 @@ class base:
     initSleep = 0
     def __init__(self):
         self.matrix = RGBMatrix(32, 4, options = options)
-        self.line = "#"
-        self.power = 'on'
         self.matrix.brightness = 50
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
@@ -45,9 +43,6 @@ class base:
                     os.system('sudo reboot now')
 
             self.lastQueryTime = time.time()
-
-            self.power = parsed['data']['power']
-            self.line  = parsed['data']['line']
 
             time.sleep(0.1)
 
