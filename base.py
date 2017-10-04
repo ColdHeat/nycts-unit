@@ -32,7 +32,6 @@ class base:
         base.initSleep    += 5
         while True:
 
-            parsed = base.req(self.client)
             self.config = self.getConfig()
             self.matrix.brightness = int(self.config["settings"]["brightness"])
 
@@ -44,8 +43,6 @@ class base:
                     logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'}, exc_info=True)
                 else:
                     os.system('sudo reboot now')
-
-            if parsed is None: return
 
             self.lastQueryTime = time.time()
 
