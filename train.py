@@ -35,7 +35,7 @@ class train:
                 url = \
                     'https://api.trainsignapi.com/prod-trains/stations/' \
                     + self.config['subway']['train']
-                querystring = {'': ''
+                querystring = {'': ''}
                 headers = {'x-api-key': self.config['settings'
                            ]['prod_api_key']}
 
