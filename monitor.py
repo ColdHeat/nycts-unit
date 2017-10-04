@@ -57,7 +57,7 @@ class Watcher:
             logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
 
 class Handler(FileSystemEventHandler):
-    LOG_FILE = "/home/pi/nycts-unit/logs/logs.json"
+
 
     @staticmethod
     def on_any_event(event):
@@ -69,7 +69,7 @@ class Handler(FileSystemEventHandler):
                 data = []
 
                 try:
-                    with open(LOG_FILE) as f:
+                    with open("/home/pi/nycts-unit/logs/logs.json") as f:
                         for line in f:
                             data.append(json.loads(line))
                 except Exception, e:
