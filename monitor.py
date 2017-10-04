@@ -12,7 +12,7 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.state    = 'connecting'
+        self.state    = 'off'
 
     def load_config_file(self):
         with open(CONFIG_FILE) as config_data:
@@ -92,4 +92,5 @@ class Handler(FileSystemEventHandler):
 
 if __name__ == '__main__':
     w = Watcher()
+    w.load_config_file()
     w.run()
