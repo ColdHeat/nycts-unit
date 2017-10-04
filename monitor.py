@@ -73,8 +73,8 @@ class Handler(FileSystemEventHandler):
                         for line in f:
                             data.append(json.loads(line))
                 except Exception, e:
-                    os.system("sudo rm " + LOG_FILE)
-                    os.system("sudo touch " + LOG_FILE)
+                    os.system("sudo rm /home/pi/nycts-unit/logs/logs.json")
+                    os.system("sudo touch /home/pi/nycts-unit/logs/logs.json")
 
                 if len(data) > 10:
                     for log in data[-10:]:
