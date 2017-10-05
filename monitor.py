@@ -26,42 +26,43 @@ class Watcher:
             self.observer.stop()
         self.observer.join()
 
-class Handler(FileSystemEventHandler):
 
-    # def check_wifi(self):
-    #     response = os.system("ping -c 1 google.com")
-    #     if response > 0:
-    #         print 'Hmm, the device seems to not be online. Cylcing wifi...'
-    #         logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
-    #         os.system("sudo /sbin/ifdown 'wlan0' && sleep 5 && sudo /sbin/ifup --force 'wlan0'")
-    #         go_offline()
-    #         time.sleep(60)
-    #         go.online()
-    #
-    # def reboot_system(self):
-    #     print "Rebooting unit"
-    #     if self.base.config['settings']['state'] == 'offline':
-    #         go_online()
-    #         os.system('sudo reboot now')
-    #
-    # def go_online(self):
-    #     try:
-    #         result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/online")
-    #     except urllib2.URLError as e:
-    #         logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
-    #
-    #
-    # def go_offline(self):
-    #     try:
-    #         result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/offline")
-    #     except urllib2.URLError as e:
-    #         logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
+    def check_wifi(self):
+        response = os.system("ping -c 1 google.com")
+        if response > 0:
+            print 'Hmm, the device seems to not be online. Cylcing wifi...'
+            logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
+            os.system("sudo /sbin/ifdown 'wlan0' && sleep 5 && sudo /sbin/ifup --force 'wlan0'")
+            go_offline()
+            time.sleep(60)
+            go.online()
+
+    def reboot_system(self):
+        print "Rebooting unit"
+        if self.base.config['settings']['state'] == 'offline':
+            go_online()
+            os.system('sudo reboot now')
+
+    def go_online(self):
+        try:
+            result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/online")
+        except urllib2.URLError as e:
+            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
+
+
+    def go_offline(self):
+        try:
+            result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/offline")
+        except urllib2.URLError as e:
+            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
+
+class Handler(FileSystemEventHandler):
 
     @staticmethod
     def on_any_event(event):
         if event.event_type == 'modified':
-            print 'modified'
-            state = 'online'
+            state = base().config['settings']['state']
+
             if state =='online':
                 last_ten_log_statuses = 0
                 data = []
@@ -80,16 +81,11 @@ class Handler(FileSystemEventHandler):
                         last_ten_log_statuses += status_code
 
                     if last_ten_log_statuses < 1:
-                        print 'Reboot system'
-                        # w.reboot_system()
+                        w.reboot_system()
                     else:
-                        print 'Check wifi'
-                        # w.check_wifi()
+                        w.check_wifi()
             else:
-                print 'Go online'
-                print 'Check wifi'
-                # w.go_online()
-                # w.check_wifi()
+                w.check_wifi()
 
 
 if __name__ == '__main__':
