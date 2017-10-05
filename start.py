@@ -82,5 +82,5 @@ while True:
 
     except Exception as e:
         logging.exception("message")
-        logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen'}, exc_info=True)
+        logs.logger.info('Error Exception', extra={'status': 0, 'job': 'exception_screen', 'error': str(e)})
         pass

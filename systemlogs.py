@@ -33,7 +33,7 @@ class systemlogs:
                 'disk_usage': psutil.disk_usage('/')[3], 'temp': str((int(subprocess.check_output(['cat', '/sys/class/thermal/thermal_zone0/temp']))/1000) * 9/5 + 32) + ' F',
                 })
             except Exception as e:
-                logs.logger.info('System Diagnostic', extra={'status': 0, 'job':'system_logs'}, exc_info=True)
+                logs.logger.info('System Diagnostic', extra={'status': 0, 'job':'system_logs', 'error': str(e)})
 
             fail_count += 1
 
@@ -47,7 +47,7 @@ class systemlogs:
             try:
                 speed_data = subprocess.check_output(['speedtest-cli', '--json'])
             except Exception as e:
-                logs.logger.info('Speed Test', extra={'status': 0, 'job':'speed_test'}, exc_info=True)
+                logs.logger.info('Speed Test', extra={'status': 0, 'job':'speed_test', 'error': str(e)})
 
             fail_count += 1
 

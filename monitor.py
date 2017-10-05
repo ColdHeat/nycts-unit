@@ -47,14 +47,14 @@ class Watcher:
         try:
             result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/online")
         except urllib2.URLError as e:
-            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
+            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': str(e)})
 
 
     def go_offline(self):
         try:
             result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/state/offline")
         except urllib2.URLError as e:
-            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
+            logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': str(e)})
 
 class Handler(FileSystemEventHandler):
 
