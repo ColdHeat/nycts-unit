@@ -13,7 +13,6 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.base     = base()
 
     def run(self):
         print "Woof woof! <_< <_<      >_> >_> doggie Doggie!"
@@ -62,7 +61,8 @@ class Handler(FileSystemEventHandler):
     def on_any_event(event):
         if event.event_type == 'modified':
             print 'modified'
-            if w.base.config['settings']['state'] =='online':
+            state = 'online'
+            if state =='online':
                 last_ten_log_statuses = 0
                 data = []
 
