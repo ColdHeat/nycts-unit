@@ -3,6 +3,7 @@
 cd /home/pi/nycts-unit
 sudo python reset.py &
 sudo python load.py &
+sudo pkill -f reset.py &
 
 cd /home/pi/nycts-unit/headless
 sudo npm run start
