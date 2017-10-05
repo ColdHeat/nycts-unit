@@ -22,7 +22,7 @@ class Watcher:
         self.observer.start()
         try:
             while True:
-                time.sleep(1)
+                time.sleep(5)
         except:
             self.observer.stop()
         self.observer.join()
@@ -63,8 +63,6 @@ class Handler(FileSystemEventHandler):
     def on_any_event(event):
         if event.event_type == 'modified':
             if w.base.config['settings']['state'] =='online':
-                w.check_wifi()
-
                 last_ten_log_statuses = 0
                 data = []
 
@@ -83,6 +81,8 @@ class Handler(FileSystemEventHandler):
 
                     if last_ten_log_statuses < 1:
                         w.reboot_system()
+                    else:
+                        w.check_wifi()
             else:
                 w.go_online()
                 w.check_wifi()

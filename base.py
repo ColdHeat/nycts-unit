@@ -38,7 +38,7 @@ class base:
                 try:
                     result = urllib2.urlopen(baseurl)
                 except urllib2.URLError as e:
-                    logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot'}, exc_info=True)
+                    logs.logger.info('API Reboot', extra={'status': 0, 'job': 'api_reboot', 'error': e})
                 else:
                     os.system('sudo reboot now')
 
@@ -52,7 +52,7 @@ class base:
             result = urllib2.urlopen(baseurl)
             print result
         except urllib2.URLError as e:
-            logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config'}, exc_info=True)
+            logs.logger.info('API Config', extra={'status': 0, 'job': 'api_config', 'error': e})
         else:
             config = json.loads(result.read())
         return config
