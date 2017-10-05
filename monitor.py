@@ -33,14 +33,14 @@ class Watcher:
             print 'Hmm, the device seems to not be online. Cylcing wifi...'
             logs.logger.info('WiFi Shutdown', extra={'status': 1, 'job': 'wifi_reboot'})
             os.system("sudo /sbin/ifdown 'wlan0' && sleep 5 && sudo /sbin/ifup --force 'wlan0'")
-            go_offline()
-            time.sleep(60)
-            go.online()
+            w.go_offline()
+            time.sleep(30)
+            w.go.online()
 
     def reboot_system(self):
         print "Rebooting unit"
         if self.base.config['settings']['state'] == 'offline':
-            go_online()
+            w.go_online()
             os.system('sudo reboot now')
 
     def go_online(self):
@@ -74,6 +74,7 @@ class Handler(FileSystemEventHandler):
                 except Exception, e:
                     os.system("sudo rm /home/pi/nycts-unit/logs/logs.json")
                     os.system("sudo touch /home/pi/nycts-unit/logs/logs.json")
+                    w.reboot_system()
 
                 if len(data) > 10:
                     for log in data[-10:]:

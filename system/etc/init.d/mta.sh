@@ -15,7 +15,7 @@ pkill -f load.py
 sleep 10
 cd /home/pi/nycts-unit
 sudo python start.py &
-sudo python monitor.py &
+sudo python schedule.py &
 
 while true; do
 	sleep 60
