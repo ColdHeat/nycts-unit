@@ -21,6 +21,7 @@ class base:
         self.lastQueryTime = time.time()
         self.config        = self.getConfig()
         self.client        = self.config["settings"]["client_id"]
+        self.logs          = logs
         t                  = threading.Thread(target=self.thread)
         t.daemon           = True
         t.start()
