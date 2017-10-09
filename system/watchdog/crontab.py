@@ -6,7 +6,7 @@ def remove_all_jobs():
 
     write_cron_jobs()
 
-def write_cron_jobs()
+def write_cron_jobs():
     upload_log_job()
     wifi_inspection_job()
     system_log_job()
