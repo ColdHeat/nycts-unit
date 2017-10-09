@@ -1,9 +1,7 @@
 from crontab import CronTab
 
 def remove_all_jobs():
-    cron = CronTab(user='pi')
-    cron.remove_all()
-
+    os.system("crontab -r")
     write_cron_jobs()
 
 def write_cron_jobs():
@@ -28,6 +26,7 @@ def device_reboot_job():
     cmd = "sudo python /home/pi/nycts-unit/system/watchdog/reboot.py"
     set_crontab(cmd, 3600)
 
-def set_minute_crontab(cmd, length):
+def set_crontab(cmd, length):
     cron = CronTab(user='pi')
-    return cron.new(cmd).minute.every(length).write()
+    cron.new(cmd).minute.every(length)
+    cron.write()
