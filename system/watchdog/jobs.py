@@ -1,6 +1,7 @@
+import os
 from crontab import CronTab
 
-def remove_all_jobs():
+def initialize_crontab():
     os.system("crontab -r")
     write_cron_jobs()
 
@@ -30,3 +31,5 @@ def set_crontab(cmd, length):
     cron = CronTab(user='pi')
     cron.new(cmd).minute.every(length)
     cron.write()
+
+initialize_crontab()
