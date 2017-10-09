@@ -14,8 +14,9 @@ node index.js &
 pkill -f load.py
 sleep 10
 cd /home/pi/nycts-unit
-sudo python start.py &
 sudo python schedule.py &
+sudo python start.py &
+sudo python monitor.py
 
 while true; do
 	sleep 60
