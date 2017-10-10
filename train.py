@@ -47,8 +47,11 @@ class train:
                 except Exception, e:
                     logs.logger.info('Train module', extra={'status': 0,
                                      'job': 'train_module', 'error': str(e)})
+
+                    self.config['settings']['state'] = 'offline'
+                    self.train_data = getFakeNews()
             else:
-                self.train_data = getFakeNews()
+
 
                 end = time.time()
 
