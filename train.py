@@ -48,6 +48,8 @@ class train:
                     logs.logger.info('Train module', extra={'status': 0,
                                      'job': 'train_module', 'error': str(e)})
             else:
+                self.train_data = getFakeNews()
+
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)
