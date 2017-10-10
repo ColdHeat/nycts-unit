@@ -45,14 +45,16 @@ class train:
 
                     self.train_data = data['data']
                 except Exception, e:
+                    urllib2.urlopen(
+                        "http://127.0.0.1:3000/setConfig/settings/state/offline"
+                    )
+                    self.train_data = getFakeNews()
+
                     logs.logger.info('Train module', extra={'status': 0,
                                      'job': 'train_module', 'error': str(e)})
 
-                    self.config['settings']['state'] = 'offline'
-                    self.train_data = getFakeNews()
+
             else:
-
-
                 end = time.time()
 
                 time_difference = math.ceil(end - self.start)

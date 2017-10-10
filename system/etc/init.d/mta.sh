@@ -15,7 +15,7 @@ pkill -f load.py
 
 sleep 10
 cd /home/pi/nycts-unit/system/watchdog/
-python jobs.py
+sudo python jobs.py
 
 cd /home/pi/nycts-unit
 sudo python start.py
