@@ -110,7 +110,7 @@ class train:
             0, 0, constants.width, constants.height), fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
 
-    def return_customer_retention_range():
+    def return_customer_retention_range(self):
         customer_retention = self.config['settings']['customer_retention']
 
         if customer_retention == True:
