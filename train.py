@@ -25,7 +25,7 @@ class train:
     def offline_train_data(self):
         train_line = self.config["subway"]["line"]
 
-        with open('./offline_data/'+ line + '.json') as json_file:
+        with open('./offline_data/'+ train_line + '.json') as json_file:
             json_data = json.load(json_file)
         return json_data["data"]
 
