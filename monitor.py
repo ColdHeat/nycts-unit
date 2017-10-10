@@ -74,10 +74,11 @@ class Handler(FileSystemEventHandler):
         except Exception, e:
             os.system("sudo rm /home/pi/nycts-unit/logs/logs.json")
             os.system("sudo touch /home/pi/nycts-unit/logs/logs.json")
+            data.append({})
 
-        sum_log_status_codes(data, )
+        sum_log_status_codes(data)
 
-    def sum_log_status_codes(data, ):
+    def sum_log_status_codes(data):
         last_ten_log_statuses = 0
 
         if len(data) > 10:

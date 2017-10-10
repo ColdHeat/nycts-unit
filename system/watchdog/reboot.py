@@ -1,8 +1,10 @@
 import os
-import logs
 import json
 import urllib2
-from base import base
+
+import sys
+sys.path.insert(0, '/home/pi/nycts-unit')
+from base import base, logs
 
 def check_reboot_status():
     if base().config['settings']['reboot'] == False:

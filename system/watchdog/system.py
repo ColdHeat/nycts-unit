@@ -1,16 +1,9 @@
-import threading
-import time
-import urllib
-import json
-import urllib2
-import Image
-import ImageDraw
-import constants
-import requests
-import logs
 import subprocess
 import psutil
-from base import base
+
+import sys
+sys.path.insert(0, '/home/pi/nycts-unit')
+from base import base, logs
 
 def check_system_state():
     if base().config['settings']['run_speed_test'] == True:

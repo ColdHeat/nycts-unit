@@ -2,10 +2,10 @@ import os
 import json
 import urllib2
 import requests
+
 import sys
 sys.path.insert(0, '/home/pi/nycts-unit')
-print sys.path
-from base import base
+from base import base, logs
 
 def check_if_offline():
     if base().config['settings']['state'] == 'offline':
