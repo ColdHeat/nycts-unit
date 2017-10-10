@@ -17,83 +17,115 @@ class train:
         self.base = base
         self.config = base.config
         self.start = time.time()
-        self.train_data = self.getFakeNews()
+        self.train_data = self.offline_train_data()
         t = threading.Thread(target=self.thread)
         t.daemon = True
         t.start()
 
-    def getFakeNews(self):
-        line = self.config["subway"]["line"]
+    def offline_train_data(self):
+        train_line = self.config["subway"]["line"]
+
         with open('./offline_data/'+ line + '.json') as json_file:
             json_data = json.load(json_file)
         return json_data["data"]
 
     def thread(self):
         while True:
-            if self.config['settings']['state'] == 'online':
+
+            def check_device_state():
+                if self.config['settings']['state'] == 'online':
+                    request_train_time()
+                else:
+                    data = offline_train_data()
+                    calculate_time_difference(data)
+
+            def request_train_time():
                 try:
                     url = \
                         'https://api.trainsignapi.com/prod-trains/stations/' \
                         + self.config['subway']['train']
                     querystring = {'': ''}
-                    headers = {'x-api-key': self.config['settings'
-                               ]['prod_api_key']}
+                    headers = {
+                        'x-api-key': self.config['settings']['prod_api_key']
+                        }
+                    response = requests.request(
+                        'GET', url, headers=headers, params=querystring)
 
-                    response = requests.request('GET', url,
-                            headers=headers, params=querystring)
-                    data = json.loads(response.text)
+                    response_data = json.loads(response.text)['data']
+                    validate_train_data(response_data)
 
-                    self.train_data = data['data']
                 except Exception, e:
-                    urllib2.urlopen(
-                        "http://127.0.0.1:3000/setConfig/settings/state/offline"
-                    )
-                    self.train_data = getFakeNews()
+                    self.train_data = offline_train_data()
 
-                    logs.logger.info('Train module', extra={'status': 0,
-                                     'job': 'train_module', 'error': str(e)})
+                    logs.logger.info(
+                        'Train module', extra={
+                            'status': 0,
+                            'job': 'train_module',
+                            'error': str(e)
+                            }
+                        )
 
+            def validate_train_data(response_data):
+                north_bound = self.train_data['N']['schedule']
+                south_bound = self.train_data['S']['schedule']
 
-            else:
-                end = time.time()
+                if len(north_bound) and len(south_bound) < 0:
+                    self.train_data = offline_train_data()
+                else:
+                    self.train_data = response_data
 
-                time_difference = math.ceil(end - self.start)
+            def calculate_time_difference():
+                time_difference = math.ceil(time.time() - self.start)
 
                 if time_difference >= 60:
                     self.start = time.time()
-                    for direction in ['N', 'S']:
-                        for row in [0, 1]:
-                            mins = self.train_data[direction]['schedule'][row]['arrivalTime']
-                            if self.train_data[direction]['schedule'][row]['arrivalTime'] > 0:
-                                self.train_data[direction]['schedule'][row]['arrivalTime'] = mins - 1
-                            else:
-                                if row == 0 and direction == 'N':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 3
-                                if row == 1 and direction == 'N':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 8
-                                if row == 0 and direction == 'S':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 4
-                                if row == 1 and direction == 'S':
-                                    self.train_data[direction]['schedule'][row]['arrivalTime'] = 9
+                    update_offline_train_data()
+
+            def update_offline_train_data():
+                north_bound = self.train_data['N']['schedule']
+                south_bound = self.train_data['S']['schedule']
+
+                for row in north_bound:
+                    minutes_away = row['arrivalTime']
+
+                    if minutes_away > 0:
+                        minutes_away - 1
+                    else:
+                        minutes_away += 5
+
+                for row in south_bound:
+                    minutes_away = row['arrivalTime']
+
+                    if minutes_away > 0:
+                        minutes_away - 1
+                    else:
+                        minutes_away += 5
+
             time.sleep(5)
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))
         draw = ImageDraw.Draw(image)
-        draw.rectangle((0, 0, constants.width, constants.height),
-                       fill=constants.black)
+        draw.rectangle((
+            0, 0, constants.width, constants.height), fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
+
+    def return_customer_retention_range():
+        customer_retention = self.config['settings']['customer_retention']
+
+        if customer_retention == True:
+            return index_range = [1, 2]
+        else:
+            return index_range = [0, 1]
+
 
     def draw(self, direction):
         self.config = self.base.config
         image = Image.new('RGB', (constants.width, constants.height))
         draw = ImageDraw.Draw(image)
+        index_range = return_customer_retention_range()
 
-        indexRange = [0,1]
-        if "customer_retention" in self.config["settings"] and self.config["settings"]["customer_retention"] == True:
-            indexRange = [1,2]
-
-        for row in indexRange:
+        for row in index_range:
             self.data = self.train_data[direction]['schedule'][row]
             xOff = 2
             yOff = 2
@@ -138,18 +170,16 @@ class train:
                 - constants.font.getsize(minLabel)[0]
             timeOffset = minOffset - constants.font.getsize(mins)[0]
             draw.ellipse((circleXoffset, circleYoffset, circleXend,
-                         circleYend), fill=circleColor)
+                circleYend), fill=circleColor)
             draw.text((circleXoffset + 1, circleYoffset - 2), nums,
-                      font=constants.font, fill=constants.black)
+                font=constants.font, fill=constants.black)
             draw.text((circleXend, fontYoffset), dirLabel,
-                      font=constants.font, fill=constants.green)
+                font=constants.font, fill=constants.green)
+            draw.text((timeOffset, 0 + fontYoffset), mins,
+                font=constants.font, fill=constants.orange)
+            draw.text((minOffset, 0 + fontYoffset), minLabel,
+                font=constants.font, fill=constants.green)
 
-            if mins != 'DELAY ':
-                draw.text((timeOffset, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
-                draw.text((minOffset, 0 + fontYoffset), minLabel, font=constants.font, fill=constants.green)
-
-            if mins == 'DELAY ':
-                draw.text((timeOffset+17, 0 + fontYoffset), mins, font=constants.font, fill=constants.orange)
 
         self.base.matrix.SetImage(image, 0, 0)
         time.sleep(self.base.getTransitionTime())
