@@ -114,10 +114,11 @@ class train:
         customer_retention = self.config['settings']['customer_retention']
 
         if customer_retention == True:
-            return index_range = [1, 2]
+            index_range = [1, 2]
+            return index_range
         else:
-            return index_range = [0, 1]
-
+            index_range = [0, 1]
+            return index_range
 
     def draw(self, direction):
         self.config = self.base.config
