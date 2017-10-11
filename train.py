@@ -34,7 +34,7 @@ class train:
                 if self.config['settings']['state'] == 'online':
                     request_train_time()
                 else:
-                    calculate_time_difference(self.offline_train_data())
+                    calculate_time_difference()
 
             def request_train_time():
                 try:
@@ -48,8 +48,7 @@ class train:
                     response = requests.request(
                         'GET', url, headers=headers, params=querystring)
 
-                    response_data = json.loads(response.text)['data']
-                    validate_train_data(response_data)
+                    validate_train_data(json.loads(response.text)['data'])
 
                 except Exception, e:
                     self.train_data = self.offline_train_data()
@@ -59,8 +58,7 @@ class train:
                             'status': 0,
                             'job': 'train_module',
                             'error': str(e)
-                            }
-                        )
+                            })
 
             def validate_train_data(response_data):
                 north_bound = self.train_data['N']['schedule']
@@ -82,30 +80,33 @@ class train:
                 north_bound = self.train_data['N']['schedule']
                 south_bound = self.train_data['S']['schedule']
 
-                for row in north_bound:
-                    minutes_away = row['arrivalTime']
+                for row in [0, 1]:
+                    north_arrival = north_bound[row]
+                    south_arrival = south_bound[row]
 
-                    if minutes_away > 0:
-                        minutes_away - 1
-                    else:
-                        minutes_away += 5
+                    if row == 0 and north_arrival['arrivalTime'] == 0:
+                        north_bound[0] == north_bound[1]
+                        north_bound[1] += 4
+                    if row == 0 and south_arrival['arrivalTime'] == 0:
+                        south_bound[0] == south_bound[1]
+                        south_bound[1] += 4
+                    if row == 1 and north_arrival['arrivalTime'] == 0:
+                        north_bound[0] - 1
+                        north_bound[1] == 9
+                    if row == 1 and south_arrival['arrivalTime'] == 0:
+                        south_bound[0] == 10
+                        south_bound[1] - 1
 
-                for row in south_bound:
-                    minutes_away = row['arrivalTime']
-
-                    if minutes_away > 0:
-                        minutes_away - 1
-                    else:
-                        minutes_away += 5
-
-            time.sleep(5)
+                    north_arrival['arrivalTime'] - 1
+                    south_arrival['arrivalTime'] - 1
+            time.sleep(10)
             check_device_state()
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))
         draw = ImageDraw.Draw(image)
-        draw.rectangle((
-            0, 0, constants.width, constants.height), fill=constants.black)
+        draw.rectangle((0, 0, constants.width, constants.height),
+            fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
 
     def draw(self, direction):
