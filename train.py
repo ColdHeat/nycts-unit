@@ -24,22 +24,19 @@ class train:
 
     def offline_train_data(self):
         train_line = self.config["subway"]["line"]
-
         with open('./offline_data/'+ train_line + '.json') as json_file:
             json_data = json.load(json_file)
         return json_data["data"]
 
     def thread(self):
         while True:
-
-            def check_device_state(self):
+            def check_device_state():
                 if self.config['settings']['state'] == 'online':
                     request_train_time()
                 else:
-                    data = offline_train_data()
-                    calculate_time_difference(data)
+                    calculate_time_difference(self.offline_train_data())
 
-            def request_train_time(self):
+            def request_train_time():
                 try:
                     url = \
                         'https://api.trainsignapi.com/prod-trains/stations/' \
@@ -55,7 +52,7 @@ class train:
                     validate_train_data(response_data)
 
                 except Exception, e:
-                    self.train_data = offline_train_data()
+                    self.train_data = self.offline_train_data()
 
                     logs.logger.info(
                         'Train module', extra={
@@ -65,23 +62,23 @@ class train:
                             }
                         )
 
-            def validate_train_data(self, response_data):
+            def validate_train_data(response_data):
                 north_bound = self.train_data['N']['schedule']
                 south_bound = self.train_data['S']['schedule']
 
                 if len(north_bound) and len(south_bound) < 0:
-                    self.train_data = offline_train_data()
+                    self.train_data = self.offline_train_data()
                 else:
                     self.train_data = response_data
 
-            def calculate_time_difference(self):
+            def calculate_time_difference():
                 time_difference = math.ceil(time.time() - self.start)
 
                 if time_difference >= 60:
                     self.start = time.time()
                     update_offline_train_data()
 
-            def update_offline_train_data(self):
+            def update_offline_train_data():
                 north_bound = self.train_data['N']['schedule']
                 south_bound = self.train_data['S']['schedule']
 
@@ -102,6 +99,7 @@ class train:
                         minutes_away += 5
 
             time.sleep(5)
+            check_device_state()
 
     def drawClear(self):
         image = Image.new('RGB', (constants.width, constants.height))
