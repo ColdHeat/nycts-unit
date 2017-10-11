@@ -32,14 +32,14 @@ class train:
     def thread(self):
         while True:
 
-            def check_device_state():
+            def check_device_state(self):
                 if self.config['settings']['state'] == 'online':
                     request_train_time()
                 else:
                     data = offline_train_data()
                     calculate_time_difference(data)
 
-            def request_train_time():
+            def request_train_time(self):
                 try:
                     url = \
                         'https://api.trainsignapi.com/prod-trains/stations/' \
@@ -65,7 +65,7 @@ class train:
                             }
                         )
 
-            def validate_train_data(response_data):
+            def validate_train_data(self, response_data):
                 north_bound = self.train_data['N']['schedule']
                 south_bound = self.train_data['S']['schedule']
 
@@ -74,14 +74,14 @@ class train:
                 else:
                     self.train_data = response_data
 
-            def calculate_time_difference():
+            def calculate_time_difference(self):
                 time_difference = math.ceil(time.time() - self.start)
 
                 if time_difference >= 60:
                     self.start = time.time()
                     update_offline_train_data()
 
-            def update_offline_train_data():
+            def update_offline_train_data(self):
                 north_bound = self.train_data['N']['schedule']
                 south_bound = self.train_data['S']['schedule']
 
