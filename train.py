@@ -110,21 +110,16 @@ class train:
             0, 0, constants.width, constants.height), fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
 
-    def return_customer_retention_range(self):
-        customer_retention = self.config['settings']['customer_retention']
-
-        if customer_retention == True:
-            index_range = [1, 2]
-            return index_range
-        else:
-            index_range = [0, 1]
-            return index_range
-
     def draw(self, direction):
         self.config = self.base.config
         image = Image.new('RGB', (constants.width, constants.height))
         draw = ImageDraw.Draw(image)
-        index_range = return_customer_retention_range()
+        customer_retention = self.config['settings']['customer_retention']
+
+        if customer_retention == True:
+            index_range = [1, 2]
+        else:
+            index_range = [0, 1]
 
         for row in index_range:
             self.data = self.train_data[direction]['schedule'][row]
