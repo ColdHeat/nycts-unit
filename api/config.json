@@ -27,7 +27,7 @@
     "client_id": "0ebd48da-3e5f-46cf-bd96-488856cff91b",
     "dev": true,
     "transition_time": "4",
-    "brightness": "100",
+    "brightness": "20",
     "reboot": false,
     "dev_api_key": "5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf",
     "prod_api_key": "rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91",
