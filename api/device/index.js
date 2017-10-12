@@ -22,9 +22,9 @@ var mqtt = require('mqtt');
 var crypto = require('crypto-js');
 
 //app deps
-var exceptions = require('./lib/exceptions');
-var isUndefined = require('./lib/is-undefined');
-var tlsReader = require('./lib/tls-reader');
+var exceptions = require('./library/exceptions');
+var isUndefined = require('./library/is-undefined');
+var tlsReader = require('./library/tls-reader');
 var path = require('path');
 var fs = require('fs');
 
