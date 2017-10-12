@@ -82,16 +82,19 @@ class train:
 
                 for train in [north_bound, south_bound]:
                     for row in [0, 1]:
-                        train_schedule = train[row]
-
-                        if row == 0 and train_schedule['arrivalTime'] <= 0:
+                        print "this is row: "
+                        print row
+                        print "this is arrival time: "
+                        print train[row]['arrivalTime']
+                        if row == 0 and train[row]['arrivalTime'] <= 0:
                             train[0]['arrivalTime'] == train[1]['arrivalTime']
                             train[1]['arrivalTime'] += 4
-                        if row == 1 and train_schedule['arrivalTime'] <= 0:
-                            train[0]['arrivalTime'] - 1
+
+                        if row == 1 and train[row]['arrivalTime'] <= 0:
+                            train[0]['arrivalTime'] -= 1
                             train[1]['arrivalTime'] == 9
 
-                        return max(0, train[row]['arrivalTime'] -= 1)
+                        train[row]['arrivalTime'] -= 1
 
 
             time.sleep(10)
