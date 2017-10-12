@@ -85,14 +85,14 @@ class train:
                         train_schedule = train[row]
 
                         if row == 0 and train_schedule['arrivalTime'] <= 0:
-                            train_schedule[0] == train_schedule[1]
-                            train_schedule[1]['arrivalTime'] += 4
+                            train[0]['arrivalTime'] == train[1]['arrivalTime']
+                            train[1]['arrivalTime'] += 4
                         if row == 1 and train_schedule['arrivalTime'] <= 0:
-                            train_schedule[0]['arrivalTime'] - 1
-                            train_schedule[1]['arrivalTime'] == 9
+                            train[0]['arrivalTime'] - 1
+                            train[1]['arrivalTime'] == 9
 
-                    train_schedule['arrivalTime'] - 1
-                    train_schedule['arrivalTime'] - 1
+                    train_schedule['arrivalTime'] -= 1
+                    train_schedule['arrivalTime'] -= 1
 
             time.sleep(10)
             check_device_state()
