@@ -84,21 +84,22 @@ class train:
                     north_arrival = north_bound[row]
                     south_arrival = south_bound[row]
 
-                    if row == 0 and north_arrival['arrivalTime'] == 0:
+                    if row == 0 and north_arrival['arrivalTime'] <= 0:
                         north_bound[0] == north_bound[1]
-                        north_bound[1] += 4
-                    if row == 0 and south_arrival['arrivalTime'] == 0:
+                        north_bound[1]['arrivalTime'] += 4
+                    if row == 0 and south_arrival['arrivalTime'] <= 0:
                         south_bound[0] == south_bound[1]
-                        south_bound[1] += 4
-                    if row == 1 and north_arrival['arrivalTime'] == 0:
-                        north_bound[0] - 1
-                        north_bound[1] == 9
-                    if row == 1 and south_arrival['arrivalTime'] == 0:
-                        south_bound[0] == 10
-                        south_bound[1] - 1
+                        south_bound[1]['arrivalTime'] += 4
+                    if row == 1 and north_arrival['arrivalTime'] <= 0:
+                        north_bound[0]['arrivalTime'] - 1
+                        north_bound[1]['arrivalTime'] == 9
+                    if row == 1 and south_arrival['arrivalTime'] <= 0:
+                        south_bound[0]['arrivalTime'] == 10
+                        south_bound[1]['arrivalTime'] - 1
 
                     north_arrival['arrivalTime'] - 1
                     south_arrival['arrivalTime'] - 1
+
             time.sleep(10)
             check_device_state()
 
