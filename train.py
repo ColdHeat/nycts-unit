@@ -91,8 +91,8 @@ class train:
                             train[0]['arrivalTime'] - 1
                             train[1]['arrivalTime'] == 9
 
-                    train[0]['arrivalTime'] -= 1
-                    train[1]['arrivalTime'] -= 1
+                        train[0]['arrivalTime'] -= 1
+                        train[1]['arrivalTime'] -= 1
 
             time.sleep(10)
             check_device_state()
