@@ -84,10 +84,10 @@ class train:
                     for row in [0, 1]:
                         train_schedule = train[row]
 
-                        if row == 0 and train[schedule]['arrivalTime'] <= 0:
+                        if row == 0 and train_schedule['arrivalTime'] <= 0:
                             train_schedule[0] == train_schedule[1]
                             train_schedule[1]['arrivalTime'] += 4
-                        if row == 1 and train[schedule]['arrivalTime'] <= 0:
+                        if row == 1 and train_schedule['arrivalTime'] <= 0:
                             north_bound[0]['arrivalTime'] - 1
                             north_bound[1]['arrivalTime'] == 9
 
