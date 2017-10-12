@@ -80,22 +80,16 @@ class train:
                 north_bound = self.train_data['N']['schedule']
                 south_bound = self.train_data['S']['schedule']
 
-                for row in [0, 1]:
-                    north_arrival = north_bound[row]
-                    south_arrival = south_bound[row]
+                for train in [north_bound, south_bound]:
+                    for row in [0, 1]:
+                        train_schedule = train[row]
 
-                    if row == 0 and north_arrival['arrivalTime'] <= 0:
-                        north_bound[0] == north_bound[1]
-                        north_bound[1]['arrivalTime'] += 4
-                    if row == 0 and south_arrival['arrivalTime'] <= 0:
-                        south_bound[0] == south_bound[1]
-                        south_bound[1]['arrivalTime'] += 4
-                    if row == 1 and north_arrival['arrivalTime'] <= 0:
-                        north_bound[0]['arrivalTime'] - 1
-                        north_bound[1]['arrivalTime'] == 9
-                    if row == 1 and south_arrival['arrivalTime'] <= 0:
-                        south_bound[0]['arrivalTime'] == 10
-                        south_bound[1]['arrivalTime'] - 1
+                        if row == 0 and train[schedule]['arrivalTime'] <= 0:
+                            train_schedule[0] == train_schedule[1]
+                            train_schedule[1]['arrivalTime'] += 4
+                        if row == 1 and train[schedule]['arrivalTime'] <= 0:
+                            north_bound[0]['arrivalTime'] - 1
+                            north_bound[1]['arrivalTime'] == 9
 
                     north_arrival['arrivalTime'] - 1
                     south_arrival['arrivalTime'] - 1
