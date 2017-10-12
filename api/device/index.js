@@ -489,8 +489,8 @@ function DeviceClient(options) {
    //connect and return the client instance to map all mqttjs apis
 
    var protocols = {};
-   protocols.mqtts = require('./lib/tls');
-   protocols.wss = require('./lib/ws');
+   protocols.mqtts = require('./library/tls');
+   protocols.wss = require('./library/ws');
 
    function _loadDefaultFilename() {
       var home = process.env.HOME ||
