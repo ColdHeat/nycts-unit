@@ -92,7 +92,7 @@ class train:
                             train[0]['arrivalTime'] -= 1
                             train[1]['arrivalTime'] = random.choice([7, 9, 11])
 
-                        train[1]['arrivalTime'] -= 1
+                        train[row]['arrivalTime'] -= 1
 
             time.sleep(5)
             check_device_state()
