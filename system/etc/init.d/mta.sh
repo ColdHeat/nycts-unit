@@ -18,8 +18,7 @@ sleep 10
 # sudo python jobs.py
 
 cd /home/pi/nycts-unit
-sudo python start.py
-
+sudo python start.py &
 sudo python monitor.py
 
 while true; do

@@ -4,7 +4,6 @@ import logs
 import json
 import urllib2
 import requests
-from base import base
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -13,6 +12,7 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
+        self.state = get_system_state()
 
     def run(self):
         print "Loading Watchdog..."
@@ -25,6 +25,17 @@ class Watcher:
         except:
             self.observer.stop()
         self.observer.join()
+
+    def get_system_state(self):
+        try:
+            result = urllib2.urlopen(
+                "http://127.0.0.1:3000/getConfig"
+            )
+            return result['settings']['state']
+        except urllib2.URLError as e:
+            logs.logger.info(
+                'API Config Retrival',
+                    extra={'status': 0, 'job': 'api_config', 'error': str(e)})
 
     def go_online(self):
         try:
@@ -57,7 +68,7 @@ class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
         if event.event_type == 'modified':
-            state = base().config['settings']['state']
+            state = self.state
 
             if state == 'online':
                 check_log_file()
