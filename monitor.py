@@ -63,18 +63,7 @@ class Watcher:
                 'API Reboot',
                     extra={'status': 0, 'job': 'api_reboot', 'error': str(e)})
 
-class Handler(FileSystemEventHandler):
-    @staticmethod
-    def on_any_event(event):
-        if event.event_type == 'modified':
-            state = w.get_system_state()['settings']['state']
-
-            if state == 'online':
-                check_log_file()
-            else:
-                w.set_reboot()
-
-    def check_log_file():
+    def check_log_file(self):
         data = []
 
         try:
@@ -88,7 +77,7 @@ class Handler(FileSystemEventHandler):
 
         sum_log_status_codes(data)
 
-    def sum_log_status_codes(data):
+    def sum_log_status_codes(self, data):
         last_ten_log_statuses = 0
 
         if len(data) > 10:
@@ -98,6 +87,17 @@ class Handler(FileSystemEventHandler):
 
             if last_ten_log_statuses < 1:
                 w.go_offline()
+
+class Handler(FileSystemEventHandler):
+    @staticmethod
+    def on_any_event(event):
+        if event.event_type == 'modified':
+            state = w.get_system_state()['settings']['state']
+
+            if state == 'online':
+                w.check_log_file()
+            else:
+                w.set_reboot()
 
 
 if __name__ == '__main__':
