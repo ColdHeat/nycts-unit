@@ -12,7 +12,6 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.state = self.get_system_state()['settings']['state']
 
     def run(self):
         print "Loading Watchdog..."
@@ -31,7 +30,7 @@ class Watcher:
             result = urllib2.urlopen(
                 "http://127.0.0.1:3000/getConfig"
             )
-            return result
+            return json.loads(result.read())
         except urllib2.URLError as e:
             logs.logger.info(
                 'API Config Retrival',
@@ -68,7 +67,7 @@ class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
         if event.event_type == 'modified':
-            state = self.state
+            state = w.get_system_state()['settings']['state']
 
             if state == 'online':
                 check_log_file()
