@@ -12,7 +12,7 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.state = get_system_state()
+        self.state = self.get_system_state()
 
     def run(self):
         print "Loading Watchdog..."
