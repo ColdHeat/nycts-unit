@@ -82,14 +82,12 @@ class train:
 
                 for train in [north_bound, south_bound]:
                     for row in [0, 1]:
-                        if train[row]['arrivalTime'] <= 0:
-                            print row
-                            print train
-                            print 'this row and train is less than 0'
-                        if row == 0 and train[row]['arrivalTime'] <= 0:
+                        arrival_less_than_zero = train[row]['arrivalTime'] <= 0
+
+                        if row == 0 and arrival_less_than_zero:
                             train[0]['arrivalTime'] == train[1]['arrivalTime']
                             train[1]['arrivalTime'] += 4
-                        elif row == 1 and train[row]['arrivalTime'] <= 0:
+                        elif row == 1 and arrival_less_than_zero:
                             train[0]['arrivalTime'] -= 1
                             train[1]['arrivalTime'] == 9
                         else:
