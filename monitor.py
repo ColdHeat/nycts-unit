@@ -12,7 +12,7 @@ class Watcher:
 
     def __init__(self):
         self.observer = Observer()
-        self.state = self.get_system_state()
+        self.state = self.get_system_state()['settings']['state']
 
     def run(self):
         print "Loading Watchdog..."
@@ -31,7 +31,7 @@ class Watcher:
             result = urllib2.urlopen(
                 "http://127.0.0.1:3000/getConfig"
             )
-            return result['settings']['state']
+            return result
         except urllib2.URLError as e:
             logs.logger.info(
                 'API Config Retrival',
