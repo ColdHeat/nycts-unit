@@ -9,6 +9,7 @@ import constants
 import math
 import logs
 import requests
+import random
 import os
 
 class train:
@@ -85,13 +86,13 @@ class train:
                         arrival_less_than_zero = train[row]['arrivalTime'] <= 0
 
                         if row == 0 and arrival_less_than_zero:
-                            train[0]['arrivalTime'] == train[1]['arrivalTime']
-                            train[1]['arrivalTime'] += 4
-                        elif row == 1 and arrival_less_than_zero:
+                            train[0]['arrivalTime'] = train[1]['arrivalTime']
+                            train[1]['arrivalTime'] += random.choice([4, 5, 6])
+                        if row == 1 and arrival_less_than_zero:
                             train[0]['arrivalTime'] -= 1
-                            train[1]['arrivalTime'] == 9
-                        else:
-                            train[row]['arrivalTime'] -= 1
+                            train[1]['arrivalTime'] = random.choice([7, 9, 11])
+
+                        train[1]['arrivalTime'] -= 1
 
             time.sleep(5)
             check_device_state()
