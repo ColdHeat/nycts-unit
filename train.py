@@ -82,22 +82,20 @@ class train:
 
                 for train in [north_bound, south_bound]:
                     for row in [0, 1]:
-                        print "this is row: "
-                        print row
-                        print "this is arrival time: "
-                        print train[row]['arrivalTime']
+                        if train[row]['arrivalTime'] <= 0:
+                            print row
+                            print train
+                            print 'this row and train is less than 0'
                         if row == 0 and train[row]['arrivalTime'] <= 0:
                             train[0]['arrivalTime'] == train[1]['arrivalTime']
                             train[1]['arrivalTime'] += 4
-
-                        if row == 1 and train[row]['arrivalTime'] <= 0:
+                        elif row == 1 and train[row]['arrivalTime'] <= 0:
                             train[0]['arrivalTime'] -= 1
                             train[1]['arrivalTime'] == 9
+                        else:
+                            train[row]['arrivalTime'] -= 1
 
-                        train[row]['arrivalTime'] -= 1
-
-
-            time.sleep(10)
+            time.sleep(5)
             check_device_state()
 
     def drawClear(self):
