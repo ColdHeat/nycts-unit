@@ -34,4 +34,4 @@ def convert_temperature():
     return  str(((int(temp))/1000) * 9/5 + 32) + ' F'
 
 check_system_state()
-quit()
+sys.exit()

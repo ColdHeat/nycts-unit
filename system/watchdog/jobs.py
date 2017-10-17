@@ -14,19 +14,19 @@ def write_cron_jobs():
     device_reboot_job()
 
 def upload_log_job():
-    cmd = CHANGE_DIR + " && sudo python system/watchdog/log.py"
+    cmd = CHANGE_DIR + " && python system/watchdog/log.py"
     set_crontab(cmd, 25)
 
 def wifi_inspection_job():
-    cmd = CHANGE_DIR + " && sudo python system/watchdog/wifi.py"
-    set_crontab(cmd, 5)
+    cmd = CHANGE_DIR + " && python system/watchdog/wifi.py"
+    set_crontab(cmd, 9)
 
 def system_log_job():
-    cmd = CHANGE_DIR + " && sudo python system/watchdog/system.py"
+    cmd = CHANGE_DIR + " && python system/watchdog/system.py"
     set_crontab(cmd, 5)
 
 def device_reboot_job():
-    cmd = CHANGE_DIR + " && sudo python system/watchdog/reboot.py"
+    cmd = CHANGE_DIR + " && python system/watchdog/reboot.py"
     set_crontab(cmd, 3600)
 
 def set_crontab(cmd, length):

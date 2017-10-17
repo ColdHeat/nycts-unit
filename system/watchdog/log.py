@@ -49,4 +49,4 @@ def wipe_log_file(log_file):
         pass
 
 check_if_offline()
-quit()
+sys.exit()

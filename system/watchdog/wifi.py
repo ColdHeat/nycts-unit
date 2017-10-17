@@ -33,4 +33,4 @@ def set_device_state(state):
         os.system("sudo reboot now")
 
 check_wifi_adapter()
-quit()
+sys.exit()
