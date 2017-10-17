@@ -22,3 +22,6 @@ def reboot_system():
             extra={'status': 0, 'job': 'system_reboot', 'error': str(e)})
 
     os.system("sudo reboot now")
+
+check_reboot_status()
+quit()

@@ -48,3 +48,6 @@ def wipe_log_file(file_path):
         open(file_path, 'w').close()
     except:
         pass
+
+check_if_offline()
+quit()

@@ -32,3 +32,6 @@ def convert_temperature():
         ['cat', '/sys/class/thermal/thermal_zone0/temp'])
 
     return  str(((int(temp))/1000) * 9/5 + 32) + ' F'
+
+check_system_state()
+quit()
