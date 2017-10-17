@@ -4,7 +4,7 @@ import json
 import os
 import urllib2
 
-COFNIG_PATH = '/home/pi'
+CONFIG_PATH = '/home/pi'
 
 def check_if_offline():
     config = load_config_file()
@@ -18,12 +18,12 @@ def load_config_file():
         result = urllib2.urlopen(baseurl)
     except urllib2.URLError as e:
         os.system("sudo reboot now")
-    else:
-        config = json.loads(result.read())
+
+    config = json.loads(result.read())
     return config
 
 def load_log_file(config):
-    log_file = COFNIG_PATH + "/nycts-unit/logs/logs.json"
+    log_file = CONFIG_PATH + "/nycts-unit/logs/logs.json"
     try:
         with open(log_file, "rb") as f:
             payload = f.read()
@@ -34,19 +34,17 @@ def load_log_file(config):
 def upload_log(config, log_file, payload):
     client_id = config['settings']['client_id']
     url = "https://api.trainsignapi.com/prod-logs/logs/" + client_id + "/upload"
-    querystring = {
-        client_id: client_id
-        }
     headers = {
         'content-type': "application/octet-stream",
         'x-api-key': config['settings']['prod_api_key']
         }
     requests.request(
         "POST", url, data=payload, headers=headers, params=querystring)
+    wipe_log_file(log_file)
 
-def wipe_log_file(file_path):
+def wipe_log_file(log_file):
     try:
-        open(file_path, 'w').close()
+        open(log_file, 'w').close()
     except Exception, e:
         pass
 
