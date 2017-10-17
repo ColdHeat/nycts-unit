@@ -58,7 +58,7 @@ const sub = () => {
       host: "a1cnhiys64c1si.iot.us-east-1.amazonaws.com",
    });
 
-   device.subscribe(`set_config/darkness`);
+   device.subscribe(`set_config/${config.settings.sign_id}`);
 
    device
       .on('connect', function() {
