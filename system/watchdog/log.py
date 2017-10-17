@@ -2,10 +2,7 @@ import requests
 import sys
 import json
 import os
-
-import sys
-sys.path.insert(0, '/home/pi/nycts-unit')
-from base import base, logs
+import urllib2
 
 COFNIG_PATH = '/home/pi'
 
