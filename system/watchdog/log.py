@@ -16,10 +16,10 @@ def check_if_offline():
         load_log_file(config)
 
 def load_log_file(config):
-    file_path = COFNIG_PATH + "/nycts-unit/logs/logs.json"
+    log_file = COFNIG_PATH + "/nycts-unit/logs/logs.json"
 
     try:
-        with open(file_path, "rb") as f:
+        with open(log_file, "rb") as f:
             payload = f.read()
     except:
             payload = {}
