@@ -75,7 +75,7 @@ class Watcher:
             os.system("sudo touch /home/pi/nycts-unit/logs/logs.json")
             data.append({})
 
-        sum_log_status_codes(data)
+        w.sum_log_status_codes(data)
 
     def sum_log_status_codes(self, data):
         last_ten_log_statuses = 0

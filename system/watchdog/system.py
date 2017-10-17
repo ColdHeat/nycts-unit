@@ -8,7 +8,6 @@ from base import base, logs
 def check_system_state():
     if base().config['settings']['run_speed_test'] == True:
         check_internet_speed()
-
     run_system_diagnostics()
 
 def run_system_diagnostics():
