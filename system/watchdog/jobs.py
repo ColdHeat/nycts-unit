@@ -1,8 +1,10 @@
 import os
 from crontab import CronTab
 
+CHANGE_DIR = "cd /home/pi/nycts-unit"
+
 def initialize_crontab():
-    os.system("crontab -r")
+    os.system("sudo -u pi crontab -r")
     write_cron_jobs()
 
 def write_cron_jobs():
@@ -12,19 +14,19 @@ def write_cron_jobs():
     device_reboot_job()
 
 def upload_log_job():
-    cmd = "sudo python /home/pi/nycts-unit/system/watchdog/log.py"
+    cmd = CHANGE_DIR + " && sudo python system/watchdog/log.py"
     set_crontab(cmd, 25)
 
 def wifi_inspection_job():
-    cmd = "sudo python /home/pi/nycts-unit/system/watchdog/wifi.py"
+    cmd = CHANGE_DIR + " && sudo python system/watchdog/wifi.py"
     set_crontab(cmd, 5)
 
 def system_log_job():
-    cmd = "sudo python /home/pi/nycts-unit/system/watchdog/system.py"
+    cmd = CHANGE_DIR + " && sudo python system/watchdog/system.py"
     set_crontab(cmd, 5)
 
 def device_reboot_job():
-    cmd = "sudo python /home/pi/nycts-unit/system/watchdog/reboot.py"
+    cmd = CHANGE_DIR + " && sudo python system/watchdog/reboot.py"
     set_crontab(cmd, 3600)
 
 def set_crontab(cmd, length):

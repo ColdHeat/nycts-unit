@@ -12,9 +12,7 @@ COFNIG_PATH = '/home/pi'
 def check_if_offline():
     config = base().config
 
-    if config['settings']['state'] == 'offline':
-        pass
-    else:
+    if config['settings']['state'] == 'online':
         load_log_file(config)
 
 def load_log_file(config):
@@ -24,7 +22,7 @@ def load_log_file(config):
         with open(file_path, "rb") as f:
             payload = f.read()
     except:
-        payload = {}
+            payload = {}
 
     upload_log(config, log_file)
 

@@ -32,4 +32,4 @@ def convert_temperature():
     temp = subprocess.check_output(
         ['cat', '/sys/class/thermal/thermal_zone0/temp'])
 
-    return  str((int(temp))/1000) * 9/5 + 32) + ' F'
+    return  str(((int(temp))/1000) * 9/5 + 32) + ' F'
