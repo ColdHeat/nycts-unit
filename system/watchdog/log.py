@@ -3,6 +3,9 @@ import sys
 import json
 import os
 import urllib2
+import sys
+sys.path.insert(0, '/home/pi/nycts-unit')
+import logs
 
 CONFIG_PATH = '/home/pi'
 
@@ -13,12 +16,10 @@ def check_if_offline():
 
 def load_config_file():
     baseurl = "http://127.0.0.1:3000/getConfig"
-
     try:
         result = urllib2.urlopen(baseurl)
     except urllib2.URLError as e:
-        os.system("sudo reboot now")
-
+        sys.exit()
     config = json.loads(result.read())
     return config
 
@@ -46,7 +47,6 @@ def wipe_log_file(log_file):
     try:
         open(log_file, 'w').close()
     except Exception, e:
-        pass
+        sys.exit()
 
 check_if_offline()
-sys.exit()

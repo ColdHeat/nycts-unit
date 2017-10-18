@@ -24,4 +24,3 @@ def reboot_system():
     os.system("sudo reboot now")
 
 check_reboot_status()
-sys.exit()

@@ -50,7 +50,7 @@ class weather:
         while True:
             self.config = self.base.config
 
-            while self.config.settings.state == 'online':
+            while self.config['settings']['state'] == 'online':
                 self.queryWeatherEndpoint()
                 time.sleep(120)
 

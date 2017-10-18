@@ -1,9 +1,19 @@
 import subprocess
 import psutil
+import urllib2
 
 import sys
 sys.path.insert(0, '/home/pi/nycts-unit')
-from base import base, logs
+import logs
+
+def load_config_file():
+    baseurl = "http://127.0.0.1:3000/getConfig"
+    try:
+        result = urllib2.urlopen(baseurl)
+    except urllib2.URLError as e:
+        sys.exit()
+    config = json.loads(result.read())
+    return config
 
 def check_system_state():
     if base().config['settings']['run_speed_test'] == True:
@@ -34,4 +44,3 @@ def convert_temperature():
     return  str(((int(temp))/1000) * 9/5 + 32) + ' F'
 
 check_system_state()
-sys.exit()
