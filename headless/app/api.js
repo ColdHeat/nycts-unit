@@ -34,6 +34,7 @@ module.exports = function(wifi_manager, callback) {
     // Setup static routes to public assets
     app.use(express.static(path.join(__dirname, "public")));
     app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }));
 
     // Setup HTTP routes for rendering views
     app.get("/", function(request, response) {
@@ -50,11 +51,15 @@ module.exports = function(wifi_manager, callback) {
     });
 
     app.post("/api/enable_wifi", function(request, response) {
+
+        console.log("Req body" + request.body);
+
         var conn_info = {
-            wifi_ssid:      request.body.wifi_ssid,
-            wifi_passcode:  request.body.wifi_passcode,
-            name:  request.body.name,
-            pin:  request.body.pin
+            wifi_ssid: request.body.wifi_ssid,
+            wifi_passcode: request.body.wifi_passcode,
+            name: request.body.name,
+            client_id: request.body.client_id,
+            sign_id: request.body.sign_id
         };
 
         // TODO: If wifi did not come up correctly, it should fail
@@ -72,6 +77,8 @@ module.exports = function(wifi_manager, callback) {
             console.log("Wifi Enabled! - Exiting");
             process.exit(0);
         });
+
+        console.log("Req fresh" + request.fresh);
     });
 
     // Listen on our server

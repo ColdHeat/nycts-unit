@@ -1,38 +1,39 @@
 {
-  "subway": {
-    "name": "Subway",
-    "enabled": true,
-    "line": "L",
-    "train": "L15"
-  },
-  "weather": {
-    "name": "Weather",
-    "enabled": false,
-    "zip_code": "11237"
-  },
-  "customtext": {
-    "name": "Custom Text",
-    "enabled": false,
-    "line_1": "HELLO DARKNESS",
-    "line_2": "MY OLD FRIEND"
-  },
-  "logo": {
-    "name": "Logo",
-    "enabled": false,
-    "image_file": "emoji.jpg",
-    "updated": true
-  },
-  "settings": {
-    "name": "{{ name }}",
-    "client_id": "29",
-    "state": "online",
-    "dev": true,
-    "transition_time": "4",
-    "brightness": "50",
-    "reboot": false,
-    "dev_api_key": "5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf",
-    "prod_api_key":"rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91",
-    "run_speed_test": false,
-    "customer_retention": false
-  }
+ "subway": {
+   "name": "Subway",
+   "enabled": true,
+   "line": "L",
+   "train": "L15"
+ },
+ "weather": {
+   "name": "Weather",
+   "enabled": false,
+   "zip_code": "11237"
+ },
+ "customtext": {
+   "name": "Custom Text",
+   "enabled": false,
+   "line_1": "HELLO DARKNESS",
+   "line_2": "MY OLD FRIEND"
+ },
+ "logo": {
+   "name": "Logo",
+   "enabled": false,
+   "image_file": "emoji.jpg",
+   "updated": true
+ },
+ "settings": {
+   "name": "{{ name }}",
+   "client_id": "{{ client_id }}",
+   "sign_id": "{{ sign_id }}",
+   "state": "online",
+   "dev": true,
+   "transition_time": "4",
+   "brightness": "50",
+   "reboot": false,
+   "dev_api_key": "5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf",
+   "prod_api_key":"rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91",
+   "run_speed_test": false,
+   "customer_retention": false
+ }
 }

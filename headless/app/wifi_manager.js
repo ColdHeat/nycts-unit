@@ -287,13 +287,6 @@ module.exports = function() {
                         connection_info, next_step);
                 },
 
-                function create_pin(next_step) {
-                    write_template_to_file(
-                        "./assets/home/pi/nycts-unit/api/pin.template",
-                        "/home/pi/nycts-unit/api/pin",
-                        connection_info, next_step);
-                },
-
                 function create_config(next_step) {
                     write_template_to_file(
                         "./assets/home/pi/nycts-unit/api/config.json.template",

@@ -1,17 +1,11 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const deviceModule = require('./device');
-let config = require('./config.json');
 const multer = require('multer');
 const bodyParser = require('body-parser');
+
 let jsonParser = bodyParser.json();
-//begin module
-const jsonReplacer = (key, value) => {
-  if (value === 'false') return false;
-  if (value === 'true') return true;
-  return value;
-};
+
 let storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, __dirname + '/uploads/');
@@ -24,6 +18,13 @@ let upload = multer({
   storage: storage
 });
 
+let config = require('./config.json');
+
+const jsonReplacer = (key, value) => {
+  if (value === 'false') return false;
+  if (value === 'true') return true;
+  return value;
+};
 
 const writeToConfigFile = callback => {
   fs.writeFile(
@@ -35,59 +36,34 @@ const writeToConfigFile = callback => {
     }
   );
 };
+const checkPin = pin => {
+  var fileContents;
+  try {
+    fileContents = fs.readFileSync('pin', 'utf-8');
+    json = JSON.parse(fileContents);
+    if (pin === json.pin) {
+      return true;
+    }
+  } catch (err) {
+    // Here you get the error when the file was not found,
+    // but you also get any other error
+  }
+  return false;
+};
 
-const setConfig = (setting, key, value) => {
-  if (
-    value === 'false' &&
-    typeof config[setting][key] === 'boolean'
-  )
-    value = false;
-  if (value === 'true') value = true;
+const setPin = pin => {
+  const fileContents = {
+    pin: pin
+  };
+  const json = JSON.stringify(fileContents);
+  fs.writeFile('./pin', json, 'utf8', function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log('The file was saved!');
+  });
+};
 
-  config[setting][key] = value;
-  writeToConfigFile(() => console.log('done'));
-
-}
-
-const sub = () => {
-
-   const device = deviceModule({
-      keyPath: 'NYCTS-Unit.private.key',
-      certPath: 'NYCTS-Unit.cert.pem',
-      caPath: 'root-CA.crt',
-      host: "a1cnhiys64c1si.iot.us-east-1.amazonaws.com",
-   });
-
-   device.subscribe(`set_config/${config.settings.sign_id}`);
-
-   device
-      .on('connect', function() {
-         console.log('connect');
-      });
-   device
-      .on('close', function() {
-         console.log('close');
-      });
-   device
-      .on('reconnect', function() {
-         console.log('reconnect');
-      });
-   device
-      .on('offline', function() {
-         console.log('offline');
-      });
-   device
-      .on('error', function(error) {
-         console.log('error', error);
-      });
-   device
-      .on('message', function(topic, payload) {
-         let newConfig = JSON.parse(payload);
-         setConfig(newConfig.setting, newConfig.key, newConfig.value);
-         console.log(payload.toString());
-      });
-
-}
 app.get('/', function(req, res) {
   res.send("Hello darkness my old friend, I've come to talk with you again.");
 });
@@ -130,5 +106,4 @@ app.post('/setPin', jsonParser, function(req, res) {
 
 app.listen(3000, function() {
   console.log('NYC Train Sign Server listening on port 3000!');
-  sub();
 });

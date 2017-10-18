@@ -23,15 +23,16 @@
     "updated": true
   },
   "settings": {
-    "name": "{{ name }}",
-    "client_id": "29",
     "state": "online",
     "dev": true,
+    "name": "Rohail",
+    "client_id": "darkness",
+    "dev": true,
     "transition_time": "4",
-    "brightness": "50",
+    "brightness": "20",
     "reboot": false,
     "dev_api_key": "5lz8VPkVUL7gcjN5LsZwu1eArX8A3B2m8VeUfXxf",
-    "prod_api_key":"rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91",
+    "prod_api_key": "rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91",
     "run_speed_test": false,
     "customer_retention": false
   }
