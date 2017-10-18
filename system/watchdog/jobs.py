@@ -12,6 +12,7 @@ def write_cron_jobs():
     wifi_inspection_job()
     system_log_job()
     device_reboot_job()
+    flush_logs()
 
 def upload_log_job():
     cmd = CHANGE_DIR + " && sudo python system/watchdog/log.py"
@@ -28,6 +29,10 @@ def system_log_job():
 def device_reboot_job():
     cmd = CHANGE_DIR + " && sudo python system/watchdog/reboot.py"
     set_crontab(cmd, 3600)
+
+def flush_logs():
+    cmd = CHANGE_DIR + " && sudo python system/watchdog/flush_logs.py"
+    set_crontab(cmd, 86400)
 
 def set_crontab(cmd, length):
     cron = CronTab(user='pi')

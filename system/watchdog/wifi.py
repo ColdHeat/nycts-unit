@@ -38,6 +38,6 @@ def set_device_state(state):
     except urllib2.URLError as e:
         logs.logger.info('Set Device State',
             extra={'status': 0, 'job': 'device_state', 'error': str(e)})
-            sys.exit()
+        sys.exit()
 
 ping_router()
