@@ -40,7 +40,7 @@ def upload_log(config, log_file, payload):
         'x-api-key': config['settings']['prod_api_key']
         }
     requests.request(
-        "POST", url, data=payload, headers=headers, params=querystring)
+        "POST", url, data=payload, headers=headers)
     wipe_log_file(log_file)
 
 def wipe_log_file(log_file):
