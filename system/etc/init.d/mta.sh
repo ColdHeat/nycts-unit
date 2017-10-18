@@ -3,6 +3,7 @@
 cd /home/pi/nycts-unit
 sudo python reset.py &
 sudo python load.py &
+sudo pkill -f reset.py &
 
 cd /home/pi/nycts-unit/headless
 sudo npm run start
@@ -11,11 +12,15 @@ cd /home/pi/nycts-unit/api
 node bonjour.js &
 node index.js &
 pkill -f load.py
+
 sleep 10
+
+cd /home/pi/nycts-unit/system/watchdog
+sudo python jobs.py
+
 cd /home/pi/nycts-unit
 sudo python start.py &
-sudo python monitor.py &
-sudo /etc/init.d/avahi-daemon restart
+sudo python monitor.py
 
 while true; do
 	sleep 60

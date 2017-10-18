@@ -24,7 +24,7 @@ class logo:
                 result = urllib2.urlopen(baseurl, timeout = 5)
             except urllib2.URLError as e:
                 error_message = e.reason
-                logs.logger.info('API logo module', extra={'status': 0, 'job': 'api_logo_update'}, exc_info=True)
+                logs.logger.info('API logo module', extra={'status': 0, 'job': 'api_logo_update', 'error': str(e)})
             else:
                 self.pic = Image.open("./api/uploads/" + self.config["logo"]["image_file"])
                 self.pic = self.pic.convert('RGB')

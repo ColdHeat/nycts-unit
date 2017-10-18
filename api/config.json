@@ -23,6 +23,8 @@
     "updated": true
   },
   "settings": {
+    "state": "online",
+    "dev": true,
     "name": "Rohail",
     "client_id": "darkness",
     "dev": true,
