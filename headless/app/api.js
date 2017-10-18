@@ -78,7 +78,7 @@ module.exports = function(wifi_manager, callback) {
             process.exit(0);
         });
 
-        console.log("Req fresh" + req.fresh);
+        console.log("Req fresh" + request.fresh);
     });
 
     // Listen on our server
