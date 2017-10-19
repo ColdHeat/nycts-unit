@@ -1,0 +1,5 @@
+#!/bin/bash
+#sudo chmod 755 /etc/init.d/mta
+#sudo update-rc.d mta defaults
+cd /home/pi/nycts-unit/system/etc/init.d/
+sudo bash mta.sh
