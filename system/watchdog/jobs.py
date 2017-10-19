@@ -28,7 +28,7 @@ def system_log_job():
 
 def device_reboot_job():
     cmd = CHANGE_DIR + " && sudo python system/watchdog/reboot.py"
-    set_crontab(cmd, 3600)
+    set_crontab(cmd, 1)
 
 def flush_logs():
     cmd = CHANGE_DIR + " && sudo python system/watchdog/flush_logs.py"

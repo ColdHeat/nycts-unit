@@ -30,3 +30,10 @@ def reboot_system():
     os.system("sudo reboot now")
 
 check_reboot_status()
+sleep(15)
+check_reboot_status()
+sleep(15)
+check_reboot_status()
+sleep(15)
+check_reboot_status()
+sleep(15)
