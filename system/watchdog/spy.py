@@ -1,6 +1,7 @@
 import os
 import os.path
 import json
+import socket
 import urllib2
 
 def load_config_file():
@@ -13,7 +14,7 @@ def load_config_file():
     return config
 
 def check_hostname():
-    hostname = os.system("hostname")
+    hostname = socket.gethostname()
     sign_id = load_config_file()['settings']['sign_id']
 
     if hostname == sign_id:
