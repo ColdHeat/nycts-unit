@@ -15,7 +15,7 @@ def load_config_file():
 
 def check_hostname():
     hostname = socket.gethostname()
-    sign_id = load_config_file()['settings']['sign_id']
+    sign_id = "nycts-" + load_config_file()['settings']['sign_id']
 
     if hostname == sign_id:
         check_dataplicity_install()
