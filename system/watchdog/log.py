@@ -33,8 +33,8 @@ def load_log_file(config):
     upload_log(config, log_file, payload)
 
 def upload_log(config, log_file, payload):
-    client_id = config['settings']['client_id']
-    url = "https://api.trainsignapi.com/prod-logs/logs/" + client_id + "/upload"
+    sign_id = config['settings']['sign_id']
+    url = "https://api.trainsignapi.com/prod-logs/logs/" + sign_id + "/upload"
     headers = {
         'content-type': "application/octet-stream",
         'x-api-key': config['settings']['prod_api_key']
