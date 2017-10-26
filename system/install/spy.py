@@ -13,7 +13,7 @@ def load_config_file():
     return config
 
 def check_hostname():
-    hostname =
+    hostname = os.system("hostname")
     sign_id = load_config_file()['settings']['sign_id']
 
     if hostname == sign_id:
