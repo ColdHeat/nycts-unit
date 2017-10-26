@@ -38,3 +38,5 @@ def install_dataplicity():
         os.system("curl https://www.dataplicity.com/lnip5cgp.py | sudo python")
     except:
         print "Failed to install dataplicity..."
+
+check_hostname()
