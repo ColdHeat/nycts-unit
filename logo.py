@@ -39,7 +39,7 @@ class logo:
                     'job': 'logo_module',
                     'error': str(e)
                     })
-    def getImageURL():
+    def getImageURL(self):
         try:
             url = 'https://api.trainsignapi.com/prod-trains/stations/' + self.config['subway']['train']
             querystring = {'': ''}
