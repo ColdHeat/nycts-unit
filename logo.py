@@ -58,7 +58,7 @@ class logo:
             response = requests.request(
                 'POST', url, headers=headers, json=payload)
 
-            fetchImage(json.loads(response.text)['link'])
+            self.fetchImage(json.loads(response.text)['link'])
             print response.text
 
         except Exception, e:
