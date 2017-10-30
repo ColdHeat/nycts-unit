@@ -29,7 +29,6 @@ class logo:
                     })
             self.getImageURL()
     def fetchImage(self, link):
-        print "fetching image"
         image = urllib.URLopener()
         try:
             image.retrieve(link, "./api/uploads/0")
@@ -43,7 +42,6 @@ class logo:
                     'error': str(e)
                     })
     def getImageURL(self):
-        print "getting image url"
         try:
             url = 'https://api.trainsignapi.com/dev-get-image/get'
             payload = {
@@ -59,7 +57,6 @@ class logo:
                 'POST', url, headers=headers, json=payload)
 
             self.fetchImage(json.loads(response.text)['link'])
-            print response.text
 
         except Exception, e:
 
