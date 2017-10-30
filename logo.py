@@ -14,6 +14,7 @@ class logo:
     def __init__(self, base):
         self.base          = base
         self.config        = base.config
+        self.pic = None
         self.loadImageFromFile()
     def loadImageFromFile(self):
         try:
@@ -28,6 +29,7 @@ class logo:
                     })
             self.getImageURL()
     def fetchImage(self, link):
+        print "fetching image"
         image = urllib.URLopener()
         try:
             image.retrieve(link, "./api/uploads/0")
@@ -41,6 +43,7 @@ class logo:
                     'error': str(e)
                     })
     def getImageURL(self):
+        print "getting image url"
         try:
             url = 'https://api.trainsignapi.com/prod-trains/stations/' + self.config['subway']['train']
             querystring = {'': ''}
