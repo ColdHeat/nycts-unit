@@ -45,15 +45,21 @@ class logo:
     def getImageURL(self):
         print "getting image url"
         try:
-            url = 'https://api.trainsignapi.com/prod-trains/stations/' + self.config['subway']['train']
-            querystring = {'': ''}
+            url = 'https://api.trainsignapi.com/dev-get-image/get'
+            payload = {
+                'clientId': self.config['settings']['client_id'],
+                'signId': self.config['settings']['sign_id'],
+                'logoKey': '0'
+            }
             headers = {
+                'Content-Type': 'application/json',
                 'x-api-key': self.config['settings']['dev_api_key']
-                }
+            }
             response = requests.request(
-                'GET', url, headers=headers, params=querystring)
+                'POST', url, headers=headers, json=payload)
 
             fetchImage(json.loads(response.text)['link'])
+            print response.text
 
         except Exception, e:
 
