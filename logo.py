@@ -7,6 +7,7 @@ import Image
 import ImageDraw
 import constants
 import logs
+import requests
 
 class logo:
 
