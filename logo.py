@@ -13,6 +13,7 @@ class logo:
     def __init__(self, base):
         self.base          = base
         self.config        = base.config
+        self.loadImageFromFile()
     def loadImageFromFile(self):
         try:
             self.pic = Image.open("./api/uploads/0")
