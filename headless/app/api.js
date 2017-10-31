@@ -4,6 +4,7 @@ var path       = require("path"),
     express    = require("express"),
     bodyParser = require('body-parser'),
     config     = require("../config.json"),
+    exec    = require("child_process").exec,
     http_test  = config.http_test_only;
 
 // Helper function to log errors and send a generic status "SUCCESS"
@@ -24,6 +25,7 @@ function log_error_send_success_with(success_obj, error, response) {
     Returns a function which sets up the app and our various routes.
 \*****************************************************************************/
 module.exports = function(wifi_manager, callback) {
+    exec("python /home/pi/nycts-unit/ready.py");
     var app = express();
 
     // Configure the app
