@@ -25,6 +25,7 @@ class train:
         t.start()
 
     def offline_train_data(self):
+        self.train_directions = ['N', 'S']
         train_line = self.config["subway"]["line"]
         with open('./offline_data/'+ train_line + '.json') as json_file:
             json_data = json.load(json_file)
@@ -149,6 +150,8 @@ class train:
                     circleColor = constants.green
                 if nums in ['N', 'Q', 'R', 'W']:
                     circleColor = constants.yellow
+                if nums in ['B', 'D', 'F', 'M']:
+                    circleColor = constants.orange
                 if nums in ['L']:
                     circleColor = constants.grey
 
