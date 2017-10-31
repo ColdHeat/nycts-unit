@@ -10,6 +10,7 @@ sudo npm run start
 cd /home/pi/nycts-unit/api
 node bonjour.js &
 node index.js &
+pkill -f load.py
 pkill -f readytopair.py
 
 sleep 10

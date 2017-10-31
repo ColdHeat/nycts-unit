@@ -252,21 +252,6 @@ module.exports = function() {
                         next_step();
                     });
                 },
-                function kill_loading_screen(next_step) {
-                    exec("pkill load.py", function(error, stdout, stderr) {
-                        //console.log(stdout);
-                        if (!error) console.log("... load.py killed!");
-                        next_step();
-                    });
-                },
-                function load_ready_to_pair_screen(next_step) {
-                    exec("python /home/pi/nycts-unit/readytopair.py &", function(error, stdout, stderr) {
-                        //console.log(stdout);
-                        if (!error) console.log("... ready.py loaded!");
-                        next_step();
-                    });
-                },
-
                 // TODO: Do we need to issue a reboot here?
 
             ], callback);
