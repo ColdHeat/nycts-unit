@@ -260,7 +260,7 @@ module.exports = function() {
                     });
                 },
                 function load_ready_to_pair_screen(next_step) {
-                    exec("python /home/pi/nycts-unit/readytopair.py", function(error, stdout, stderr) {
+                    exec("python /home/pi/nycts-unit/readytopair.py &", function(error, stdout, stderr) {
                         //console.log(stdout);
                         if (!error) console.log("... ready.py loaded!");
                         next_step();
