@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 let jsonParser = bodyParser.json();
 const fetch = require('node-fetch');
 const PROD_API_KEY = 'rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91';
-
+const GET_CONFIG_URL = 'https://api.trainsignapi.com/prod-get-config/get';
 
 //begin module
 const jsonReplacer = (key, value) => {
