@@ -19,13 +19,12 @@ class train:
         self.config = base.config
         self.start = time.time()
         self.train_data = self.offline_train_data()
-        self.train_directions = []
+        self.train_directions = ['N', 'S']
         t = threading.Thread(target=self.thread)
         t.daemon = True
         t.start()
 
     def offline_train_data(self):
-        self.train_directions = ['N', 'S']
         train_line = self.config["subway"]["line"]
         with open('./offline_data/'+ train_line + '.json') as json_file:
             json_data = json.load(json_file)
@@ -152,7 +151,7 @@ class train:
                     circleColor = constants.g_green
                 if nums in ['N', 'Q', 'R', 'W']:
                     circleColor = constants.yellow
-                if nums in ['A', 'C', 'E', 'SIR']:
+                if nums in ['A', 'C', 'E', 'S']:
                     circleColor = constants.blue
                 if nums in ['J', 'Z']:
                     circleColor = constants.brown
