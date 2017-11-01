@@ -151,7 +151,7 @@ class train:
                     circleColor = constants.g_green
                 if nums in ['N', 'Q', 'R', 'W']:
                     circleColor = constants.yellow
-                if nums in ['A', 'C', 'E', 'S']:
+                if nums in ['A', 'C', 'E', 'SI']:
                     circleColor = constants.blue
                 if nums in ['J', 'Z']:
                     circleColor = constants.brown
