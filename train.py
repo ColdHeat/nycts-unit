@@ -99,7 +99,7 @@ class train:
                         arrival_less_than_zero = route[row]['arrivalTime'] <= 0
 
                         if row == 0 and arrival_less_than_zero:
-                            route[0]['arrivalTime'] = train[1]['arrivalTime']
+                            route[0]['arrivalTime'] = route[1]['arrivalTime']
                             route[1]['arrivalTime'] += random.choice([4, 6, 8])
                         if row == 1 and arrival_less_than_zero:
                             route[0]['arrivalTime'] -= 1
