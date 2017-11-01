@@ -43,7 +43,7 @@ class logo:
                     })
     def getImageURL(self):
         try:
-            url = 'https://api.trainsignapi.com/dev-get-image/get'
+            url = 'https://api.trainsignapi.com/prod-get-image/get'
             payload = {
                 'clientId': self.config['settings']['client_id'],
                 'signId': self.config['settings']['sign_id'],
