@@ -1,0 +1,62 @@
+{
+	"data": {
+		"N": {
+			"schedule": [
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 2,
+					"departureTime": 1506624349
+				},
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 10,
+					"departureTime": 1506624949
+				},
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 21,
+					"departureTime": 1506625607
+				},
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 30,
+					"departureTime": 1506626130
+				}
+			],
+			"term": "JAMICA CENTER"
+		},
+		"S": {
+			"schedule": [
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 3,
+					"departureTime": 1506624529
+				},
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 14,
+					"departureTime": 1506625170
+				},
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 24,
+					"departureTime": 1506625770
+				},
+				{
+					"routeId": "J",
+					"delay": null,
+					"arrivalTime": 33,
+					"departureTime": 1506626310
+				}
+			],
+			"term": "BROAD ST"
+		}
+	}
+}
