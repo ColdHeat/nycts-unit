@@ -6,7 +6,9 @@ let config = require('./config.json');
 const multer = require('multer');
 const bodyParser = require('body-parser');
 let jsonParser = bodyParser.json();
+const fetch = require('node-fetch');
 const PROD_API_KEY = 'rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91';
+
 
 //begin module
 const jsonReplacer = (key, value) => {
