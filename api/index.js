@@ -91,7 +91,7 @@ const sub = () => {
 
 }
 const getNewConfig = (callback) => {
-  const config = {
+  const params = {
   method: 'POST',
   headers: {
     Accept: 'application/json',
@@ -103,7 +103,7 @@ const getNewConfig = (callback) => {
   })
 };
 
-fetch(GET_CONFIG_URL, config)
+fetch(GET_CONFIG_URL, params)
   .then(response => {
     return response.json();
   })
