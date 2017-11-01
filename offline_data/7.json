@@ -1,0 +1,62 @@
+{
+	"data": {
+		"N": {
+			"schedule": [
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 2,
+					"departureTime": 1506556914
+				},
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 5,
+					"departureTime": 1506557079
+				},
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 7,
+					"departureTime": 1506557207
+				},
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 9,
+					"departureTime": 1506557308
+				}
+			],
+			"term": "MAIN STREET"
+		},
+		"S": {
+			"schedule": [
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 3,
+					"departureTime": 1506556982
+				},
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 11,
+					"departureTime": 1506557417
+				},
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 15,
+					"departureTime": 1506557700
+				},
+				{
+					"routeId": "7",
+					"delay": null,
+					"arrivalTime": 20,
+					"departureTime": 1506558000
+				}
+			],
+			"term": "HUDSON YARDS"
+		}
+	}
+}

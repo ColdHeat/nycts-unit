@@ -146,10 +146,18 @@ class train:
 
                 if nums in ['1', '2', '3']:
                     circleColor = constants.red
-                if nums in ['4', '5', '6', 'G']:
+                if nums in ['4', '5', '6']:
                     circleColor = constants.green
+                if nums in ['G']:
+                    circleColor = constants.g_green
                 if nums in ['N', 'Q', 'R', 'W']:
                     circleColor = constants.yellow
+                if nums in ['A', 'C', 'E', 'SIR']:
+                    circleColor = constants.blue
+                if nums in ['J', 'Z']:
+                    circleColor = constants.brown
+                if nums in ['7']:
+                    circleColor = constants.purple
                 if nums in ['B', 'D', 'F', 'M']:
                     circleColor = constants.orange
                 if nums in ['L']:
