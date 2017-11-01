@@ -88,12 +88,59 @@ const sub = () => {
       });
 
 }
+const getNewConfig = (callback) => {
+  const config = {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    'x-api-key': PROD_API_KEY
+  },
+  body: JSON.stringify({
+    clientId: config['settings']['client_id']
+  })
+};
+
+fetch(GET_CONFIG_URL, config)
+  .then(response => {
+    return response.json();
+  })
+  .then(json => {
+    let newConfig = json[config['settings']['sign_id']];
+    callback(newConfig);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
+if(fs.existsSync('./config.json')) {
+  getNewConfig((newConfig) => {
+    config = newConfig;
+    writeToConfigFile(() => { void(0) });
+  })
+}
+
+
 app.get('/', function(req, res) {
   res.send("Hello darkness my old friend, I've come to talk with you again.");
 });
 
 app.get('/getConfig', function(req, res) {
   res.json(config);
+});
+app.get('/getNewConfig', function(req, res) {
+  if(fs.existsSync('./config.json')) {
+    getNewConfig((newConfig) => {
+      config = newConfig;
+      writeToConfigFile(() => {
+        res.json(config)
+      });
+    })
+  }
+  else {
+    res.json({ error: 'error' });
+  }
 });
 
 app.get('/setConfig/:route/:settingKey/:settingValue', function(req, res) {
