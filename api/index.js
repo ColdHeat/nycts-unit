@@ -96,9 +96,9 @@ const sleep = (time) => {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 const getNewConfig = (callback) => {
-  console.log('get new config');
   const params = {
   method: 'POST',
+  timeout: 5000,
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ fetch(GET_CONFIG_URL, params)
   })
   .catch(err => {
     console.log(err);
-    sleep(1000).then(() => {
+    sleep(2000).then(() => {
       getNewConfig(callback);
     })
   });
