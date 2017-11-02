@@ -37,7 +37,7 @@ def reboot_wifi():
     os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
     os.system("sudo /sbin/ifup --force 'wlan0' && sleep 5")
     set_device_state(state='online')
-    get_new_config()
+    load_new_config_file()
 
 def set_device_state(state):
     try:

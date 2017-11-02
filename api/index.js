@@ -92,11 +92,15 @@ const sub = () => {
       });
 
 }
+const sleep = (time) => {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 const getNewConfig = (callback) => {
+  console.log('get new config');
   const params = {
   method: 'POST',
   headers: {
-    Accept: 'application/json',
+    'Accept': 'application/json',
     'Content-Type': 'application/json',
     'x-api-key': PROD_API_KEY
   },
@@ -115,6 +119,9 @@ fetch(GET_CONFIG_URL, params)
   })
   .catch(err => {
     console.log(err);
+    sleep(1000).then(() => {
+      getNewConfig(callback);
+    })
   });
 }
 
