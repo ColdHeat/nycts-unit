@@ -44,7 +44,7 @@ def check_dataplicity_install():
 
 def install_dataplicity():
     try:
-        os.system("curl https://www.dataplicity.com/lnip5cgp.py | sudo python")
+        os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
     except:
         print "Failed to install dataplicity..."
 
