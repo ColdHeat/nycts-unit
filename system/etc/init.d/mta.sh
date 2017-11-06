@@ -9,7 +9,8 @@ sudo npm run start
 
 cd /home/pi/nycts-unit/api
 node index.js &
-sleep 10
+sleep 5
+sudo python /home/pi/nycts-unit/system/watchdog/spy.py
 pkill -f load.py
 pkill -f readytopair.py
 

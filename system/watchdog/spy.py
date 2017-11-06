@@ -36,15 +36,17 @@ def check_dataplicity_install():
         install_dataplicity()
 
 def install_dataplicity():
-    if os.system("ping -c 1 google.com") > 0:
-        time.sleep(30)
-
+    while (os.system("ping -c 1 google.com") == 0):
         try:
             os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
-            os.system("sudo reboot")
+            set_reboot_to_true()
         except:
             print "Failed to install dataplicity..."
-    else:
-        os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
+
+def set_reboot_to_true():
+    try:
+        result = urllib2.urlopen("http://127.0.0.1:3000/setConfig/settings/reboot/true")
+    except urllib2.URLError as e:
+        print 'Something went wrong setting reboot to true...'
 
 check_hostname()
