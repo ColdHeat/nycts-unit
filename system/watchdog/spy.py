@@ -46,6 +46,5 @@ def install_dataplicity():
             print "Failed to install dataplicity..."
     else:
         os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
-        os.system("sudo reboot")
 
 check_hostname()

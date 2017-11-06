@@ -16,7 +16,6 @@ pkill -f readytopair.py
 sleep 10
 
 cd /home/pi/nycts-unit/
-sudo python system/watchdog/spy.py
 sudo python jobs.py
 
 cd /home/pi/nycts-unit
