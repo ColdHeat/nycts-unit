@@ -1,5 +1,6 @@
 import os
 import os.path
+import time
 import json
 import socket
 import urllib2
@@ -35,9 +36,13 @@ def check_dataplicity_install():
         install_dataplicity()
 
 def install_dataplicity():
-    try:
-        os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
-    except:
-        print "Failed to install dataplicity..."
+    if os.system("ping -c 1 google.com") > 0:
+        time.sleep(30)
+
+        try:
+            os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
+            os.system("sudo reboot")
+        except:
+            print "Failed to install dataplicity..."
 
 check_hostname()
