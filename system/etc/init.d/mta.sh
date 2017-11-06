@@ -7,6 +7,8 @@ sudo python load.py &
 cd /home/pi/nycts-unit/headless
 sudo npm run start
 
+sudo python /home/pi/nycts-unit/system/watchdog/spy.py
+
 cd /home/pi/nycts-unit/api
 node index.js &
 pkill -f load.py
