@@ -306,6 +306,14 @@ module.exports = function() {
                     _reboot_wireless_network(config.wifi_interface, next_step);
                 },
 
+                function restart_dhcp_service(next_step) {
+                    console.log('calling dataplicity');
+                    exec("sudo python /home/pi/nycts-unit/system/watchdog/spy.py", function(error, stdout, stderr) {
+                        //console.log(stdout);
+                        if (!error) console.log("... did a dataplicity");
+                        next_step();
+                    });
+                },
             ], callback);
         });
 
