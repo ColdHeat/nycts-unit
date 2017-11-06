@@ -44,7 +44,7 @@ def install_dataplicity():
             except:
                 print "Failed to install dataplicity..."
                 pass
-            time.sleep(1)
+        time.sleep(2)
 
 def set_reboot_to_true():
     try:
