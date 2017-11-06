@@ -252,7 +252,6 @@ module.exports = function() {
                         next_step();
                     });
                 },
-
                 // TODO: Do we need to issue a reboot here?
 
             ], callback);

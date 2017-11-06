@@ -1,0 +1,62 @@
+{
+	"data": {
+		"N": {
+			"schedule": [
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 2,
+					"departureTime": 1506556627
+				},
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 6,
+					"departureTime": 1506557020
+				},
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 10,
+					"departureTime": 1506557244
+				},
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 14,
+					"departureTime": 1506557473
+				}
+			],
+			"term": "ST. GEORGE"
+		},
+		"S": {
+			"schedule": [
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 1,
+					"departureTime": 1506556730
+				},
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 4,
+					"departureTime": 1506556893
+				},
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 7,
+					"departureTime": 1506557045
+				},
+				{
+					"routeId": "SIR",
+					"delay": null,
+					"arrivalTime": 11,
+					"departureTime": 1506557313
+				}
+			],
+			"term": "TOTTENVILLE"
+		}
+	}
+}

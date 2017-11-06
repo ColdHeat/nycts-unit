@@ -6,6 +6,10 @@ let config = require('./config.json');
 const multer = require('multer');
 const bodyParser = require('body-parser');
 let jsonParser = bodyParser.json();
+const fetch = require('node-fetch');
+const PROD_API_KEY = 'rKlRPviE105H3paeGQyo9u7NGjhaauQ7TvyYSv91';
+const GET_CONFIG_URL = 'https://api.trainsignapi.com/prod-get-config/get';
+
 //begin module
 const jsonReplacer = (key, value) => {
   if (value === 'false') return false;
@@ -88,12 +92,65 @@ const sub = () => {
       });
 
 }
+const sleep = (time) => {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+const getNewConfig = (callback) => {
+  const params = {
+  method: 'POST',
+  timeout: 5000,
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'x-api-key': PROD_API_KEY
+  },
+  body: JSON.stringify({
+    clientId: config['settings']['client_id']
+  })
+};
+
+fetch(GET_CONFIG_URL, params)
+  .then(response => {
+    return response.json();
+  })
+  .then(json => {
+    let newConfig = json[config['settings']['sign_id']];
+    callback(newConfig);
+  })
+  .catch(err => {
+    sleep(2000).then(() => {
+      getNewConfig(callback);
+    })
+  });
+}
+
+if(fs.existsSync('./config.json')) {
+  getNewConfig((newConfig) => {
+    config = newConfig;
+    writeToConfigFile(() => { void(0) });
+  })
+}
+
+
 app.get('/', function(req, res) {
   res.send("Hello darkness my old friend, I've come to talk with you again.");
 });
 
 app.get('/getConfig', function(req, res) {
   res.json(config);
+});
+app.get('/getNewConfig', function(req, res) {
+  if(fs.existsSync('./config.json')) {
+    getNewConfig((newConfig) => {
+      config = newConfig;
+      writeToConfigFile(() => {
+        res.json(config)
+      });
+    })
+  }
+  else {
+    res.json({ error: 'error' });
+  }
 });
 
 app.get('/setConfig/:route/:settingKey/:settingValue', function(req, res) {

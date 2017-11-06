@@ -14,6 +14,13 @@ def load_config_file():
     config = json.loads(result.read())
     return config
 
+def load_new_config_file():
+    baseurl = "http://127.0.0.1:3000/getNewConfig"
+    try:
+        result = urllib2.urlopen(baseurl)
+    except urllib2.URLError as e:
+        sys.exit()
+
 def ping_router():
     if os.system("ping -c 1 google.com") > 0:
         logs.logger.info('WiFi Shutdown',
@@ -27,6 +34,7 @@ def reboot_wifi():
         set_device_state(state='offline')
         os.system("sudo /sbin/ifdown 'wlan0'")
         os.system("sudo /sbin/ifup --force 'wlan0' && sleep 10")
+        load_new_config_file()
     else:
         ping_router()
 
