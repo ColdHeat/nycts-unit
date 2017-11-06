@@ -36,14 +36,15 @@ def check_dataplicity_install():
         install_dataplicity()
 
 def install_dataplicity():
-    time.sleep(60)
-    if os.system("ping -c 1 google.com") == 0:
+    while (os.system("ping -c 1 google.com") == 0):
         try:
             os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
             set_reboot_to_true()
         except:
             print "Failed to install dataplicity..."
-            pass
+        return True
+        time.sleep(1)
+    return False
 
 def set_reboot_to_true():
     try:

@@ -9,12 +9,12 @@ sudo npm run start
 
 cd /home/pi/nycts-unit/api
 node index.js &
-sleep 10
-sudo python /home/pi/nycts-unit/system/watchdog/spy.py
+sleep 5
 pkill -f load.py
+sudo python /home/pi/nycts-unit/system/watchdog/spy.py
 pkill -f readytopair.py
 
-sleep 10
+sleep 5
 
 cd /home/pi/nycts-unit/system/watchdog
 sudo python jobs.py
