@@ -26,18 +26,17 @@ def ping_router():
         logs.logger.info('WiFi Shutdown',
             extra={'status': 1, 'job': 'wifi_reboot'})
         reboot_wifi()
-    check_device_state()
-
-def check_device_state():
-    config = load_config_file()
-    if config['settings']['state'] == 'offline':
-        set_device_state(state='online')
+    set_device_state(state='online')
 
 def reboot_wifi():
-    os.system("sudo /sbin/ifdown 'wlan0' && sleep 5")
-    os.system("sudo /sbin/ifup --force 'wlan0' && sleep 5")
-    set_device_state(state='online')
-    load_new_config_file()
+    config = load_config_file()
+    if config['settings']['state'] == 'online':
+        set_device_state(state='offline')
+        os.system("sudo /sbin/ifdown 'wlan0'")
+        os.system("sudo /sbin/ifup --force 'wlan0' && sleep 10")
+        load_new_config_file()
+    else:
+        ping_router()
 
 def set_device_state(state):
     try:
