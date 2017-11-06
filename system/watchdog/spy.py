@@ -27,7 +27,7 @@ def change_hostname(sign_id):
     check_dataplicity_install()
 
 def check_dataplicity_install():
-    dataplicity_is_installed = os.path.exists("/var/log/dataplicity.log")
+    dataplicity_is_installed = os.path.exists("/opt/dataplicity/tuxtunnel/auth")
 
     if dataplicity_is_installed:
         pass
