@@ -120,5 +120,5 @@ class train:
 
     def draw(self, direction):
         self.config = self.base.config
-        bart.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
+        mta.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
         time.sleep(self.base.getTransitionTime())
