@@ -1,29 +1,31 @@
-def draw(self, direction):
-    self.config = self.base.config
+import Image
+import ImageDraw
+
+def draw(direction, constants, config, train_data, train_directions, matrix):
     image = Image.new('RGB', (constants.width, constants.height))
     draw = ImageDraw.Draw(image)
-    customer_retention = self.config['settings']['customer_retention']
-    schedule_length = range(len(self.train_data[direction]['schedule']))
+    customer_retention = config['settings']['customer_retention']
+    schedule_length = range(len(train_data[direction]['schedule']))
 
-    if direction in self.train_directions:
+    if direction in train_directions:
         if customer_retention == True:
             index_range = schedule_length[1:3:]
         else:
             index_range = schedule_length[0:2:]
 
         for row in index_range:
-            self.data = self.train_data[direction]['schedule'][row]
+            data = train_data[direction]['schedule'][row]
             xOff = 2
             yOff = 2
 
-            mins = str(self.data['arrivalTime'])
+            mins = str(data['arrivalTime'])
             if len(mins) < 2:
                 mins = mins.rjust(3)
 
             minLabel = 'Min'
-            dirLabel = '  ' + self.train_data[direction]['term']
+            dirLabel = '  ' + train_data[direction]['term']
 
-            nums = self.data['routeId']
+            nums = data['routeId']
 
             if nums in ['1', '2', '3']:
                 circleColor = constants.red
@@ -77,5 +79,5 @@ def draw(self, direction):
                 font=constants.font, fill=constants.green)
 
 
-        self.base.matrix.SetImage(image, 0, 0)
+        matrix.SetImage(image, 0, 0)
         time.sleep(self.base.getTransitionTime())
