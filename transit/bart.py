@@ -30,7 +30,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             fontYoffset = yOff
             minPos = constants.width \
                 - constants.font.getsize(minLabel)[0] - 3
-
+            minOffset = constants.width - 2 - constants.font.getsize(minLabel)[0]
             time1Offset = 106
             minOffset = constants.width - 2 - constants.font.getsize(minLabel)[0]
             draw.text((fontXoffset, fontYoffset), dirLabel, font=constants.font, fill=constants.red)
