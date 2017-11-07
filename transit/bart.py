@@ -17,7 +17,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             data = train_data[direction]['schedule'][row]
             xOff = 2
             yOff = -1
-
+            print row
             mins = str(data['arrivalTime'])
             if len(mins) < 2:
                 mins = mins.rjust(3)
@@ -29,9 +29,6 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
 
             fontXoffset = xOff
             fontYoffset = yOff
-
-            numLabel = str(row + 1) + '. '
-            numLabelW = constants.font.getsize(numLabel)[0]
 
             minPos = constants.width \
                 - constants.font.getsize(minLabel)[0] - 3
