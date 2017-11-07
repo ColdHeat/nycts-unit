@@ -2,7 +2,13 @@
  "subway": {
    "name": "Subway",
    "enabled": true,
-   "service": "MTA",
+   "service": {
+      "name" : "New York - MTA",
+      "key" : "MTA",
+      "endpoint-trains" : "https://api.trainsignapi.com/prod-trains/trains/availableLines/",
+      "endpoint-stations" : "https://api.trainsignapi.com/prod-trains/trains/",
+      "endpoint-times": "https://api.trainsignapi.com/prod-trains/stations/"
+   },
    "line": "L",
    "train": "L15"
  },

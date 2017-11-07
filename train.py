@@ -41,10 +41,8 @@ class train:
                     calculate_time_difference()
 
             def request_train_time():
+                url = self.config['subway']['service']['endpoint-times'] + self.config['subway']['train']
                 try:
-                    url = \
-                        'https://api.trainsignapi.com/prod-trains/stations/' \
-                        + self.config['subway']['train']
                     querystring = {'': ''}
                     headers = {
                         'x-api-key': self.config['settings']['prod_api_key']
