@@ -39,7 +39,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             time1Offset = 106
 
             dirLabelw = constants.font.getsize(dirLabel)[0]
-            draw.rectangle((0, 0, width, height), fill=constants.black)
+            draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
             draw.text((fontXoffset + dirOffset, -1), 'DALY CITY', font=constants.font, fill=constants.red)
             draw.text((time1Offset, -1), mins, font=constants.font, fill=constants.red)
             draw.text((minOffset, -1), minLabel, font=constants.font, fill=constants.red)
