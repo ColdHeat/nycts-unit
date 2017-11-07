@@ -244,7 +244,6 @@ module.exports = function() {
                         next_step();
                     });
                 },
-
                 function restart_hostapd_service(next_step) {
                     exec("service hostapd restart", function(error, stdout, stderr) {
                         //console.log(stdout);
@@ -306,6 +305,13 @@ module.exports = function() {
                     _reboot_wireless_network(config.wifi_interface, next_step);
                 },
 
+                function change_hostname_add_dataplicity(next_step) {
+                  exec("sudo python /home/pi/nycts-unit/system/watchdog/spy.py", function(error, stdout, stderr) {
+                      //console.log(stdout);
+                      if (!error) console.log("... hostname and dataplicity thing");
+                      next_step();
+                  });
+                }
             ], callback);
         });
 

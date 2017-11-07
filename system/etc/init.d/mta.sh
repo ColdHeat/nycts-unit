@@ -9,14 +9,18 @@ sudo npm run start
 
 cd /home/pi/nycts-unit/api
 node index.js &
+sleep 5
 pkill -f load.py
-pkill -f readytopair.py
+pkill -f readytopair.py &
+sudo python /home/pi/nycts-unit/settingupsign.py &
 
-sleep 10
+sleep 5
 
 cd /home/pi/nycts-unit/system/watchdog
-sudo python jobs.py
+sudo python jobs.py &
+sudo python spy.py
 
 cd /home/pi/nycts-unit
+pkill -f settingupsign.py &
 sudo python start.py &
 sudo python monitor.py

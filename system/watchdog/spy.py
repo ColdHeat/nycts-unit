@@ -1,5 +1,6 @@
 import os
 import os.path
+import time
 import json
 import socket
 import urllib2
@@ -27,7 +28,7 @@ def change_hostname(sign_id):
     check_dataplicity_install()
 
 def check_dataplicity_install():
-    dataplicity_is_installed = os.path.exists("/var/log/dataplicity.log")
+    dataplicity_is_installed = os.path.exists("/opt/dataplicity/tuxtunnel/auth")
 
     if dataplicity_is_installed:
         pass
@@ -35,9 +36,16 @@ def check_dataplicity_install():
         install_dataplicity()
 
 def install_dataplicity():
-    try:
-        os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
-    except:
-        print "Failed to install dataplicity..."
+    time.sleep(10)
+    while (os.system("ping -c 1 google.com") == 0):
+        try:
+            print "Installing dataplicity..."
+            os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
+            os.system("sudo reboot")
+        except:
+            print "Failed to install dataplicity..."
+        return True
+        time.sleep(1)
+    return False
 
 check_hostname()
