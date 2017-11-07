@@ -12,6 +12,7 @@ import requests
 import random
 import os
 from transit import mta
+from transit import bart
 
 class train:
 
@@ -119,5 +120,5 @@ class train:
 
     def draw(self, direction):
         self.config = self.base.config
-        mta.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
+        bart.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
         time.sleep(self.base.getTransitionTime())
