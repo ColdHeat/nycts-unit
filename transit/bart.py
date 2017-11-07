@@ -45,7 +45,4 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             draw.text((minOffset, -1), minLabel, font=constants.font, fill=constants.red)
             draw.text((fontXoffset + 2, 6), '8 CAR TRAIN', font=constants.font, fill=constants.orange)
 
-            draw.point((width - 12, 7), fill=black)
-            draw.point((width - 12, 20), fill=black)
-
         matrix.SetImage(image, 0, 0)
