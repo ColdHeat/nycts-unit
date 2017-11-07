@@ -27,9 +27,15 @@ class train:
         t.start()
 
     def offline_train_data(self):
-        train_line = self.config["subway"]["line"]
-        with open('./offline_data/'+ train_line + '.json') as json_file:
-            json_data = json.load(json_file)
+        if self.config["subway"]["service"]["key"] == "MTA":
+            train_line = self.config["subway"]["line"]
+            with open('./offline_data/'+ train_line + '.json') as json_file:
+                json_data = json.load(json_file)
+        if self.config["subway"]["service"]["key"] == "BART":
+            train_line = self.config["subway"]["train"]
+            with open('./offline_data/bart/'+ train_line + '.json') as json_file:
+                json_data = json.load(json_file)
+
         return json_data["data"]
 
     def thread(self):
