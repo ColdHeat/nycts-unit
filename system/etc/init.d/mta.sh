@@ -11,9 +11,8 @@ cd /home/pi/nycts-unit/api
 node index.js &
 sleep 5
 pkill -f load.py
-sudo python /home/pi/nycts-unit/settingupsign.py
-pkill -f readytopair.py
-pkill -f settingupsign.py
+pkill -f readytopair.py &
+sudo python /home/pi/nycts-unit/settingupsign.py &
 
 sleep 5
 
@@ -22,5 +21,6 @@ sudo python jobs.py &
 sudo python spy.py
 
 cd /home/pi/nycts-unit
+pkill -f settingupsign.py &
 sudo python start.py &
 sudo python monitor.py
