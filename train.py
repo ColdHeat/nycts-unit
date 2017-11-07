@@ -41,7 +41,9 @@ class train:
                     calculate_time_difference()
 
             def request_train_time():
+                self.config = self.base.config
                 url = self.config['subway']['service']['endpoint-times'] + self.config['subway']['train']
+                print url
                 try:
                     querystring = {'': ''}
                     headers = {
