@@ -38,12 +38,12 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
 
             time1Offset = 106
 
-            dirLabelw = font.getsize(dirLabel)[0]
-            draw.rectangle((0, 0, width, height), fill=black)
-            draw.text((fontXoffset + dirOffset, -1), 'DALY CITY', font=font, fill=red)
-            draw.text((time1Offset, -1), mins, font=font, fill=red)
-            draw.text((minOffset, -1), minLabel, font=font, fill=red)
-            draw.text((fontXoffset + dirOffset, 6), '8 CAR TRAIN', font=font, fill=orange)
+            dirLabelw = constants.font.getsize(dirLabel)[0]
+            draw.rectangle((0, 0, width, height), fill=constants.black)
+            draw.text((fontXoffset + dirOffset, -1), 'DALY CITY', font=constants.font, fill=constants.red)
+            draw.text((time1Offset, -1), mins, font=constants.font, fill=constants.red)
+            draw.text((minOffset, -1), minLabel, font=constants.font, fill=constants.red)
+            draw.text((fontXoffset + dirOffset, 6), '8 CAR TRAIN', font=constants.font, fill=constants.orange)
 
             draw.point((width - 12, 7), fill=black)
             draw.point((width - 12, 20), fill=black)
