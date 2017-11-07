@@ -29,13 +29,12 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
 
             fontXoffset = xOff
             fontYoffset = yOff
-
+            print fontYoffset
             minPos = constants.width \
                 - constants.font.getsize(minLabel)[0] - 3
 
             time1Offset = 106
             minOffset = constants.width - 2 - constants.font.getsize(minLabel)[0]
-            dirLabelw = constants.font.getsize(dirLabel)[0]
             draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
             draw.text((fontXoffset + 2, fontYoffset), dirLabel, font=constants.font, fill=constants.red)
             draw.text((time1Offset, fontYoffset), mins, font=constants.font, fill=constants.red)
