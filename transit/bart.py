@@ -34,8 +34,11 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             time1Offset = 102
             minOffset = constants.width - 2 - constants.font.getsize(minLabel)[0]
             draw.text((fontXoffset, fontYoffset), dirLabel, font=constants.font, fill=constants.red)
+            if mins == "Leaving":
+                time1Offset = 90
             draw.text((time1Offset, fontYoffset), mins, font=constants.font, fill=constants.red)
-            draw.text((minOffset, fontYoffset), minLabel, font=constants.font, fill=constants.red)
-            draw.text((fontXoffset, fontYoffset + 7), data['length'] + 'CAR TRAIN', font=constants.font, fill=constants.orange)
+            if mins != "Leaving":
+                draw.text((minOffset, fontYoffset), minLabel, font=constants.font, fill=constants.red)
+            draw.text((fontXoffset, fontYoffset + 7), data['length'] + ' CAR TRAIN', font=constants.font, fill=constants.orange)
 
         matrix.SetImage(image, 0, 0)
