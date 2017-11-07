@@ -10,8 +10,8 @@ sudo npm run start
 cd /home/pi/nycts-unit/api
 node index.js &
 sleep 5
-sudo python /home/pi/nycts-unit/settingupsign.py
 pkill -f load.py
+sudo python /home/pi/nycts-unit/settingupsign.py
 pkill -f readytopair.py
 pkill -f settingupsign.py
 
