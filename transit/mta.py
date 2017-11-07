@@ -80,4 +80,3 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
 
 
         matrix.SetImage(image, 0, 0)
-        time.sleep(self.base.getTransitionTime())
