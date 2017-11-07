@@ -2,6 +2,7 @@
  "subway": {
    "name": "Subway",
    "enabled": true,
+   "service": "MTA",
    "line": "L",
    "train": "L15"
  },
