@@ -36,6 +36,6 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             draw.text((fontXoffset, fontYoffset), dirLabel, font=constants.font, fill=constants.red)
             draw.text((time1Offset, fontYoffset), mins, font=constants.font, fill=constants.red)
             draw.text((minOffset, fontYoffset), minLabel, font=constants.font, fill=constants.red)
-            draw.text((fontXoffset, fontYoffset + 6), train_data[direction]['length'] + 'CAR TRAIN', font=constants.font, fill=constants.orange)
+            draw.text((fontXoffset, fontYoffset + 6), data['length'] + 'CAR TRAIN', font=constants.font, fill=constants.orange)
 
         matrix.SetImage(image, 0, 0)
