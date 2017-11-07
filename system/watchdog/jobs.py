@@ -20,7 +20,7 @@ def upload_log_job():
 
 def wifi_inspection_job():
     cmd = CHANGE_DIR + " && sudo python system/watchdog/wifi.py"
-    set_crontab(cmd, 1)
+    set_crontab(cmd, 3)
 
 def system_log_job():
     cmd = CHANGE_DIR + " && sudo python system/watchdog/system.py"

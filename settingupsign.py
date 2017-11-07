@@ -50,7 +50,7 @@ swapImage = Image.new('RGB', (constants.width, constants.height))
 swapDraw  = ImageDraw.Draw(swapImage)
 swapDraw.text((2, 0), 'NYC TRAIN SIGN'  , font=constants.font, fill=constants.red)
 swapDraw.text((68, 0), ' legit. realtime.'  , font=constants.font, fill=constants.green)
-swapDraw.text((2, 16), 'SETTING UP SIGN...PLEASE WAIT', font=constants.font, fill=constants.blue)
+swapDraw.text((2, 16), 'CONFIGURING SIGN..', font=constants.font, fill=constants.blue)
 swap.SetImage(swapImage, 0, 0)
 swap = b.SwapOnVSync(swap)
 
