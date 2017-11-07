@@ -6,7 +6,6 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
     draw = ImageDraw.Draw(image)
     customer_retention = config['settings']['customer_retention']
     schedule_length = range(len(train_data[direction]['schedule']))
-    count = not count
 
     if direction in train_directions:
         if customer_retention == True:
