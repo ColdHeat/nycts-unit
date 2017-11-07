@@ -16,7 +16,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
         for row in index_range:
             data = train_data[direction]['schedule'][row]
             xOff = 2
-            yOff = 2
+            yOff = -1
 
             mins = str(data['arrivalTime'])
             if len(mins) < 2:
@@ -25,7 +25,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             minLabel = 'Min'
             dirLabel = train_data[direction]['term']
             if row == 1:
-                yOff = 18
+                yOff = 14
 
             fontXoffset = xOff
             fontYoffset = yOff
@@ -40,9 +40,9 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             minOffset = constants.width - 2 - constants.font.getsize(minLabel)[0]
             dirLabelw = constants.font.getsize(dirLabel)[0]
             draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
-            draw.text((fontXoffset + 2, -1), dirLabel, font=constants.font, fill=constants.red)
-            draw.text((time1Offset, -1), mins, font=constants.font, fill=constants.red)
-            draw.text((minOffset, -1), minLabel, font=constants.font, fill=constants.red)
-            draw.text((fontXoffset + 2, 6), data['length'] + 'CAR TRAIN', font=constants.font, fill=constants.orange)
+            draw.text((fontXoffset + 2, fontYoffset), dirLabel, font=constants.font, fill=constants.red)
+            draw.text((time1Offset, fontYoffset), mins, font=constants.font, fill=constants.red)
+            draw.text((minOffset, fontYoffset), minLabel, font=constants.font, fill=constants.red)
+            draw.text((fontXoffset + 2, fontYoffset + 6), data['length'] + 'CAR TRAIN', font=constants.font, fill=constants.orange)
 
         matrix.SetImage(image, 0, 0)
