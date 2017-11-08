@@ -36,16 +36,42 @@ def check_dataplicity_install():
         install_dataplicity()
 
 def install_dataplicity():
-    time.sleep(10)
     while (os.system("ping -c 1 google.com") == 0):
         try:
             print "Installing dataplicity..."
             os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
+            upload_unit_model(sign_id, client_id)
             os.system("sudo reboot")
         except:
             print "Failed to install dataplicity..."
         return True
         time.sleep(1)
     return False
+
+def upload_unit_model(sign_id, client_id):
+    config = load_config_file()
+    sign_id = config['settings']['sign_id']
+    client_id = config['settings']['client_id']
+    versions = load_version_file()
+
+    url = "https://api.trainsignapi.com/prod-version-handshake/handshake"
+    headers = {
+        'content-type': "application/octet-stream",
+        'x-api-key': config['settings']['prod_api_key']
+        }
+    payload = {
+        "client_id": client_id,
+		"sign_id": sign_id,
+		"model": versions['model'],
+		"firmware": versions['firmware']
+        }
+    requests.request(
+        "POST", url, data=payload, headers=headers)
+
+def load_version_file():
+    VERSION_PATH = '/home/pi/nycts-unit/api/version.json'
+
+    with open(VERSION_PATH) as json_file:
+        return json.load(json_file)
 
 check_hostname()
