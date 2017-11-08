@@ -127,7 +127,9 @@ fetch(GET_CONFIG_URL, params)
 if(fs.existsSync('./config.json')) {
   getNewConfig((newConfig) => {
     config = newConfig;
-    writeToConfigFile(() => { void(0) });
+    fs.unlink('./config.json', (err) => {
+      writeToConfigFile(() => { void(0) });
+    });
   })
 }
 

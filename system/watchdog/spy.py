@@ -44,7 +44,7 @@ def install_dataplicity():
             os.system("sudo reboot")
         except:
             print "Failed to install dataplicity..."
-        return True
+            install_dataplicity()
         time.sleep(1)
     return False
 
