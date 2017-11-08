@@ -58,7 +58,7 @@ def upload_unit_model():
 
     url = "https://api.trainsignapi.com/prod-version-handshake/handshake"
     headers = {
-        'content-type': "application/octet-stream",
+        'content-type': "application/json",
         'x-api-key': config['settings']['prod_api_key']
         }
     payload = {
