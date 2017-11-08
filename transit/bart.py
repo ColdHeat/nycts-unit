@@ -44,5 +44,5 @@ def draw(swap, direction, constants, config, train_data, train_directions, matri
                 draw.text((fontXoffset, fontYoffset + 7), data['length'] + ' CAR TRAIN', font=constants.font, fill=constants.orange)
 
             matrix.SetImage(image, 0, 0)
-        if destination != (len(train_data[direction])-1):
-            time.sleep(int(config['settings']['transition_time']))
+            if destination != (len(train_data[direction])-1):
+                time.sleep(int(config['settings']['transition_time']))
