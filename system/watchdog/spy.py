@@ -40,8 +40,8 @@ def install_dataplicity():
         try:
             print "Installing dataplicity..."
             os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
-            upload_unit_model(sign_id, client_id)
-            os.system("sudo reboot")
+            upload_unit_model()
+            os.system("sudo reboot now")
         except:
             print "Failed to install dataplicity..."
         return True
