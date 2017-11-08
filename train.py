@@ -134,5 +134,5 @@ class train:
         if self.config['subway']['service']['key'] == "MTA":
             mta.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
         if self.config['subway']['service']['key'] == "BART":
-            bart.draw(swap, direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
+            bart.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
         time.sleep(self.base.getTransitionTime())
