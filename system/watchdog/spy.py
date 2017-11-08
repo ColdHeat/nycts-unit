@@ -41,6 +41,7 @@ def install_dataplicity():
             print "Installing dataplicity..."
             os.system("sudo python /home/pi/nycts-unit/system/install/dataplicity.py")
             upload_unit_model()
+            print "something"
             os.system("sudo reboot now")
         except:
             print "Failed to install dataplicity..."
@@ -48,7 +49,7 @@ def install_dataplicity():
         time.sleep(1)
     return False
 
-def upload_unit_model(sign_id, client_id):
+def upload_unit_model():
     config = load_config_file()
     sign_id = config['settings']['sign_id']
     client_id = config['settings']['client_id']
