@@ -129,11 +129,10 @@ if(fs.existsSync('./config.json')) {
     config = newConfig;
     fs.unlink('./config.json', (err) => {
       if (err) {
-        console.log(errr);
+        console.log(err);
       } else {
-        console.log('it worked');
+        writeToConfigFile(() => { void(0) });
       }
-      writeToConfigFile(() => { void(0) });
     });
   })
 }
