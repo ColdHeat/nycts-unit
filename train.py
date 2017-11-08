@@ -129,7 +129,7 @@ class train:
             fill=constants.black)
         self.base.matrix.SetImage(image, 0, 0)
 
-    def draw(self, direction, swap):
+    def draw(self, direction):
         self.config = self.base.config
         if self.config['subway']['service']['key'] == "MTA":
             mta.draw(direction, constants, self.config, self.train_data, self.train_directions, self.base.matrix)
