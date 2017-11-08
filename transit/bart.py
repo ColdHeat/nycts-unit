@@ -6,11 +6,11 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
     image = Image.new('RGB', (constants.width, constants.height))
     draw = ImageDraw.Draw(image)
     #customer_retention = config['settings']['customer_retention']
-    schedule_length = range(len(train_data[direction]['schedule']))
+    #schedule_length = range(len(train_data[direction]['schedule']))
 
     if direction in train_directions:
         for destination in train_data[direction]:
-            index_range = schedule_length[1:3:]
+            index_range = destination[1:3:]
             #if customer_retention == True:
             #    index_range = schedule_length[1:3:]
             #else:
