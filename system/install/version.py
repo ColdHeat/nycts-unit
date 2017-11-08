@@ -2,44 +2,31 @@ import requests
 import sys
 import json
 import os
-import urllib2
-import sys
-sys.path.insert(0, '/home/pi/nycts-unit')
-import logs
 
-def load_config_file():
-    baseurl = "http://127.0.0.1:3000/getConfig"
-    try:
-        result = urllib2.urlopen(baseurl)
-    except urllib2.URLError as e:
-        sys.exit()
-    config = json.loads(result.read())
-    return config
-
-def load_log_file(config):
-    log_file = CONFIG_PATH + "/nycts-unit/logs/logs.json"
-    try:
-        with open(log_file, "rb") as f:
-            payload = f.read()
-    except Exception, e:
-            payload = {}
-    upload_log(config, log_file, payload)
-
-def upload_log(config, log_file, payload):
+def upload_unit_model():
+    config = load_config_file()
     sign_id = config['settings']['sign_id']
-    url = "https://api.trainsignapi.com/prod-logs/logs/" + sign_id + "/upload"
+    client_id = config['settings']['client_id']
+    versions = load_version_file()
+
+    url = "https://api.trainsignapi.com/prod-version-handshake/handshake"
     headers = {
-        'content-type': "application/octet-stream",
+        'content-type': "application/json",
         'x-api-key': config['settings']['prod_api_key']
+        }
+    payload = {
+        "client_id": client_id,
+		"sign_id": sign_id,
+		"model": versions['model'],
+		"firmware": versions['firmware']
         }
     requests.request(
         "POST", url, data=payload, headers=headers)
-    wipe_log_file(log_file)
 
-def wipe_log_file(log_file):
-    try:
-        open(log_file, 'w').close()
-    except Exception, e:
-        sys.exit()
+def load_version_file():
+    VERSION_PATH = '/home/pi/nycts-unit/api/version.json'
 
-check_if_offline()
+    with open(VERSION_PATH) as json_file:
+        return json.load(json_file)
+
+upload_unit_model()
