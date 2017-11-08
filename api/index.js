@@ -149,8 +149,12 @@ app.get('/getNewConfig', function(req, res) {
   if(fs.existsSync('./config.json')) {
     getNewConfig((newConfig) => {
       config = newConfig;
-      writeToConfigFile(() => {
-        res.json(config)
+      fs.unlink('./config.json', (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          writeToConfigFile(() => { void(0) });
+        }
       });
     })
   }
