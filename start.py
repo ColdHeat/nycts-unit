@@ -72,9 +72,9 @@ while True:
 
         swap.Clear()
         if b.config["subway"]["enabled"] == True:
-            trainScreen.draw('S')
+            trainScreen.draw('S', swap)
             swap.Clear()
-            trainScreen.draw('N')
+            trainScreen.draw('N', swap)
 
         swap.Clear()
         if b.config["logo"]["enabled"] == True:
