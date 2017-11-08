@@ -1,0 +1,1 @@
+{"data":{"N":[],"S":[{"schedule":[{"routeId":"BART","delay":null,"arrivalTime":"1","departureTime":0,"length":"10"}],"term":"SF Airport"},{"schedule":[{"routeId":"BART","delay":null,"arrivalTime":"21","departureTime":0,"length":"10"},{"routeId":"BART","delay":null,"arrivalTime":"41","departureTime":0,"length":"10"}],"term":"SFO/Millbrae"}]}}

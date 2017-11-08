@@ -1,0 +1,1 @@
+{"data":{"N":[{"schedule":[{"routeId":"BART","delay":null,"arrivalTime":"12","departureTime":0,"length":"10"},{"routeId":"BART","delay":null,"arrivalTime":"32","departureTime":0,"length":"10"}],"term":"Pittsburg/Bay Point"}],"S":[{"schedule":[{"routeId":"BART","delay":null,"arrivalTime":"14","departureTime":0,"length":"10"}],"term":"Millbrae"}]}}
