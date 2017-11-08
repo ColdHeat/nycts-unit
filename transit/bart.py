@@ -13,7 +13,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             schedule_length = range(len(train_data[direction][destination]['schedule']))
 
             index_range = schedule_length[0:2:]
-	        draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
+            draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
             for row in index_range:
                 data = train_data[direction][destination]['schedule'][row]
                 xOff = 0
