@@ -131,7 +131,7 @@ if(fs.existsSync('./config.json')) {
       if (err) {
         console.log(err);
       } else {
-        writeToConfigFile(() => { res.json(config) });
+        writeToConfigFile(() => { void(0) });
       }
     });
   })
@@ -153,7 +153,7 @@ app.get('/getNewConfig', function(req, res) {
         if (err) {
           console.log(err);
         } else {
-          writeToConfigFile(() => { void(0) });
+          writeToConfigFile(() => { res.json(config) });
         }
       });
     })
