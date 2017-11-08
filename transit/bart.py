@@ -17,7 +17,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
             #    index_range = schedule_length[0:2:]
 
             for row in index_range:
-                data = train_data[direction]['schedule'][row]
+                data = train_data[direction][destination]['schedule'][row]
                 xOff = 0
                 yOff = -1
                 mins = str(data['arrivalTime'])
@@ -25,7 +25,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
                     mins = mins.rjust(3)
 
                 minLabel = 'Min'
-                dirLabel = train_data[direction]['term'] + ' '
+                dirLabel = train_data[direction][destination]['term'] + ' '
                 if row == 1:
                     yOff = 15
 
