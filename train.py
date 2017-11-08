@@ -70,26 +70,32 @@ class train:
                             })
 
             def validate_train_data(response_data):
-                north_bound = self.train_data['N']['schedule']
-                south_bound = self.train_data['S']['schedule']
+        		if self.config['subway']['service']['key'] == "MTA":
+                            north_bound = self.train_data['N']['schedule']
+                            south_bound = self.train_data['S']['schedule']
+                            is_first_stop = len(south_bound) == 0
+                            is_last_stop = len(north_bound) == 0
 
-                is_first_stop = len(south_bound) == 0
-                is_last_stop = len(north_bound) == 0
+                            if is_first_stop and is_last_stop:
+                                self.train_directions = ['N', 'S']
+                                self.train_data = self.offline_train_data()
+                            elif is_first_stop:
+                                self.train_directions = ['N']
+                                self.train_data = response_data
+                                self.train_data['N']['term'] = self.train_data['S']['term']
+                            elif is_last_stop:
+                                self.train_directions = ['S']
+                                self.train_data = response_data
+                                self.train_data['S']['term'] = self.train_data['N']['term']
+                            else:
+                                self.train_directions = ['N', 'S']
+                                self.train_data = response_data
+        		if self.config['subway']['service']['key'] == "BART":
+                            north_bound = self.train_data['N']
+                            south_bound = self.train_data['S']
+                            self.train_directions = ['N', 'S']
+                            self.train_data = response_data
 
-                if is_first_stop and is_last_stop:
-                    self.train_directions = ['N', 'S']
-                    self.train_data = self.offline_train_data()
-                elif is_first_stop:
-                    self.train_directions = ['N']
-                    self.train_data = response_data
-                    self.train_data['N']['term'] = self.train_data['S']['term']
-                elif is_last_stop:
-                    self.train_directions = ['S']
-                    self.train_data = response_data
-                    self.train_data['S']['term'] = self.train_data['N']['term']
-                else:
-                    self.train_directions = ['N', 'S']
-                    self.train_data = response_data
 
             def calculate_time_difference():
                 time_difference = math.ceil(time.time() - self.start)

@@ -5,17 +5,15 @@ import time
 def draw(direction, constants, config, train_data, train_directions, matrix):
     image = Image.new('RGB', (constants.width, constants.height))
     draw = ImageDraw.Draw(image)
-    #customer_retention = config['settings']['customer_retention']
-    #schedule_length = range(len(train_data[direction]['schedule']))
-
     if direction in train_directions:
-        for destination in train_data[direction]:
-            index_range = train_data[direction][destination][1:3:]
-            #if customer_retention == True:
-            #    index_range = schedule_length[1:3:]
-            #else:
-            #    index_range = schedule_length[0:2:]
+        destination_length = range(len(train_data[direction]))
 
+
+        for destination in destination_length:
+            schedule_length = range(len(train_data[direction][destination]['schedule']))
+
+            index_range = schedule_length[0:2:]
+	        draw.rectangle((0, 0, constants.width, constants.height), fill=constants.black)
             for row in index_range:
                 data = train_data[direction][destination]['schedule'][row]
                 xOff = 0
@@ -45,4 +43,5 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
                 draw.text((fontXoffset, fontYoffset + 7), data['length'] + ' CAR TRAIN', font=constants.font, fill=constants.orange)
 
             matrix.SetImage(image, 0, 0)
-            time.sleep(config['settings']['transition_time'])
+	    if destination != (len(train_data[direction])-1):
+            time.sleep(int(config['settings']['transition_time']))
