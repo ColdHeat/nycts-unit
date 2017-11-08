@@ -9,7 +9,7 @@ def draw(direction, constants, config, train_data, train_directions, matrix):
     schedule_length = range(len(train_data[direction]['schedule']))
 
     if direction in train_directions:
-        for destination in train_directions[direction]:
+        for destination in train_data[direction]:
 
             if customer_retention == True:
                 index_range = schedule_length[1:3:]
