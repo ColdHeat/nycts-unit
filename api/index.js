@@ -131,7 +131,7 @@ if(fs.existsSync('./config.json')) {
       if (err) {
         console.log(err);
       } else {
-        writeToConfigFile(() => { void(0) });
+        writeToConfigFile(() => { res.json(config) });
       }
     });
   })
