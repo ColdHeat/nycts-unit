@@ -36,6 +36,7 @@ def check_dataplicity_install():
         install_dataplicity()
 
 def install_dataplicity():
+    time.sleep(10)
     while (os.system("ping -c 1 google.com") == 0):
         try:
             print "Installing dataplicity..."
@@ -45,7 +46,7 @@ def install_dataplicity():
             os.system("sudo reboot now")
         except:
             print "Failed to install dataplicity..."
-        return True
+            install_dataplicity()
         time.sleep(1)
     return False
 
